@@ -1,0 +1,39 @@
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #17202a;
+  background: #f7fafc;
+}
+
+.shell {
+  display: grid;
+  min-height: 100vh;
+  place-items: center;
+  padding: 24px;
+}
+
+.intro {
+  max-width: 720px;
+  padding: 32px;
+  border: 1px solid #d9e2ec;
+  border-radius: 8px;
+  background: #fff;
+}
+
+.intro p {
+  color: #2356d8;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.intro h1 {
+  margin: 0 0 14px;
+  font-size: 42px;
+}
+
+.intro span {
+  color: #637083;
+  font-size: 18px;
+  line-height: 1.5;
+}
+
