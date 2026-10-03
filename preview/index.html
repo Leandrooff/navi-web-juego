@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NAVI Web Juego Preview</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">Preview ejecutable</p>
+        <h1>NAVI Web Juego</h1>
+      </div>
+      <nav>
+        <a href="#juego">Juego</a>
+        <a href="#paneles">Paneles</a>
+        <a href="#modulos">Modulos</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero" id="juego">
+        <div class="hero-copy">
+          <p class="badge">Aventura educativa</p>
+          <h2>Aprender seguridad jugando decisiones</h2>
+          <p>
+            El nino elige una historia, mira escenas, toma decisiones y recibe
+            una recomendacion clara al final.
+          </p>
+          <div class="actions">
+            <button id="startGame">Probar cuento demo</button>
+            <a href="#modulos">Ver modulos</a>
+          </div>
+        </div>
+        <div class="game-card">
+          <div class="scene-art" id="sceneArt">Parque</div>
+          <p class="scene-tag" id="sceneTag">Escena 1 de 3</p>
+          <h3 id="sceneTitle">Me perdi en el parque</h3>
+          <p id="sceneText">
+            Estas jugando y de pronto no ves a tu tutor. Hay varias personas cerca.
+            Que deberias hacer?
+          </p>
+          <div class="choice-list" id="choiceList"></div>
+          <div class="score-row">
+            <span id="scoreLabel">Puntos: 0</span>
+            <span id="starsLabel">Estrellas: 0</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-title">
+          <p class="eyebrow">Biblioteca</p>
+          <h2>Aventuras disponibles</h2>
+        </div>
+        <div class="story-grid">
+          <article class="story">
+            <span>Seguridad en lugares publicos</span>
+            <h3>Me perdi en el parque</h3>
+            <p>Practica como buscar ayuda segura si no encuentras a tu tutor.</p>
+          </article>
+          <article class="story">
+            <span>Desconocidos</span>
+            <h3>Alguien ofrece un regalo</h3>
+            <p>Aprende a reconocer situaciones que necesitan apoyo adulto.</p>
+          </article>
+          <article class="story">
+            <span>Calle</span>
+            <h3>Cruzar con cuidado</h3>
+            <p>Decide cuando esperar, mirar y pedir ayuda.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section panels" id="paneles">
+        <div class="section-title">
+          <p class="eyebrow">Seguimiento</p>
+          <h2>Paneles base</h2>
+        </div>
+        <div class="panel-grid">
+          <article class="panel">
+            <h3>Tutor</h3>
+            <p>Ve cuentos completados, decisiones y recomendaciones.</p>
+            <ul>
+              <li>Perfil infantil: Mateo</li>
+              <li>Ultimo cuento: Me perdi en el parque</li>
+              <li>Recomendacion: practicar adultos seguros</li>
+            </ul>
+          </article>
+          <article class="panel">
+            <h3>Educador</h3>
+            <p>Revisa avance individual y grupal.</p>
+            <ul>
+              <li>Grupo: 4 ninos demo</li>
+              <li>Tema a reforzar: desconocidos</li>
+              <li>Promedio: 2 estrellas</li>
+            </ul>
+          </article>
+          <article class="panel">
+            <h3>Administrador</h3>
+            <p>Crea cuentos, escenas, opciones, imagenes y audios.</p>
+            <ul>
+              <li>Estado: borrador/publicado</li>
+              <li>Validacion: rutas completas</li>
+              <li>Contenido: apropiado para ninos</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="modulos">
+        <div class="section-title">
+          <p class="eyebrow">Trabajo en grupos</p>
+          <h2>Vista previa de todos los modulos</h2>
+        </div>
+        <div class="module-grid" id="moduleGrid"></div>
+      </section>
+    </main>
+
+    <footer>
+      <p>NAVI Web Juego - base inicial para el equipo</p>
+    </footer>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
+
