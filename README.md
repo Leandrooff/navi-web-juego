@@ -27,6 +27,17 @@ Construir una pagina web tipo juego donde el nino pueda:
 
 ```text
 navi-web-juego/
+  preview/
+    index.html
+    styles.css
+    app.js
+  frontend/
+    package.json
+    src/
+  backend/
+    api-contrato.md
+  database/
+    schema.sql
   docs/
     herramientas-instalacion.md
     flujo-logico.md
@@ -43,6 +54,34 @@ navi-web-juego/
 ```
 
 Cada carpeta dentro de `modules/` corresponde a un modulo independiente para una pareja de trabajo.
+
+## Vista previa ejecutable
+
+La carpeta `preview/` tiene una demo que ya se puede abrir y probar. Muestra el inicio del juego, cuento demo, paneles y vista de los 7 modulos.
+
+Para correrla rapido:
+
+```bash
+cd preview
+python -m http.server 5173
+```
+
+Abrir:
+
+```text
+http://127.0.0.1:5173
+```
+
+Tambien se puede abrir directo `preview/index.html` en el navegador.
+
+## Carpetas tecnicas
+
+- `preview/`: demo ejecutable para entender el proyecto completo.
+- `frontend/`: base del frontend final con React, Vite y Tailwind CSS.
+- `backend/`: base para Laravel API, Sanctum y Filament.
+- `database/`: esquema inicial de tablas y relaciones.
+- `modules/`: trabajo separado por grupos de 2.
+- `docs/`: guias generales del proyecto.
 
 ## Modulos principales
 
@@ -71,4 +110,3 @@ Leer estos archivos en orden:
 3. `docs/reparto-14-personas.md`
 4. `docs/git-trabajo-equipo.md`
 5. El `README.md` del modulo asignado dentro de `modules/`
-
