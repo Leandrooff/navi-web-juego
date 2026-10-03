@@ -1,53 +1,12 @@
-const modules = [
-  {
-    id: "01",
-    name: "Diseno UI y experiencia de juego",
-    owner: "Grupo de 2",
-    goal: "Definir pantallas, estilo visual, botones, avatares y flujo infantil.",
-    output: "Figma, capturas, paleta y mapa de pantallas."
-  },
-  {
-    id: "02",
-    name: "Frontend y motor de cuentos",
-    owner: "Grupo de 2",
-    goal: "Crear la parte jugable: escenas, opciones y avance segun decisiones.",
-    output: "React, JSON demo, pantalla de biblioteca y juego."
-  },
-  {
-    id: "03",
-    name: "Backend API autenticacion y roles",
-    owner: "Grupo de 2",
-    goal: "Preparar login, roles, permisos y endpoints principales.",
-    output: "Laravel API, Sanctum y pruebas en Postman."
-  },
-  {
-    id: "04",
-    name: "Panel administrador de contenidos",
-    owner: "Grupo de 2",
-    goal: "Permitir crear categorias, cuentos, escenas, opciones, imagenes y audios.",
-    output: "Panel Filament y validacion de rutas completas."
-  },
-  {
-    id: "05",
-    name: "Base de datos y modelo",
-    owner: "Grupo de 2",
-    goal: "Definir tablas, relaciones, migraciones y datos de prueba.",
-    output: "Diagrama ER, SQL y diccionario de datos."
-  },
-  {
-    id: "06",
-    name: "Reportes seguimiento y recomendaciones",
-    owner: "Grupo de 2",
-    goal: "Calcular puntos, estrellas, logros y recomendaciones.",
-    output: "Reglas, reportes tutor/docente y datos demo."
-  },
-  {
-    id: "07",
-    name: "Integracion pruebas y documentacion",
-    owner: "Leandrooff",
-    goal: "Revisar avances, integrar modulos y preparar entrega final.",
-    output: "Checklist, pruebas, documentacion y version final."
-  }
+const menuItems = [
+  ["inicio", "Inicio general"],
+  ["modulo-01", "01 Diseno UI"],
+  ["modulo-02", "02 Juego frontend"],
+  ["modulo-03", "03 Backend API"],
+  ["modulo-04", "04 Panel admin"],
+  ["modulo-05", "05 Base de datos"],
+  ["modulo-06", "06 Reportes"],
+  ["modulo-07", "07 Integracion"]
 ];
 
 const story = [
@@ -79,24 +38,26 @@ const story = [
   }
 ];
 
+let currentScreen = "inicio";
 let currentScene = 0;
 let score = 0;
 
-function renderModules() {
-  const grid = document.querySelector("#moduleGrid");
-  grid.innerHTML = modules
+function renderMenu() {
+  const menu = document.querySelector("#menu");
+  menu.innerHTML = menuItems
     .map(
-      (module) => `
-        <article class="module-card">
-          <span>Modulo ${module.id}</span>
-          <h3>${module.name}</h3>
-          <p>${module.goal}</p>
-          <strong>Responsable: ${module.owner}</strong>
-          <p>${module.output}</p>
-        </article>
-      `
+      ([id, label]) =>
+        `<button class="${id === currentScreen ? "active" : ""}" data-go="${id}">${label}</button>`
     )
     .join("");
+}
+
+function showScreen(id) {
+  currentScreen = id;
+  document.querySelectorAll(".screen").forEach((screen) => {
+    screen.classList.toggle("active", screen.id === `screen-${id}`);
+  });
+  renderMenu();
 }
 
 function renderScene() {
@@ -134,7 +95,11 @@ function restartGame() {
   renderScene();
 }
 
-document.querySelector("#startGame").addEventListener("click", restartGame);
-renderModules();
-renderScene();
+document.addEventListener("click", (event) => {
+  const trigger = event.target.closest("[data-go]");
+  if (!trigger) return;
+  showScreen(trigger.dataset.go);
+});
 
+renderMenu();
+renderScene();
