@@ -74,8 +74,8 @@ navi-web-juego/
     08-ruth-mariela-base-datos/
     09-ruth-serrano-reportes/
     10-alejandra-logros-recomendaciones/
-    11-alvaro-qa-pruebas/
-    12-gabriela-documentacion/
+    11-alvaro-accesibilidad-audio/
+    12-gabriela-perfil-progreso/
     13-alejandro-integracion/
 ```
 
@@ -93,8 +93,8 @@ Cada carpeta dentro de `modules/` corresponde a una persona y a una responsabili
 8. Ruth Mariela: Base de datos.
 9. Ruth Serrano: Reportes.
 10. Alejandra Quiroga: Logros y recomendaciones.
-11. Alvaro Rosas: QA y pruebas.
-12. Gabriela Peñaranda: Documentacion.
+11. Alvaro Rosas: Accesibilidad y audio.
+12. Gabriela Peñaranda: Perfil y progreso.
 13. Alejandro: Integracion y coordinacion final.
 
 ## Reglas de trabajo
@@ -104,7 +104,7 @@ Cada carpeta dentro de `modules/` corresponde a una persona y a una responsabili
 - Cada persona trabaja solo dentro de su carpeta asignada.
 - Los avances van dentro de `base-avance/`.
 - Los cambios se integran mediante Pull Request.
-- Cada modulo debe poder revisarse con capturas, datos de ejemplo o instrucciones claras.
+- Cada modulo debe traer una pantalla, funcion, componente, endpoint o datos demo que Alejandro pueda integrar.
 
 ## Primer paso para el equipo
 
