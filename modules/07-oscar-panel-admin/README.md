@@ -1,22 +1,29 @@
 # Modulo 07 Oscar Panel administrador
 
-## Responsable
-
-Oscar
-
 ## Objetivo
 
-Crear la base del panel administrativo para gestionar contenido.
+Crear el panel donde el administrador pueda crear y editar cuentos, escenas y opciones.
 
-## Debe desarrollar
+## Pantallas a desarrollar
 
-- Gestion de categorias.
-- Gestion de cuentos.
-- Gestion de escenas.
-- Gestion de opciones.
-- Estado borrador/publicado.
+- Dashboard admin.
+- Lista de cuentos.
+- Crear cuento.
+- Editar cuento.
+- Crear escena.
+- Editar escena.
+- Crear opciones de decision.
+
+## Funciones necesarias
+
+- Crear cuento con titulo, categoria, descripcion e imagen.
+- Editar cuento.
+- Cambiar estado: borrador o publicado.
+- Crear escenas y ordenarlas.
+- Crear opciones con texto, puntaje y siguiente escena.
+- Desactivar cuento.
+- Ver resumen del cuento antes de publicar.
 
 ## Entrega esperada
 
-Subir capturas, formularios o codigo de panel en `base-avance/`.
-
+Subir pantallas con formularios reales. Puede funcionar con datos demo.
