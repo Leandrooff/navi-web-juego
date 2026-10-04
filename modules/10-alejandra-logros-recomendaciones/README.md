@@ -4,7 +4,7 @@
 
 Crear el sistema de recompensas del juego: estrellas, logros, mensajes positivos y recomendaciones.
 
-Leer tambien `../../docs/instrucciones-detalladas-entrega.md` para ver la estructura exacta de entrega.
+Leer tambien `INSTRUCCIONES.md` dentro de esta misma carpeta para ver exactamente que debes subir.
 
 ## Pantallas a desarrollar
 
