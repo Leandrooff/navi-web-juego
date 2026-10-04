@@ -1,17 +1,16 @@
 # Avance Oscar
 
-## Responsable
+## Que debes subir
 
-Oscar
+- Panel admin.
+- Lista de cuentos.
+- Formulario de cuento.
+- Formulario de escena y opciones.
 
-## Que debe subir aqui
+## Como verlo
 
-- Pantallas del panel.
-- Formularios creados.
-- Campos necesarios.
-- Validaciones propuestas.
+Explica que archivo abre el panel admin.
 
-## Estado
+## Falta
 
-Pendiente.
-
+- Anotar si falta guardar datos.
