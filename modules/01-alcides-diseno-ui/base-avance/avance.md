@@ -1,18 +1,16 @@
 # Avance Alcides
 
-## Responsable
+## Que debes subir
 
-Alcides
+- Pantalla de inicio.
+- Pantalla de juego.
+- Pantalla de resultado.
+- Archivo de colores y estilos.
 
-## Que debe subir aqui
+## Como verlo
 
-- Capturas del diseno.
-- Link de Figma si existe.
-- Paleta de colores.
-- Ejemplos de botones y tarjetas.
-- Notas de estilo visual.
+Indica si se abre como HTML, React, imagen o Figma.
 
-## Estado
+## Falta
 
-Pendiente.
-
+- Anotar que pantalla queda pendiente.
