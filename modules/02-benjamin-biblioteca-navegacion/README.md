@@ -4,6 +4,8 @@
 
 Crear la biblioteca donde el nino elige que cuento jugar y moverse entre las secciones principales.
 
+Leer tambien `../../docs/instrucciones-detalladas-entrega.md` para ver la estructura exacta de entrega.
+
 ## Pantallas a desarrollar
 
 - Biblioteca de cuentos.
