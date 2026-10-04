@@ -4,7 +4,7 @@
 
 Este modulo es para Alejandro. La funcion principal no es hacer otra pantalla aislada, sino fusionar todo lo que suban los demas.
 
-Leer tambien `../../docs/instrucciones-detalladas-entrega.md` para ver la estructura exacta de entrega del equipo.
+Leer tambien `INSTRUCCIONES.md` dentro de esta misma carpeta para ver exactamente que debes integrar.
 
 ## Responsabilidades
 
