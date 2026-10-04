@@ -1,17 +1,16 @@
 # Avance Benjamin
 
-## Responsable
+## Que debes subir
 
-Benjamin
+- Biblioteca de cuentos.
+- Menu de navegacion.
+- Filtro por categoria.
+- Datos demo de cuentos.
 
-## Que debe subir aqui
+## Como verlo
 
-- Pantalla de biblioteca.
-- Capturas o codigo.
-- Lista de cuentos de ejemplo.
-- Explicacion de navegacion.
+Explica que archivo abre la biblioteca.
 
-## Estado
+## Falta
 
-Pendiente.
-
+- Anotar si falta conectar con el motor de cuentos.
