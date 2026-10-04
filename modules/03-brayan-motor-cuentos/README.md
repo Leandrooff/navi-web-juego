@@ -4,7 +4,7 @@
 
 Crear la logica principal del juego: leer escenas, mostrar decisiones, sumar puntos y llegar a un final.
 
-Leer tambien `../../docs/instrucciones-detalladas-entrega.md` para ver la estructura exacta de entrega.
+Leer tambien `INSTRUCCIONES.md` dentro de esta misma carpeta para ver exactamente que debes subir.
 
 ## Pantallas a desarrollar
 
