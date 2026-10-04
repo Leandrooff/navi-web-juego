@@ -1,22 +1,38 @@
-# Modulo 08 Ruth Mariela Base de datos
-
-## Responsable
-
-Ruth Mariela
+# Modulo 08 Ruth Mariela Base de datos y datos
 
 ## Objetivo
 
-Disenar la base de datos del proyecto y documentar sus relaciones.
+Crear la estructura de datos para que el proyecto tenga usuarios, cuentos, escenas, decisiones, puntajes y logros.
 
-## Debe desarrollar
+## Tablas o colecciones necesarias
 
-- Diagrama entidad relacion.
-- Diccionario de datos.
-- Tablas principales.
-- Relaciones entre cuentos, escenas y decisiones.
-- Datos de prueba.
+- Usuarios.
+- Roles.
+- Cuentos.
+- Categorias.
+- Escenas.
+- Opciones.
+- Decisiones.
+- Puntajes.
+- Logros.
+- Progreso.
+
+## Funciones de datos necesarias
+
+- Relacionar cuentos con escenas.
+- Relacionar escenas con opciones.
+- Relacionar usuarios con progreso.
+- Guardar puntajes por usuario.
+- Guardar logros obtenidos.
+- Cargar datos iniciales.
+
+## Archivos sugeridos
+
+- `schema.sql`
+- `datos-demo.sql`
+- `datos-demo.json`
+- `modelo-relaciones.md`
 
 ## Entrega esperada
 
-Subir diagrama, SQL o migraciones en `base-avance/`.
-
+Subir SQL, migraciones o JSON listo para que otros modulos lo usen.
