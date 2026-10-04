@@ -1,17 +1,16 @@
 # Avance Ruth Serrano
 
-## Responsable
+## Que debes subir
 
-Ruth Serrano
+- Dashboard de progreso.
+- Historial de cuentos.
+- Puntajes y estrellas.
+- Recomendacion para tutor.
 
-## Que debe subir aqui
+## Como verlo
 
-- Capturas o mockups de reportes.
-- Datos necesarios.
-- Reglas de seguimiento.
-- Dudas sobre resultados.
+Explica que archivo abre el reporte.
 
-## Estado
+## Falta
 
-Pendiente.
-
+- Anotar si falta conectar con datos reales.
