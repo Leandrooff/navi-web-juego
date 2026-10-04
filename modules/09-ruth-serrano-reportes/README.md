@@ -4,6 +4,8 @@
 
 Crear pantallas para que tutor o educador vea el avance del nino.
 
+Leer tambien `../../docs/instrucciones-detalladas-entrega.md` para ver la estructura exacta de entrega.
+
 ## Pantallas a desarrollar
 
 - Dashboard de progreso.
