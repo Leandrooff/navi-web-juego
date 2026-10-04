@@ -4,7 +4,7 @@
 
 Crear el acceso de usuarios y roles para separar nino, tutor, educador y administrador.
 
-Leer tambien `../../docs/instrucciones-detalladas-entrega.md` para ver la estructura exacta de entrega.
+Leer tambien `INSTRUCCIONES.md` dentro de esta misma carpeta para ver exactamente que debes subir.
 
 ## Pantallas a desarrollar
 
