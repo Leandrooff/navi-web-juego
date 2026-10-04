@@ -1,21 +1,34 @@
-# Modulo 05 Josué Backend autenticacion y roles
-
-## Responsable
-
-Josué
+# Modulo 05 Josué Login y roles
 
 ## Objetivo
 
-Preparar la base del backend con autenticacion, usuarios y roles.
+Crear el acceso de usuarios y roles para separar nino, tutor, educador y administrador.
 
-## Debe desarrollar
+## Pantallas a desarrollar
 
 - Login.
-- Logout.
-- Roles: administrador, educador, tutor y perfil infantil.
-- Middleware o reglas de permisos.
-- Endpoints base de usuario.
+- Registro.
+- Seleccion de rol.
+- Usuario logueado.
+- Acceso denegado si no tiene permiso.
+
+## Funciones necesarias
+
+- Registrar usuario.
+- Iniciar sesion.
+- Cerrar sesion.
+- Guardar usuario activo.
+- Validar rol.
+- Redirigir segun rol.
+- Proteger rutas o pantallas.
+
+## Roles
+
+- `nino`: juega cuentos.
+- `tutor`: ve progreso del nino.
+- `educador`: ve reportes de estudiantes.
+- `admin`: administra contenidos.
 
 ## Entrega esperada
 
-Subir rutas, capturas de Postman/Insomnia y explicacion tecnica en `base-avance/`.
+Subir pantallas o funciones simuladas. Si no hay backend listo, usar datos demo en JSON.
