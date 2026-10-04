@@ -61,6 +61,7 @@ navi-web-juego/
     herramientas-instalacion.md
     flujo-logico.md
     reparto-13-personas.md
+    instrucciones-detalladas-entrega.md
     git-trabajo-equipo.md
     avance-base-modulos.md
   modules/
@@ -113,6 +114,7 @@ Leer estos archivos en orden:
 1. `docs/herramientas-instalacion.md`
 2. `docs/flujo-logico.md`
 3. `docs/reparto-13-personas.md`
-4. `docs/git-trabajo-equipo.md`
-5. `docs/avance-base-modulos.md`
-6. El `README.md` de la carpeta personal asignada dentro de `modules/`
+4. `docs/instrucciones-detalladas-entrega.md`
+5. `docs/git-trabajo-equipo.md`
+6. `docs/avance-base-modulos.md`
+7. El `README.md` de la carpeta personal asignada dentro de `modules/`
