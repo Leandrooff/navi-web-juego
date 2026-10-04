@@ -4,6 +4,8 @@
 
 Crear la logica principal del juego: leer escenas, mostrar decisiones, sumar puntos y llegar a un final.
 
+Leer tambien `../../docs/instrucciones-detalladas-entrega.md` para ver la estructura exacta de entrega.
+
 ## Pantallas a desarrollar
 
 - Escena del cuento.
