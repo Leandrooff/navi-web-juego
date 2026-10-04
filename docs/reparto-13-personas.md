@@ -4,6 +4,12 @@ El proyecto se trabajara de forma individual. Cada persona debe subir funciones,
 
 La idea es que todos avancen partes reales del sistema. Alejandro se encargara de fusionar, corregir e integrar todo al final.
 
+Para ver exactamente que archivos, estructura y datos debe subir cada persona, leer tambien:
+
+```text
+docs/instrucciones-detalladas-entrega.md
+```
+
 ## Regla principal
 
 - Cada persona trabaja solo en su carpeta.
