@@ -23,6 +23,25 @@ Construir una pagina web tipo juego donde el nino pueda:
 - Diseno: Figma.
 - Pruebas API: Postman o Insomnia.
 
+## Vista previa ejecutable
+
+La carpeta `preview/` tiene una demo que ya se puede abrir y probar. Muestra pantallas separadas para cada persona/modulo.
+
+Para correrla rapido:
+
+```bash
+cd preview
+python -m http.server 5173
+```
+
+Abrir:
+
+```text
+http://127.0.0.1:5173
+```
+
+Tambien se puede abrir directo `preview/index.html` en el navegador.
+
 ## Estructura del repositorio
 
 ```text
@@ -41,65 +60,51 @@ navi-web-juego/
   docs/
     herramientas-instalacion.md
     flujo-logico.md
-    reparto-14-personas.md
+    reparto-13-personas.md
     git-trabajo-equipo.md
+    avance-base-modulos.md
   modules/
-    01-diseno-ui-juego/
-    02-frontend-motor-cuentos/
-    03-backend-api-auth/
-    04-panel-admin-contenidos/
-    05-base-datos-modelo/
-    06-reportes-seguimiento/
-    07-integracion-qa/
+    01-alcides-diseno-ui/
+    02-benjamin-biblioteca-navegacion/
+    03-brayan-motor-cuentos/
+    04-fabian-componentes-frontend/
+    05-josue-backend-auth-roles/
+    06-luis-api-cuentos/
+    07-oscar-panel-admin/
+    08-ruth-mariela-base-datos/
+    09-ruth-serrano-reportes/
+    10-alejandra-logros-recomendaciones/
+    11-alvaro-qa-pruebas/
+    12-gabriela-documentacion/
+    13-alejandro-integracion/
 ```
 
-Cada carpeta dentro de `modules/` corresponde a un modulo independiente para una pareja de trabajo.
+Cada carpeta dentro de `modules/` corresponde a una persona y a una responsabilidad individual.
 
-## Vista previa ejecutable
+## Reparto individual
 
-La carpeta `preview/` tiene una demo que ya se puede abrir y probar. Muestra el inicio del juego, cuento demo, paneles y vista de los 7 modulos.
-
-Para correrla rapido:
-
-```bash
-cd preview
-python -m http.server 5173
-```
-
-Abrir:
-
-```text
-http://127.0.0.1:5173
-```
-
-Tambien se puede abrir directo `preview/index.html` en el navegador.
-
-## Carpetas tecnicas
-
-- `preview/`: demo ejecutable para entender el proyecto completo.
-- `frontend/`: base del frontend final con React, Vite y Tailwind CSS.
-- `backend/`: base para Laravel API, Sanctum y Filament.
-- `database/`: esquema inicial de tablas y relaciones.
-- `modules/`: trabajo separado por grupos de 2.
-- `docs/`: guias generales del proyecto.
-
-## Modulos principales
-
-1. Diseno UI y experiencia de juego.
-2. Frontend y motor de cuentos interactivos.
-3. Backend API, autenticacion y roles.
-4. Panel administrador de contenidos.
-5. Base de datos y modelo de informacion.
-6. Reportes, seguimiento y recomendaciones.
-7. Integracion, pruebas y documentacion final.
+1. Alcides: Diseno UI.
+2. Benjamin: Biblioteca y navegacion.
+3. Brayan: Motor de cuentos.
+4. Fabian: Componentes frontend.
+5. Josué: Backend autenticacion y roles.
+6. Luis: API de cuentos.
+7. Oscar: Panel administrador.
+8. Ruth Mariela: Base de datos.
+9. Ruth Serrano: Reportes.
+10. Alejandra Quiroga: Logros y recomendaciones.
+11. Alvaro Rosas: QA y pruebas.
+12. Gabriela Peñaranda: Documentacion.
+13. Alejandro: Integracion y coordinacion final.
 
 ## Reglas de trabajo
 
 - Nadie debe trabajar directamente sobre la rama `main`.
-- Cada pareja debe crear su propia rama.
-- Cada modulo debe tener su propio avance documentado en su carpeta.
+- Cada persona debe crear su propia rama.
+- Cada persona trabaja solo dentro de su carpeta asignada.
+- Los avances van dentro de `base-avance/`.
 - Los cambios se integran mediante Pull Request.
-- Cada modulo debe poder probarse con datos de ejemplo aunque otros modulos aun no esten terminados.
+- Cada modulo debe poder revisarse con capturas, datos de ejemplo o instrucciones claras.
 
 ## Primer paso para el equipo
 
@@ -107,6 +112,7 @@ Leer estos archivos en orden:
 
 1. `docs/herramientas-instalacion.md`
 2. `docs/flujo-logico.md`
-3. `docs/reparto-14-personas.md`
+3. `docs/reparto-13-personas.md`
 4. `docs/git-trabajo-equipo.md`
-5. El `README.md` del modulo asignado dentro de `modules/`
+5. `docs/avance-base-modulos.md`
+6. El `README.md` de la carpeta personal asignada dentro de `modules/`
