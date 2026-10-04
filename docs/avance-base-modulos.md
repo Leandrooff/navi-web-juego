@@ -4,56 +4,45 @@ Este archivo explica como debe trabajar cada persona dentro de su modulo.
 
 ## Regla principal
 
-Cada persona debe subir su avance dentro de su carpeta personal, especialmente dentro de:
+Cada persona debe subir algo funcional dentro de su carpeta personal:
 
 ```text
-modules/NOMBRE-DEL-MODULO/base-avance/
+modules/NOMBRE-DEL-MODULO/
 ```
 
-La idea es que cada integrante tenga una base clara y que Alejandro pueda revisar, corregir e integrar lo que suban.
+No se necesita documentacion larga ni pruebas formales. Lo importante es que suban pantallas, funciones, componentes, datos, endpoints o demos que Alejandro pueda integrar despues.
 
 ## Que debe entregar cada persona
 
-Cada persona debe completar como minimo:
+Cada modulo debe traer como minimo:
 
-- `avance.md`: explicacion corta de lo que hizo.
-- Archivos de ejemplo, diseno, codigo, capturas o diagramas segun su modulo.
-- Instrucciones simples para probar o revisar su avance.
-- Dudas o cosas pendientes.
-
-## Como nombrar archivos
-
-Usar nombres claros, por ejemplo:
-
-```text
-pantalla-biblioteca.png
-diagrama-base-datos.png
-endpoints-auth.md
-cuento-demo.json
-reporte-progreso.md
-```
+- Una pantalla, componente, funcion, endpoint o archivo de datos real.
+- Datos demo para ver como funciona.
+- Una explicacion corta en `base-avance/avance.md`.
+- Instrucciones rapidas para saber donde mirar.
 
 ## Que no deben hacer
 
 - No borrar archivos de otros modulos.
 - No trabajar directo en `main`.
-- No subir archivos sin explicar para que sirven.
+- No intentar fusionar todo el proyecto por su cuenta.
+- No subir archivos sueltos sin nombre claro.
 - No subir contrasenas ni archivos `.env`.
-- No cambiar la estructura general sin avisar.
 
-## Como se revisara
+## Como nombrar archivos
 
-Alejandro revisara:
+Usar nombres claros:
 
-- Si el avance esta en la carpeta correcta.
-- Si se entiende que hizo la persona.
-- Si el modulo puede revisarse sin depender totalmente de otro.
-- Si falta documentacion, capturas o datos de prueba.
-- Si el avance puede integrarse al proyecto final.
+```text
+pantalla-biblioteca.html
+cuento-demo.json
+componente-boton.jsx
+api-cuentos.js
+perfil-demo.json
+pantalla-logros.html
+```
 
-## Formato recomendado del avance
-
-Cada persona puede usar esta estructura:
+## Formato corto para `avance.md`
 
 ```md
 # Avance del modulo
@@ -62,22 +51,15 @@ Cada persona puede usar esta estructura:
 
 Nombre
 
-## Que hice
+## Que subi
 
-Explicar en pocas lineas el avance.
+- Pantalla, funcion o archivo creado.
 
-## Archivos subidos
+## Como verlo
 
-- archivo 1
-- archivo 2
+Explicar en 2 o 3 lineas como abrirlo o revisarlo.
 
-## Como revisar
+## Falta
 
-Explicar como abrir, probar o entender el avance.
-
-## Pendiente
-
-- Pendiente 1
-- Pendiente 2
+- Lo que aun no esta terminado.
 ```
-
