@@ -121,7 +121,7 @@ Cuando el repositorio ya este clonado:
 ```bash
 git clone URL_DEL_REPOSITORIO
 cd navi-web-juego
-git checkout -b modulo-nombre-del-modulo
+git checkout -b nombre-persona-modulo
 ```
 
 ## Estructura tecnica recomendada para desarrollo
@@ -157,5 +157,4 @@ php artisan serve
 
 ## Nota importante
 
-Si una pareja no tiene todavia el backend listo, debe usar datos de ejemplo en JSON. Si una pareja no tiene frontend listo, debe probar su modulo con Postman o con capturas/documentacion.
-
+Si una persona no tiene todavia el backend listo, debe usar datos de ejemplo en JSON. Si una persona no tiene frontend listo, debe probar su modulo con Postman, capturas, mockups o documentacion.
