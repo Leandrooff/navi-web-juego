@@ -1,16 +1,16 @@
 # Avance Josué
 
-## Responsable
+## Que debes subir
 
-Josué
+- Login.
+- Registro.
+- Roles.
+- Usuario activo.
 
-## Que debe subir aqui
+## Como verlo
 
-- Endpoints de autenticacion.
-- Capturas de pruebas.
-- Explicacion de roles.
-- Archivos Laravel si ya existen.
+Explica que archivo muestra login y como simular usuario.
 
-## Estado
+## Falta
 
-Pendiente.
+- Anotar si falta conectar con backend real.
