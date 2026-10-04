@@ -1,17 +1,16 @@
-# Avance Alejandra Quiroga
+# Avance Alejandra
 
-## Responsable
+## Que debes subir
 
-Alejandra Quiroga
-
-## Que debe subir aqui
-
-- Reglas de estrellas.
-- Lista de logros.
+- Pantalla de logros.
+- Calculo de estrellas.
+- Mensajes positivos.
 - Recomendaciones.
-- Mensajes para ninos y tutores.
 
-## Estado
+## Como verlo
 
-Pendiente.
+Explica que archivo muestra logros o resultado.
 
+## Falta
+
+- Anotar si falta conectar con puntaje del cuento.
