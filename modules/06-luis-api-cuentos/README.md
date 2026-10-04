@@ -1,22 +1,32 @@
 # Modulo 06 Luis API de cuentos
 
-## Responsable
-
-Luis
-
 ## Objetivo
 
-Definir y desarrollar la API para cuentos, escenas y opciones.
+Crear las funciones o endpoints que conectaran el juego con los cuentos, escenas, decisiones y puntajes.
 
-## Debe desarrollar
+## Funciones necesarias
 
-- Endpoint para listar cuentos.
-- Endpoint para ver un cuento.
-- Estructura de escenas.
-- Estructura de opciones.
-- Registro de decisiones.
+- Listar cuentos.
+- Obtener detalle de un cuento.
+- Obtener escenas de un cuento.
+- Guardar decision tomada.
+- Guardar avance del cuento.
+- Guardar puntaje final.
+- Devolver recomendacion segun resultado.
+
+## Endpoints sugeridos
+
+- `GET /api/stories`
+- `GET /api/stories/:id`
+- `GET /api/stories/:id/scenes`
+- `POST /api/progress`
+- `POST /api/decisions`
+- `POST /api/scores`
+
+## Datos demo
+
+Crear respuestas JSON de ejemplo para que el frontend pueda avanzar aunque el backend no este terminado.
 
 ## Entrega esperada
 
-Subir contrato API, ejemplos JSON y pruebas en `base-avance/`.
-
+Subir funciones, rutas simuladas o archivos JSON claros para integrar.
