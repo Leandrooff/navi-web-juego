@@ -4,6 +4,8 @@
 
 Crear la estructura de datos para que el proyecto tenga usuarios, cuentos, escenas, decisiones, puntajes y logros.
 
+Leer tambien `../../docs/instrucciones-detalladas-entrega.md` para ver la estructura exacta de entrega.
+
 ## Tablas o colecciones necesarias
 
 - Usuarios.
