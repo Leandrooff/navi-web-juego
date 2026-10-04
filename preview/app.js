@@ -5,8 +5,8 @@ const people = [
     name: "Alcides",
     title: "Diseno UI",
     folder: "modules/01-alcides-diseno-ui",
-    goal: "Definir identidad visual, colores, pantallas base, botones, tarjetas y experiencia infantil.",
-    deliverables: ["Paleta de colores", "Bocetos o Figma", "Componentes visuales", "Capturas de pantallas"]
+    goal: "Crear la base visual del juego: inicio, biblioteca, pantalla de cuento y resultado final.",
+    deliverables: ["Pantalla de inicio", "Pantalla de juego", "Botones y tarjetas", "Colores y estados visuales"]
   },
   {
     id: "persona-02",
@@ -14,8 +14,8 @@ const people = [
     name: "Benjamin",
     title: "Biblioteca y navegacion",
     folder: "modules/02-benjamin-biblioteca-navegacion",
-    goal: "Crear la vista de biblioteca, navegacion principal y seleccion de aventuras.",
-    deliverables: ["Pantalla de biblioteca", "Menu de navegacion", "Estados de cuento", "Capturas o codigo"]
+    goal: "Crear la biblioteca donde el nino elige aventuras, filtra categorias y entra al cuento.",
+    deliverables: ["Biblioteca de cuentos", "Menu principal", "Filtro por categoria", "Boton iniciar cuento"]
   },
   {
     id: "persona-03",
@@ -23,8 +23,8 @@ const people = [
     name: "Brayan",
     title: "Motor de cuentos",
     folder: "modules/03-brayan-motor-cuentos",
-    goal: "Crear la logica de escenas, opciones, rutas, puntaje y finales.",
-    deliverables: ["JSON de cuento demo", "Rutas entre escenas", "Puntaje por opcion", "Final del cuento"],
+    goal: "Crear el motor jugable: escenas, opciones, rutas, puntos, finales y reinicio.",
+    deliverables: ["JSON de cuento demo", "Funcion avanzar escena", "Puntaje por opcion", "Finales por resultado"],
     game: true
   },
   {
@@ -33,17 +33,17 @@ const people = [
     name: "Fabian",
     title: "Componentes frontend",
     folder: "modules/04-fabian-componentes-frontend",
-    goal: "Crear componentes reutilizables y asegurar que la interfaz funcione bien en diferentes pantallas.",
-    deliverables: ["Botones", "Tarjetas", "Layout responsive", "Componentes de escena"]
+    goal: "Crear componentes frontend reutilizables para que las pantallas se armen mas rapido.",
+    deliverables: ["Botones", "Tarjetas", "Barra de progreso", "Layout responsive"]
   },
   {
     id: "persona-05",
     number: "05",
     name: "Josué",
-    title: "Backend autenticacion y roles",
+    title: "Login y roles",
     folder: "modules/05-josue-backend-auth-roles",
-    goal: "Preparar login, usuarios, roles, permisos y endpoints base.",
-    deliverables: ["Login", "Roles", "Middleware", "Pruebas en Postman"]
+    goal: "Crear login, registro, cierre de sesion y roles para nino, tutor, educador y admin.",
+    deliverables: ["Pantalla login", "Pantalla registro", "Roles", "Usuario activo"]
   },
   {
     id: "persona-06",
@@ -51,8 +51,8 @@ const people = [
     name: "Luis",
     title: "API de cuentos",
     folder: "modules/06-luis-api-cuentos",
-    goal: "Definir endpoints de cuentos, escenas, opciones y registro de decisiones.",
-    deliverables: ["GET /api/stories", "GET /api/stories/{id}", "POST decisiones", "JSON de respuesta"]
+    goal: "Crear funciones o endpoints para cuentos, escenas, decisiones, puntajes y recomendaciones.",
+    deliverables: ["Listar cuentos", "Detalle de cuento", "Guardar decision", "Guardar puntaje"]
   },
   {
     id: "persona-07",
@@ -60,26 +60,26 @@ const people = [
     name: "Oscar",
     title: "Panel administrador",
     folder: "modules/07-oscar-panel-admin",
-    goal: "Crear la base del panel para gestionar categorias, cuentos, escenas y opciones.",
-    deliverables: ["CRUD categorias", "CRUD cuentos", "CRUD escenas", "Estado borrador/publicado"]
+    goal: "Crear el panel para administrar cuentos, escenas, opciones y estados de publicacion.",
+    deliverables: ["Lista de cuentos", "Formulario cuento", "Formulario escena", "Borrador/publicado"]
   },
   {
     id: "persona-08",
     number: "08",
     name: "Ruth Mariela",
-    title: "Base de datos",
+    title: "Base de datos y datos",
     folder: "modules/08-ruth-mariela-base-datos",
-    goal: "Disenar tablas, relaciones, diccionario de datos y datos de prueba.",
-    deliverables: ["Diagrama ER", "Diccionario de datos", "SQL o migraciones", "Datos de prueba"]
+    goal: "Crear la estructura de datos del juego con usuarios, cuentos, escenas, decisiones y logros.",
+    deliverables: ["SQL o migraciones", "Datos demo", "Relaciones", "Tablas principales"]
   },
   {
     id: "persona-09",
     number: "09",
     name: "Ruth Serrano",
-    title: "Reportes",
+    title: "Reportes de progreso",
     folder: "modules/09-ruth-serrano-reportes",
-    goal: "Crear reportes para tutor y educador sobre progreso, decisiones y temas a reforzar.",
-    deliverables: ["Reporte individual", "Reporte grupal", "Temas a reforzar", "Mockups"]
+    goal: "Crear dashboard de progreso para ver cuentos completados, decisiones, puntos y temas a reforzar.",
+    deliverables: ["Dashboard tutor", "Historial cuentos", "Puntos y estrellas", "Recomendacion"]
   },
   {
     id: "persona-10",
@@ -87,35 +87,35 @@ const people = [
     name: "Alejandra Quiroga",
     title: "Logros y recomendaciones",
     folder: "modules/10-alejandra-logros-recomendaciones",
-    goal: "Definir estrellas, logros, mensajes positivos y recomendaciones.",
-    deliverables: ["Reglas de estrellas", "Lista de logros", "Mensajes positivos", "Recomendaciones"]
+    goal: "Crear recompensas del juego: estrellas, logros, mensajes positivos y recomendaciones finales.",
+    deliverables: ["Calculo de estrellas", "Pantalla logros", "Mensajes positivos", "Recomendaciones"]
   },
   {
     id: "persona-11",
     number: "11",
     name: "Alvaro Rosas",
-    title: "QA y pruebas",
-    folder: "modules/11-alvaro-qa-pruebas",
-    goal: "Probar modulos, crear checklist, registrar bugs y validar avances.",
-    deliverables: ["Checklist", "Bugs encontrados", "Capturas", "Observaciones"]
+    title: "Accesibilidad y audio",
+    folder: "modules/11-alvaro-accesibilidad-audio",
+    goal: "Crear opciones para que el juego sea facil de usar: audio, lectura, volumen y ayuda.",
+    deliverables: ["Leer texto en voz alta", "Repetir escena", "Control volumen", "Modo alto contraste"]
   },
   {
     id: "persona-12",
     number: "12",
     name: "Gabriela Peñaranda",
-    title: "Documentacion",
-    folder: "modules/12-gabriela-documentacion",
-    goal: "Preparar manuales, guias, capturas explicadas y apoyo de presentacion.",
-    deliverables: ["Manual de instalacion", "Manual de usuario", "Capturas explicadas", "Guion de presentacion"]
+    title: "Perfil y progreso",
+    folder: "modules/12-gabriela-perfil-progreso",
+    goal: "Crear la zona personal del nino con perfil, progreso, logros recientes y continuar aventura.",
+    deliverables: ["Pantalla perfil", "Progreso personal", "Ultima aventura", "Datos de usuario"]
   },
   {
     id: "persona-13",
     number: "13",
     name: "Alejandro",
-    title: "Integracion y coordinacion",
+    title: "Integracion y fusion final",
     folder: "modules/13-alejandro-integracion",
-    goal: "Coordinar, revisar Pull Requests, integrar avances y preparar la version final.",
-    deliverables: ["Revision de ramas", "Integracion", "Control de pendientes", "Version final"]
+    goal: "Fusionar lo que suban todos, corregir conflictos y dejar corriendo la version final.",
+    deliverables: ["Revision de ramas", "Integracion final", "Control de pendientes", "Version estable"]
   }
 ];
 
@@ -191,16 +191,16 @@ function renderPersonScreen(person) {
       <article class="summary-panel">
         <h3>Carpeta asignada</h3>
         <code>${person.folder}</code>
-        <h3>Entregables</h3>
+        <h3>Funciones o pantallas a subir</h3>
         <ul>${deliverables}</ul>
       </article>
       <article class="summary-panel">
         <h3>Como avanzar</h3>
         <ol>
           <li>Trabajar en una rama propia.</li>
-          <li>Subir avances en <code>base-avance/</code>.</li>
-          <li>Explicar como revisar el trabajo.</li>
-          <li>Abrir Pull Request cuando este listo.</li>
+          <li>Crear pantallas, funciones o datos dentro de su carpeta.</li>
+          <li>Subir una explicacion corta en <code>base-avance/avance.md</code>.</li>
+          <li>Alejandro fusionara todo al final.</li>
         </ol>
       </article>
     </div>
