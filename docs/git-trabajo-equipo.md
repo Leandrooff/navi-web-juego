@@ -31,8 +31,8 @@ git checkout -b oscar-panel-admin
 git checkout -b ruth-mariela-base-datos
 git checkout -b ruth-serrano-reportes
 git checkout -b alejandra-logros
-git checkout -b alvaro-qa
-git checkout -b gabriela-documentacion
+git checkout -b alvaro-accesibilidad-audio
+git checkout -b gabriela-perfil-progreso
 git checkout -b alejandro-integracion
 ```
 
@@ -67,9 +67,9 @@ git merge main
 ```text
 Agregar pantalla de biblioteca
 Crear JSON de cuento demo
-Documentar endpoints de autenticacion
-Agregar diagrama entidad relacion
-Crear checklist de pruebas
+Crear login y roles
+Agregar datos demo de cuentos
+Crear pantalla de perfil
 Actualizar avance personal
 ```
 
