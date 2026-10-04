@@ -29,7 +29,10 @@ Mientras no se instalen dependencias, usar la preview ejecutable:
 
 ## Responsables principales
 
-Modulo 01: diseno UI.
+Modulo 01 Alcides: diseno UI.
 
-Modulo 02: frontend y motor de cuentos.
+Modulo 02 Benjamin: biblioteca y navegacion.
 
+Modulo 03 Brayan: motor de cuentos.
+
+Modulo 04 Fabian: componentes frontend.
