@@ -4,6 +4,8 @@
 
 Crear la zona personal del nino con perfil, progreso, cuentos guardados y ultima actividad.
 
+Leer tambien `../../docs/instrucciones-detalladas-entrega.md` para ver la estructura exacta de entrega.
+
 ## Pantallas a desarrollar
 
 - Perfil del nino.
