@@ -1,6 +1,6 @@
 # Como correr la vista previa
 
-Esta vista previa sirve para mostrar la idea completa de NAVI Web Juego antes de que cada grupo programe su modulo final.
+Esta vista previa sirve para mostrar la idea completa de NAVI Web Juego antes de que cada persona programe o documente su modulo final.
 
 ## Opcion rapida
 
@@ -33,9 +33,8 @@ http://127.0.0.1:5173
 - Decisiones y resultado.
 - Panel de tutor.
 - Panel de administrador.
-- Vista de los 7 modulos del equipo.
+- Vista de los 13 modulos individuales del equipo.
 
 ## Importante
 
-Esta preview no reemplaza al frontend final. Es una base visual para que todos entiendan el proyecto y sepan que debe construir cada modulo.
-
+Esta preview no reemplaza al frontend final. Es una base visual para que todos entiendan el proyecto y sepan que debe construir o documentar cada persona.
