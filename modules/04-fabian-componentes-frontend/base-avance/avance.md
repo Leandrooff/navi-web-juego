@@ -1,17 +1,16 @@
 # Avance Fabian
 
-## Responsable
+## Que debes subir
 
-Fabian
+- Botones.
+- Tarjetas.
+- Barra de progreso.
+- Componentes responsive.
 
-## Que debe subir aqui
+## Como verlo
 
-- Componentes creados.
-- Capturas responsive.
-- Notas de instalacion o uso.
-- Pendientes tecnicos.
+Explica donde estan los ejemplos de componentes.
 
-## Estado
+## Falta
 
-Pendiente.
-
+- Anotar si falta adaptar algun componente a celular.
