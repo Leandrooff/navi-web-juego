@@ -1,17 +1,16 @@
 # Avance Brayan
 
-## Responsable
-
-Brayan
-
-## Que debe subir aqui
+## Que debes subir
 
 - Cuento demo en JSON.
-- Logica de rutas.
-- Capturas del cuento funcionando.
-- Explicacion de puntajes.
+- Funcion para avanzar escenas.
+- Puntaje por opcion.
+- Final del cuento.
 
-## Estado
+## Como verlo
 
-Pendiente.
+Explica como jugar el cuento demo.
 
+## Falta
+
+- Anotar si falta conectar con biblioteca o logros.
