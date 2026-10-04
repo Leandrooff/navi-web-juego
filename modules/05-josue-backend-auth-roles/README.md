@@ -4,6 +4,8 @@
 
 Crear el acceso de usuarios y roles para separar nino, tutor, educador y administrador.
 
+Leer tambien `../../docs/instrucciones-detalladas-entrega.md` para ver la estructura exacta de entrega.
+
 ## Pantallas a desarrollar
 
 - Login.
