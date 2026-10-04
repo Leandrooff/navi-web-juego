@@ -1,17 +1,16 @@
 # Avance Luis
 
-## Responsable
+## Que debes subir
 
-Luis
+- Endpoints o funciones de cuentos.
+- JSON de respuestas.
+- Guardado de decision.
+- Guardado de puntaje.
 
-## Que debe subir aqui
+## Como verlo
 
-- Endpoints de cuentos.
-- JSON de respuesta.
-- Pruebas en Postman o Insomnia.
-- Dudas sobre integracion con frontend.
+Explica que archivo contiene las rutas o respuestas demo.
 
-## Estado
+## Falta
 
-Pendiente.
-
+- Anotar si falta conectar con base de datos.
