@@ -4,7 +4,7 @@
 
 Crear la identidad visual y las pantallas base del juego NAVI. Este modulo debe servir como referencia visual para que los demas usen colores, botones, tarjetas y estilos parecidos.
 
-Leer tambien `../../docs/instrucciones-detalladas-entrega.md` para ver la estructura exacta de entrega.
+Leer tambien `INSTRUCCIONES.md` dentro de esta misma carpeta para ver exactamente que debes subir.
 
 ## Pantallas a desarrollar
 
