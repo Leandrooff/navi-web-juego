@@ -25,7 +25,7 @@ php artisan serve
 
 ## Modulos relacionados
 
-- Modulo 03: Backend API autenticacion y roles.
-- Modulo 04: Panel administrador de contenidos.
-- Modulo 06: Reportes seguimiento y recomendaciones.
-
+- Modulo 05 Josué: Backend autenticacion y roles.
+- Modulo 06 Luis: API de cuentos.
+- Modulo 07 Oscar: Panel administrador.
+- Modulo 09 Ruth Serrano: Reportes.
