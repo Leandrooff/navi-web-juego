@@ -4,6 +4,8 @@
 
 Crear el panel donde el administrador pueda crear y editar cuentos, escenas y opciones.
 
+Leer tambien `../../docs/instrucciones-detalladas-entrega.md` para ver la estructura exacta de entrega.
+
 ## Pantallas a desarrollar
 
 - Dashboard admin.
