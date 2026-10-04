@@ -4,6 +4,8 @@
 
 Crear funciones para que el juego sea mas facil de usar para ninos: lectura, audio, ayuda visual y controles simples.
 
+Leer tambien `../../docs/instrucciones-detalladas-entrega.md` para ver la estructura exacta de entrega.
+
 ## Pantallas a desarrollar
 
 - Panel de accesibilidad.
