@@ -1,22 +1,22 @@
-# Avance base para todos los modulos
+# Avance base para modulos individuales
 
-Este archivo explica como debe trabajar cada grupo dentro de su modulo.
+Este archivo explica como debe trabajar cada persona dentro de su modulo.
 
 ## Regla principal
 
-Cada grupo debe subir su avance dentro de la carpeta de su modulo, especialmente dentro de:
+Cada persona debe subir su avance dentro de su carpeta personal, especialmente dentro de:
 
 ```text
 modules/NOMBRE-DEL-MODULO/base-avance/
 ```
 
-La idea es que cada pareja tenga una base clara y que el responsable de integracion pueda revisar, corregir y mejorar lo que suban.
+La idea es que cada integrante tenga una base clara y que Alejandro pueda revisar, corregir e integrar lo que suban.
 
-## Que debe entregar cada grupo
+## Que debe entregar cada persona
 
-Cada grupo debe completar como minimo:
+Cada persona debe completar como minimo:
 
-- `avance.md`: explicacion corta de lo que hicieron.
+- `avance.md`: explicacion corta de lo que hizo.
 - Archivos de ejemplo, diseno, codigo, capturas o diagramas segun su modulo.
 - Instrucciones simples para probar o revisar su avance.
 - Dudas o cosas pendientes.
@@ -43,27 +43,26 @@ reporte-progreso.md
 
 ## Como se revisara
 
-El responsable del modulo 07 revisara:
+Alejandro revisara:
 
 - Si el avance esta en la carpeta correcta.
-- Si se entiende que hizo el grupo.
+- Si se entiende que hizo la persona.
 - Si el modulo puede revisarse sin depender totalmente de otro.
 - Si falta documentacion, capturas o datos de prueba.
 - Si el avance puede integrarse al proyecto final.
 
 ## Formato recomendado del avance
 
-Cada grupo puede usar esta estructura:
+Cada persona puede usar esta estructura:
 
 ```md
 # Avance del modulo
 
-## Integrantes
+## Responsable
 
-- Nombre 1
-- Nombre 2
+Nombre
 
-## Que hicimos
+## Que hice
 
 Explicar en pocas lineas el avance.
 
