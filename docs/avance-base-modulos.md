@@ -12,6 +12,12 @@ modules/NOMBRE-DEL-MODULO/
 
 No se necesita documentacion larga ni pruebas formales. Lo importante es que suban pantallas, funciones, componentes, datos, endpoints o demos que Alejandro pueda integrar despues.
 
+Antes de subir, cada persona debe leer su seccion en:
+
+```text
+docs/instrucciones-detalladas-entrega.md
+```
+
 ## Que debe entregar cada persona
 
 Cada modulo debe traer como minimo:
