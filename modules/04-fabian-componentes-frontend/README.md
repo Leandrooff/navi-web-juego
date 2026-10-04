@@ -4,7 +4,7 @@
 
 Crear componentes reutilizables para que las pantallas del proyecto no se hagan desde cero cada vez.
 
-Leer tambien `../../docs/instrucciones-detalladas-entrega.md` para ver la estructura exacta de entrega.
+Leer tambien `INSTRUCCIONES.md` dentro de esta misma carpeta para ver exactamente que debes subir.
 
 ## Componentes a desarrollar
 
