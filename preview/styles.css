@@ -153,6 +153,7 @@ p {
 
 .home-copy,
 .summary-panel,
+.person-card,
 .wireframe,
 .game-card,
 .library-panel,
@@ -170,6 +171,7 @@ p {
 
 .home-copy,
 .summary-panel,
+.person-card,
 .wireframe,
 .game-card,
 .library-panel,
@@ -202,6 +204,49 @@ p {
   padding-left: 20px;
   color: var(--muted);
   line-height: 1.8;
+}
+
+.summary-panel ul {
+  margin: 12px 0 0;
+  padding-left: 20px;
+  color: var(--muted);
+  line-height: 1.8;
+}
+
+.person-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+  margin-top: 22px;
+}
+
+.person-card {
+  cursor: pointer;
+  transition: transform 0.16s ease, border-color 0.16s ease;
+}
+
+.person-card:hover {
+  border-color: var(--blue);
+  transform: translateY(-2px);
+}
+
+.person-card span {
+  display: block;
+  color: var(--blue);
+  font-weight: 900;
+}
+
+.person-card h3 {
+  margin: 8px 0;
+}
+
+.person-card p {
+  margin-bottom: 0;
+  color: var(--muted);
+}
+
+.extra-block {
+  margin-top: 22px;
 }
 
 .wireframe-grid,
@@ -439,6 +484,7 @@ textarea {
   .home-layout,
   .game-layout,
   .admin-layout,
+  .person-grid,
   .wireframe-grid,
   .api-layout,
   .report-layout,
