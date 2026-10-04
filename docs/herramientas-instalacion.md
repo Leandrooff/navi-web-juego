@@ -157,4 +157,4 @@ php artisan serve
 
 ## Nota importante
 
-Si una persona no tiene todavia el backend listo, debe usar datos de ejemplo en JSON. Si una persona no tiene frontend listo, debe probar su modulo con Postman, capturas, mockups o documentacion.
+Si una persona no tiene todavia el backend listo, debe usar datos de ejemplo en JSON. Si una persona no tiene frontend listo, debe subir una pantalla simple, una funcion demo o un archivo de datos que Alejandro pueda integrar despues.
