@@ -1,18 +1,24 @@
 # Avance Alejandro
 
-## Responsable
+## Que debes hacer
 
-Alejandro
+- Revisar avances de todos.
+- Fusionar pantallas y funciones.
+- Ordenar carpetas.
+- Corregir conflictos.
+- Dejar la version final corriendo.
 
-## Que debe subir aqui
+## Pendientes de integracion
 
-- Estado de cada modulo.
-- Pull Requests revisados.
-- Cambios integrados.
-- Pendientes finales.
-- Notas para la presentacion.
-
-## Estado
-
-En coordinacion.
-
+- Alcides:
+- Benjamin:
+- Brayan:
+- Fabian:
+- Josué:
+- Luis:
+- Oscar:
+- Ruth Mariela:
+- Ruth Serrano:
+- Alejandra:
+- Alvaro:
+- Gabriela:
