@@ -1,17 +1,16 @@
 # Avance Ruth Mariela
 
-## Responsable
+## Que debes subir
 
-Ruth Mariela
+- Tablas o colecciones.
+- Relaciones.
+- Datos demo.
+- SQL, migraciones o JSON.
 
-## Que debe subir aqui
+## Como verlo
 
-- Diagrama entidad relacion.
-- Diccionario de datos.
-- SQL o migraciones.
-- Datos de prueba.
+Explica que archivo contiene la estructura principal.
 
-## Estado
+## Falta
 
-Pendiente.
-
+- Anotar si falta alguna tabla para integrar.
