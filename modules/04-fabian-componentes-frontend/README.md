@@ -4,6 +4,8 @@
 
 Crear componentes reutilizables para que las pantallas del proyecto no se hagan desde cero cada vez.
 
+Leer tambien `../../docs/instrucciones-detalladas-entrega.md` para ver la estructura exacta de entrega.
+
 ## Componentes a desarrollar
 
 - Boton principal.
