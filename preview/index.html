@@ -19,15 +19,15 @@
       <section class="screen active" id="screen-inicio">
         <div class="home-layout">
           <div class="home-copy">
-            <p class="badge">Base por modulos</p>
-            <h2>NAVI Web Juego separado por pantallas</h2>
+            <p class="badge">13 modulos individuales</p>
+            <h2>NAVI Web Juego dividido por persona</h2>
             <p>
-              Esta vista previa ya no mezcla todo en una sola pagina. Cada modulo
-              tiene su propia pantalla para que cada grupo entienda que debe crear.
+              Cada integrante tiene su propia pantalla, carpeta y responsabilidad.
+              La idea es que todos trabajen en paralelo sin pisarse archivos.
             </p>
             <div class="actions">
-              <button data-go="modulo-02">Probar juego demo</button>
-              <button class="secondary" data-go="modulo-07">Ver integracion</button>
+              <button data-go="persona-03">Probar motor de cuento</button>
+              <button class="secondary" data-go="persona-13">Ver integracion</button>
             </div>
           </div>
           <div class="summary-panel">
@@ -41,164 +41,11 @@
             </ol>
           </div>
         </div>
+        <div class="person-grid" id="personGrid"></div>
       </section>
 
-      <section class="screen" id="screen-modulo-01">
-        <div class="screen-title">
-          <p class="eyebrow">Modulo 01</p>
-          <h2>Diseno UI y experiencia de juego</h2>
-          <p>Pantalla para el grupo que definira el estilo visual y la experiencia infantil.</p>
-        </div>
-        <div class="wireframe-grid">
-          <article class="wireframe">
-            <span>Inicio</span>
-            <div class="mock hero-mock">NAVI</div>
-            <p>Primera pantalla con identidad del juego.</p>
-          </article>
-          <article class="wireframe">
-            <span>Avatar</span>
-            <div class="mock avatar-mock">🙂 ⭐ 🎒</div>
-            <p>Seleccion de perfil infantil o avatar.</p>
-          </article>
-          <article class="wireframe">
-            <span>Resultado</span>
-            <div class="mock result-mock">★★★</div>
-            <p>Estrellas, mensaje positivo y recomendacion.</p>
-          </article>
-        </div>
-        <div class="task-strip">
-          <strong>Debe entregar:</strong>
-          Figma, capturas, paleta, componentes y mapa de pantallas.
-        </div>
-      </section>
-
-      <section class="screen" id="screen-modulo-02">
-        <div class="screen-title">
-          <p class="eyebrow">Modulo 02</p>
-          <h2>Frontend y motor de cuentos</h2>
-          <p>Esta pantalla simula el juego: escenas, opciones, rutas y puntaje.</p>
-        </div>
-        <div class="game-layout">
-          <div class="library-panel">
-            <h3>Biblioteca</h3>
-            <button class="story-button active-story">Me perdi en el parque</button>
-            <button class="story-button">Alguien ofrece un regalo</button>
-            <button class="story-button">Cruzar con cuidado</button>
-          </div>
-          <div class="game-card">
-            <div class="scene-art" id="sceneArt">Parque</div>
-            <p class="scene-tag" id="sceneTag">Escena 1 de 3</p>
-            <h3 id="sceneTitle">Me perdi en el parque</h3>
-            <p id="sceneText">
-              Estas jugando y de pronto no ves a tu tutor. Hay varias personas cerca.
-              Que deberias hacer?
-            </p>
-            <div class="choice-list" id="choiceList"></div>
-            <div class="score-row">
-              <span id="scoreLabel">Puntos: 0</span>
-              <span id="starsLabel">Estrellas: 0</span>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="screen" id="screen-modulo-03">
-        <div class="screen-title">
-          <p class="eyebrow">Modulo 03</p>
-          <h2>Backend API autenticacion y roles</h2>
-          <p>Vista previa de rutas y roles que debe preparar el backend.</p>
-        </div>
-        <div class="api-layout">
-          <article class="role-card admin">Administrador</article>
-          <article class="role-card">Educador</article>
-          <article class="role-card">Tutor</article>
-          <article class="role-card child">Perfil infantil</article>
-        </div>
-        <div class="endpoint-list">
-          <code>POST /api/login</code>
-          <code>GET /api/me</code>
-          <code>GET /api/stories</code>
-          <code>POST /api/game-sessions</code>
-          <code>POST /api/game-sessions/{id}/decisions</code>
-        </div>
-      </section>
-
-      <section class="screen" id="screen-modulo-04">
-        <div class="screen-title">
-          <p class="eyebrow">Modulo 04</p>
-          <h2>Panel administrador de contenidos</h2>
-          <p>Pantalla base para crear cuentos, escenas, opciones, imagenes y audios.</p>
-        </div>
-        <div class="admin-layout">
-          <div class="admin-menu">
-            <button>Categorias</button>
-            <button>Cuentos</button>
-            <button>Escenas</button>
-            <button>Opciones</button>
-          </div>
-          <form class="admin-form">
-            <label>Titulo del cuento<input value="Me perdi en el parque" /></label>
-            <label>Categoria<input value="Seguridad en lugares publicos" /></label>
-            <label>Estado<select><option>Borrador</option><option>Publicado</option></select></label>
-            <label>Validacion<textarea>Rutas completas, escena inicial y opciones con destino.</textarea></label>
-          </form>
-        </div>
-      </section>
-
-      <section class="screen" id="screen-modulo-05">
-        <div class="screen-title">
-          <p class="eyebrow">Modulo 05</p>
-          <h2>Base de datos y modelo</h2>
-          <p>Vista previa de tablas y relaciones principales.</p>
-        </div>
-        <div class="db-map">
-          <div>users</div>
-          <div>child_profiles</div>
-          <div>categories</div>
-          <div>stories</div>
-          <div>scenes</div>
-          <div>choices</div>
-          <div>game_sessions</div>
-          <div>decision_records</div>
-        </div>
-        <p class="note">Una opcion apunta a otra escena o a un final. Una sesion guarda el recorrido del nino.</p>
-      </section>
-
-      <section class="screen" id="screen-modulo-06">
-        <div class="screen-title">
-          <p class="eyebrow">Modulo 06</p>
-          <h2>Reportes seguimiento y recomendaciones</h2>
-          <p>Pantalla base para mostrar progreso del nino y recomendaciones.</p>
-        </div>
-        <div class="report-layout">
-          <article class="metric"><span>85</span><p>Puntaje</p></article>
-          <article class="metric"><span>3</span><p>Estrellas</p></article>
-          <article class="metric"><span>4</span><p>Cuentos completados</p></article>
-        </div>
-        <div class="recommendation">
-          <h3>Recomendacion</h3>
-          <p>Mateo reconoce adultos seguros. Practicar nuevamente situaciones con desconocidos.</p>
-        </div>
-      </section>
-
-      <section class="screen" id="screen-modulo-07">
-        <div class="screen-title">
-          <p class="eyebrow">Modulo 07</p>
-          <h2>Integracion pruebas y documentacion final</h2>
-          <p>Esta es tu pantalla: sirve para revisar que todos los grupos suban bien sus avances.</p>
-        </div>
-        <div class="qa-board">
-          <article><strong>Modulo 01</strong><span>Pendiente de grupo</span></article>
-          <article><strong>Modulo 02</strong><span>Preview funcional</span></article>
-          <article><strong>Modulo 03</strong><span>Contrato API listo</span></article>
-          <article><strong>Modulo 04</strong><span>Panel base definido</span></article>
-          <article><strong>Modulo 05</strong><span>Schema inicial listo</span></article>
-          <article><strong>Modulo 06</strong><span>Reglas demo listas</span></article>
-        </div>
-        <div class="task-strip">
-          <strong>Tu trabajo:</strong>
-          revisar PRs, probar avances, mejorar entregas y preparar la version final.
-        </div>
+      <section class="screen" id="screen-persona">
+        <div id="personScreen"></div>
       </section>
     </main>
 
