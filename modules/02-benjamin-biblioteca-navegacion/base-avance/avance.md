@@ -69,3 +69,25 @@ No se necesita servidor. El JavaScript incluye un fallback de datos por si fetch
 - **Reportes de progreso reales:** La vista de Progreso es demostrativa. Los reportes corresponden al módulo de **Ruth Serrano (Módulo 09)**.
 - **API real de cuentos:** Los cuentos se cargan desde un JSON demo. La API real corresponde al módulo de **Luis (Módulo 06)**.
 - **Integración final:** El responsable del proyecto realizará la fusión de módulos en la integración final.
+
+---
+
+## Actualización — Botones Jugar y Continuar con ID de cuento
+
+- Los botones **Jugar** y **Continuar** ahora utilizan el **ID único del cuento** (`id` del JSON) como identificador.  
+  No dependen del título, posición en el array ni ningún otro campo de texto.
+
+- Se agregaron las funciones `jugarCuento(id)` y `continuarCuento(id)` en `src/biblioteca.js`,  
+  preparadas como **punto de integración con el Motor de Cuentos del Módulo 03 (Brayan)**.
+
+- Cuando el usuario pulsa **Jugar** (estado `nuevo`), se llama a `jugarCuento(id)` con el ID del cuento.  
+  Cuando pulsa **Continuar** (estado `en progreso`), se llama a `continuarCuento(id)` con el ID del cuento.
+
+- La implementación actual es **temporal**: registra el ID en consola y muestra la vista de progreso  
+  como demo de navegación, igual que antes.
+
+- **La conexión real con el motor de cuentos está pendiente.**  
+  Brayan (Módulo 03) deberá reemplazar el cuerpo de `jugarCuento(id)` y `continuarCuento(id)`  
+  con la llamada correspondiente a su motor, por ejemplo:  
+  `motorDeCuentos.iniciar(id)` y `motorDeCuentos.continuar(id)`.
+

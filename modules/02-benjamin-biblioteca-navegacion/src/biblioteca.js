@@ -9,7 +9,9 @@
  *  - Filtro por categoría
  *  - Búsqueda por nombre
  *  - Mostrar estado: nuevo / en progreso / completado
- *  - Botón Jugar / Continuar / Completado
+ *  - Botón Jugar / Continuar / Completado (usando el campo `id` del cuento)
+ *  - jugarCuento(id)    → preparado para conectar con el Motor de Cuentos (Módulo 03 - Brayan)
+ *  - continuarCuento(id) → preparado para conectar con el Motor de Cuentos (Módulo 03 - Brayan)
  *  - Vista de detalle de cuento
  *  - Vista de cuento en progreso (demo de navegación)
  *  - Navegación entre: inicio, biblioteca, perfil, progreso
@@ -278,24 +280,70 @@ function crearBotonAccion(cuento) {
 
 /**
  * Acción principal al hacer clic en Jugar/Continuar en una tarjeta.
+ * Utiliza cuento.id como identificador único — no depende del título ni
+ * de la posición del array.
  */
 function accionCuento(cuento) {
   cuentoSeleccionado = cuento;
   if (cuento.estado === 'en progreso') {
-    abrirProgresosCuento(cuento);
+    continuarCuento(cuento.id);
   } else if (cuento.estado === 'nuevo') {
-    // Iniciar el cuento → mostramos la vista de progreso (demo de navegación)
-    abrirProgresosCuento(cuento);
+    jugarCuento(cuento.id);
   }
 }
 
 /**
  * Acción del botón en la vista de detalle.
+ * También pasa el ID del cuento seleccionado.
  */
 function accionCuentoDetalle() {
   if (!cuentoSeleccionado) return;
   if (cuentoSeleccionado.estado === 'completado') return;
-  abrirProgresosCuento(cuentoSeleccionado);
+  if (cuentoSeleccionado.estado === 'en progreso') {
+    continuarCuento(cuentoSeleccionado.id);
+  } else {
+    jugarCuento(cuentoSeleccionado.id);
+  }
+}
+
+// =====================================================
+// INTEGRACIÓN CON MOTOR DE CUENTOS (Módulo 03 - Brayan)
+// =====================================================
+
+/**
+ * Inicia un cuento nuevo usando su ID único.
+ *
+ * PENDIENTE DE INTEGRACIÓN:
+ * Brayan (Módulo 03) deberá reemplazar el cuerpo de esta función
+ * con la llamada real al motor de cuentos, por ejemplo:
+ *
+ *   motorDeCuentos.iniciar(id);
+ *
+ * @param {number} id - ID único del cuento a iniciar (campo `id` de cuentos-demo.json)
+ */
+function jugarCuento(id) {
+  console.log('[Módulo 02] Iniciar cuento con ID:', id);
+  // Mostrar vista de progreso como demo de navegación
+  const cuento = todosLosCuentos.find(c => c.id === id);
+  if (cuento) abrirProgresosCuento(cuento);
+}
+
+/**
+ * Continúa un cuento en progreso usando su ID único.
+ *
+ * PENDIENTE DE INTEGRACIÓN:
+ * Brayan (Módulo 03) deberá reemplazar el cuerpo de esta función
+ * con la llamada real al motor de cuentos, por ejemplo:
+ *
+ *   motorDeCuentos.continuar(id);
+ *
+ * @param {number} id - ID único del cuento a continuar (campo `id` de cuentos-demo.json)
+ */
+function continuarCuento(id) {
+  console.log('[Módulo 02] Continuar cuento con ID:', id);
+  // Mostrar vista de progreso como demo de navegación
+  const cuento = todosLosCuentos.find(c => c.id === id);
+  if (cuento) abrirProgresosCuento(cuento);
 }
 
 // =====================================================
