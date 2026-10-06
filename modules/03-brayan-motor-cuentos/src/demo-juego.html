@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#2356d8">
+    <title>NAVI · Motor de cuentos</title>
+    <link rel="stylesheet" href="demo-juego.css">
+    <script type="module" src="demo-juego.js"></script>
+  </head>
+  <body>
+    <header class="header">
+      <a class="brand" href="./demo-juego.html" aria-label="NAVI, inicio del cuento">NAVI<span>Una aventura para aprender</span></a>
+      <span class="module-label">Motor de cuentos · Módulo 03</span>
+    </header>
+    <main class="shell">
+      <div class="intro">
+        <p class="eyebrow">Pequeñas decisiones, grandes aprendizajes</p>
+        <h1 id="cuento-titulo">Me perdí en el parque</h1>
+        <p>Lee, elige y descubre qué sucede. Puedes volver a intentarlo cuando quieras.</p>
+      </div>
+      <p id="error" class="error" role="alert" hidden></p>
+      <p id="cargando" role="status">Preparando tu aventura…</p>
+      <div id="juego" class="layout" hidden>
+        <section class="game-card" aria-label="Cuento interactivo">
+          <div class="scene-art" aria-hidden="true"><span id="escena-icono">🌳</span><span class="art-caption">Explora · Decide · Aprende</span></div>
+          <div class="scene-content" id="escena-contenido">
+            <div class="scene-meta"><span id="fase" class="badge"></span><span id="decisiones"></span></div>
+            <h2 id="escena-titulo" tabindex="-1"></h2>
+            <p id="escena-texto" class="scene-text"></p>
+            <div id="opciones" class="choices" aria-label="Opciones de decisión"></div>
+            <section id="consecuencia" class="feedback" aria-label="Resultado de tu decisión" hidden>
+              <p class="eyebrow">Tu decisión</p>
+              <h3 id="eleccion-texto"></h3>
+              <p id="consecuencia-texto"></p>
+              <p id="puntos-eleccion" class="points-note"></p>
+              <button id="continuar" class="primary" type="button">Continuar aventura →</button>
+            </section>
+            <section id="final" class="ending" aria-label="Final del cuento" hidden>
+              <p id="final-tipo" class="eyebrow"></p>
+              <h3 id="final-titulo"></h3>
+              <p id="final-texto"></p>
+            </section>
+          </div>
+        </section>
+        <aside class="journey" aria-label="Tu recorrido">
+          <div class="score-card"><p>Tu puntaje</p><strong id="puntaje" role="status" aria-live="polite">0</strong><span>puntos de aprendizaje</span></div>
+          <div class="history-card"><h2>Tu recorrido</h2><p id="historial-vacio">Tus decisiones aparecerán aquí.</p><ol id="historial"></ol></div>
+          <button id="reiniciar" class="secondary restart" type="button">↻ Reiniciar cuento</button>
+          <p class="tip">Si te pierdes, busca ayuda de personal identificado y quédate en un lugar visible.</p>
+        </aside>
+      </div>
+      <noscript><p class="error">Activa JavaScript para jugar este cuento.</p></noscript>
+    </main>
+    <footer>Una práctica para aprender con tu tutor. Cada intento cuenta.</footer>
+  </body>
+</html>
