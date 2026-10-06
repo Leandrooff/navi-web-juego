@@ -1,0 +1,122 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f7f6;
+  color: #2c3e50;
+  transition: background-color 0.3s, color 0.3s, font-size 0.2s;
+}
+
+
+body.letra-normal { font-size: 18px; }
+body.letra-grande { font-size: 24px; }
+body.letra-extragrande { font-size: 30px; }
+
+body.alto-contraste {
+  background-color: #000000 !important;
+  color: #ffff00 !important;
+}
+
+body.alto-contraste .panel-accesibilidad,
+body.alto-contraste .contenedor-cuento,
+body.alto-contraste .modal-ayuda {
+  background-color: #121212 !important;
+  border: 2px solid #ffff00 !important;
+  color: #ffff00 !important;
+}
+
+body.alto-contraste button {
+  background-color: #ffff00 !important;
+  color: #000000 !important;
+  font-weight: bold;
+}
+
+/* Layout del panel superior */
+.panel-accesibilidad {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  border-bottom: 3px solid #3498db;
+}
+
+.grupo-controles, .grupo-audio {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+button {
+  padding: 10px 14px;
+  border: none;
+  border-radius: 8px;
+  background-color: #3498db;
+  color: white;
+  font-size: 0.85em;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.1s;
+}
+
+button:hover {
+  background-color: #2980b9;
+  transform: scale(1.02);
+}
+
+.contenedor-cuento {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 30px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.texto-lectura {
+  line-height: 1.6;
+}
+
+/* Indicador visual de audio */
+.indicador-audio {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.8em;
+  background: #e0e0e0;
+}
+
+.indicador-audio.activo {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.indicador-audio.activo .onda {
+  width: 4px;
+  height: 12px;
+  background-color: #28a745;
+  animation: pulso 0.6s infinite alternate;
+}
+
+@keyframes pulso {
+  0% { height: 4px; }
+  100% { height: 16px; }
+}
+
+/* Modal */
+.modal-ayuda {
+  border: 2px solid #3498db;
+  border-radius: 10px;
+  padding: 20px;
+  max-width: 450px;
+}
+
+.modal-ayuda::backdrop {
+  background: rgba(0, 0, 0, 0.5);
+}
