@@ -2,79 +2,190 @@
 <html lang="es">
 
 <head>
+
     <meta charset="UTF-8">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
 
-    <meta name="description"
+    <meta
+        name="description"
         content="Página de accesibilidad digital con herramientas de tamaño de letra, alto contraste y lectura por audio.">
 
     <title>Accesibilidad Digital</title>
 
-    <!-- Conexión con el archivo CSS -->
-    <link rel="stylesheet" href="accesibilidad.css">
+    <!-- CSS principal -->
+    <link
+        rel="stylesheet"
+        href="accesibilidad.css">
+
 </head>
+
 
 <body class="letra-normal">
 
-    <!-- =========================================
+    <!-- =====================================================
          PANEL DE ACCESIBILIDAD
-    ========================================== -->
+         ===================================================== -->
 
     <header class="panel-accesibilidad">
 
+        <!-- CONTROLES VISUALES -->
+
         <div class="grupo-controles">
 
-            <strong>Opciones de accesibilidad:</strong>
+            <strong>
+                Opciones de accesibilidad:
+            </strong>
 
-            <!-- Tamaño de letra -->
-            <button type="button" id="btnLetraNormal">
+
+            <!-- Tamaño normal -->
+
+            <button
+                type="button"
+                id="btnLetraNormal">
+
                 Letra normal
+
             </button>
 
-            <button type="button" id="btnLetraGrande">
+
+            <!-- Tamaño grande -->
+
+            <button
+                type="button"
+                id="btnLetraGrande">
+
                 Letra grande
+
             </button>
 
-            <button type="button" id="btnLetraExtraGrande">
+
+            <!-- Tamaño extra grande -->
+
+            <button
+                type="button"
+                id="btnLetraExtraGrande">
+
                 Letra extra grande
+
             </button>
+
 
             <!-- Alto contraste -->
-            <button type="button" id="btnContraste">
+
+            <button
+                type="button"
+                id="btnContraste">
+
                 Alto contraste
+
             </button>
 
+
             <!-- Ayuda -->
-            <button type="button" id="btnAyuda">
-                Ayuda
+
+            <button
+                type="button"
+                id="btnAyuda">
+
+                ❓ Ayuda
+
             </button>
 
         </div>
 
 
-        <!-- =========================================
+        <!-- =================================================
              CONTROLES DE AUDIO
-        ========================================== -->
+             ================================================= -->
 
         <div class="grupo-audio">
 
-            <button type="button" id="btnLeer">
+
+            <!-- Leer -->
+
+            <button
+                type="button"
+                id="btnLeer">
+
                 🔊 Leer página
+
             </button>
 
-            <button type="button" id="btnDetener">
+
+            <!-- Repetir -->
+
+            <button
+                type="button"
+                id="btnRepetir">
+
+                🔁 Repetir
+
+            </button>
+
+
+            <!-- Detener -->
+
+            <button
+                type="button"
+                id="btnDetener">
+
                 ⏹ Detener
+
             </button>
 
-            <!-- Indicador del estado del audio -->
-            <div class="indicador-audio" id="indicadorAudio">
+
+            <!-- Activar / desactivar sonido -->
+
+            <button
+                type="button"
+                id="btn-silenciar">
+
+                🔔 Sonido activo
+
+            </button>
+
+
+            <!-- Volumen -->
+
+            <label
+                for="volumen"
+                class="etiqueta-volumen">
+
+                🔉 Volumen:
+
+            </label>
+
+
+            <input
+                type="range"
+                id="volumen"
+                min="0"
+                max="1"
+                step="0.1"
+                value="1"
+                aria-label="Control de volumen">
+
+
+            <!-- Indicador -->
+
+            <div
+                class="indicador-audio desactivado"
+                id="indicadorAudio"
+                aria-live="polite">
+
 
                 <span class="onda"></span>
 
+
                 <span id="estadoAudio">
-                    Audio detenido
+
+                    En reposo
+
                 </span>
+
 
             </div>
 
@@ -83,18 +194,23 @@
     </header>
 
 
-    <!-- =========================================
+    <!-- =====================================================
          CONTENIDO PRINCIPAL
-    ========================================== -->
+         ===================================================== -->
 
     <main class="contenedor-cuento">
+
 
         <section
             class="texto-lectura"
             id="contenidoLectura"
             aria-label="Contenido sobre accesibilidad digital">
 
-            <h1>Accesibilidad Digital</h1>
+
+            <h1>
+                Accesibilidad Digital
+            </h1>
+
 
             <p>
                 La accesibilidad digital consiste en crear sitios web,
@@ -103,7 +219,11 @@
                 alguna discapacidad.
             </p>
 
-            <h2>¿Por qué es importante?</h2>
+
+            <h2>
+                ¿Por qué es importante?
+            </h2>
+
 
             <p>
                 La accesibilidad permite reducir las barreras que pueden
@@ -111,17 +231,23 @@
                 web o una aplicación.
             </p>
 
+
             <p>
                 Una página accesible debe facilitar la lectura,
                 la navegación y la comprensión de la información.
             </p>
 
-            <h2>Herramientas de accesibilidad</h2>
+
+            <h2>
+                Herramientas de accesibilidad
+            </h2>
+
 
             <p>
                 Existen diferentes herramientas que pueden ayudar a
                 mejorar la experiencia de los usuarios.
             </p>
+
 
             <p>
                 Entre ellas se encuentran el aumento del tamaño de la
@@ -129,14 +255,22 @@
                 mediante audio.
             </p>
 
-            <h2>Tamaño de letra</h2>
+
+            <h2>
+                Tamaño de letra
+            </h2>
+
 
             <p>
                 Las opciones de tamaño de letra permiten adaptar el texto
                 a las necesidades visuales de cada usuario.
             </p>
 
-            <h2>Alto contraste</h2>
+
+            <h2>
+                Alto contraste
+            </h2>
+
 
             <p>
                 El modo de alto contraste utiliza colores con una
@@ -144,7 +278,11 @@
                 facilitar la lectura.
             </p>
 
-            <h2>Lectura por audio</h2>
+
+            <h2>
+                Lectura por audio
+            </h2>
+
 
             <p>
                 La función de lectura por audio permite escuchar el
@@ -152,7 +290,11 @@
                 de voz disponible en el navegador.
             </p>
 
-            <h2>Conclusión</h2>
+
+            <h2>
+                Conclusión
+            </h2>
+
 
             <p>
                 La accesibilidad digital es importante para crear
@@ -160,372 +302,154 @@
                 personas puedan acceder a la información.
             </p>
 
+
         </section>
 
     </main>
 
 
-    <!-- =========================================
+    <!-- =====================================================
          VENTANA DE AYUDA
-    ========================================== -->
+         ===================================================== -->
 
     <dialog
         id="modalAyuda"
         class="modal-ayuda"
         aria-labelledby="tituloAyuda">
 
+
         <h2 id="tituloAyuda">
+
             Ayuda de accesibilidad
+
         </h2>
 
+
         <p>
+
             Puedes utilizar las siguientes opciones:
+
         </p>
+
 
         <ul>
 
+
             <li>
-                <strong>Letra normal:</strong>
+
+                <strong>
+                    Letra normal:
+                </strong>
+
                 establece el tamaño normal del texto.
+
             </li>
 
+
             <li>
-                <strong>Letra grande:</strong>
+
+                <strong>
+                    Letra grande:
+                </strong>
+
                 aumenta el tamaño del texto.
+
             </li>
 
+
             <li>
-                <strong>Letra extra grande:</strong>
+
+                <strong>
+                    Letra extra grande:
+                </strong>
+
                 aumenta aún más el tamaño del texto.
+
             </li>
 
+
             <li>
-                <strong>Alto contraste:</strong>
+
+                <strong>
+                    Alto contraste:
+                </strong>
+
                 cambia los colores de la página para facilitar la lectura.
+
             </li>
 
+
             <li>
-                <strong>Leer página:</strong>
+
+                <strong>
+                    Leer página:
+                </strong>
+
                 reproduce el contenido mediante voz.
+
             </li>
 
+
             <li>
-                <strong>Detener:</strong>
-                detiene la lectura por audio.
+
+                <strong>
+                    Repetir:
+                </strong>
+
+                vuelve a reproducir el último texto leído.
+
             </li>
+
+
+            <li>
+
+                <strong>
+                    Detener:
+                </strong>
+
+                detiene la lectura por audio.
+
+            </li>
+
+
+            <li>
+
+                <strong>
+                    Sonido:
+                </strong>
+
+                permite activar o desactivar el audio.
+
+            </li>
+
+
+            <li>
+
+                <strong>
+                    Volumen:
+                </strong>
+
+                permite controlar el nivel del audio.
+
+            </li>
+
 
         </ul>
+
 
         <button
             type="button"
             id="btnCerrarAyuda">
+
             Cerrar
+
         </button>
+
 
     </dialog>
 
+    <script src="audio_control.js"></script>
 
-    <!-- =========================================
-         JAVASCRIPT
-    ========================================== -->
-
-    <script>
-
-        // =========================================
-        // ELEMENTOS DEL DOCUMENTO
-        // =========================================
-
-        const body = document.body;
-
-
-        // Botones de tamaño de letra
-        const btnLetraNormal =
-            document.getElementById("btnLetraNormal");
-
-        const btnLetraGrande =
-            document.getElementById("btnLetraGrande");
-
-        const btnLetraExtraGrande =
-            document.getElementById("btnLetraExtraGrande");
-
-
-        // Botón de contraste
-        const btnContraste =
-            document.getElementById("btnContraste");
-
-
-        // Botones de audio
-        const btnLeer =
-            document.getElementById("btnLeer");
-
-        const btnDetener =
-            document.getElementById("btnDetener");
-
-
-        // Contenido que será leído
-        const contenidoLectura =
-            document.getElementById("contenidoLectura");
-
-
-        // Indicador de audio
-        const indicadorAudio =
-            document.getElementById("indicadorAudio");
-
-        const estadoAudio =
-            document.getElementById("estadoAudio");
-
-
-        // Modal de ayuda
-        const modalAyuda =
-            document.getElementById("modalAyuda");
-
-        const btnAyuda =
-            document.getElementById("btnAyuda");
-
-        const btnCerrarAyuda =
-            document.getElementById("btnCerrarAyuda");
-
-
-        // =========================================
-        // CAMBIAR A LETRA NORMAL
-        // =========================================
-
-        btnLetraNormal.addEventListener("click", function () {
-
-            body.classList.remove(
-                "letra-grande",
-                "letra-extragrande"
-            );
-
-            body.classList.add("letra-normal");
-
-        });
-
-
-        // =========================================
-        // CAMBIAR A LETRA GRANDE
-        // =========================================
-
-        btnLetraGrande.addEventListener("click", function () {
-
-            body.classList.remove(
-                "letra-normal",
-                "letra-extragrande"
-            );
-
-            body.classList.add("letra-grande");
-
-        });
-
-
-        // =========================================
-        // CAMBIAR A LETRA EXTRA GRANDE
-        // =========================================
-
-        btnLetraExtraGrande.addEventListener("click", function () {
-
-            body.classList.remove(
-                "letra-normal",
-                "letra-grande"
-            );
-
-            body.classList.add("letra-extragrande");
-
-        });
-
-
-        // =========================================
-        // ACTIVAR / DESACTIVAR ALTO CONTRASTE
-        // =========================================
-
-        btnContraste.addEventListener("click", function () {
-
-            body.classList.toggle("alto-contraste");
-
-        });
-
-
-        // =========================================
-        // LEER EL CONTENIDO DE LA PÁGINA
-        // =========================================
-
-        btnLeer.addEventListener("click", function () {
-
-            // Verificar que el navegador tenga
-            // soporte para Speech Synthesis
-
-            if (!("speechSynthesis" in window)) {
-
-                alert(
-                    "Tu navegador no soporta la función de lectura por audio."
-                );
-
-                return;
-            }
-
-
-            // Detener cualquier lectura anterior
-
-            window.speechSynthesis.cancel();
-
-
-            // Obtener el texto del contenido
-
-            const texto =
-                contenidoLectura.innerText;
-
-
-            // Crear el objeto de lectura
-
-            const lectura =
-                new SpeechSynthesisUtterance(texto);
-
-
-            // Configurar idioma
-
-            lectura.lang = "es-ES";
-
-
-            // Velocidad de lectura
-
-            lectura.rate = 0.9;
-
-
-            // Tono de voz
-
-            lectura.pitch = 1;
-
-
-            // =====================================
-            // CUANDO COMIENZA LA LECTURA
-            // =====================================
-
-            lectura.onstart = function () {
-
-                indicadorAudio.classList.add("activo");
-
-                estadoAudio.textContent =
-                    "Leyendo contenido...";
-
-            };
-
-
-            // =====================================
-            // CUANDO TERMINA LA LECTURA
-            // =====================================
-
-            lectura.onend = function () {
-
-                indicadorAudio.classList.remove("activo");
-
-                estadoAudio.textContent =
-                    "Audio detenido";
-
-            };
-
-
-            // =====================================
-            // SI OCURRE UN ERROR
-            // =====================================
-
-            lectura.onerror = function () {
-
-                indicadorAudio.classList.remove("activo");
-
-                estadoAudio.textContent =
-                    "Error en el audio";
-
-            };
-
-
-            // Reproducir la lectura
-
-            window.speechSynthesis.speak(lectura);
-
-        });
-
-
-        // =========================================
-        // DETENER LA LECTURA
-        // =========================================
-
-        btnDetener.addEventListener("click", function () {
-
-            if ("speechSynthesis" in window) {
-
-                window.speechSynthesis.cancel();
-
-            }
-
-            indicadorAudio.classList.remove("activo");
-
-            estadoAudio.textContent =
-                "Audio detenido";
-
-        });
-
-
-        // =========================================
-        // ABRIR VENTANA DE AYUDA
-        // =========================================
-
-        btnAyuda.addEventListener("click", function () {
-
-            modalAyuda.showModal();
-
-        });
-
-
-        // =========================================
-        // CERRAR VENTANA DE AYUDA
-        // =========================================
-
-        btnCerrarAyuda.addEventListener("click", function () {
-
-            modalAyuda.close();
-
-        });
-
-
-        // =========================================
-        // CERRAR MODAL AL HACER CLIC FUERA
-        // =========================================
-
-        modalAyuda.addEventListener("click", function (event) {
-
-            const rect =
-                modalAyuda.getBoundingClientRect();
-
-            const dentro =
-                event.clientX >= rect.left &&
-                event.clientX <= rect.right &&
-                event.clientY >= rect.top &&
-                event.clientY <= rect.bottom;
-
-            if (!dentro) {
-
-                modalAyuda.close();
-
-            }
-
-        });
-
-
-        // =========================================
-        // DETENER AUDIO AL SALIR DE LA PÁGINA
-        // =========================================
-
-        window.addEventListener("beforeunload", function () {
-
-            if ("speechSynthesis" in window) {
-
-                window.speechSynthesis.cancel();
-
-            }
-
-        });
-
-    </script>
 
 </body>
 
