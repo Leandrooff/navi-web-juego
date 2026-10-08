@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NAVI · Resultado</title>
+<link rel="stylesheet" href="estilos-ui.css">
+<style>
+  .resultado { max-width: 620px; margin-inline: auto; text-align: center; }
+  .resultado .panel { padding: clamp(1.5rem, 5vw, 3rem); }
+  .estrellas-grandes { font-size: 3.5rem; letter-spacing: .4rem; color: #e4ebf2; }
+  .estrellas-grandes b { color: var(--sun); font-weight: 400; }
+  .recomendacion { text-align: left; }
+</style>
+</head>
+<body>
+<main class="navi-wrap">
+
+  <section class="resultado">
+    <span class="navi-brand" style="margin-bottom:1.5rem">
+      <span class="navi-brand__mark">
+        <svg width="24" height="24" viewBox="0 0 48 48"><path d="M24 4l6 12.3 13.6 2-9.8 9.6 2.3 13.6L24 35.1 11.9 41.5l2.3-13.6L4.4 18.3l13.6-2z" fill="#ffc43d"/></svg>
+      </span>
+      <span class="navi-brand__name">NA<b>VI</b></span>
+    </span>
+
+    <div class="panel">
+      <div class="estrellas-grandes"><b>★★</b>★</div>
+      <h2 class="mt-2">¡Muy bien hecho!</h2>
+      <p class="muted">Terminaste <strong>“Me perdí en el parque”</strong> tomando decisiones seguras.</p>
+
+      <div class="logro mt-2">🏅 Logro: Mantengo la calma</div>
+
+      <div class="mensaje mensaje--positivo mt-3" style="text-align:left">
+        <span class="mensaje__icono">🎉</span>
+        <span>Aprendiste a quedarte en un lugar seguro y pedir ayuda a un adulto de confianza.</span>
+      </div>
+
+      <div class="mensaje mensaje--advertencia mt-2 recomendacion">
+        <span class="mensaje__icono">💡</span>
+        <span><strong>Para la próxima:</strong> recuerda memorizar el nombre de un familiar y un número de teléfono.</span>
+      </div>
+
+      <div class="fila mt-3" style="justify-content:center">
+        <a class="btn btn--reward btn--lg" href="pantalla-biblioteca.html">Siguiente aventura</a>
+        <a class="btn btn--secondary btn--lg" href="pantalla-inicio.html">Volver al inicio</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+</body>
+</html>
