@@ -1,0 +1,326 @@
+/* ===================================================================
+   NAVI · Sistema de diseño (Módulo 01 - Diseño UI · Alcides)
+   Esta es la base visual del juego. Todos los módulos deben usar
+   estos mismos tokens, botones, tarjetas y mensajes para que la app
+   se vea pareja. Importar con:  <link rel="stylesheet" href="estilos-ui.css">
+   =================================================================== */
+
+/* Tipografías redondeadas y amigables (con respaldo si no hay internet) */
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:wght@400;600;700;800&display=swap');
+
+/* ---------- TOKENS ---------- */
+:root {
+  /* Marca */
+  --navi-blue: #2356d8;        /* color principal, acciones */
+  --navi-blue-ink: #16327e;    /* azul oscuro, hover y títulos */
+  --navi-blue-soft: #e8f1fd;   /* fondo suave azul */
+
+  /* Fondos y texto */
+  --bg: #f3f8fc;               /* fondo de pantalla */
+  --surface: #ffffff;          /* tarjetas y paneles */
+  --ink: #14293d;              /* texto principal */
+  --muted: #5e7183;            /* texto secundario */
+  --line: #d7e3ee;             /* bordes */
+
+  /* Recompensa / estrellas */
+  --sun: #ffc43d;
+  --sun-soft: #fff2cf;
+
+  /* Estados semánticos */
+  --mint: #1fa971;  --mint-soft: #ddf3e8;   /* positivo / completado */
+  --amber: #e09112; --amber-soft: #fbebcf;  /* advertencia / en progreso */
+  --coral: #e5484d; --coral-soft: #fbe0e1;  /* error / peligro / bloqueado */
+  --violet: #7a5af8; --violet-soft: #ebe6fe;/* logros */
+
+  /* Radios (todo redondeado: es un juego para niños) */
+  --r-sm: 10px;
+  --r: 16px;
+  --r-lg: 24px;
+  --pill: 999px;
+
+  /* Sombras */
+  --shadow: 0 10px 30px rgba(20, 41, 61, 0.08);
+  --shadow-lg: 0 18px 40px rgba(20, 41, 61, 0.14);
+
+  /* Tipografía */
+  --font-display: 'Baloo 2', ui-rounded, 'Segoe UI', system-ui, sans-serif;
+  --font-body: 'Nunito', ui-rounded, 'Segoe UI', system-ui, sans-serif;
+}
+
+/* ---------- BASE ---------- */
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: var(--font-body);
+  font-size: 17px;
+  line-height: 1.55;
+  color: var(--ink);
+  background:
+    radial-gradient(1100px 520px at 85% -10%, var(--navi-blue-soft), transparent 60%),
+    radial-gradient(900px 500px at -10% 110%, var(--sun-soft), transparent 55%),
+    var(--bg);
+}
+
+h1, h2, h3 {
+  margin: 0 0 .5rem;
+  font-family: var(--font-display);
+  font-weight: 800;
+  line-height: 1.1;
+  color: var(--navi-blue-ink);
+}
+h1 { font-size: clamp(2.4rem, 6vw, 4rem); letter-spacing: -0.5px; }
+h2 { font-size: clamp(1.6rem, 3.5vw, 2.3rem); }
+h3 { font-size: 1.25rem; }
+p  { margin: 0 0 1rem; }
+a  { color: var(--navi-blue); }
+
+img, svg { max-width: 100%; }
+
+/* Contenedor central de cada pantalla */
+.navi-wrap {
+  width: min(1120px, 100% - 2rem);
+  margin-inline: auto;
+  padding-block: clamp(1.5rem, 4vw, 3rem);
+}
+
+/* ---------- MARCA ---------- */
+.navi-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: .6rem;
+  font-family: var(--font-display);
+  font-weight: 800;
+}
+.navi-brand__mark {
+  width: 44px; height: 44px;
+  display: grid; place-items: center;
+  border-radius: 14px;
+  background: var(--navi-blue);
+  box-shadow: var(--shadow);
+}
+.navi-brand__name { font-size: 1.6rem; color: var(--navi-blue-ink); }
+.navi-brand__name b { color: var(--sun); }
+
+/* Barra superior de pantallas internas */
+.navi-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Chip de usuario / avatar (acceso a perfil) */
+.navi-user {
+  display: inline-flex;
+  align-items: center;
+  gap: .55rem;
+  padding: .4rem .9rem .4rem .4rem;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--pill);
+  box-shadow: var(--shadow);
+  font-weight: 700;
+  cursor: pointer;
+}
+.navi-user__avatar {
+  width: 36px; height: 36px; border-radius: 50%;
+  display: grid; place-items: center;
+  background: var(--violet-soft); color: var(--violet);
+  font-family: var(--font-display); font-weight: 800;
+}
+
+/* ---------- BOTONES ---------- */
+.btn {
+  --_bg: var(--navi-blue);
+  --_fg: #fff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: .5rem;
+  min-height: 52px;              /* área de toque cómoda para niños */
+  padding: 0 1.5rem;
+  border: 0;
+  border-radius: var(--pill);
+  background: var(--_bg);
+  color: var(--_fg);
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform .12s ease, box-shadow .12s ease, filter .12s ease;
+  box-shadow: 0 8px 18px rgba(35, 86, 216, 0.28);
+}
+.btn:hover   { transform: translateY(-2px); filter: brightness(1.03); }
+.btn:active  { transform: translateY(0); }
+
+.btn--secondary {
+  --_bg: var(--surface);
+  --_fg: var(--navi-blue-ink);
+  border: 2px solid var(--navi-blue);
+  box-shadow: var(--shadow);
+}
+.btn--reward {
+  --_bg: var(--sun);
+  --_fg: #5a3d00;
+  box-shadow: 0 8px 18px rgba(255, 196, 61, 0.4);
+}
+.btn--ghost {
+  --_bg: transparent;
+  --_fg: var(--navi-blue-ink);
+  box-shadow: none;
+}
+
+/* Estado deshabilitado (vale para cualquier botón) */
+.btn:disabled,
+.btn--disabled,
+.btn[aria-disabled="true"] {
+  --_bg: #e4ebf2;
+  --_fg: #9aa9b8;
+  border-color: #e4ebf2;
+  box-shadow: none;
+  cursor: not-allowed;
+  transform: none;
+  filter: none;
+}
+
+.btn--block { width: 100%; }
+.btn--lg { min-height: 60px; font-size: 1.2rem; padding-inline: 2rem; }
+
+/* ---------- PANELES / TARJETAS GENERALES ---------- */
+.panel {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--r-lg);
+  box-shadow: var(--shadow);
+  padding: clamp(1.25rem, 3vw, 2rem);
+}
+
+/* ---------- TARJETA DE CUENTO (con estados) ---------- */
+.cuentos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 1.1rem;
+}
+
+.card-cuento {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--r);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  transition: transform .14s ease, box-shadow .14s ease;
+}
+.card-cuento:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+
+.card-cuento__cover {
+  aspect-ratio: 16 / 10;
+  display: grid;
+  place-items: center;
+  font-size: 3.2rem;
+  background: var(--navi-blue-soft);
+}
+.card-cuento__body { padding: 1rem 1.1rem 1.2rem; }
+.card-cuento__title { font-family: var(--font-display); font-weight: 700; font-size: 1.15rem; color: var(--ink); margin-bottom: .2rem; }
+.card-cuento__meta  { color: var(--muted); font-size: .9rem; margin-bottom: .9rem; }
+
+/* Etiqueta de estado */
+.estado {
+  position: absolute;
+  top: .7rem; left: .7rem;
+  display: inline-flex;
+  align-items: center;
+  gap: .35rem;
+  padding: .28rem .7rem;
+  border-radius: var(--pill);
+  font-family: var(--font-display);
+  font-size: .78rem;
+  font-weight: 700;
+  background: var(--surface);
+  box-shadow: var(--shadow);
+}
+.estado--nuevo       { color: var(--navi-blue-ink); background: var(--navi-blue-soft); }
+.estado--progreso    { color: #8a5a00; background: var(--amber-soft); }
+.estado--completado  { color: #0f6a44; background: var(--mint-soft); }
+.estado--bloqueado   { color: #8a3236; background: var(--coral-soft); }
+
+/* Barra de progreso dentro de la tarjeta */
+.barra { height: 8px; border-radius: var(--pill); background: #eef3f8; overflow: hidden; }
+.barra > span { display: block; height: 100%; border-radius: var(--pill); background: var(--amber); }
+
+/* Variante completado */
+.card-cuento.is-completado .card-cuento__cover { background: var(--mint-soft); }
+.card-cuento.is-completado .estrellas { color: var(--sun); margin-top: .2rem; }
+
+/* Variante bloqueado: se ve apagado y no se puede abrir */
+.card-cuento.is-bloqueado { filter: grayscale(.5); opacity: .72; }
+.card-cuento.is-bloqueado .card-cuento__cover::after {
+  content: "🔒";
+  position: absolute; inset: 0;
+  display: grid; place-items: center;
+  font-size: 2rem;
+  background: rgba(20, 41, 61, 0.35);
+}
+
+/* ---------- MENSAJES (positivo / advertencia / error) ---------- */
+.mensaje {
+  display: flex;
+  align-items: flex-start;
+  gap: .7rem;
+  padding: .9rem 1.1rem;
+  border-radius: var(--r);
+  border: 1px solid transparent;
+  font-weight: 600;
+}
+.mensaje__icono { font-size: 1.3rem; line-height: 1.2; }
+.mensaje--positivo    { background: var(--mint-soft);  border-color: #b7e6cf; color: #0f6a44; }
+.mensaje--advertencia { background: var(--amber-soft); border-color: #f1d49a; color: #8a5a00; }
+.mensaje--error       { background: var(--coral-soft); border-color: #f3b6b8; color: #a32329; }
+
+/* ---------- ESTRELLAS / RECOMPENSA ---------- */
+.estrellas { font-size: 1.6rem; letter-spacing: .15rem; color: #d7e3ee; }
+.estrellas b { color: var(--sun); font-weight: 400; }
+
+.logro {
+  display: inline-flex;
+  align-items: center;
+  gap: .6rem;
+  padding: .5rem 1rem;
+  border-radius: var(--pill);
+  background: var(--violet-soft);
+  color: var(--violet);
+  font-family: var(--font-display);
+  font-weight: 700;
+}
+
+/* ---------- ESTADO VACÍO (sin cuentos) ---------- */
+.vacio {
+  text-align: center;
+  padding: clamp(2rem, 6vw, 4rem) 1rem;
+  border: 2px dashed var(--line);
+  border-radius: var(--r-lg);
+  background: var(--surface);
+}
+.vacio__icono { font-size: 3.5rem; }
+.vacio h3 { margin-top: .6rem; }
+.vacio p  { color: var(--muted); max-width: 42ch; margin-inline: auto; }
+
+/* ---------- UTILIDADES ---------- */
+.fila { display: flex; gap: .8rem; flex-wrap: wrap; align-items: center; }
+.centro { text-align: center; }
+.mt-1 { margin-top: .5rem; } .mt-2 { margin-top: 1rem; } .mt-3 { margin-top: 1.5rem; }
+.muted { color: var(--muted); }
+
+/* ---------- ACCESIBILIDAD ---------- */
+:focus-visible { outline: 3px solid var(--navi-blue); outline-offset: 2px; border-radius: 6px; }
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; }
+}
