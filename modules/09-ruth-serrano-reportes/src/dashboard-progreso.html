@@ -4,25 +4,27 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>NAVI | Reportes de progreso</title>
+  <link rel="stylesheet" href="estilos-ui.css">
   <link rel="stylesheet" href="reportes.css">
   <script src="reportes.js" defer></script>
 </head>
 
 <body>
+  <a class="saltar-contenido" href="#contenido-principal">Saltar al contenido</a>
   <header class="encabezado">
     <div class="contenedor">
-      <p class="marca">NAVI</p>
+      <div class="navi-topbar"><span class="navi-brand"><span class="navi-brand__mark" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 48 48"><path d="M24 4l6 12.3 13.6 2-9.8 9.6 2.3 13.6L24 35.1 11.9 41.5l2.3-13.6L4.4 18.3l13.6-2z" fill="#ffc43d"/></svg></span><span class="navi-brand__name">NA<b>VI</b></span></span><span class="etiqueta-tutor">Tutores y educadores</span></div>
       <h1>Reportes de progreso</h1>
       <p>Seguimiento de cuentos y decisiones para tutores y educadores.</p>
     </div>
   </header>
 
-  <main class="contenedor">
-    <p class="aviso-demo">
+  <main class="contenedor" id="contenido-principal">
+    <p class="aviso-demo mensaje mensaje--advertencia">
       Demostración con datos ficticios de niños.
     </p>
 
-    <p id="mensaje-estado" role="status" aria-live="polite">
+    <p id="mensaje-estado" class="mensaje-estado" role="status" aria-live="polite">
       Cargando reportes…
     </p>
 
@@ -44,6 +46,7 @@
           </select>
         </div>
       </div>
+      <button id="limpiar-filtro" class="btn btn--secondary mt-2" type="button" disabled>Ver todos los cuentos</button>
     </section>
 
     <section class="panel" aria-labelledby="nombre-nino">
@@ -68,17 +71,17 @@
           <p id="puntaje-total">—</p>
         </article>
 
-        <article class="tarjeta">
+        <article class="tarjeta tarjeta--estrellas">
           <h3>Estrellas acumuladas</h3>
           <p id="estrellas-total">—</p>
         </article>
 
-        <article class="tarjeta">
+        <article class="tarjeta tarjeta--correctas">
           <h3>Decisiones correctas</h3>
           <p id="decisiones-correctas">—</p>
         </article>
 
-        <article class="tarjeta">
+        <article class="tarjeta tarjeta--reforzar">
           <h3>Decisiones incorrectas</h3>
           <p id="decisiones-incorrectas">—</p>
         </article>
@@ -87,9 +90,9 @@
 
     <section class="panel" aria-labelledby="titulo-historial">
       <h2 id="titulo-historial">Historial de cuentos jugados</h2>
-      <p>El filtro por cuento se aplica al historial y a las recomendaciones.</p>
+      <p>El filtro se aplica al historial, los temas y las recomendaciones. El resumen general incluye todos los cuentos del niño.</p>
 
-      <div class="tabla-contenedor">
+      <div class="tabla-contenedor" tabindex="0" role="region" aria-label="Historial de cuentos, tabla desplazable">
         <table>
           <caption>Cuentos del niño seleccionado</caption>
           <thead>
@@ -106,7 +109,7 @@
         </table>
       </div>
 
-      <p id="historial-vacio" hidden>No hay cuentos para mostrar.</p>
+      <p id="historial-vacio" class="vacio" hidden>No hay cuentos para mostrar.</p>
     </section>
 
     <section class="panel" aria-labelledby="titulo-temas">
@@ -121,12 +124,12 @@
 
     <section class="panel" aria-labelledby="titulo-logros">
       <h2 id="titulo-logros">Logros obtenidos</h2>
-      <ul id="lista-logros"></ul>
+      <ul id="lista-logros" class="lista-logros"></ul>
     </section>
   </main>
 
   <footer class="contenedor">
-    <p>NAVI · Módulo de reportes de progreso</p>
+    <p>NAVI · Casa de la Infancia · Reportes de progreso</p>
   </footer>
 </body>
 </html>

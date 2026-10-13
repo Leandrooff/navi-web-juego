@@ -100,8 +100,27 @@
             }
           ],
           "recomendacion": "Repasar a quién puede pedir ayuda si se separa de su tutor."
+        },
+        {
+          "id": "cuento-calle",
+          "titulo": "Cruzamos la calle",
+          "categoria": "Seguridad vial",
+          "fecha": "2026-10-13",
+          "estado": "en-progreso",
+          "puntaje": 0,
+          "puntajeMaximo": 20,
+          "estrellas": 0,
+          "decisiones": [],
+          "recomendacion": "Acompañar al niño para continuar el cuento y conversar sobre el semáforo peatonal."
         }
       ]
+    },
+    {
+      "id": 3,
+      "nombre": "Valentina",
+      "cuentosAsignados": 3,
+      "logros": [],
+      "cuentosJugados": []
     }
   ]
 }

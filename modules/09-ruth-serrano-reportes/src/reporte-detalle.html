@@ -4,29 +4,31 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>NAVI | Detalle del reporte</title>
+  <link rel="stylesheet" href="estilos-ui.css">
   <link rel="stylesheet" href="reportes.css">
   <script src="reportes.js" defer></script>
 </head>
 
 <body>
+  <a class="saltar-contenido" href="#contenido-principal">Saltar al contenido</a>
   <header class="encabezado">
     <div class="contenedor">
-      <p class="marca">NAVI</p>
+      <div class="navi-topbar"><span class="navi-brand"><span class="navi-brand__mark" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 48 48"><path d="M24 4l6 12.3 13.6 2-9.8 9.6 2.3 13.6L24 35.1 11.9 41.5l2.3-13.6L4.4 18.3l13.6-2z" fill="#ffc43d"/></svg></span><span class="navi-brand__name">NA<b>VI</b></span></span><span class="etiqueta-tutor">Tutores y educadores</span></div>
       <h1>Detalle del reporte</h1>
       <p>Decisiones y resultados del cuento seleccionado.</p>
     </div>
   </header>
 
-  <main class="contenedor">
-    <p class="aviso-demo">
+  <main class="contenedor" id="contenido-principal">
+    <p class="aviso-demo mensaje mensaje--advertencia">
       Demostración con datos ficticios de niños.
     </p>
 
-    <a href="dashboard-progreso.html" class="boton">
+    <a id="volver-reportes" href="dashboard-progreso.html" class="btn btn--secondary">
       Volver a reportes
     </a>
 
-    <p id="mensaje-estado" role="status" aria-live="polite">
+    <p id="mensaje-estado" class="mensaje-estado" role="status" aria-live="polite">
       Cargando detalle…
     </p>
 
@@ -79,7 +81,7 @@
   </main>
 
   <footer class="contenedor">
-    <p>NAVI · Módulo de reportes de progreso</p>
+    <p>NAVI · Casa de la Infancia · Reportes de progreso</p>
   </footer>
 </body>
 </html>

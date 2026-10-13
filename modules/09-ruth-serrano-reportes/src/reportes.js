@@ -1,5 +1,45 @@
 "use strict";
 
+// Datos demo: reemplazar esta ruta por la API acordada durante la integración.
+const RUTA_DATOS = "../demo/progreso-demo.json";
+
+function informarError(mensaje) {
+  mostrarTexto("mensaje-estado", mensaje);
+  buscar("mensaje-estado").classList.add("es-error");
+  buscar("mensaje-estado").setAttribute("role", "alert");
+}
+
+// Evita mostrar totales engañosos si el archivo tiene campos inválidos.
+async function cargarDatos() {
+  const respuesta = await fetch(RUTA_DATOS);
+  if (!respuesta.ok) throw new Error("No se pudo cargar el archivo de datos.");
+  const datos = await respuesta.json();
+  if (!Array.isArray(datos.ninos)) throw new Error("Falta la lista de niños.");
+  const ids = new Set();
+  for (const nino of datos.ninos) {
+    if (!nino || !Number.isInteger(nino.cuentosAsignados) || nino.cuentosAsignados < 0 ||
+        typeof nino.nombre !== "string" || nino.id == null || ids.has(String(nino.id)) ||
+        !Array.isArray(nino.logros) || !Array.isArray(nino.cuentosJugados)) {
+      throw new Error("Datos de niño incompletos o inválidos.");
+    }
+    ids.add(String(nino.id));
+    const cuentosIds = new Set();
+    for (const cuento of nino.cuentosJugados) {
+      if (!cuento || typeof cuento.id !== "string" || cuentosIds.has(cuento.id) ||
+          typeof cuento.titulo !== "string" || typeof cuento.fecha !== "string" ||
+          !["completado", "en-progreso"].includes(cuento.estado) ||
+          ![cuento.puntaje, cuento.puntajeMaximo, cuento.estrellas].every(x => Number.isFinite(x) && x >= 0) ||
+          cuento.puntaje > cuento.puntajeMaximo || cuento.estrellas > 3 ||
+          !Array.isArray(cuento.decisiones) ||
+          cuento.decisiones.some(d => !d || typeof d.correcta !== "boolean" || !Number.isFinite(d.puntos))) {
+        throw new Error("Datos de cuento incompletos o inválidos.");
+      }
+      cuentosIds.add(cuento.id);
+    }
+  }
+  return datos;
+}
+
 let ninos = [];
 
 const buscar = (id) => document.getElementById(id);
@@ -24,7 +64,7 @@ function mostrarLista(id, valores, mensajeVacio) {
   const textos = valores.length ? valores : [mensajeVacio];
 
   textos.forEach((texto) => {
-    lista.appendChild(crearElemento("li", texto));
+    lista.appendChild(crearElemento("li", texto, id === "lista-logros" && valores.length ? "logro" : ""));
   });
 }
 
@@ -124,16 +164,21 @@ function mostrarHistorial(nino, cuentos) {
       cuento.estrellas
     ];
 
-    datos.forEach((dato) => {
-      fila.appendChild(crearElemento("td", dato));
+    datos.forEach((dato, indice) => {
+      const celda = crearElemento("td", indice === 2 ? "" : dato);
+      if (indice === 2) {
+        celda.appendChild(crearElemento("span", dato, `estado-reporte ${cuento.estado}`));
+      }
+      fila.appendChild(celda);
     });
 
     const celdaEnlace = document.createElement("td");
-    const enlace = crearElemento("a", "Ver detalle", "boton");
+    const enlace = crearElemento("a", "Ver detalle", "btn btn--secondary");
 
     const parametros = new URLSearchParams({
       nino: String(nino.id),
-      cuento: cuento.id
+      cuento: cuento.id,
+      filtro: buscar("filtro-cuento").value
     });
 
     enlace.href = `reporte-detalle.html?${parametros}`;
@@ -170,7 +215,9 @@ function actualizarReportes() {
   mostrarLista(
     "temas-reforzar",
     [...new Set(temas)],
-    "No se registran decisiones incorrectas en los cuentos seleccionados."
+    cuentos.some(c => c.decisiones.length)
+      ? "No se registran decisiones incorrectas en los cuentos seleccionados."
+      : "Todavía no hay decisiones registradas para evaluar."
   );
 
   const recomendaciones = cuentos.map(
@@ -183,21 +230,15 @@ function actualizarReportes() {
     "No hay recomendaciones para mostrar."
   );
 
-  mostrarTexto(
-    "mensaje-estado",
-    `Reportes de ${nino.nombre} cargados.`
-  );
+  buscar("limpiar-filtro").disabled = filtro === "todos";
+  const parametros = new URLSearchParams({ nino: String(nino.id), cuento: filtro });
+  window.history.replaceState(null, "", `?${parametros}`);
+  mostrarTexto("mensaje-estado", `Reportes de ${nino.nombre} cargados.`);
 }
 
 async function iniciarReportes() {
   try {
-    const respuesta = await fetch("../demo/progreso-demo.json");
-
-    if (!respuesta.ok) {
-      throw new Error("No se pudo cargar el archivo de datos.");
-    }
-
-    const datos = await respuesta.json();
+    const datos = await cargarDatos();
 
     if (!Array.isArray(datos.ninos) || datos.ninos.length === 0) {
       throw new Error("No hay niños en los datos de demostración.");
@@ -215,8 +256,20 @@ async function iniciarReportes() {
     selector.disabled = false;
     buscar("filtro-cuento").disabled = false;
 
+    const parametros = new URLSearchParams(window.location.search);
+    if (ninos.some(n => String(n.id) === parametros.get("nino"))) {
+      selector.value = parametros.get("nino");
+    }
     cargarFiltroCuentos(obtenerNino());
+    const cuentoInicial = parametros.get("cuento");
+    if ([...buscar("filtro-cuento").options].some(o => o.value === cuentoInicial)) {
+      buscar("filtro-cuento").value = cuentoInicial;
+    }
     actualizarReportes();
+    buscar("limpiar-filtro").addEventListener("click", () => {
+      buscar("filtro-cuento").value = "todos";
+      actualizarReportes();
+    });
 
     selector.addEventListener("change", () => {
       cargarFiltroCuentos(obtenerNino());
@@ -230,10 +283,7 @@ async function iniciarReportes() {
   } catch (error) {
     console.error(error);
 
-    mostrarTexto(
-      "mensaje-estado",
-      "No se pudieron cargar los reportes. Comprueba el JSON y abre la página con un servidor local."
-    );
+    informarError("No se pudieron cargar los reportes. Comprueba el archivo de datos y abre la página con un servidor local.");
 
     buscar("selector-nino").disabled = true;
     buscar("filtro-cuento").disabled = true;
@@ -252,13 +302,7 @@ async function iniciarDetalle() {
     const idNino = parametros.get("nino");
     const idCuento = parametros.get("cuento");
 
-    const respuesta = await fetch("../demo/progreso-demo.json");
-
-    if (!respuesta.ok) {
-      throw new Error("No se pudo cargar el archivo de datos.");
-    }
-
-    const datos = await respuesta.json();
+    const datos = await cargarDatos();
 
     const nino = datos.ninos.find(
       (item) => String(item.id) === idNino
@@ -269,13 +313,12 @@ async function iniciarDetalle() {
     );
 
     if (!nino || !cuento) {
-      mostrarTexto(
-        "mensaje-estado",
-        "No se encontró el reporte. Vuelve a reportes y selecciona un cuento."
-      );
+      informarError("No se encontró el reporte. Vuelve a reportes y selecciona un cuento.");
       return;
     }
 
+    const retorno = new URLSearchParams({ nino: String(nino.id), cuento: parametros.get("filtro") || "todos" });
+    buscar("volver-reportes").href = `dashboard-progreso.html?${retorno}`;
     mostrarTexto("titulo-cuento", cuento.titulo);
     mostrarTexto("detalle-nino", nino.nombre);
     mostrarTexto("detalle-categoria", cuento.categoria);
@@ -353,7 +396,9 @@ async function iniciarDetalle() {
     mostrarLista(
       "temas-reforzar",
       [...new Set(temas)],
-      "No se registran decisiones incorrectas en este cuento."
+      cuento.decisiones.length
+        ? "No se registran decisiones incorrectas en este cuento."
+        : "Todavía no hay decisiones registradas para evaluar."
     );
 
     mostrarTexto("detalle-recomendacion", cuento.recomendacion);
@@ -366,10 +411,7 @@ async function iniciarDetalle() {
   } catch (error) {
     console.error(error);
 
-    mostrarTexto(
-      "mensaje-estado",
-      "No se pudo cargar el detalle. Comprueba el JSON y abre la página con un servidor local."
-    );
+    informarError("No se pudo cargar el detalle. Comprueba el archivo de datos y abre la página con un servidor local.");
   }
 }
 
