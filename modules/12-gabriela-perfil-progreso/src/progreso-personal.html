@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NAVI - Progreso personal</title>
+    <link rel="stylesheet" href="./perfil.css" />
+    <script src="./perfil.js" defer></script>
+  </head>
+  <body data-page="progreso">
+    <header class="topbar">
+      <a class="brand" href="./perfil.html">NAVI</a>
+      <nav class="nav-links" aria-label="Navegacion del perfil">
+        <a href="./perfil.html">Perfil</a>
+        <a class="active" href="./progreso-personal.html">Progreso</a>
+      </nav>
+    </header>
+
+    <main class="page-shell">
+      <section class="screen-title">
+        <p class="eyebrow">Progreso personal</p>
+        <h1 id="progressName">Cargando progreso...</h1>
+        <p class="muted">
+          Resumen de cuentos jugados, estrellas y actividad reciente.
+        </p>
+      </section>
+
+      <section class="grid three-columns">
+        <article class="metric-card">
+          <span id="progressCompleted">0</span>
+          <p>Cuentos completados</p>
+        </article>
+        <article class="metric-card">
+          <span id="progressStars">0</span>
+          <p>Estrellas</p>
+        </article>
+        <article class="metric-card">
+          <span id="progressActive">0</span>
+          <p>En progreso</p>
+        </article>
+      </section>
+
+      <section class="grid two-columns">
+        <article class="card">
+          <div class="section-head">
+            <div>
+              <p class="eyebrow">Cuentos</p>
+              <h2>Avance por aventura</h2>
+            </div>
+          </div>
+          <div class="story-list" id="storyList"></div>
+        </article>
+
+        <article class="card">
+          <p class="eyebrow">Actividad</p>
+          <h2>Ultimos movimientos</h2>
+          <div class="activity-list" id="activityList"></div>
+        </article>
+      </section>
+    </main>
+  </body>
+</html>
