@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#102a43" />
+    <title>Galería de componentes · NAVI</title>
+    <link rel="stylesheet" href="../src/componentes.css" />
+    <style>
+      body { margin: 0; background: #f7fafc; }
+      .demo { max-width: 1120px; margin: 0 auto; padding: clamp(20px, 4vw, 48px); }
+      .demo-header { display: flex; align-items: center; justify-content: space-between; gap: 20px; margin-bottom: 34px; }
+      .demo-brand { display: flex; align-items: center; gap: 12px; color: #102a43; font-size: 1.5rem; font-weight: 1000; }
+      .demo-brand b { display: grid; width: 44px; height: 44px; place-items: center; border-radius: 14px; background: #ffe7a8; }
+      .demo-header p { margin: 4px 0 0; color: #637083; }
+      .demo h1 { margin: 0 0 10px; font-size: clamp(2rem, 5vw, 3.3rem); line-height: 1.05; }
+      .demo-intro { max-width: 700px; margin-bottom: 36px; color: #637083; font-size: 1.08rem; line-height: 1.6; }
+      .demo-section { margin: 30px 0; border: 1px solid #d9e2ec; border-radius: 20px; padding: clamp(18px, 3vw, 28px); background: #fff; box-shadow: 0 8px 24px #102a4310; }
+      .demo-section h2 { margin: 0 0 7px; font-size: 1.45rem; }.demo-section > p { margin: 0 0 20px; color: #637083; }
+      .demo-row { display: flex; align-items: center; flex-wrap: wrap; gap: 12px; }.demo-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 245px), 1fr)); gap: 16px; }
+      .demo-stack { display: grid; gap: 12px; max-width: 680px; }.demo-progress { max-width: 540px; }.demo-modal-actions { margin-top: 16px; }
+      .demo-code { overflow-x: auto; margin: 16px 0 0; border-radius: 12px; padding: 12px 14px; color: #e7f0ff; background: #102a43; font: .85rem/1.5 Consolas, monospace; }
+      .demo-footer { margin: 38px 0 12px; color: #637083; text-align: center; }
+      @media (max-width: 560px) { .demo-header { align-items: flex-start; flex-direction: column; }.demo-section { border-radius: 16px; } }
+    </style>
+  </head>
+  <body class="navi-components">
+    <main class="demo">
+      <header class="demo-header"><div class="demo-brand"><b aria-hidden="true">N</b><span>NAVI<small style="display:block;color:#637083;font-size:.75rem;font-weight:600">Aprender jugando</small></span></div><span class="navi-badge">Galería interactiva</span></header>
+      <p class="navi-eyebrow">Componentes frontend · Módulo 04</p>
+      <h1>Pequeñas piezas,<br />grandes aventuras</h1>
+      <p class="demo-intro">Una colección de componentes amigables, accesibles y adaptables para construir las pantallas del juego NAVI. Prueba las opciones y los botones para ver sus estados.</p>
+
+      <section class="demo-section" aria-labelledby="buttons-heading">
+        <h2 id="buttons-heading">Botones</h2><p>Acciones principales y secundarias con estados normal, activo, deshabilitado y error.</p>
+        <div class="demo-row"><button class="navi-button navi-button--primary">Comenzar aventura</button><button class="navi-button navi-button--secondary">Ver biblioteca</button><button class="navi-button navi-button--primary navi-state--active">Seleccionado</button><button class="navi-button navi-button--primary" disabled>Deshabilitado</button><button class="navi-button navi-button--primary navi-state--error">Reintentar</button></div>
+        <pre class="demo-code">&lt;Button variant="primary" onClick={iniciar}&gt;Comenzar aventura&lt;/Button&gt;</pre>
+      </section>
+
+      <section class="demo-section" aria-labelledby="stories-heading">
+        <h2 id="stories-heading">Tarjetas de cuento</h2><p>Estados de biblioteca: nuevo, en progreso, completado y bloqueado.</p>
+        <div class="demo-grid">
+          <article class="navi-card navi-story-card"><div class="navi-story-art" role="img" aria-label="Un parque con árboles"><span aria-hidden="true">🌳</span><span class="navi-badge">Nueva aventura</span></div><div class="navi-card__body"><p class="navi-eyebrow">Seguridad · 6+ años</p><h3>Me perdí en el parque</h3><p class="navi-muted">Descubre qué hacer si no encuentras a tu tutor.</p><button class="navi-button navi-button--primary">Jugar cuento</button></div></article>
+          <article class="navi-card navi-story-card"><div class="navi-story-art" style="background:linear-gradient(135deg,#dff3ff,#ffe7a8)" role="img" aria-label="Una calle segura"><span aria-hidden="true">🚦</span><span class="navi-badge navi-badge--enProgreso">En progreso</span></div><div class="navi-card__body"><p class="navi-eyebrow">Seguridad vial · 7+ años</p><h3>La calle de colores</h3><p class="navi-muted">Practica cómo cruzar la calle con seguridad.</p><button class="navi-button navi-button--primary">Continuar</button></div></article>
+          <article class="navi-card navi-story-card is-disabled"><div class="navi-story-art" style="background:linear-gradient(135deg,#edf0f3,#d9e2ec)" role="img" aria-label="Una casa"><span aria-hidden="true">🏠</span><span class="navi-badge navi-badge--bloqueado">Bloqueado</span></div><div class="navi-card__body"><p class="navi-eyebrow">Seguridad en casa</p><h3>Una visita inesperada</h3><p class="navi-muted">Completa otra aventura para desbloquear este cuento.</p><button class="navi-button navi-button--primary" disabled>Bloqueado</button></div></article>
+        </div>
+      </section>
+
+      <section class="demo-section" aria-labelledby="achievement-heading">
+        <h2 id="achievement-heading">Tarjetas de logro</h2><p>Insignias para celebrar el progreso y motivar al niño.</p>
+        <div class="demo-grid"><article class="navi-card navi-achievement is-completed"><span class="navi-achievement__icon" aria-hidden="true">🌟</span><div><p class="navi-eyebrow">Logro desbloqueado</p><h3>Explorador valiente</h3><p class="navi-muted">Terminaste tu primera aventura.</p></div></article><article class="navi-card navi-achievement is-disabled"><span class="navi-achievement__icon" aria-hidden="true">🧭</span><div><p class="navi-eyebrow">Sigue jugando</p><h3>Gran explorador</h3><p class="navi-muted">Completa tres aventuras para obtenerlo.</p></div></article></div>
+      </section>
+
+      <section class="demo-section" aria-labelledby="progress-heading">
+        <h2 id="progress-heading">Barra de progreso</h2><p>El valor se limita entre cero y el máximo indicado.</p>
+        <div class="demo-progress"><div class="navi-progress"><div class="navi-progress__label"><span>Aventura completada</span><strong>65%</strong></div><div class="navi-progress__track" role="progressbar" aria-label="Aventura completada" aria-valuemin="0" aria-valuemax="100" aria-valuenow="65"><span style="width:65%"></span></div></div></div>
+        <pre class="demo-code">&lt;ProgressBar value={13} max={20} label="Aventura" /&gt;</pre>
+      </section>
+
+      <section class="demo-section" aria-labelledby="choice-heading">
+        <h2 id="choice-heading">Opciones de decisión</h2><p>Elige una respuesta. Los estados activo, error y deshabilitado se muestran debajo.</p>
+        <div class="demo-stack" id="choices"><button class="navi-choice" type="button" aria-pressed="false"><span class="navi-choice__marker" aria-hidden="true"></span>Buscar a una persona adulta de confianza</button><button class="navi-choice" type="button" aria-pressed="false"><span class="navi-choice__marker" aria-hidden="true"></span>Quedarme en un lugar seguro y pedir ayuda</button><button class="navi-choice is-disabled" type="button" disabled><span class="navi-choice__marker" aria-hidden="true"></span>Opción no disponible</button><button class="navi-choice is-error" type="button"><span class="navi-choice__marker" aria-hidden="true">!</span>Respuesta que requiere revisión</button></div>
+      </section>
+
+      <section class="demo-section" aria-labelledby="alerts-heading">
+        <h2 id="alerts-heading">Mensajes de alerta</h2><p>Mensajes claros para informar, celebrar o ayudar a corregir.</p>
+        <div class="demo-stack"><div class="navi-alert navi-alert--success" role="status"><span class="navi-alert__icon">✓</span><div class="navi-alert__copy"><strong>¡Muy bien!</strong><span>Completaste la aventura de forma segura.</span></div></div><div class="navi-alert navi-alert--warning" role="status"><span class="navi-alert__icon">!</span><div class="navi-alert__copy"><strong>Recuerda</strong><span>Quédate con tu grupo cuando estés en un lugar público.</span></div></div><div class="navi-alert navi-alert--error" role="alert"><span class="navi-alert__icon">×</span><div class="navi-alert__copy"><strong>No se pudo guardar</strong><span>Revisa tu conexión e inténtalo de nuevo.</span></div></div><div class="navi-alert navi-alert--info" role="status"><span class="navi-alert__icon">i</span><div class="navi-alert__copy"><strong>Consejo</strong><span>Puedes pedir ayuda a una persona adulta de confianza.</span></div><button class="navi-alert__dismiss" aria-label="Cerrar aviso" onclick="this.parentElement.remove()">×</button></div></div>
+      </section>
+
+      <section class="demo-section" aria-labelledby="modal-heading">
+        <h2 id="modal-heading">Modal de confirmación</h2><p>Confirma una acción importante; también puedes cerrarlo con Escape o haciendo clic fuera del diálogo.</p>
+        <button class="navi-button navi-button--primary" id="open-modal">Abrir confirmación</button>
+      </section>
+
+      <section class="demo-section" aria-labelledby="layout-heading">
+        <h2 id="layout-heading">Layout base adaptable</h2><p>La versión React <code>Layout</code> organiza menú, perfil y contenido. En celular el menú se vuelve horizontal.</p>
+        <div class="navi-card" style="padding:16px;background:#102a43;color:#fff"><div class="demo-row"><strong>NAVI</strong><span style="color:#b8d8ee">Inicio　 Aventuras　 Mi progreso　 Logros</span><span style="margin-left:auto">👧 Sofía</span></div></div>
+      </section>
+      <footer class="demo-footer">NAVI · Componentes reutilizables para aprender jugando</footer>
+    </main>
+    <div id="modal-root"></div>
+    <script>
+      document.querySelectorAll("#choices .navi-choice:not(:disabled):not(.is-error)").forEach((choice) => {
+        choice.addEventListener("click", () => {
+          document.querySelectorAll("#choices .navi-choice").forEach((item) => {
+            item.classList.remove("is-active"); item.setAttribute("aria-pressed", "false"); item.querySelector(".navi-choice__marker").textContent = "";
+          });
+          choice.classList.add("is-active"); choice.setAttribute("aria-pressed", "true"); choice.querySelector(".navi-choice__marker").textContent = "✓";
+        });
+      });
+      const root = document.getElementById("modal-root");
+      const closeModal = () => { root.innerHTML = ""; document.getElementById("open-modal").focus(); };
+      document.getElementById("open-modal").addEventListener("click", () => {
+        root.innerHTML = '<div class="navi-modal-backdrop"><section class="navi-modal" role="dialog" aria-modal="true" aria-labelledby="demo-modal-title"><h2 id="demo-modal-title">¿Quieres salir del cuento?</h2><div class="navi-modal__content">Tu aventura quedará guardada y podrás continuar después.</div><div class="navi-modal__actions"><button class="navi-button navi-button--secondary" data-close>Seguir jugando</button><button class="navi-button navi-button--primary" data-close>Salir del cuento</button></div></section></div>';
+        root.querySelectorAll("[data-close]").forEach((button) => button.addEventListener("click", closeModal));
+        root.querySelector(".navi-modal-backdrop").addEventListener("mousedown", (event) => { if (event.target === event.currentTarget) closeModal(); });
+        root.querySelector("[data-close]").focus();
+      });
+      document.addEventListener("keydown", (event) => { if (event.key === "Escape" && root.firstElementChild) closeModal(); });
+    </script>
+  </body>
+</html>
