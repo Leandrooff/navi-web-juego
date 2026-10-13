@@ -1,0 +1,16 @@
+
+> navi-web-juego-frontend@0.1.0 test
+> node --test tests/*.test.mjs
+
+✔ La historia preserva seis escenas, once elecciones y todos sus destinos (0.8674ms)
+✔ Cada recorrido termina, muestra cada consecuencia y reconoce participación sin puntuación (3.9533ms)
+✔ Reanudar una consecuencia no la salta y rechaza historiales alterados (0.4716ms)
+✔ Cada escena usa una ilustración local real; voces opcionales ausentes (2.5158ms)
+ℹ tests 4
+ℹ suites 0
+ℹ pass 4
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 71.3169

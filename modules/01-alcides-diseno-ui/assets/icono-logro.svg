@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" role="img" aria-label="Logro">
+  <circle cx="24" cy="18" r="13" fill="#fff2cf" stroke="#ffc43d" stroke-width="3"/>
+  <path d="M24 11l2.6 5.3 5.8.8-4.2 4.1 1 5.8-5.2-2.7-5.2 2.7 1-5.8-4.2-4.1 5.8-.8z" fill="#ffc43d"/>
+  <path d="M17 29l-3 13 10-5 10 5-3-13" fill="none" stroke="#7a5af8" stroke-width="3" stroke-linejoin="round"/>
+</svg>

@@ -1,0 +1,33 @@
+
+  POST      api/auth/login .................................................................. Api\AuthController@login
+  POST      api/auth/logout ................................................................ Api\AuthController@logout
+  GET|HEAD  api/auth/me ........................................................................ Api\AuthController@me
+  PUT       api/auth/password ............................................................ Api\AuthController@password
+  POST      api/auth/register ............................................................ Api\AuthController@register
+  GET|HEAD  api/child-profiles ...................................................... Api\ChildProfileController@index
+  POST      api/child-profiles ...................................................... Api\ChildProfileController@store
+  PUT       api/child-profiles/{id} ................................................ Api\ChildProfileController@update
+  GET|HEAD  api/child-profiles/{id}/assignments ............................... Api\ChildProfileController@assignments
+  GET|HEAD  api/child-profiles/{id}/enrollments ........................................ Api\ClassroomController@links
+  GET|HEAD  api/child-profiles/{id}/history ........................................... Api\ProgressController@history
+  GET|HEAD  api/child-profiles/{id}/progress ............................................ Api\ProgressController@index
+  GET|HEAD  api/classrooms ............................................................. Api\ClassroomController@index
+  POST      api/classrooms ............................................................. Api\ClassroomController@store
+  GET|HEAD  api/classrooms/{id} ......................................................... Api\ClassroomController@show
+  POST      api/classrooms/{id}/assignments ........................................... Api\ClassroomController@assign
+  DELETE    api/classrooms/{id}/assignments/{assignment} ............................ Api\ClassroomController@unassign
+  POST      api/classrooms/{id}/rotate-code ........................................... Api\ClassroomController@rotate
+  GET|HEAD  api/csrf ................................................................................ routes/api.php:6
+  POST      api/enrollments ........................................................... Api\ClassroomController@enroll
+  POST      api/enrollments/lookup .................................................... Api\ClassroomController@lookup
+  DELETE    api/enrollments/{id} ...................................................... Api\ClassroomController@revoke
+  POST      api/game-sessions ........................................................ Api\GameSessionController@store
+  GET|HEAD  api/game-sessions/{id} .................................................... Api\GameSessionController@show
+  POST      api/game-sessions/{id}/continue ........................................ Api\GameSessionController@advance
+  POST      api/game-sessions/{id}/decisions ...................................... Api\GameSessionController@decision
+  POST      api/game-sessions/{id}/finish ........................................... Api\GameSessionController@finish
+  GET|HEAD  api/stories .................................................................... Api\StoryController@index
+  GET|HEAD  api/stories/{id} ................................................................ Api\StoryController@show
+
+                                                                                                   Showing [29] routes
+

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard Administrador - Cuentos</title>
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+    <div class="admin-container">
+        <div class="header">
+            <h1>Panel Mágico de Cuentos</h1>
+            <button class="btn btn-primary" onclick="location.href='cuentos-form.html'">+ Crear Nuevo Cuento</button>
+        </div>
+        <div class="card">
+            <h2>Lista de Cuentos</h2>
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Título</th>
+                        <th>Categoría</th>
+                        <th>Estado</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody id="cuentos-list">
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script src="admin.js"></script>
+</body>
+</html>

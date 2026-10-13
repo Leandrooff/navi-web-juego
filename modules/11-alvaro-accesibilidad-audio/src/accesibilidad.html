@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="Página de accesibilidad digital con herramientas de tamaño de letra, alto contraste y lectura por audio.">
+
+    <title>Accesibilidad Digital</title>
+
+    <!-- CSS principal -->
+    <link
+        rel="stylesheet"
+        href="accesibilidad.css">
+
+</head>
+
+
+<body class="letra-normal">
+
+    <!-- =====================================================
+         PANEL DE ACCESIBILIDAD
+         ===================================================== -->
+
+    <header class="panel-accesibilidad">
+
+        <!-- CONTROLES VISUALES -->
+
+        <div class="grupo-controles">
+
+            <strong>
+                Opciones de accesibilidad:
+            </strong>
+
+
+            <!-- Tamaño normal -->
+
+            <button
+                type="button"
+                id="btnLetraNormal">
+
+                Letra normal
+
+            </button>
+
+
+            <!-- Tamaño grande -->
+
+            <button
+                type="button"
+                id="btnLetraGrande">
+
+                Letra grande
+
+            </button>
+
+
+            <!-- Tamaño extra grande -->
+
+            <button
+                type="button"
+                id="btnLetraExtraGrande">
+
+                Letra extra grande
+
+            </button>
+
+
+            <!-- Alto contraste -->
+
+            <button
+                type="button"
+                id="btnContraste">
+
+                Alto contraste
+
+            </button>
+
+
+            <!-- Ayuda -->
+
+            <button
+                type="button"
+                id="btnAyuda">
+
+                ❓ Ayuda
+
+            </button>
+
+        </div>
+
+
+        <!-- =================================================
+             CONTROLES DE AUDIO
+             ================================================= -->
+
+        <div class="grupo-audio">
+
+
+            <!-- Leer -->
+
+            <button
+                type="button"
+                id="btnLeer">
+
+                🔊 Leer página
+
+            </button>
+
+
+            <!-- Repetir -->
+
+            <button
+                type="button"
+                id="btnRepetir">
+
+                🔁 Repetir
+
+            </button>
+
+
+            <!-- Detener -->
+
+            <button
+                type="button"
+                id="btnDetener">
+
+                ⏹ Detener
+
+            </button>
+
+
+            <!-- Activar / desactivar sonido -->
+
+            <button
+                type="button"
+                id="btn-silenciar">
+
+                🔔 Sonido activo
+
+            </button>
+
+
+            <!-- Volumen -->
+
+            <label
+                for="volumen"
+                class="etiqueta-volumen">
+
+                🔉 Volumen:
+
+            </label>
+
+
+            <input
+                type="range"
+                id="volumen"
+                min="0"
+                max="1"
+                step="0.1"
+                value="1"
+                aria-label="Control de volumen">
+
+
+            <!-- Indicador -->
+
+            <div
+                class="indicador-audio desactivado"
+                id="indicadorAudio"
+                aria-live="polite">
+
+
+                <span class="onda"></span>
+
+
+                <span id="estadoAudio">
+
+                    En reposo
+
+                </span>
+
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- =====================================================
+         CONTENIDO PRINCIPAL
+         ===================================================== -->
+
+    <main class="contenedor-cuento">
+
+
+        <section
+            class="texto-lectura"
+            id="contenidoLectura"
+            aria-label="Contenido sobre accesibilidad digital">
+
+
+            <h1>
+                Accesibilidad Digital
+            </h1>
+
+
+            <p>
+                La accesibilidad digital consiste en crear sitios web,
+                aplicaciones y contenidos que puedan ser utilizados por
+                todas las personas, incluyendo aquellas que presentan
+                alguna discapacidad.
+            </p>
+
+
+            <h2>
+                ¿Por qué es importante?
+            </h2>
+
+
+            <p>
+                La accesibilidad permite reducir las barreras que pueden
+                impedir que una persona utilice correctamente una página
+                web o una aplicación.
+            </p>
+
+
+            <p>
+                Una página accesible debe facilitar la lectura,
+                la navegación y la comprensión de la información.
+            </p>
+
+
+            <h2>
+                Herramientas de accesibilidad
+            </h2>
+
+
+            <p>
+                Existen diferentes herramientas que pueden ayudar a
+                mejorar la experiencia de los usuarios.
+            </p>
+
+
+            <p>
+                Entre ellas se encuentran el aumento del tamaño de la
+                letra, el alto contraste y la lectura del contenido
+                mediante audio.
+            </p>
+
+
+            <h2>
+                Tamaño de letra
+            </h2>
+
+
+            <p>
+                Las opciones de tamaño de letra permiten adaptar el texto
+                a las necesidades visuales de cada usuario.
+            </p>
+
+
+            <h2>
+                Alto contraste
+            </h2>
+
+
+            <p>
+                El modo de alto contraste utiliza colores con una
+                diferencia elevada entre el fondo y el texto para
+                facilitar la lectura.
+            </p>
+
+
+            <h2>
+                Lectura por audio
+            </h2>
+
+
+            <p>
+                La función de lectura por audio permite escuchar el
+                contenido de la página mediante la función de síntesis
+                de voz disponible en el navegador.
+            </p>
+
+
+            <h2>
+                Conclusión
+            </h2>
+
+
+            <p>
+                La accesibilidad digital es importante para crear
+                tecnologías más inclusivas y permitir que todas las
+                personas puedan acceder a la información.
+            </p>
+
+
+        </section>
+
+    </main>
+
+
+    <!-- =====================================================
+         VENTANA DE AYUDA
+         ===================================================== -->
+
+    <dialog
+        id="modalAyuda"
+        class="modal-ayuda"
+        aria-labelledby="tituloAyuda">
+
+
+        <h2 id="tituloAyuda">
+
+            Ayuda de accesibilidad
+
+        </h2>
+
+
+        <p>
+
+            Puedes utilizar las siguientes opciones:
+
+        </p>
+
+
+        <ul>
+
+
+            <li>
+
+                <strong>
+                    Letra normal:
+                </strong>
+
+                establece el tamaño normal del texto.
+
+            </li>
+
+
+            <li>
+
+                <strong>
+                    Letra grande:
+                </strong>
+
+                aumenta el tamaño del texto.
+
+            </li>
+
+
+            <li>
+
+                <strong>
+                    Letra extra grande:
+                </strong>
+
+                aumenta aún más el tamaño del texto.
+
+            </li>
+
+
+            <li>
+
+                <strong>
+                    Alto contraste:
+                </strong>
+
+                cambia los colores de la página para facilitar la lectura.
+
+            </li>
+
+
+            <li>
+
+                <strong>
+                    Leer página:
+                </strong>
+
+                reproduce el contenido mediante voz.
+
+            </li>
+
+
+            <li>
+
+                <strong>
+                    Repetir:
+                </strong>
+
+                vuelve a reproducir el último texto leído.
+
+            </li>
+
+
+            <li>
+
+                <strong>
+                    Detener:
+                </strong>
+
+                detiene la lectura por audio.
+
+            </li>
+
+
+            <li>
+
+                <strong>
+                    Sonido:
+                </strong>
+
+                permite activar o desactivar el audio.
+
+            </li>
+
+
+            <li>
+
+                <strong>
+                    Volumen:
+                </strong>
+
+                permite controlar el nivel del audio.
+
+            </li>
+
+
+        </ul>
+
+
+        <button
+            type="button"
+            id="btnCerrarAyuda">
+
+            Cerrar
+
+        </button>
+
+
+    </dialog>
+
+    <script src="audio_control.js"></script>
+
+
+</body>
+
+</html>
