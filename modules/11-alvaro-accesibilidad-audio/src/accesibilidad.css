@@ -1,0 +1,423 @@
+/* 
+   CONFIGURACIÓN GENERAL
+*/
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+
+  background-color: #f4f7f6;
+  color: #2c3e50;
+
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease,
+    font-size 0.2s ease;
+}
+
+
+/* =========================================================
+   TAMAÑOS DE LETRA
+   ========================================================= */
+
+body.letra-normal {
+  font-size: 18px;
+}
+
+body.letra-grande {
+  font-size: 24px;
+}
+
+body.letra-extragrande {
+  font-size: 30px;
+}
+
+
+/* =========================================================
+   PANEL DE ACCESIBILIDAD
+   ========================================================= */
+
+.panel-accesibilidad {
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 15px;
+
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 15px 20px;
+
+  background-color: #ffffff;
+
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+  border-bottom: 3px solid #3498db;
+}
+
+
+/* =========================================================
+   GRUPOS DE CONTROLES
+   ========================================================= */
+
+.grupo-controles,
+.grupo-audio {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  flex-wrap: wrap;
+}
+
+
+/* =========================================================
+   BOTONES
+   ========================================================= */
+
+button {
+  padding: 10px 14px;
+
+  border: none;
+  border-radius: 8px;
+
+  background-color: #3498db;
+
+  color: white;
+
+  font-size: 0.85em;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.2s ease,
+    transform 0.1s ease;
+}
+
+button:hover {
+  background-color: #2980b9;
+
+  transform: scale(1.02);
+}
+
+button:focus {
+  outline: 3px solid #f1c40f;
+  outline-offset: 2px;
+}
+
+
+/* =========================================================
+   CONTENIDO PRINCIPAL
+   ========================================================= */
+
+.contenedor-cuento {
+  max-width: 800px;
+
+  margin: 40px auto;
+
+  padding: 30px;
+
+  background-color: #ffffff;
+
+  border-radius: 12px;
+
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.texto-lectura {
+  line-height: 1.6;
+}
+
+
+/* =========================================================
+   INDICADOR VISUAL DE AUDIO
+   ========================================================= */
+
+.indicador-audio {
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  padding: 7px 12px;
+
+  min-width: 145px;
+
+  border-radius: 20px;
+
+  font-size: 0.8em;
+
+  background-color: #e0e0e0;
+
+  color: #333333;
+
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+
+
+/* Texto del indicador */
+
+.indicador-audio .texto-estado {
+  font-weight: 600;
+}
+
+
+/*
+   Compatibilidad con el HTML actual,
+   que utiliza #estadoAudio.
+*/
+
+#estadoAudio {
+  font-weight: 600;
+}
+
+
+/* =========================================================
+   INDICADOR DE AUDIO ACTIVO
+   ========================================================= */
+
+.indicador-audio.activo {
+  background-color: #d4edda;
+
+  color: #155724;
+}
+
+.indicador-audio.activo .onda {
+  width: 4px;
+
+  height: 12px;
+
+  border-radius: 3px;
+
+  background-color: #28a745;
+
+  animation: pulso 0.6s infinite alternate;
+}
+
+
+/* =========================================================
+   INDICADOR DE AUDIO DESACTIVADO
+   ========================================================= */
+
+.indicador-audio.desactivado {
+  background-color: #e0e0e0;
+
+  color: #555555;
+}
+
+
+/* =========================================================
+   ONDA DE AUDIO
+   ========================================================= */
+
+.indicador-audio .onda {
+  display: inline-block;
+
+  width: 4px;
+
+  height: 6px;
+
+  border-radius: 3px;
+
+  background-color: #777777;
+}
+
+
+/* =========================================================
+   ANIMACIÓN DEL AUDIO
+   ========================================================= */
+
+@keyframes pulso {
+  0% {
+    height: 4px;
+  }
+
+  100% {
+    height: 16px;
+  }
+}
+
+
+/* =========================================================
+   BOTÓN REPETIR
+   ========================================================= */
+
+#btnRepetir {
+  background-color: #27ae60;
+}
+
+#btnRepetir:hover {
+  background-color: #219150;
+}
+
+
+/* =========================================================
+   BOTÓN SILENCIAR
+   ========================================================= */
+
+#btn-silenciar {
+  background-color: #8e44ad;
+}
+
+#btn-silenciar:hover {
+  background-color: #71368a;
+}
+
+
+/* =========================================================
+   CONTROL DE VOLUMEN
+   ========================================================= */
+
+#volumen {
+  width: 120px;
+
+  cursor: pointer;
+}
+
+
+/* =========================================================
+   ETIQUETA DE VOLUMEN
+   ========================================================= */
+
+.etiqueta-volumen {
+  font-weight: 600;
+}
+
+
+/* =========================================================
+   MODAL DE AYUDA
+   ========================================================= */
+
+.modal-ayuda {
+  width: min(450px, 90%);
+
+  border: 2px solid #3498db;
+
+  border-radius: 10px;
+
+  padding: 20px;
+
+  background-color: #ffffff;
+
+  color: #2c3e50;
+
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.modal-ayuda::backdrop {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+
+/* =========================================================
+   ALTO CONTRASTE
+   ========================================================= */
+
+body.alto-contraste {
+  background-color: #000000 !important;
+
+  color: #ffff00 !important;
+}
+
+
+/* Panel, contenido y modal */
+
+body.alto-contraste .panel-accesibilidad,
+body.alto-contraste .contenedor-cuento,
+body.alto-contraste .modal-ayuda {
+  background-color: #121212 !important;
+
+  border: 2px solid #ffff00 !important;
+
+  color: #ffff00 !important;
+}
+
+
+/* Títulos y textos */
+
+body.alto-contraste h1,
+body.alto-contraste h2,
+body.alto-contraste h3,
+body.alto-contraste p,
+body.alto-contraste li,
+body.alto-contraste strong {
+  color: #ffff00 !important;
+}
+
+
+/* Botones */
+
+body.alto-contraste button {
+  background-color: #ffff00 !important;
+
+  color: #000000 !important;
+
+  font-weight: bold;
+}
+
+
+/* Indicador */
+
+body.alto-contraste .indicador-audio {
+  background-color: #121212 !important;
+
+  color: #ffff00 !important;
+
+  border: 1px solid #ffff00;
+}
+
+body.alto-contraste .indicador-audio.activo {
+  background-color: #ffff00 !important;
+
+  color: #000000 !important;
+}
+
+body.alto-contraste .indicador-audio.activo .onda {
+  background-color: #000000 !important;
+}
+
+
+/* =========================================================
+   DISEÑO RESPONSIVO
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+  .panel-accesibilidad {
+    flex-direction: column;
+
+    align-items: stretch;
+  }
+
+  .grupo-controles,
+  .grupo-audio {
+    justify-content: center;
+  }
+
+  button {
+    width: 100%;
+  }
+
+  .indicador-audio {
+    justify-content: center;
+
+    width: 100%;
+  }
+
+  .contenedor-cuento {
+    margin: 20px 10px;
+
+    padding: 20px;
+  }
+
+}

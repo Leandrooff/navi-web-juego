@@ -1,25 +1,36 @@
-# Node
-node_modules/
-dist/
-.vite/
+﻿# Configuraciones privadas
+**/.env
+**/.env.*
+!**/.env.example
+!**/.env.testing.example
+
+# Dependencias
+**/node_modules/
+**/vendor/
+
+# Archivos generados
+**/dist/
+**/.vite/
+**/coverage/
+**/test-results/
+**/playwright-report/
 
 # Laravel
-vendor/
-.env
-.env.*
-storage/*.key
+**/storage/logs/*.log
+**/bootstrap/cache/*.php
 
-# IDE
+# Archivos temporales
+*.log
+*.sqlite
+*.sqlite3
+*.bak
+.DS_Store
+Thumbs.db
+
+# Copias de seguridad
+**/*backup*.sql
+**/*respaldo*.sql
+
+# Archivos del editor
 .vscode/
 .idea/
-
-# OS
-Thumbs.db
-Desktop.ini
-
-# Logs
-*.log
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-

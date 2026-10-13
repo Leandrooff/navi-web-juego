@@ -1,120 +1,42 @@
-# NAVI Web Juego
+# NAVI · El Parque de los Faroles
 
-NAVI Web Juego es una plataforma web educativa tipo aventura interactiva. El objetivo es que los ninos aprendan a reconocer situaciones cotidianas de riesgo mediante cuentos jugables, decisiones, consecuencias, puntajes, logros y seguimiento para tutores o educadores.
+Proyecto implementado directamente sobre **NAVI_AVENTURA.zip**. React 19 + Vite, Laravel 12 y MariaDB/MySQL. Interfaz en español.
 
-## Objetivo del proyecto
+## La misión completa
 
-Construir una pagina web tipo juego donde el nino pueda:
+- Apertura con viaje de NAVI, encuentro personalizado y conexión directa con el parque.
+- **34 escenas, 53 elecciones y 26 ilustraciones nuevas**, además del mundo y el personaje NAVI existentes.
+- Tres finales distintos: **La luz que nos reunió**, **Mi voz encontró un camino** y **Siempre puedo cambiar de rumbo**.
+- Cada recorrido contiene de 12 a 21 elecciones; el grafo admite 2.784 combinaciones completas.
+- El niño decide. NAVI presenta el mundo y después ofrece pistas opcionales.
+- Cada elección genera una huella con texto propio y fecha/hora, incluso cuando enseña a rectificar. Inicio, pistas y cierre también se registran.
+- Primer encuentro, insignias y finales en el cuaderno del perfil; historial paginado con fechas.
+- Guardado real, reanudación de consecuencias pendientes y protección frente a peticiones duplicadas.
+- Familia y aula conservadas: autenticación, perfiles, informes, consentimiento, grupos y asignaciones.
+- Voces preparadas por identificador de diálogo y ruta opcional. **No se generaron voces, archivos de sonido ni síntesis.**
 
-- Elegir una aventura o cuento interactivo.
-- Leer y escuchar escenas con imagenes.
-- Tomar decisiones dentro de la historia.
-- Ver consecuencias seguras y apropiadas para su edad.
-- Obtener estrellas, logros y recomendaciones.
-- Permitir que tutores y educadores revisen su progreso.
+## Ejecutar
 
-## Tecnologia recomendada
+Sigue [INSTALACION.md](docs/INSTALACION.md). Requiere PHP 8.2+, Composer, Node 22.12+ y MariaDB/MySQL.
 
-- Frontend: React + Vite + Tailwind CSS.
-- Backend: Laravel API.
-- Panel administrador: Filament para Laravel.
-- Base de datos: MySQL o PostgreSQL.
-- Control de versiones: Git + GitHub.
-- Diseno: Figma.
-- Pruebas API: Postman o Insomnia.
+Después de instalar dependencias, configurar la base y ejecutar las migraciones:
+1. En backend: `php artisan serve --host=127.0.0.1 --port=8000`.
+2. En frontend: `npm run dev`.
+3. Abre http://127.0.0.1:5173.
+4. Crea una cuenta de familia, crea el perfil infantil y pulsa **Abrir su mundo**. La primera entrada lleva directamente al prólogo y a la misión.
+5. En entradas posteriores puedes continuar la partida desde el mapa. Al terminar, pulsa **Guardar mi final**.
 
-## Vista previa ejecutable
+No se incluyen cuentas compartidas ni datos infantiles de ejemplo. Las dependencias se restauran con Composer y npm; el código, las migraciones, el contenido y las ilustraciones están completos.
 
-La carpeta `preview/` tiene una demo que ya se puede abrir y probar. Muestra pantallas separadas para cada persona/modulo.
+## Documentación
 
-Para correrla rapido:
+- [Instalación y actualización sin perder datos](docs/INSTALACION.md)
+- [Guion completo: todas las escenas, decisiones y aprendizajes](docs/GUION_MISION.md)
+- [Arquitectura y persistencia](docs/ARQUITECTURA.md)
+- [Arte y futura integración de voces](docs/ARTE_Y_VOCES.md)
+- [Pruebas y capturas actuales](docs/PRUEBAS.md)
+- [Auditoría de la entrega](docs/AUDITORIA.md)
 
-```bash
-cd preview
-python -m http.server 5173
-```
+La aplicación actual está en frontend/ y backend/. modules/ y docs/legacy/ conservan material anterior; no sustituyen la aplicación ni su guardado.
 
-Abrir:
-
-```text
-http://127.0.0.1:5173
-```
-
-Tambien se puede abrir directo `preview/index.html` en el navegador.
-
-## Estructura del repositorio
-
-```text
-navi-web-juego/
-  preview/
-    index.html
-    styles.css
-    app.js
-  frontend/
-    package.json
-    src/
-  backend/
-    api-contrato.md
-  database/
-    schema.sql
-  docs/
-    herramientas-instalacion.md
-    flujo-logico.md
-    reparto-13-personas.md
-    instrucciones-detalladas-entrega.md
-    git-trabajo-equipo.md
-    avance-base-modulos.md
-  modules/
-    01-alcides-diseno-ui/
-    02-benjamin-biblioteca-navegacion/
-    03-brayan-motor-cuentos/
-    04-fabian-componentes-frontend/
-    05-josue-backend-auth-roles/
-    06-luis-api-cuentos/
-    07-oscar-panel-admin/
-    08-ruth-mariela-base-datos/
-    09-ruth-serrano-reportes/
-    10-alejandra-logros-recomendaciones/
-    11-alvaro-accesibilidad-audio/
-    12-gabriela-perfil-progreso/
-    13-alejandro-integracion/
-```
-
-Cada carpeta dentro de `modules/` corresponde a una persona y a una responsabilidad individual.
-
-## Reparto individual
-
-1. Alcides: Diseno UI.
-2. Benjamin: Biblioteca y navegacion.
-3. Brayan: Motor de cuentos.
-4. Fabian: Componentes frontend.
-5. Josué: Backend autenticacion y roles.
-6. Luis: API de cuentos.
-7. Oscar: Panel administrador.
-8. Ruth Mariela: Base de datos.
-9. Ruth Serrano: Reportes.
-10. Alejandra Quiroga: Logros y recomendaciones.
-11. Alvaro Rosas: Accesibilidad y audio.
-12. Gabriela Peñaranda: Perfil y progreso.
-13. Alejandro: Integracion y coordinacion final.
-
-## Reglas de trabajo
-
-- Nadie debe trabajar directamente sobre la rama `main`.
-- Cada persona debe crear su propia rama.
-- Cada persona trabaja solo dentro de su carpeta asignada.
-- Los avances van dentro de `base-avance/`.
-- Los cambios se integran mediante Pull Request.
-- Cada modulo debe traer una pantalla, funcion, componente, endpoint o datos demo que Alejandro pueda integrar.
-
-## Primer paso para el equipo
-
-Leer estos archivos en orden:
-
-1. `docs/herramientas-instalacion.md`
-2. `docs/flujo-logico.md`
-3. `docs/reparto-13-personas.md`
-4. `docs/instrucciones-detalladas-entrega.md`
-5. `docs/git-trabajo-equipo.md`
-6. `docs/avance-base-modulos.md`
-7. El `README.md` de la carpeta personal asignada dentro de `modules/`
+Las escenas e imágenes antiguas se conservan para las partidas previas. La actualización añade una revisión interna del contenido; no borra decisiones ni reinicia perfiles. Las credenciales .env, las bases con registros, las sesiones de prueba, los logs y las dependencias reinstalables no se distribuyen.

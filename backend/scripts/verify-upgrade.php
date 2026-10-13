@@ -1,0 +1,43 @@
+<?php
+// Prueba de actualización: SOLO una base vacía cuyo nombre termine en _upgrade_test.
+require __DIR__.'/../vendor/autoload.php';
+$app=require __DIR__.'/../bootstrap/app.php';
+$app->make(Illuminate\Contracts\Console\Kernel::class)->bootstrap();
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Artisan;
+$target=$argv[1]??'';
+if(!preg_match('/^[a-z0-9_]+_upgrade_test$/',$target))throw new RuntimeException('Indica una base aislada terminada en _upgrade_test.');
+DB::statement("CREATE DATABASE IF NOT EXISTS ".$target." CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci");
+config(['database.connections.mysql.database'=>$target]);DB::purge('mysql');
+if(count(DB::select('SHOW TABLES')))throw new RuntimeException('La base de prueba ya contiene tablas. Usa un nombre nuevo. Nunca se borran tablas.');
+$sql=file_get_contents(__DIR__.'/../../modules/08-ruth-mariela-base-datos/src/schema.sql');
+$sql=preg_replace('/--[^\n]*/','',$sql);
+$sql=substr($sql,strpos($sql,'CREATE TABLE roles'));
+foreach(explode(';',$sql) as $stmt)if(trim($stmt))DB::unprepared($stmt);
+// Reproducir exactamente la historia incluida en el ZIP original, en esta base desechable.
+$legacy=file_get_contents(__DIR__.'/../../docs/legacy/NaviStorySeeder.php');
+$legacy=str_replace('class NaviStorySeeder','class OriginalParkSeederForUpgradeTest',$legacy);
+eval(substr($legacy,strpos($legacy,'<?php')+5));
+DB::statement('ALTER TABLE choices ADD consequence TEXT NULL');
+(new Database\Seeders\OriginalParkSeederForUpgradeTest())->run();
+$role=DB::table('roles')->insertGetId(['name'=>'tutor','description'=>'Prueba']);
+$u=DB::table('users')->insertGetId(['role_id'=>$role,'name'=>'Tutor de prueba de actualización','email'=>'upgrade@example.test','password'=>password_hash(bin2hex(random_bytes(24)),PASSWORD_BCRYPT)]);
+$c=DB::table('child_profiles')->insertGetId(['tutor_id'=>$u,'nickname'=>'Perfil de prueba','age'=>8,'support_level'=>'high']);
+$story=DB::table('stories')->where('title','Me perdí en el parque')->first();
+$choice=DB::table('choices')->where('scene_id',$story->initial_scene_id)->orderBy('choice_order')->first();
+$session=DB::table('game_sessions')->insertGetId(['child_profile_id'=>$c,'story_id'=>$story->id,'status'=>'in_progress']);
+$decision=DB::table('decision_records')->insertGetId(['game_session_id'=>$session,'scene_id'=>$choice->scene_id,'choice_id'=>$choice->id]);
+$ids=DB::table('scenes')->orderBy('id')->pluck('id')->all();
+$originalText=$choice->consequence;
+if(Artisan::call('migrate',['--force'=>true])!==0)throw new RuntimeException(Artisan::output());
+echo Artisan::output();
+if(Artisan::call('db:seed',['--class'=>'Database\\Seeders\\NaviStorySeeder','--force'=>true])!==0)throw new RuntimeException(Artisan::output());
+if(Artisan::call('db:seed',['--class'=>'Database\\Seeders\\NaviStorySeeder','--force'=>true])!==0)throw new RuntimeException(Artisan::output());
+if($ids!==DB::table('scenes')->where('content_version',1)->orderBy('id')->pluck('id')->all())throw new RuntimeException('Cambió un identificador.');
+$record=DB::table('decision_records')->find($decision);
+if(!$record || $record->consequence_text!==$originalText)throw new RuntimeException('No se conservó la consecuencia histórica.');
+if(DB::table('game_sessions')->find($session)->current_scene_id!==$choice->target_scene_id)throw new RuntimeException('No se recuperó la escena de la sesión antigua.');
+if(DB::table('child_profiles')->count()!==1 || DB::table('users')->count()!==1)throw new RuntimeException('Se alteraron perfiles o cuentas.');
+if(DB::table('stories')->count()!==1 || DB::table('scenes')->count()!==40 || DB::table('choices')->count()!==64)throw new RuntimeException('Duplicación de contenido.');
+if(DB::table('learning_records')->where('decision_record_id',$decision)->count()!==1)throw new RuntimeException('Falta el recuerdo de la decisión histórica.');
+echo "PASS: esquema del módulo 08 adoptado; cuentas, perfiles, IDs, decisiones, consecuencias y sesión conservados; seeder repetido sin duplicación.\n";

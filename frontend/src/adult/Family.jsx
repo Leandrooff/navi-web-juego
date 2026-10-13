@@ -1,0 +1,32 @@
+import React,{useState,useEffect} from 'react';
+import {api,request} from '../services/api.js';
+import Button from '../components/Button.jsx';
+import {Avatar,Icon,Modal,ErrorNotice,Loading} from '../components/GameUI.jsx';
+import Report from './Report.jsx';
+export function ProfileForm({profile,onClose,onSaved}){
+ const [avatar,setAvatar]=useState(profile?.avatar||'leaf'),[color,setColor]=useState(profile?.navi_color||'green'),[busy,setBusy]=useState(false),[error,setError]=useState('');
+ async function submit(e){e.preventDefault();setBusy(true);setError('');try{const body=Object.fromEntries(new FormData(e.currentTarget));body.avatar=avatar;body.navi_color=color;body.age=Number(body.age);await api.saveProfile(body,profile?.id);await onSaved();onClose();}catch(e){setError(e.message);}finally{setBusy(false);}}
+ return <Modal title={profile?'Su identidad de explorador':'Un nuevo explorador'} onClose={onClose}><form onSubmit={submit}><label>Alias del niño o niña<input name="nickname" defaultValue={profile?.nickname} required maxLength={40} placeholder="Un nombre para la aventura" autoComplete="off"/></label><div className="form-row"><label>Edad<select name="age" defaultValue={profile?.age||8}>{[6,7,8,9,10].map(n=><option key={n} value={n}>{n} años</option>)}</select></label><label>Acompañamiento<select name="support_level" defaultValue={profile?.support_level||'high'}><option value="high">Leer juntos</option><option value="medium">Ayuda cuando la pida</option><option value="low">Exploración autónoma</option></select></label></div>
+ <fieldset><legend>Su emblema</legend><div className="avatar-options">{['leaf','moon','sun','river'].map((a,i)=><button type="button" key={a} aria-label={['Hoja','Luna','Sol','Río'][i]} aria-pressed={avatar===a} onClick={()=>setAvatar(a)}><Avatar name={a} color={color}/></button>)}</div></fieldset>
+ <fieldset><legend>El color de su NAVI</legend><div className="color-options">{['green','orange','blue','purple'].map((c,i)=><button type="button" key={c} aria-pressed={color===c} onClick={()=>setColor(c)}><i className={'color-'+c}/>{['Primavera','Amanecer','Océano','Estelar'][i]}</button>)}</div></fieldset><ErrorNotice error={error}/><Button disabled={busy}>{busy?'Guardando…':'Guardar perfil'}<Icon name="check"/></Button></form></Modal>;
+}
+function Enrollment({child}){
+ const [code,setCode]=useState(''),[preview,setPreview]=useState(null),[links,setLinks]=useState([]),[error,setError]=useState(''),[busy,setBusy]=useState(false);
+ async function reload(){try{setLinks(await request('/child-profiles/'+child.id+'/enrollments'));}catch(e){setError(e.message);}}
+ useEffect(()=>{setPreview(null);setCode('');reload();},[child.id]);
+ async function lookup(e){e.preventDefault();setBusy(true);setError('');try{setPreview(await request('/enrollments/lookup',{method:'POST',body:{code:code.trim().toUpperCase()}}));}catch(e){setError(e.status===404?'No encontramos ese código. Compruébalo con el docente.':e.message);}finally{setBusy(false);}}
+ async function enroll(e){e.preventDefault();setBusy(true);setError('');try{await request('/enrollments',{method:'POST',body:{code,child_profile_id:child.id,consent:true}});setPreview(null);setCode('');await reload();}catch(e){setError(e.message);}finally{setBusy(false);}}
+ async function revoke(id){setBusy(true);setError('');try{await request('/enrollments/'+id,{method:'DELETE'});await reload();}catch(e){setError(e.message);}finally{setBusy(false);}}
+ return <section className="enrollment"><h3><Icon name="book"/> Familia y aula, en compañía</h3><p>Introduce el código que te entregue el docente. Podrás revisar el grupo antes de autorizar el acceso al recorrido de {child.nickname}.</p>
+ {links.map(l=><div className="linked-class" key={l.id}><span><strong>{l.name}</strong><small>Docente: {l.teacher_name}</small></span><button disabled={busy} onClick={()=>revoke(l.id)}>Retirar autorización</button></div>)}
+ <form className="inline-form" onSubmit={lookup}><label>Código del aula<input required minLength={12} maxLength={12} value={code} onChange={e=>{setCode(e.target.value.toUpperCase());setPreview(null);}} placeholder="12 caracteres" autoComplete="off"/></label><Button disabled={busy} variant="secondary">Revisar grupo</Button></form>
+ {preview&&<form onSubmit={enroll} className="consent-box"><h4>{preview.name}</h4><p>Docente: <strong>{preview.teacher_name}</strong></p><label className="toggle"><input type="checkbox" required/>Autorizo que este docente consulte el alias, edad, progreso, sesiones y decisiones de {child.nickname}. Puedo retirar el acceso aquí.</label><Button disabled={busy}>Autorizar vinculación</Button></form>}<ErrorNotice error={error}/></section>;
+}
+export default function Family({profiles,reloadProfiles,onPlay}){
+ const [editing,setEditing]=useState(null),[selected,setSelected]=useState(profiles[0]?.id||null);
+ const child=profiles.find(p=>p.id===selected)||profiles[0];
+ return <><section className="adult-welcome"><span className="eyebrow">NAVI FAMILIAS · OBSERVATORIO DE AVENTURAS</span><h1>Creciendo, paso a paso.</h1><p>Cada aventura abre una conversación. Acompaña sus descubrimientos.</p></section>
+ <div className="family-layout"><aside className="parchment explorer-list"><h2>Mis exploradores</h2>{profiles.map(p=><button className={'explorer-row '+(p.id===child?.id?'selected':'')} key={p.id} onClick={()=>setSelected(p.id)}><Avatar name={p.avatar} color={p.navi_color}/><span><strong>{p.nickname}</strong><small>{p.age} años</small></span><Icon name="arrow"/></button>)}<Button variant="secondary" onClick={()=>setEditing({})}>+ Crear perfil</Button><div className="family-tip"><Icon name="leaf"/><p>Después de jugar, prueba con: «¿Qué te gustaría contarme de tu aventura?»</p></div></aside>
+ <section className="parchment family-content">{child?<><div className="profile-actions"><button className="outline-button" onClick={()=>setEditing(child)}>Editar perfil</button><Button onClick={()=>onPlay(child)}>Abrir su mundo <Icon name="arrow"/></Button></div><Report key={child.id} child={child}/><Enrollment key={'link-'+child.id} child={child}/></>:<div className="empty-state"><Icon name="leaf" size={56}/><h2>Su aventura empieza aquí</h2><p>Crea un perfil con un alias, su edad y su emblema favorito.</p><Button onClick={()=>setEditing({})}>Crear primer perfil</Button></div>}</section></div>
+ {editing&&<ProfileForm profile={editing.id?editing:null} onClose={()=>setEditing(null)} onSaved={reloadProfiles}/>}</>;
+}

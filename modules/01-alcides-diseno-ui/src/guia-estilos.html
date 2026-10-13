@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NAVI · Guía de estilos</title>
+<link rel="stylesheet" href="estilos-ui.css">
+<style>
+  .sec { margin-top: 2.5rem; }
+  .sec > h2 { padding-bottom: .4rem; border-bottom: 2px solid var(--line); }
+  .swatches { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px,1fr)); gap: .8rem; }
+  .swatch { border: 1px solid var(--line); border-radius: var(--r-sm); overflow: hidden; box-shadow: var(--shadow); }
+  .swatch__color { height: 68px; }
+  .swatch__info { padding: .5rem .7rem; font-size: .82rem; }
+  .swatch__info b { display:block; font-family: var(--font-display); }
+  .swatch__info code { color: var(--muted); }
+  .iconos { display: flex; gap: 1.5rem; flex-wrap: wrap; align-items: center; }
+  .iconos figure { text-align: center; margin: 0; }
+  .iconos svg { width: 48px; height: 48px; }
+  .iconos figcaption { font-size: .8rem; color: var(--muted); margin-top: .3rem; }
+</style>
+</head>
+<body>
+<main class="navi-wrap">
+
+  <span class="navi-brand">
+    <span class="navi-brand__mark"><svg width="24" height="24" viewBox="0 0 48 48"><path d="M24 4l6 12.3 13.6 2-9.8 9.6 2.3 13.6L24 35.1 11.9 41.5l2.3-13.6L4.4 18.3l13.6-2z" fill="#ffc43d"/></svg></span>
+    <span class="navi-brand__name">NA<b>VI</b></span>
+  </span>
+  <h1 style="margin-top:1rem">Guía de estilos</h1>
+  <p class="muted">Base visual del juego. Usa estos tokens y componentes en todos los módulos.</p>
+
+  <!-- COLORES -->
+  <section class="sec">
+    <h2>Paleta de colores</h2>
+    <div class="swatches mt-2">
+      <div class="swatch"><div class="swatch__color" style="background:#2356d8"></div><div class="swatch__info"><b>Azul NAVI</b><code>#2356d8</code> · principal</div></div>
+      <div class="swatch"><div class="swatch__color" style="background:#16327e"></div><div class="swatch__info"><b>Azul oscuro</b><code>#16327e</code> · títulos</div></div>
+      <div class="swatch"><div class="swatch__color" style="background:#ffc43d"></div><div class="swatch__info"><b>Sol</b><code>#ffc43d</code> · estrellas/recompensa</div></div>
+      <div class="swatch"><div class="swatch__color" style="background:#1fa971"></div><div class="swatch__info"><b>Menta</b><code>#1fa971</code> · positivo</div></div>
+      <div class="swatch"><div class="swatch__color" style="background:#e09112"></div><div class="swatch__info"><b>Ámbar</b><code>#e09112</code> · advertencia</div></div>
+      <div class="swatch"><div class="swatch__color" style="background:#e5484d"></div><div class="swatch__info"><b>Coral</b><code>#e5484d</code> · error/peligro</div></div>
+      <div class="swatch"><div class="swatch__color" style="background:#7a5af8"></div><div class="swatch__info"><b>Violeta</b><code>#7a5af8</code> · logros</div></div>
+      <div class="swatch"><div class="swatch__color" style="background:#14293d"></div><div class="swatch__info"><b>Tinta</b><code>#14293d</code> · texto</div></div>
+      <div class="swatch"><div class="swatch__color" style="background:#f3f8fc;border-bottom:1px solid var(--line)"></div><div class="swatch__info"><b>Fondo</b><code>#f3f8fc</code></div></div>
+    </div>
+  </section>
+
+  <!-- BOTONES -->
+  <section class="sec">
+    <h2>Botones</h2>
+    <div class="fila mt-2">
+      <button class="btn">Principal</button>
+      <button class="btn btn--secondary">Secundario</button>
+      <button class="btn btn--reward">Recompensa</button>
+      <button class="btn btn--ghost">Fantasma</button>
+      <button class="btn" disabled>Deshabilitado</button>
+    </div>
+  </section>
+
+  <!-- TARJETAS DE CUENTO -->
+  <section class="sec">
+    <h2>Tarjetas de cuento · estados</h2>
+    <div class="cuentos-grid mt-2">
+      <article class="card-cuento is-nuevo"><span class="estado estado--nuevo">✨ Nuevo</span><div class="card-cuento__cover">🌳</div><div class="card-cuento__body"><div class="card-cuento__title">Me perdí en el parque</div><div class="card-cuento__meta">5 escenas</div><button class="btn btn--block">Jugar</button></div></article>
+      <article class="card-cuento is-progreso"><span class="estado estado--progreso">⏳ En progreso</span><div class="card-cuento__cover">🚦</div><div class="card-cuento__body"><div class="card-cuento__title">Cruzar la calle</div><div class="card-cuento__meta">2 de 4</div><div class="barra mt-1"><span style="width:50%"></span></div><button class="btn btn--block mt-2">Continuar</button></div></article>
+      <article class="card-cuento is-completado"><span class="estado estado--completado">✓ Completado</span><div class="card-cuento__cover">🤝</div><div class="card-cuento__body"><div class="card-cuento__title">Adulto seguro</div><div class="card-cuento__meta">Confianza</div><div class="estrellas"><b>★★★</b></div></div></article>
+      <article class="card-cuento is-bloqueado"><span class="estado estado--bloqueado">🔒 Bloqueado</span><div class="card-cuento__cover">💬</div><div class="card-cuento__body"><div class="card-cuento__title">Desconocido en línea</div><div class="card-cuento__meta">Se desbloquea pronto</div><button class="btn btn--block" disabled>Bloqueado</button></div></article>
+    </div>
+  </section>
+
+  <!-- MENSAJES -->
+  <section class="sec">
+    <h2>Mensajes</h2>
+    <div class="mt-2" style="display:grid;gap:.8rem;max-width:620px">
+      <div class="mensaje mensaje--positivo"><span class="mensaje__icono">✅</span><span>¡Muy bien! Esa fue una decisión segura.</span></div>
+      <div class="mensaje mensaje--advertencia"><span class="mensaje__icono">⚠️</span><span>Ten cuidado: piénsalo otra vez antes de continuar.</span></div>
+      <div class="mensaje mensaje--error"><span class="mensaje__icono">⛔</span><span>Esa opción no es segura. Inténtalo de nuevo.</span></div>
+    </div>
+  </section>
+
+  <!-- ICONOS -->
+  <section class="sec">
+    <h2>Íconos</h2>
+    <div class="iconos mt-2">
+      <figure><img src="../assets/icono-cuento.svg" alt="Cuento"><figcaption>Cuento</figcaption></figure>
+      <figure><img src="../assets/icono-estrella.svg" alt="Estrella"><figcaption>Estrella</figcaption></figure>
+      <figure><img src="../assets/icono-logro.svg" alt="Logro"><figcaption>Logro</figcaption></figure>
+      <figure><img src="../assets/icono-usuario.svg" alt="Usuario"><figcaption>Usuario</figcaption></figure>
+    </div>
+  </section>
+
+  <!-- ESTADO VACÍO -->
+  <section class="sec">
+    <h2>Estado vacío</h2>
+    <div class="vacio mt-2">
+      <div class="vacio__icono">📭</div>
+      <h3>Todavía no hay cuentos</h3>
+      <p>Cuando el educador publique aventuras, aparecerán aquí.</p>
+    </div>
+  </section>
+
+</main>
+</body>
+</html>

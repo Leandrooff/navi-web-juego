@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NAVI | Reportes de progreso</title>
+  <link rel="stylesheet" href="reportes.css">
+  <script src="reportes.js" defer></script>
+</head>
+
+<body>
+  <header class="encabezado">
+    <div class="contenedor">
+      <p class="marca">NAVI</p>
+      <h1>Reportes de progreso</h1>
+      <p>Seguimiento de cuentos y decisiones para tutores y educadores.</p>
+    </div>
+  </header>
+
+  <main class="contenedor">
+    <p class="aviso-demo">
+      Demostración con datos ficticios de niños.
+    </p>
+
+    <p id="mensaje-estado" role="status" aria-live="polite">
+      Cargando reportes…
+    </p>
+
+    <section class="panel filtros" aria-labelledby="titulo-filtros">
+      <h2 id="titulo-filtros">Consultar progreso</h2>
+
+      <div class="grupo-filtros">
+        <div>
+          <label for="selector-nino">Niño</label>
+          <select id="selector-nino" disabled>
+            <option value="">Seleccionar niño</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="filtro-cuento">Cuento</label>
+          <select id="filtro-cuento" disabled>
+            <option value="todos">Todos los cuentos</option>
+          </select>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel" aria-labelledby="nombre-nino">
+      <h2 id="nombre-nino">Resumen del niño</h2>
+      <p>Avance según los cuentos completados respecto a los asignados.</p>
+
+      <label for="barra-progreso">
+        Avance general: <strong id="porcentaje-avance">—</strong>
+      </label>
+
+      <progress id="barra-progreso" max="100" value="0">0 %</progress>
+      <p id="detalle-avance"></p>
+
+      <div class="tarjetas-resumen">
+        <article class="tarjeta">
+          <h3>Cuentos completados</h3>
+          <p id="cuentos-completados">—</p>
+        </article>
+
+        <article class="tarjeta">
+          <h3>Puntaje total</h3>
+          <p id="puntaje-total">—</p>
+        </article>
+
+        <article class="tarjeta">
+          <h3>Estrellas acumuladas</h3>
+          <p id="estrellas-total">—</p>
+        </article>
+
+        <article class="tarjeta">
+          <h3>Decisiones correctas</h3>
+          <p id="decisiones-correctas">—</p>
+        </article>
+
+        <article class="tarjeta">
+          <h3>Decisiones incorrectas</h3>
+          <p id="decisiones-incorrectas">—</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="panel" aria-labelledby="titulo-historial">
+      <h2 id="titulo-historial">Historial de cuentos jugados</h2>
+      <p>El filtro por cuento se aplica al historial y a las recomendaciones.</p>
+
+      <div class="tabla-contenedor">
+        <table>
+          <caption>Cuentos del niño seleccionado</caption>
+          <thead>
+            <tr>
+              <th scope="col">Cuento</th>
+              <th scope="col">Fecha</th>
+              <th scope="col">Estado</th>
+              <th scope="col">Puntaje</th>
+              <th scope="col">Estrellas</th>
+              <th scope="col">Reporte</th>
+            </tr>
+          </thead>
+          <tbody id="historial-cuentos"></tbody>
+        </table>
+      </div>
+
+      <p id="historial-vacio" hidden>No hay cuentos para mostrar.</p>
+    </section>
+
+    <section class="panel" aria-labelledby="titulo-temas">
+      <h2 id="titulo-temas">Temas por reforzar</h2>
+      <ul id="temas-reforzar"></ul>
+    </section>
+
+    <section class="panel" aria-labelledby="titulo-recomendaciones">
+      <h2 id="titulo-recomendaciones">Recomendaciones para el tutor</h2>
+      <ul id="lista-recomendaciones"></ul>
+    </section>
+
+    <section class="panel" aria-labelledby="titulo-logros">
+      <h2 id="titulo-logros">Logros obtenidos</h2>
+      <ul id="lista-logros"></ul>
+    </section>
+  </main>
+
+  <footer class="contenedor">
+    <p>NAVI · Módulo de reportes de progreso</p>
+  </footer>
+</body>
+</html>

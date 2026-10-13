@@ -1,0 +1,21 @@
+{
+  "passed": true,
+  "checks": [
+    "Registro real de tutor con cookie y CSRF",
+    "Fallo de red no avanza la historia; reintento guarda una única decisión",
+    "Recarga conserva cuenta, perfil autorizado y consecuencia pendiente",
+    "Dos recorridos distintos finalizados; una estrella persistente e historial familiar real",
+    "Docente crea grupo, tutor autoriza, asignación llega al niño y revocación retira acceso",
+    "Cierre y nueva entrada recuperan progreso; localStorage contiene solo preferencias"
+  ],
+  "pageErrors": [],
+  "viewportDesktop": [
+    1440,
+    960
+  ],
+  "viewportMobile": [
+    390,
+    844
+  ],
+  "testAccounts": "Solo cuentas sintéticas @example.test; no incluidas en la entrega."
+}

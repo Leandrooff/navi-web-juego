@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "nombre": "Lucas Niño",
+    "email": "nino@navi.com",
+    "password": "123",
+    "rol": "nino"
+  },
+  {
+    "id": 2,
+    "nombre": "Carlos Tutor",
+    "email": "tutor@navi.com",
+    "password": "123",
+    "rol": "tutor"
+  },
+  {
+    "id": 3,
+    "nombre": "Prof. Ana Educadora",
+    "email": "educador@navi.com",
+    "password": "123",
+    "rol": "educador"
+  },
+  {
+    "id": 4,
+    "nombre": "Admin Principal",
+    "email": "admin@navi.com",
+    "password": "123",
+    "rol": "admin"
+  }
+]

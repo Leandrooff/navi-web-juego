@@ -1,0 +1,71 @@
+{
+  "method": "Herramienta integrada image_gen; referencias proporcionadas por la autora.",
+  "assets": [
+    {
+      "name": "world",
+      "path": "frontend/public/art/world.png"
+    },
+    {
+      "name": "inicio",
+      "path": "frontend/public/art/inicio.png"
+    },
+    {
+      "name": "caseta",
+      "path": "frontend/public/art/caseta.png"
+    },
+    {
+      "name": "punto-visible",
+      "path": "frontend/public/art/punto-visible.png"
+    },
+    {
+      "name": "sendero",
+      "path": "frontend/public/art/sendero.png"
+    },
+    {
+      "name": "reencuentro",
+      "path": "frontend/public/art/reencuentro.png"
+    },
+    {
+      "name": "cierre",
+      "path": "frontend/public/art/cierre.png"
+    },
+    {
+      "name": "navi",
+      "path": "frontend/public/art/navi.png"
+    }
+  ],
+  "prompts": [
+    {
+      "key": "world",
+      "prompt": "Use case: illustration-story. Create a finished wide landscape 16:9 background asset for NAVI, a 2D children's narrative videogame. Input references: the two supplied NAVI design images are artistic reference only; do not reproduce their UI or typography. Lush painterly storybook fantasy, detailed hand-painted anime-inspired environmental art, soft sunlight, turquoise rivers and golden sunlit paths. Floating garden island in clouds, a park with big oak tree, blue pond and small timber information cottage in the LEFT MIDDLE, winding stone bridges leading to a cozy village plaza in the RIGHT MIDDLE, distant graceful castle, floating smaller islands and waterfalls, dark leafy foreground framing edges. Composition: wide panoramic immersive world with rich depth; central bottom path leads into park; open blue sky at upper left for game logo, landscape remains uncluttered enough for interactive map markers. Palette teal, spring green, warm cream, muted gold and sky blue. No characters, no lettering, no UI, no logos, no buttons. Polished original game background, not a screenshot mockup."
+    },
+    {
+      "key": "inicio",
+      "prompt": "Use case: illustration-story. Finished original production illustration for NAVI children's 2D narrative game. Reference image is a STYLE AND CHARACTER reference, not an edit target. Keep its lush finely painted storybook anime environmental art, turquoise sky, warm golden light, deep leafy framing and warm gentle emotions. Landscape 16:9. Characters: the same small 8-year-old explorer with short tousled brown hair, cream hooded jacket, teal shorts and small teal backpack in every scene. NAVI is the same floating lime-green leaf spirit from the reference, cream oval face and glowing pale oval eyes, layered green leaf mane and flowing pink petal tail, curved antenna, no legs. Adults warm and recognizable: guardian is a brown-haired woman in a mustard cardigan and cream trousers; park staff wears teal jacket and clearly visible round information badge. Place storytelling characters in central 60%, above bottom 28% reserved as darker ground for dialogue overlay. No text, no UI, no labels, no frame, no watermark. A single complete scene, not a collage. Specific scene: Wide beautiful park playground under a huge oak. Small wooden slide and swing at left, distant timber information cottage right, blue pond middle background. The explorer stands looking around a little uncertain after losing sight of guardian, with NAVI beside them offering reassurance. Guardian is not visible. Safe bright inviting park, daisies, drifting leaves; no danger or scary expressions."
+    },
+    {
+      "key": "caseta",
+      "prompt": "Use case: illustration-story. Finished original production illustration for NAVI children's 2D narrative game. Reference image is a STYLE AND CHARACTER reference, not an edit target. Keep its lush finely painted storybook anime environmental art, turquoise sky, warm golden light, deep leafy framing and warm gentle emotions. Landscape 16:9. Characters: the same small 8-year-old explorer with short tousled brown hair, cream hooded jacket, teal shorts and small teal backpack in every scene. NAVI is the same floating lime-green leaf spirit from the reference, cream oval face and glowing pale oval eyes, layered green leaf mane and flowing pink petal tail, curved antenna, no legs. Adults warm and recognizable: guardian is a brown-haired woman in a mustard cardigan and cream trousers; park staff wears teal jacket and clearly visible round information badge. Place storytelling characters in central 60%, above bottom 28% reserved as darker ground for dialogue overlay. No text, no UI, no labels, no frame, no watermark. A single complete scene, not a collage. Specific scene: At the welcoming timber information cottage under big oak, flower baskets, teal roof and round information symbol without lettering. The explorer talks to the female park attendant wearing teal uniform and round badge, who bends kindly to child's height and holds a radio. NAVI floats near the child's shoulder. Pond and wooden bench visible beyond. Scene about receiving identified help."
+    },
+    {
+      "key": "punto-visible",
+      "prompt": "Use case: illustration-story. Finished original production illustration for NAVI children's 2D narrative game. Reference image is a STYLE AND CHARACTER reference, not an edit target. Keep its lush finely painted storybook anime environmental art, turquoise sky, warm golden light, deep leafy framing and warm gentle emotions. Landscape 16:9. Characters: the same small 8-year-old explorer with short tousled brown hair, cream hooded jacket, teal shorts and small teal backpack in every scene. NAVI is the same floating lime-green leaf spirit from the reference, cream oval face and glowing pale oval eyes, layered green leaf mane and flowing pink petal tail, curved antenna, no legs. Adults warm and recognizable: guardian is a brown-haired woman in a mustard cardigan and cream trousers; park staff wears teal jacket and clearly visible round information badge. Place storytelling characters in central 60%, above bottom 28% reserved as darker ground for dialogue overlay. No text, no UI, no labels, no frame, no watermark. A single complete scene, not a collage. Specific scene: An open clearly visible blue wooden bench beside the park pond, bright flowers, a recognizable large golden oak, distant information cottage plainly visible in the right background. The explorer waits beside the bench and raises a hand to ask for help, NAVI calm and close. Wide spacious sunlit park path; comfortable safe location."
+    },
+    {
+      "key": "sendero",
+      "prompt": "Use case: illustration-story. Finished original production illustration for NAVI children's 2D narrative game. Reference image is a STYLE AND CHARACTER reference, not an edit target. Keep its lush finely painted storybook anime environmental art, turquoise sky, warm golden light, deep leafy framing and warm gentle emotions. Landscape 16:9. Characters: the same small 8-year-old explorer with short tousled brown hair, cream hooded jacket, teal shorts and small teal backpack in every scene. NAVI is the same floating lime-green leaf spirit from the reference, cream oval face and glowing pale oval eyes, layered green leaf mane and flowing pink petal tail, curved antenna, no legs. Adults warm and recognizable: guardian is a brown-haired woman in a mustard cardigan and cream trousers; park staff wears teal jacket and clearly visible round information badge. Place storytelling characters in central 60%, above bottom 28% reserved as darker ground for dialogue overlay. No text, no UI, no labels, no frame, no watermark. A single complete scene, not a collage. Specific scene: A gently winding path leading toward an ornate open park gate in background. Explorer has stopped at the fork, NAVI hovers thoughtfully. On the left stands the recognizable teal-uniform park worker with round badge and radio. Farther right stands a neutral friendly-looking adult in plain plum shirt, gesturing toward exit, neither scary nor villainous. The child remains inside the park and apart from both adults. No menace; moment of deciding whom to ask."
+    },
+    {
+      "key": "reencuentro",
+      "prompt": "Use case: illustration-story. Finished original production illustration for NAVI children's 2D narrative game. Reference image is a STYLE AND CHARACTER reference, not an edit target. Keep its lush finely painted storybook anime environmental art, turquoise sky, warm golden light, deep leafy framing and warm gentle emotions. Landscape 16:9. Characters: the same small 8-year-old explorer with short tousled brown hair, cream hooded jacket, teal shorts and small teal backpack in every scene. NAVI is the same floating lime-green leaf spirit from the reference, cream oval face and glowing pale oval eyes, layered green leaf mane and flowing pink petal tail, curved antenna, no legs. Adults warm and recognizable: guardian is a brown-haired woman in a mustard cardigan and cream trousers; park staff wears teal jacket and clearly visible round information badge. Place storytelling characters in central 60%, above bottom 28% reserved as darker ground for dialogue overlay. No text, no UI, no labels, no frame, no watermark. A single complete scene, not a collage. Specific scene: Warm joyful reunion in front of the same timber park information cottage with teal roof. Explorer hugs their guardian, brown-haired woman with mustard cardigan and cream trousers, who kneels to child's height. Teal-uniform park attendant smiles behind them. NAVI floats joyfully beside the hug, pink petals drifting. Same park pond and giant oak, beautiful warm late-afternoon light. No text."
+    },
+    {
+      "key": "cierre",
+      "prompt": "Use case: illustration-story. Finished original production illustration for NAVI children's 2D narrative game. Reference image is a STYLE AND CHARACTER reference, not an edit target. Keep its lush finely painted storybook anime environmental art, turquoise sky, warm golden light, deep leafy framing and warm gentle emotions. Landscape 16:9. Characters: the same small 8-year-old explorer with short tousled brown hair, cream hooded jacket, teal shorts and small teal backpack in every scene. NAVI is the same floating lime-green leaf spirit from the reference, cream oval face and glowing pale oval eyes, layered green leaf mane and flowing pink petal tail, curved antenna, no legs. Adults warm and recognizable: guardian is a brown-haired woman in a mustard cardigan and cream trousers; park staff wears teal jacket and clearly visible round information badge. Place storytelling characters in central 60%, above bottom 28% reserved as darker ground for dialogue overlay. No text, no UI, no labels, no frame, no watermark. A single complete scene, not a collage. Specific scene: Peaceful storybook epilogue tableau in the same beautiful park at golden hour. Explorer and mustard-cardigan guardian sit together on the blue bench under giant oak, discussing a meeting place. NAVI floats playfully in front holding a small glowing golden star between leaf fins. The information cottage with teal roof visible beyond the pond. Gentle celebratory motes and flowers, heartwarming completion, no lettering."
+    },
+    {
+      "key": "navi",
+      "prompt": "Use case: illustration-story. Production character sprite for NAVI 2D children's game. Reference image is character identity and art style reference only. Create ONE isolated full-body NAVI leaf spirit, facing slightly right, friendly curious smile. Same lime-green layered leafy mane flowing left, pale cream oval face with large glowing white oval eyes, long pink petal tail, little leaf-like fins and curling green antenna; floating, no legs. Preserve highly recognizable silhouette in reference. Refined hand-drawn painted anime storybook rendering, beautifully shaded, crisp clean outline, soft green rim light. Full sprite centered with generous transparent margin, square canvas. No background whatsoever, genuine alpha transparency. No shadow plane, no glow extending to canvas edge, no text, no symbols, no other character, no collage."
+    }
+  ]
+}

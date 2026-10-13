@@ -1,34 +1,40 @@
-# Modulo 02 Benjamin Biblioteca y navegacion
+# Módulo 02 — Benjamin — Biblioteca y Navegación
 
 ## Objetivo
 
-Crear la biblioteca donde el nino elige que cuento jugar y moverse entre las secciones principales.
+Crear la biblioteca donde el niño elige qué cuento jugar y moverse entre las secciones principales.
 
-Leer tambien `INSTRUCCIONES.md` dentro de esta misma carpeta para ver exactamente que debes subir.
+Leer también `INSTRUCCIONES.md` dentro de esta misma carpeta para ver exactamente qué debes subir.
+
+---
 
 ## Pantallas a desarrollar
 
 - Biblioteca de cuentos.
-- Menu principal.
+- Menú principal.
 - Pantalla de detalle corto del cuento.
-- Filtro por categoria.
+- Filtro por categoría.
 - Vista de cuento en progreso.
+
+---
 
 ## Funciones necesarias
 
-- Mostrar una lista de cuentos con imagen, titulo, categoria y estado.
-- Filtrar cuentos por categoria: seguridad, casa, calle, escuela u otra.
+- Mostrar una lista de cuentos con imagen, título, categoría y estado.
+- Filtrar cuentos por categoría: seguridad, casa, calle, escuela u otra.
 - Buscar cuento por nombre.
 - Mostrar estado: nuevo, en progreso o completado.
-- Boton para iniciar aventura.
-- Boton para continuar aventura si ya fue iniciada.
-- Navegar entre inicio, biblioteca, perfil y juego.
+- Botón para iniciar aventura.
+- Botón para continuar aventura si ya fue iniciada.
+- Navegar entre inicio, biblioteca, perfil y progreso.
+
+---
 
 ## Datos demo sugeridos
 
-Crear un archivo `cuentos-demo.json` con minimo 5 cuentos.
+Crear un archivo `demo/cuentos-demo.json` con mínimo 5 cuentos.
 
-Cada cuento deberia tener:
+Cada cuento debe tener:
 
 - `id`
 - `titulo`
@@ -37,6 +43,34 @@ Cada cuento deberia tener:
 - `estado`
 - `imagen`
 
+---
+
+## Estructura del módulo
+
+```
+modules/02-benjamin-biblioteca-navegacion/
+  README.md
+  INSTRUCCIONES.md
+  base-avance/
+    avance.md
+  src/
+    biblioteca.html
+    biblioteca.css
+    biblioteca.js
+  demo/
+    cuentos-demo.json
+```
+
+---
+
+## Cómo probar
+
+1. Abrir el archivo `src/biblioteca.html` directamente en el navegador.
+2. No se necesita servidor. Los datos de cuentos se cargan automáticamente.
+3. Si `fetch()` falla al abrir desde el sistema de archivos local, la aplicación usa datos de respaldo integrados.
+
+---
+
 ## Entrega esperada
 
-Subir la pantalla de biblioteca y datos demo. Puede ser HTML, React o una maqueta navegable.
+La pantalla de biblioteca con datos demo. Implementado en HTML5, CSS3 y JavaScript vanilla. Maqueta navegable y funcional.
