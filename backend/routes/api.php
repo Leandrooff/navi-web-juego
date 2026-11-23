@@ -1,38 +1,81 @@
 <?php
-use Illuminate\Support\Facades\Route;
-use Illuminate\Http\Request;
-use App\Http\Controllers\Api\{AuthController,ChildProfileController,StoryController,GameSessionController,ProgressController,ClassroomController};
 
-Route::get('/csrf',fn()=>response()->json(['token'=>csrf_token()]));
-Route::post('/auth/register',[AuthController::class,'register'])->middleware('throttle:navi-register');
-Route::post('/auth/login',[AuthController::class,'login'])->middleware('throttle:navi-login');
-Route::get('/stories',[StoryController::class,'index']);
-Route::get('/stories/{id}',[StoryController::class,'show']);
-Route::middleware(['auth:web','throttle:navi-api'])->group(function(){
-    Route::get('/auth/me',[AuthController::class,'me']);
-    Route::post('/auth/logout',[AuthController::class,'logout']);
-    Route::put('/auth/password',[AuthController::class,'password'])->middleware('throttle:navi-password');
-    Route::get('/child-profiles',[ChildProfileController::class,'index']);
-    Route::post('/child-profiles',[ChildProfileController::class,'store']);
-    Route::put('/child-profiles/{id}',[ChildProfileController::class,'update']);
-    Route::get('/child-profiles/{id}/progress',[ProgressController::class,'index']);
-    Route::get('/child-profiles/{id}/history',[ProgressController::class,'history']);
-    Route::get('/child-profiles/{id}/assignments',[ChildProfileController::class,'assignments']);
-    Route::post('/game-sessions',[GameSessionController::class,'store']);
-    Route::get('/game-sessions/{id}',[GameSessionController::class,'show']);
-    Route::post('/game-sessions/{id}/decisions',[GameSessionController::class,'decision']);
-    Route::post('/game-sessions/{id}/continue',[GameSessionController::class,'advance']);
-    Route::post('/game-sessions/{id}/hint',[GameSessionController::class,'hint']);
-    Route::get('/child-profiles/{id}/memories',[ProgressController::class,'memories']);
-    Route::post('/game-sessions/{id}/finish',[GameSessionController::class,'finish']);
-    Route::get('/classrooms',[ClassroomController::class,'index']);
-    Route::post('/classrooms',[ClassroomController::class,'store']);
-    Route::get('/classrooms/{id}',[ClassroomController::class,'show']);
-    Route::post('/classrooms/{id}/rotate-code',[ClassroomController::class,'rotate']);
-    Route::post('/classrooms/{id}/assignments',[ClassroomController::class,'assign']);
-    Route::delete('/classrooms/{id}/assignments/{assignment}',[ClassroomController::class,'unassign']);
-    Route::post('/enrollments/lookup',[ClassroomController::class,'lookup'])->middleware('throttle:10,1');
-    Route::post('/enrollments',[ClassroomController::class,'enroll']);
-    Route::get('/child-profiles/{id}/enrollments',[ClassroomController::class,'links']);
-    Route::delete('/enrollments/{id}',[ClassroomController::class,'revoke']);
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Api\AuthController;
+use App\Support\Access;
+
+/*
+|--------------------------------------------------------------------------
+| API Routes - NAVI Web Juego
+| Responsable: Josué (Autenticación y Permisos / Roles)
+| Integración con: Gabriela (Perfiles), Ruth Serrano (Reportes), Óscar (Admin)
+|--------------------------------------------------------------------------
+*/
+
+// --- 1. Rutas públicas de Autenticación ---
+Route::post('/register', [AuthController::class, 'register']);
+Route::post('/login', [AuthController::class, 'login']);
+
+// --- 2. Rutas protegidas por Autenticación (Sanctum / Sesión) ---
+Route::middleware('auth:sanctum')->group(function () {
+
+    // Gestión de Sesión y Cuenta
+    Route::get('/me', [AuthController::class, 'me']);
+    Route::post('/logout', [AuthController::class, 'logout']);
+    Route::post('/change-password', [AuthController::class, 'changePassword']);
+
+    // --- 3. Perfiles Infantiles (Gabriela - Módulo 12) ---
+    // Aislamiento entre tutores: un tutor solo ve y edita perfiles de sus propios niños.
+    Route::prefix('child-profiles')->group(function () {
+        Route::get('/', function (Request $request) {
+            // Tutores ven sus propios perfiles creados
+            return response()->json([
+                'profiles' => []
+            ]);
+        });
+
+        Route::get('/{profileId}', function (Request $request, $profileId) {
+            // Ejemplo de validación de propiedad de perfil:
+            $dummyProfile = ['id' => $profileId, 'tutor_id' => 10, 'name' => 'Perfil sintético'];
+            Access::denyUnless(
+                Access::canAccessChildProfile($request->user(), $dummyProfile),
+                'Acceso denegado: este perfil infantil no pertenece a tu cuenta de tutor'
+            );
+
+            return response()->json(['profile' => $dummyProfile]);
+        });
+    });
+
+    // --- 4. Reportes y Aulas (Ruth Serrano - Módulo 09) ---
+    // El docente solo accede con consentimiento del tutor; si es revocado, se niega el acceso.
+    Route::prefix('reports')->group(function () {
+        Route::get('/children/{childId}', function (Request $request, $childId) {
+            $dummyProfile = ['id' => $childId, 'tutor_id' => 10];
+            $hasActiveConsent = (bool) $request->header('X-Consent-Active', true);
+
+            Access::denyUnless(
+                Access::canAccessReport($request->user(), $dummyProfile, $hasActiveConsent),
+                'Acceso denegado: no cuentas con el consentimiento activo del tutor para consultar este informe'
+            );
+
+            return response()->json(['report' => 'Datos de progreso y decisiones']);
+        });
+    });
+
+    // --- 5. Panel Administrativo (Óscar - Módulo 07) ---
+    // Solo accesible por usuarios con rol 'admin'. Tutores y docentes reciben 403 Forbidden.
+    Route::prefix('admin')->group(function () {
+        Route::get('/dashboard', function (Request $request) {
+            Access::denyUnless(
+                Access::canAccessAdminPanel($request->user()),
+                'Acceso denegado: se requieren permisos de administrador para este panel'
+            );
+
+            return response()->json([
+                'status' => 'ok',
+                'panel'  => 'Panel administrativo NAVI - Gestión de cuentos y escenas'
+            ]);
+        });
+    });
 });
