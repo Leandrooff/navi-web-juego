@@ -1,0 +1,19 @@
+﻿VERIFICACION FUNCIONAL - NAVI
+Fecha: 23 de noviembre de 2026
+
+Perfil de prueba: Luna, 8 años.
+Historia completada: Me perdí en el parque.
+Final obtenido: Mi voz encontró un camino.
+Decisiones mostradas: 17.
+
+Se comprobó desde la aplicación:
+- Registro de usuario y perfil infantil.
+- Guardado de una partida.
+- Persistencia del cuaderno tras cerrar e iniciar sesión.
+- Vinculación autorizada al grupo 2.º A.
+- Consulta del progreso desde el panel docente.
+- Revocación de autorización.
+- Desaparición de Luna del panel docente tras revocar.
+
+Fuente: observaciones y capturas compartidas durante las pruebas.
+No sustituye las capturas originales ni una prueba directa de API.

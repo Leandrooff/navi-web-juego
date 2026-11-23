@@ -1,0 +1,12 @@
+﻿PRUEBA DE ACTUALIZACION - NAVI
+Fecha: 23 de noviembre de 2026
+
+Comando ejecutado:
+php scripts/verify-upgrade.php navi_mariela_20261123_upgrade_test
+
+Resultado observado:
+PASS: esquema del módulo 08 adoptado; cuentas, perfiles,
+IDs, decisiones, consecuencias y sesión conservados;
+seeder repetido sin duplicación.
+
+Fuente: resultado de la terminal compartido durante la prueba.
