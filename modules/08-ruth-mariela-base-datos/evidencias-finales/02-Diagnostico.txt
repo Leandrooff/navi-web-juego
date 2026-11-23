@@ -1,0 +1,11 @@
+﻿PHP 8.2.34; conexi├│n mysql
+Base: navi_mariela_limpia
+users: presente
+child_profiles: presente
+stories: presente
+scenes: presente
+choices: presente
+game_sessions: presente
+progress: presente
+scores: presente
+Precomprobaci├│n terminada. Haz copia de seguridad antes de actualizar una base con datos.

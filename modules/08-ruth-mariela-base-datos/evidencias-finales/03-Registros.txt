@@ -1,0 +1,8 @@
+﻿Historias: 1
+Escenas: 34
+Opciones: 53
+Usuarios: 2
+Perfiles: 1
+Partidas: 1
+Progreso: 1
+Puntuaciones: 1
