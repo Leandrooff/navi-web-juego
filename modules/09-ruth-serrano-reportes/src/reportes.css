@@ -1,0 +1,241 @@
+/* Estilos generales */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f3f6fb;
+  color: #243247;
+  line-height: 1.6;
+}
+
+.contenedor {
+  width: min(1100px, 92%);
+  margin: 0 auto;
+}
+
+.encabezado {
+  background: #284a85;
+  color: white;
+  padding: 28px 0;
+}
+
+.marca {
+  margin: 0;
+  font-size: 22px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+h1 {
+  margin: 8px 0;
+  font-size: 30px;
+}
+
+h2 {
+  margin-top: 0;
+  font-size: 21px;
+}
+
+h3 {
+  font-size: 15px;
+}
+
+.aviso-demo {
+  background: #fff3ce;
+  color: #664c00;
+  border-left: 4px solid #b88600;
+  padding: 12px 16px;
+  border-radius: 8px;
+  margin-top: 24px;
+}
+
+.panel {
+  background: white;
+  border: 1px solid #dce3ef;
+  border-radius: 14px;
+  padding: 24px;
+  margin: 20px 0;
+  box-shadow: 0 4px 12px rgba(36, 50, 71, 0.05);
+}
+
+/* Selección de niño y filtro por cuento */
+.grupo-filtros {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+select {
+  width: 100%;
+  padding: 12px;
+  font: inherit;
+  color: #243247;
+  background: white;
+  border: 1px solid #8898ae;
+  border-radius: 8px;
+}
+
+select:disabled {
+  background: #edf1f7;
+  color: #596779;
+}
+
+/* Indicador de avance */
+progress {
+  display: block;
+  width: 100%;
+  height: 22px;
+  margin-top: 12px;
+  accent-color: #286c53;
+}
+
+/* Resumen de resultados */
+.tarjetas-resumen {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.tarjeta {
+  padding: 16px;
+  background: #eef3fb;
+  border-radius: 10px;
+  border-top: 4px solid #284a85;
+}
+
+.tarjeta h3 {
+  margin: 0;
+}
+
+.tarjeta p {
+  margin: 8px 0 0;
+  font-size: 30px;
+  font-weight: bold;
+  color: #284a85;
+}
+
+/* Historial de cuentos */
+.tabla-contenedor {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+caption {
+  text-align: left;
+  padding-bottom: 12px;
+  color: #526175;
+}
+
+th,
+td {
+  padding: 14px 12px;
+  text-align: left;
+  border-bottom: 1px solid #dce3ef;
+}
+
+th {
+  background: #eef3fb;
+}
+
+tbody tr:hover {
+  background: #f7f9fd;
+}
+
+/* Enlaces y botones */
+a {
+  color: #234e91;
+}
+
+.boton {
+  display: inline-block;
+  padding: 9px 16px;
+  background: #284a85;
+  color: white;
+  border: 0;
+  border-radius: 8px;
+  text-decoration: none;
+  font: inherit;
+  cursor: pointer;
+}
+
+.boton:hover {
+  background: #1c3765;
+}
+
+a:focus-visible,
+button:focus-visible,
+select:focus-visible {
+  outline: 3px solid #b76a00;
+  outline-offset: 3px;
+}
+
+/* Listas y detalle de decisiones */
+ul {
+  padding-left: 24px;
+}
+
+li {
+  margin-bottom: 10px;
+}
+
+.decision {
+  padding: 16px;
+  margin: 16px 0;
+  border: 1px solid #dce3ef;
+  border-left: 4px solid #284a85;
+  border-radius: 8px;
+}
+
+.correcta {
+  color: #205b3d;
+  font-weight: bold;
+}
+
+.incorrecta {
+  color: #923622;
+  font-weight: bold;
+}
+
+footer {
+  padding: 12px 0 28px;
+  color: #526175;
+}
+
+/* Evita mostrar elementos marcados como ocultos */
+[hidden] {
+  display: none !important;
+}
+
+/* Adaptación a celulares */
+@media (max-width: 600px) {
+  .grupo-filtros {
+    grid-template-columns: 1fr;
+  }
+
+  .panel {
+    padding: 16px;
+  }
+
+  h1 {
+    font-size: 25px;
+  }
+
+  th,
+  td {
+    padding: 10px;
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "id": 1,
+  "nombre": "Luna",
+  "rol": "Niña",
+  "edad": 8,
+  "avatar": "🌙",
+  "estrellas": 5,
+  "cuentosCompletados": 1,
+  "ultimaAventura": {
+    "id": "cuento-parque",
+    "titulo": "Me perdí en el parque",
+    "estado": "en progreso"
+  },
+  "logros": [
+    {
+      "id": 1,
+      "nombre": "Comienza tu aventura",
+      "descripcion": "Completaste tu primera misión.",
+      "icono": "⭐"
+    },
+    {
+      "id": 2,
+      "nombre": "Buen observador",
+      "descripcion": "Prestaste atención a una situación importante.",
+      "icono": "👀"
+    }
+  ]
+}

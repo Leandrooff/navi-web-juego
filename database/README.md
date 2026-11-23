@@ -1,14 +1,9 @@
-# Database NAVI
+# Base de datos NAVI
 
-Esta carpeta guarda el modelo inicial de base de datos.
+MariaDB/MySQL. Instalar mediante las migraciones de backend/database/migrations y el seeder de contenido.
 
-## Herramientas previstas
+schema.sql es una exportación de estructura final sin registros. No es necesario importarla antes de migrar.
 
-- MySQL o PostgreSQL.
-- MySQL Workbench, dbdiagram.io o Draw.io.
-- Migraciones de Laravel.
+El esquema original completo del equipo permanece en modules/08-ruth-mariela-base-datos/src/schema.sql. El esquema reducido de la raíz original se preservó en docs/legacy/schema-basico-original.sql.
 
-## Archivos
-
-- `schema.sql`: esquema inicial sugerido.
-
+Consulta docs/INSTALACION.md para instalación nueva, actualización conservando datos y pruebas.

@@ -1,0 +1,58 @@
+[
+  {
+    "id": 1,
+    "titulo": "El semáforo valiente",
+    "categoria": "calle",
+    "estado": "nuevo",
+    "descripcion": "Aprende a cruzar la calle de forma segura siguiendo las señales del semáforo. ¡El semáforo rojo te protege!",
+    "imagen": "https://cdn-icons-png.flaticon.com/512/2491/2491324.png"
+  },
+  {
+    "id": 2,
+    "titulo": "La cocina y sus secretos",
+    "categoria": "casa",
+    "estado": "en progreso",
+    "descripcion": "Descubre qué objetos de la cocina pueden ser peligrosos y cómo pedir ayuda a un adulto cuando los necesitas.",
+    "imagen": "https://cdn-icons-png.flaticon.com/512/3175/3175148.png"
+  },
+  {
+    "id": 3,
+    "titulo": "El extraño en la puerta",
+    "categoria": "seguridad",
+    "estado": "completado",
+    "descripcion": "¿Qué haces si alguien desconocido toca la puerta? Aprende a protegerte y cuándo llamar a un adulto de confianza.",
+    "imagen": "https://cdn-icons-png.flaticon.com/512/1717/1717945.png"
+  },
+  {
+    "id": 4,
+    "titulo": "Amigos en el recreo",
+    "categoria": "escuela",
+    "estado": "nuevo",
+    "descripcion": "¿Qué haces cuando alguien no te trata bien? Aprende a decir 'no' y a pedir ayuda a tu maestra o maestro.",
+    "imagen": "https://cdn-icons-png.flaticon.com/512/3048/3048127.png"
+  },
+  {
+    "id": 5,
+    "titulo": "El parque seguro",
+    "categoria": "otra",
+    "estado": "en progreso",
+    "descripcion": "Jugar en el parque es divertido. Aprende cuáles son los lugares seguros y cómo mantenerte cerca de tu familia.",
+    "imagen": "https://cdn-icons-png.flaticon.com/512/2972/2972185.png"
+  },
+  {
+    "id": 6,
+    "titulo": "¡Fuego, fuego!",
+    "categoria": "casa",
+    "estado": "nuevo",
+    "descripcion": "Aprende qué hacer si hay un incendio en casa: cómo salir, a quién llamar y dónde encontrarse con tu familia.",
+    "imagen": "https://cdn-icons-png.flaticon.com/512/785/785116.png"
+  },
+  {
+    "id": 7,
+    "titulo": "El camino a la escuela",
+    "categoria": "calle",
+    "estado": "completado",
+    "descripcion": "Sigue a Lucía en su camino diario a la escuela y aprende las reglas para caminar seguro por la calle.",
+    "imagen": "https://cdn-icons-png.flaticon.com/512/3076/3076170.png"
+  }
+]

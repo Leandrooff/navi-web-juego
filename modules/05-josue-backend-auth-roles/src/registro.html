@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registro - NAVI</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="auth-shell">
+    <!-- PANTALLA: REGISTRO -->
+    <div id="view-register" class="card auth-card">
+      <div class="card-body">
+        <div class="brand-wrap">
+          <div class="brand-badge">
+            <i class="bi bi-person-plus"></i>
+          </div>
+          <div class="brand-copy">
+            <span class="eyebrow">Únete a NAVI</span>
+            <h3>Crear cuenta</h3>
+          </div>
+        </div>
+
+        <h3 class="form-title">Registro de Usuario</h3>
+
+        <form id="form-register" class="input-stack">
+          <div class="input-wrap">
+            <span class="input-icon"><i class="bi bi-person"></i></span>
+            <input type="text" id="reg-nombre" class="form-control" placeholder="Nombre completo" required>
+          </div>
+
+          <div class="input-wrap">
+            <span class="input-icon"><i class="bi bi-envelope"></i></span>
+            <input type="email" id="reg-email" class="form-control" placeholder="Correo electrónico" required>
+          </div>
+
+          <div class="input-wrap">
+            <span class="input-icon"><i class="bi bi-lock"></i></span>
+            <input type="password" id="reg-password" class="form-control" placeholder="Contraseña" required>
+          </div>
+
+          <div class="input-wrap">
+            <span class="input-icon"><i class="bi bi-people"></i></span>
+            <select id="reg-rol" class="form-select" required>
+              <option value="" disabled selected>Selecciona tu rol</option>
+              <option value="nino">Niño</option>
+              <option value="tutor">Tutor</option>
+              <option value="educador">Educador</option>
+              <option value="admin">Administrador</option>
+            </select>
+          </div>
+
+          <div class="form-actions">
+            <button type="submit" class="btn btn-navi">Registrar y Entrar</button>
+          </div>
+        </form>
+
+        <div class="form-footer">
+          <span>¿Ya tienes cuenta? <a href="login.html">Inicia sesión</a></span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="auth.js"></script>
+</body>
+</html>
