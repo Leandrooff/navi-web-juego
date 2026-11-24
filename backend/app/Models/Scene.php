@@ -23,10 +23,20 @@ class Scene extends Model
         'audio_path',
         'scene_type',
         'is_final',
+        'content_version',
+        'presentation',
+        'act',
+        'hint',
+        'ending_key',
+        'takeaway',
+        'caption',
     ];
 
     protected $casts = [
         'is_final' => 'boolean',
+        'scene_order' => 'integer',
+        'content_version' => 'integer',
+        'act' => 'integer',
     ];
 
     public function story()

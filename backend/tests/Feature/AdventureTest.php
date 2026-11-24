@@ -88,6 +88,41 @@ class AdventureTest extends TestCase {
         $end=$this->finishPath($second);$this->assertFalse($end['new_star']);
         $this->getJson('/api/child-profiles/'.$c->id.'/progress')->assertJsonPath('data.stars',1)->assertJsonPath('data.attempts',2)->assertJsonCount(3,'data.achievements');
     }
+    public function test_session_mutations_reject_scenes_and_targets_outside_the_saved_revision(): void {
+        $u=$this->adult();$c=$this->child($u);$this->actingAs($u);
+        $saved=$this->start($c);$session=$saved['session'];$sessionId=$session['id'];
+        $legacyScene=DB::table('scenes')->insertGetId([
+            'story_id'=>$session['story_id'],'title'=>'Escena de otra revisión','body'=>'Contenido de prueba.',
+            'scene_order'=>1,'scene_type'=>'final','is_final'=>true,'content_version'=>1,
+        ]);
+        $this->assertGreaterThan(1,(int)$session['story_version']);
+        $choice=DB::table('choices')->where('scene_id',$session['current_scene_id'])->firstOrFail();
+        $this->postJson("/api/game-sessions/$sessionId/decisions",[
+            'scene_id'=>$choice->target_scene_id,'choice_id'=>$choice->id,'request_key'=>(string)Str::uuid(),
+        ])->assertConflict();
+        $this->assertSame(0,DB::table('decision_records')->where('game_session_id',$sessionId)->count());
+
+        DB::table('game_sessions')->where('id',$sessionId)->update(['current_scene_id'=>$legacyScene]);
+        $this->postJson("/api/game-sessions/$sessionId/decisions",[
+            'scene_id'=>$legacyScene,'choice_id'=>$choice->id,
+            'request_key'=>(string)Str::uuid(),
+        ])->assertConflict();
+        $this->assertSame(0,DB::table('decision_records')->where('game_session_id',$sessionId)->count());
+
+        DB::table('game_sessions')->where('id',$sessionId)->update(['current_scene_id'=>$session['current_scene_id']]);
+        $decision=$this->postJson("/api/game-sessions/$sessionId/decisions",[
+            'scene_id'=>$session['current_scene_id'],'choice_id'=>$choice->id,'request_key'=>(string)Str::uuid(),
+        ])->assertOk()->json('data');
+        DB::table('decision_records')->where('id',$decision['pending']['id'])->update(['target_scene_id'=>$legacyScene]);
+        $this->postJson("/api/game-sessions/$sessionId/continue",[
+            'decision_id'=>$decision['pending']['id'],
+        ])->assertConflict();
+
+        DB::table('game_sessions')->where('id',$sessionId)->update([
+            'current_scene_id'=>$legacyScene,'pending_decision_id'=>null,
+        ]);
+        $this->postJson("/api/game-sessions/$sessionId/finish")->assertConflict();
+    }
     public function test_foreign_session_cannot_be_read_finished_or_changed(): void {
         $owner=$this->adult();$c=$this->child($owner);$this->actingAs($owner);$s=$this->start($c)['session'];$this->actingAs($this->adult());
         $this->getJson('/api/game-sessions/'.$s['id'])->assertNotFound();

@@ -28,8 +28,9 @@ composer --version
 Inicia **MySQL** desde el panel de XAMPP. En phpMyAdmin crea:
 - Base: `navi_db`.
 - Intercalación: `utf8mb4_unicode_ci`.
-- Usuario local para esta base, por ejemplo `navi`, con una contraseña propia.
-- Permisos sobre `navi_db` (las migraciones requieren crear y modificar tablas).
+- Usuario local, por ejemplo `navi`, con una contraseña propia y permisos sobre `navi_db`.
+- Para PHPUnit, una segunda base vacía `navi_test` y permisos del mismo usuario sobre esa base.
+  No reutilices `navi_db` como base de pruebas.
 
 No importes SQL manualmente para una instalación nueva: las migraciones crean la estructura.
 
@@ -150,7 +151,9 @@ npm.cmd test
 npm.cmd run build
 ```
 
-Backend: crea una base **separada**, llamada navi_test. Copia `.env.testing.example` a `.env.testing`, introduce sus credenciales y genera su clave:
+Backend: crea una base **separada**, llamada `navi_test`. Copia `.env.testing.example`
+a `.env.testing`, introduce las credenciales del usuario con permisos sobre esa base y
+genera su clave. `.env.testing` está ignorado por Git y no debe compartirse:
 
 ```powershell
 cd backend
@@ -161,6 +164,8 @@ php artisan test
 ```
 
 Las pruebas usan transacciones y requieren que el nombre termine en _test. No utilizan SQLite ni borran tablas.
+`phpunit.xml` fija `DB_DATABASE=navi_test` para impedir que PHPUnit opere por accidente
+sobre la base de desarrollo.
 
 Prueba de actualización sobre una base vacía nueva (requiere permiso para crear esa base):
 

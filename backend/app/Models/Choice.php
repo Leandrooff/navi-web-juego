@@ -21,6 +21,9 @@ class Choice extends Model
         'choice_type',
         'is_expected_answer',
         'points',
+        'mark_title',
+        'mark_text',
+        'mark_kind',
     ];
 
     protected $casts = [

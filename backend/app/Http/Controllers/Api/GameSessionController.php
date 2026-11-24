@@ -12,6 +12,10 @@ class GameSessionController extends Controller {
             'marks'=>DB::table('learning_records')->where('game_session_id',$s->id)->orderBy('id')->get(),
             'decisions'=>DB::table('decision_records')->where('game_session_id',$s->id)->orderBy('id')->get()];
     }
+    private function sceneFor(object $s,int $sceneId): ?object {
+        return DB::table('scenes')->where('id',$sceneId)->where('story_id',$s->story_id)
+            ->where('content_version',$s->story_version)->first();
+    }
     private function mark(object $s,string $key,string $title,string $description,string $kind,?int $scene=null,?int $decision=null): void {
         DB::table('learning_records')->insertOrIgnore(['child_profile_id'=>$s->child_profile_id,'story_id'=>$s->story_id,
             'game_session_id'=>$s->id,'scene_id'=>$scene,'decision_record_id'=>$decision,'event_key'=>$key,
@@ -26,8 +30,9 @@ class GameSessionController extends Controller {
         return DB::transaction(function()use($r,$id,$v){
             $s=$this->locked($r,$id);
             abort_unless($s->status==='in_progress' && !$s->pending_decision_id && $s->current_scene_id==$v['scene_id'],409);
-            $scene=DB::table('scenes')->find($s->current_scene_id);
-            abort_unless($scene && $scene->hint,422);
+            $scene=$this->sceneFor($s,(int)$s->current_scene_id);
+            abort_unless($scene,409,'La escena no pertenece a la versión guardada de esta aventura.');
+            abort_unless($scene->hint,422,'Esta escena no tiene una pista.');
             $this->mark($s,'hint:'.$scene->id,'Una pista cuando la necesito','Pediste una pista para pensar tu siguiente paso.','support',$scene->id);
             return ['data'=>$this->payload($s)];
         });
@@ -44,7 +49,11 @@ class GameSessionController extends Controller {
         return DB::transaction(function()use($r,$v){
             ChildProfile::whereKey($v['child_profile_id'])->lockForUpdate()->firstOrFail();
             $story=DB::table('stories')->where('id',$v['story_id'])->where('status','published')->firstOrFail();
-            abort_unless($story->initial_scene_id,422,'Esta aventura aún no tiene una escena inicial.');
+            $initial=$story->initial_scene_id
+                ? DB::table('scenes')->where('id',$story->initial_scene_id)->where('story_id',$story->id)
+                    ->where('content_version',$story->version)->exists()
+                : false;
+            abort_unless($initial,422,'Esta aventura aún no tiene una escena inicial disponible.');
             $same=DB::table('game_sessions')->where('start_key',$v['request_key'])->first();
             if ($same) { abort_unless($same->child_profile_id==$v['child_profile_id'] && $same->story_id==$story->id,409); return ['data'=>$this->payload($same)]; }
             $active=DB::table('game_sessions')->where('child_profile_id',$v['child_profile_id'])->where('story_id',$story->id)->where('status','in_progress')->orderByDesc('id')->first();
@@ -75,9 +84,10 @@ class GameSessionController extends Controller {
             }
             abort_unless($s->status==='in_progress',409,'La aventura ya terminó.');
             abort_unless(!$s->pending_decision_id && $s->current_scene_id==$v['scene_id'],409,'Actualiza la aventura para continuar desde la escena guardada.');
-            $scene=DB::table('scenes')->where('id',$s->current_scene_id)->where('story_id',$s->story_id)->firstOrFail();
+            $scene=$this->sceneFor($s,(int)$s->current_scene_id);
+            abort_unless($scene,409,'La escena no pertenece a la versión guardada de esta aventura.');
             $choice=DB::table('choices')->where('id',$v['choice_id'])->where('scene_id',$scene->id)->firstOrFail();
-            abort_unless(DB::table('scenes')->where('id',$choice->target_scene_id)->where('story_id',$s->story_id)->where('content_version',$s->story_version)->exists(),422,'La escena de destino no está disponible.');
+            abort_unless($choice->target_scene_id && $this->sceneFor($s,(int)$choice->target_scene_id),422,'La escena de destino no está disponible en esta versión.');
             $seq=DB::table('decision_records')->where('game_session_id',$id)->count()+1;
             $decisionId=DB::table('decision_records')->insertGetId(['game_session_id'=>$id,'scene_id'=>$scene->id,'choice_id'=>$choice->id,
                 'request_key'=>$v['request_key'],'sequence'=>$seq,'selected_at'=>now(),'choice_text'=>$choice->label,'consequence_text'=>$choice->consequence,
@@ -96,6 +106,7 @@ class GameSessionController extends Controller {
             $d=DB::table('decision_records')->where('id',$v['decision_id'])->where('game_session_id',$id)->firstOrFail();
             if ($d->acknowledged_at) return ['data'=>$this->payload($s)];
             abort_unless($s->status==='in_progress' && $s->pending_decision_id==$d->id,409);
+            abort_unless($this->sceneFor($s,(int)$d->target_scene_id),409,'El destino de esta decisión no pertenece a la versión guardada.');
             DB::table('decision_records')->where('id',$d->id)->update(['acknowledged_at'=>now()]);
             DB::table('game_sessions')->where('id',$id)->update(['current_scene_id'=>$d->target_scene_id,'pending_decision_id'=>null]);
             DB::table('progress')->where('child_profile_id',$s->child_profile_id)->where('story_id',$s->story_id)
@@ -107,7 +118,7 @@ class GameSessionController extends Controller {
         return DB::transaction(function()use($r,$id){
             $s=$this->locked($r,$id);
             if ($s->status==='completed') return ['data'=>['session'=>$s,'new_star'=>false]];
-            $scene=DB::table('scenes')->find($s->current_scene_id);
+            $scene=$this->sceneFor($s,(int)$s->current_scene_id);
             abort_unless($s->status==='in_progress' && !$s->pending_decision_id && $scene && $scene->is_final,409,'Continúa hasta el final para guardar tu estrella.');
             $key=['child_profile_id'=>$s->child_profile_id,'story_id'=>$s->story_id];
             $reward=DB::table('scores')->where($key)->first();

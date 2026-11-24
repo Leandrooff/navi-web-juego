@@ -17,12 +17,16 @@ class GameSession extends Model
         'child_profile_id',
         'story_id',
         'story_version',
+        'ending_key',
         'started_at',
         'completed_at',
         'status',
     ];
 
     protected $casts = [
+        'current_scene_id' => 'integer',
+        'pending_decision_id' => 'integer',
+        'story_version' => 'integer',
         'started_at' => 'datetime',
         'completed_at' => 'datetime',
     ];

@@ -21,6 +21,13 @@ class Story extends Model
         'initial_scene_id',
     ];
 
+    protected $casts = [
+        'version' => 'integer',
+        'story_order' => 'integer',
+        'estimated_minutes' => 'integer',
+        'initial_scene_id' => 'integer',
+    ];
+
     public function category()
     {
         return $this->belongsTo(Category::class);

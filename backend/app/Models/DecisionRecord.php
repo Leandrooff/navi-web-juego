@@ -14,11 +14,21 @@ class DecisionRecord extends Model
         'game_session_id',
         'scene_id',
         'choice_id',
+        'request_key',
+        'sequence',
+        'choice_text',
+        'consequence_text',
+        'scene_title',
+        'target_scene_id',
         'selected_at',
+        'acknowledged_at',
     ];
 
     protected $casts = [
+        'sequence' => 'integer',
+        'target_scene_id' => 'integer',
         'selected_at' => 'datetime',
+        'acknowledged_at' => 'datetime',
     ];
 
     public function session()
