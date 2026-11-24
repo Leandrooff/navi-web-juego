@@ -1,0 +1,1019 @@
+{
+  "slug": "me-perdi-en-el-parque",
+  "title": "Me perdí en el parque",
+  "subtitle": "El Parque de los Faroles",
+  "description": "Una tarde, un cuaderno de hojas y tres caminos para volver a encontrarnos. Tú decides cómo cuidar tus pasos.",
+  "version": 2,
+  "initial": "cielo",
+  "minutes": 20,
+  "acts": [
+    "Una luz te busca",
+    "La tarde de las hojas",
+    "Una pequeña duda",
+    "Busco mi camino",
+    "Ya viene la ayuda",
+    "Volver a encontrarnos"
+  ],
+  "scenes": [
+    {
+      "key": "cielo",
+      "title": "Donde empiezan las historias",
+      "body": "Soy NAVI. Vivo entre estas islas y acompaño a quienes se atreven a descubrir. Hoy he visto una luz nueva… ¡la tuya!",
+      "image": "/art/park/cielo.png",
+      "act": 0,
+      "speaker": "navi",
+      "hint": null,
+      "kind": "cinematic",
+      "caption": "PRÓLOGO · UNA LUZ TE BUSCA",
+      "choices": [
+        {
+          "key": "cielo-1",
+          "to": "puente",
+          "label": "Seguir la luz",
+          "consequence": "Un pequeño destello cruza las nubes. El mundo empieza a abrirse ante ti.",
+          "mark": {
+            "title": "Una puerta se abre",
+            "text": "Diste el primer paso en tu propia aventura.",
+            "kind": "discovery"
+          }
+        }
+      ]
+    },
+    {
+      "key": "puente",
+      "title": "Un vuelo hacia ti",
+      "body": "Podemos explorar, hacernos preguntas y aprender a cuidarnos. Yo iré a tu lado. Las decisiones serán tuyas.",
+      "image": "/art/park/puente.png",
+      "act": 0,
+      "speaker": "navi",
+      "hint": null,
+      "kind": "cinematic",
+      "caption": "AL OTRO LADO DE LAS NUBES",
+      "choices": [
+        {
+          "key": "puente-1",
+          "to": "encuentro",
+          "label": "Encontrarme con NAVI",
+          "consequence": "El brillo baja hasta el parque y se detiene junto a tu mano.",
+          "mark": {
+            "title": "Compañía de viaje",
+            "text": "Descubriste que puedes elegir con compañía.",
+            "kind": "discovery"
+          }
+        }
+      ]
+    },
+    {
+      "key": "encuentro",
+      "title": "Hola, {name}",
+      "body": "¡Aquí estás, {name}! Me alegra encontrarte. ¿Me haces un sitio en tu aventura?",
+      "image": "/art/park/encuentro.png",
+      "act": 0,
+      "speaker": "navi",
+      "hint": null,
+      "kind": "cinematic",
+      "caption": "ESTA HISTORIA EMPIEZA CONTIGO",
+      "choices": [
+        {
+          "key": "encuentro-1",
+          "to": "entrada",
+          "label": "¡Hola, NAVI! Vamos juntos",
+          "consequence": "NAVI dibuja un círculo de luz a tu alrededor. En tu cuaderno aparece la primera hoja: «Primer encuentro».",
+          "mark": {
+            "title": "Primer encuentro",
+            "text": "Conociste a NAVI. Tu aventura ya tiene compañía.",
+            "kind": "discovery"
+          }
+        },
+        {
+          "key": "encuentro-2",
+          "to": "entrada",
+          "label": "Sonreír y ofrecerle mi mano",
+          "consequence": "NAVI se posa un instante sobre tu mano. No hace falta decir mucho para empezar una amistad.",
+          "mark": {
+            "title": "Primer encuentro",
+            "text": "Un gesto también puede dar la bienvenida.",
+            "kind": "discovery"
+          }
+        }
+      ]
+    },
+    {
+      "key": "entrada",
+      "title": "El Parque de los Faroles",
+      "body": "Vienes al parque con Mara, la adulta que te cuida hoy. Antes de entrar, señala el farol turquesa junto al banco: «Si nos separamos, este será nuestro punto de encuentro».",
+      "image": "/art/park/entrada.png",
+      "act": 1,
+      "speaker": "narrator",
+      "hint": "Un punto de encuentro se acuerda con la persona que te cuida antes de separarse.",
+      "kind": "story",
+      "choices": [
+        {
+          "key": "entrada-1",
+          "to": "fuente",
+          "label": "Señalar el farol y repetir el acuerdo",
+          "consequence": "Mara asiente. Ahora sabes qué lugar recordar si dejan de verse.",
+          "mark": {
+            "title": "Un lugar para volver",
+            "text": "Acordaste un punto de encuentro antes de explorar.",
+            "kind": "care"
+          }
+        },
+        {
+          "key": "entrada-2",
+          "to": "fuente",
+          "label": "Mirar también dónde está la caseta",
+          "consequence": "Descubres una caseta de información cerca de la fuente. Mara te recuerda el farol acordado. Ya conoces dos referencias.",
+          "mark": {
+            "title": "Ojos de explorador",
+            "text": "Observaste lugares que pueden ayudarte a orientarte.",
+            "kind": "discovery"
+          }
+        }
+      ]
+    },
+    {
+      "key": "fuente",
+      "title": "Una tarde por descubrir",
+      "body": "La fuente canta bajito. Mara se queda cerca, mirando las flores. Tú llevas un cuaderno de hojas: hoy quieres encontrar algo que merezca dibujarse.",
+      "image": "/art/park/fuente.png",
+      "act": 1,
+      "speaker": "narrator",
+      "hint": null,
+      "kind": "story",
+      "choices": [
+        {
+          "key": "fuente-1",
+          "to": "peces",
+          "label": "Observar los peces desde el camino",
+          "consequence": "Tres peces dorados asoman bajo una hoja. Te agachas en el camino seco para verlos mejor.",
+          "mark": {
+            "title": "Pequeñas maravillas",
+            "text": "Exploraste sin acercarte al borde del agua.",
+            "kind": "discovery"
+          }
+        },
+        {
+          "key": "fuente-2",
+          "to": "cuaderno",
+          "label": "Dibujar la hoja que cayó en el banco",
+          "consequence": "La hoja parece un pequeño barco. Abres tu cuaderno y empiezas a dibujarla.",
+          "mark": {
+            "title": "Una mirada propia",
+            "text": "Elegiste qué detalle guardar de esta tarde.",
+            "kind": "discovery"
+          }
+        }
+      ]
+    },
+    {
+      "key": "peces",
+      "title": "El barco de una hoja",
+      "body": "Un pez empuja la hoja y los otros dos la siguen. Te gustaría enseñárselo a Mara. Al girarte, solo ves la fuente, los árboles y otras familias.",
+      "image": "/art/park/peces.png",
+      "act": 1,
+      "speaker": "narrator",
+      "hint": null,
+      "kind": "story",
+      "choices": [
+        {
+          "key": "peces-1",
+          "to": "silencio",
+          "label": "Levantarme y mirar a mi alrededor",
+          "consequence": "Miras desde donde estás. La chaqueta amarilla de Mara ya no aparece entre las flores.",
+          "mark": {
+            "title": "Me doy cuenta",
+            "text": "Notaste que algo cambió y prestaste atención.",
+            "kind": "discovery"
+          }
+        }
+      ]
+    },
+    {
+      "key": "cuaderno",
+      "title": "Un dibujo a medias",
+      "body": "Ya tienes el contorno de la hoja. «¡Mara, mira!». Nadie responde. Tu lápiz se queda quieto: no ves a Mara junto a las flores.",
+      "image": "/art/park/cuaderno.png",
+      "act": 1,
+      "speaker": "narrator",
+      "hint": null,
+      "kind": "story",
+      "choices": [
+        {
+          "key": "cuaderno-1",
+          "to": "silencio",
+          "label": "Guardar el cuaderno y mirar alrededor",
+          "consequence": "Cierras el cuaderno. La tarde sigue sonando, pero ahora necesitas encontrar ayuda.",
+          "mark": {
+            "title": "Lo importante primero",
+            "text": "Dejaste tu dibujo para atender lo que ocurre.",
+            "kind": "discovery"
+          }
+        }
+      ]
+    },
+    {
+      "key": "silencio",
+      "title": "¿Dónde está Mara?",
+      "body": "Miras a un lado y al otro. Mara no está a la vista. Sientes un nudo en la barriga. NAVI se queda cerca, en silencio. Ahora decides tu siguiente paso.",
+      "image": "/art/park/silencio.png",
+      "act": 2,
+      "speaker": "narrator",
+      "hint": "Si no ves a quien te cuida, puedes parar en un lugar seguro y visible antes de decidir.",
+      "kind": "story",
+      "choices": [
+        {
+          "key": "silencio-1",
+          "to": "respiro",
+          "label": "Parar y respirar despacio",
+          "consequence": "Apoyas los pies en el suelo. El nudo sigue ahí, pero puedes pensar un poquito mejor.",
+          "mark": {
+            "title": "Una pausa que ayuda",
+            "text": "Reconociste lo que sentías y te diste tiempo.",
+            "kind": "care"
+          }
+        },
+        {
+          "key": "silencio-2",
+          "to": "cruce",
+          "label": "Caminar para buscarla",
+          "consequence": "Avanzas hasta una bifurcación. Desde aquí ya no ves tan bien la fuente. Buscar sin rumbo puede hacer más difícil encontrarse.",
+          "mark": {
+            "title": "Una pista sobre perderse",
+            "text": "Descubriste qué cambia cuando te alejas sin un plan.",
+            "kind": "learning"
+          }
+        }
+      ]
+    },
+    {
+      "key": "respiro",
+      "title": "Un poquito de calma",
+      "body": "Inspiras como si olieras una flor y sueltas el aire despacio. No tienes que resolverlo todo de golpe. Desde aquí ves el farol acordado y la caseta de información.",
+      "image": "/art/park/respiro.png",
+      "act": 2,
+      "speaker": "narrator",
+      "hint": "No necesitas caminar lejos: mira primero qué ayuda hay cerca y a la vista.",
+      "kind": "story",
+      "choices": [
+        {
+          "key": "respiro-1",
+          "to": "banco",
+          "label": "Quedarme junto al farol cercano",
+          "consequence": "Te sitúas junto al banco, a la vista del camino. Es el lugar que acordaste con Mara.",
+          "mark": {
+            "title": "Recuerdo nuestro acuerdo",
+            "text": "Elegiste un punto conocido y visible.",
+            "kind": "care"
+          }
+        },
+        {
+          "key": "respiro-2",
+          "to": "mapa",
+          "label": "Mirar cómo llegar a la caseta visible",
+          "consequence": "El mapa está justo al lado. Puedes mirarlo sin perder de vista la fuente.",
+          "mark": {
+            "title": "Leo el lugar",
+            "text": "Buscaste una referencia antes de moverte.",
+            "kind": "discovery"
+          }
+        }
+      ]
+    },
+    {
+      "key": "cruce",
+      "title": "Dos caminos, ninguna certeza",
+      "body": "Un camino vuelve hacia la fuente. El otro se estrecha entre los arbustos. Una cinta amarilla se mueve al fondo… pero no sabes si es Mara.",
+      "image": "/art/park/sendero.png",
+      "act": 2,
+      "speaker": "narrator",
+      "hint": "Una pista de verdad ayuda a orientarte. Adivinar por un color puede alejarte más.",
+      "kind": "story",
+      "choices": [
+        {
+          "key": "cruce-1",
+          "to": "mapa",
+          "label": "Volver al mapa que todavía veo",
+          "consequence": "Regresas por el tramo que conoces. La fuente y el mapa vuelven a estar cerca.",
+          "mark": {
+            "title": "Puedo cambiar de idea",
+            "text": "Cambiar de rumbo también es una decisión valiosa.",
+            "kind": "care"
+          }
+        },
+        {
+          "key": "cruce-2",
+          "to": "limite",
+          "label": "Acercarme a la cinta amarilla",
+          "consequence": "Es un molinillo de papel. Has llegado a una verja lateral; seguir por ahí te alejaría del parque.",
+          "mark": {
+            "title": "Una apariencia engaña",
+            "text": "Un color conocido no siempre es una persona conocida.",
+            "kind": "learning"
+          }
+        }
+      ]
+    },
+    {
+      "key": "limite",
+      "title": "La verja del sendero",
+      "body": "La verja da a un camino que no conoces. Antes de cruzar, escuchas voces en el parque. Todavía puedes volver al espacio abierto.",
+      "image": "/art/park/limite.png",
+      "act": 2,
+      "speaker": "narrator",
+      "hint": "Si te has perdido, no salgas del lugar con alguien que no conoces.",
+      "kind": "story",
+      "choices": [
+        {
+          "key": "limite-1",
+          "to": "regreso",
+          "label": "Dar media vuelta hacia el parque",
+          "consequence": "No cruzas la verja. Vuelves despacio hasta el árbol grande, donde hay otras familias.",
+          "mark": {
+            "title": "Mi paso de vuelta",
+            "text": "Reconociste un límite y volviste a un lugar acompañado.",
+            "kind": "care"
+          }
+        },
+        {
+          "key": "limite-2",
+          "to": "oferta",
+          "label": "Preguntar a una persona que pasa",
+          "consequence": "La persona no trabaja en el parque. Te dice que quizá vio a Mara fuera y que puede acompañarte.",
+          "mark": {
+            "title": "Una ayuda por comprobar",
+            "text": "Pedir ayuda abre una conversación; todavía puedes decidir qué hacer.",
+            "kind": "learning"
+          }
+        }
+      ]
+    },
+    {
+      "key": "mapa",
+      "title": "Tres dibujos en el mapa",
+      "body": "El mapa muestra una fuente, un farol y una caseta. Levantas la vista: la caseta está aquí mismo, al otro lado de la plaza abierta. Hay personal atendiendo.",
+      "image": "/art/park/mapa.png",
+      "act": 2,
+      "speaker": "narrator",
+      "hint": null,
+      "kind": "story",
+      "choices": [
+        {
+          "key": "mapa-1",
+          "to": "caseta",
+          "label": "Acercarme a la caseta a la vista",
+          "consequence": "Cruzas la plaza abierta sin salir del parque. Una trabajadora deja de ordenar folletos para escucharte.",
+          "mark": {
+            "title": "Encuentro ayuda cercana",
+            "text": "Buscaste personal en un punto de atención público.",
+            "kind": "care"
+          }
+        },
+        {
+          "key": "mapa-2",
+          "to": "banco",
+          "label": "Volver al farol que acordamos",
+          "consequence": "El farol está cerca y puedes verlo todo el tiempo. Te quedas al lado del banco.",
+          "mark": {
+            "title": "Un lugar conocido",
+            "text": "Usaste una referencia que compartes con Mara.",
+            "kind": "care"
+          }
+        }
+      ]
+    },
+    {
+      "key": "banco",
+      "title": "El farol turquesa",
+      "body": "Te quedas junto al banco, lejos del agua y a la vista de las familias. Mara conoce este lugar. ¿Cómo puedes hacer que sepan que necesitas ayuda?",
+      "image": "/art/park/banco.png",
+      "act": 3,
+      "speaker": "narrator",
+      "hint": "Quedarte visible y hacer saber que necesitas ayuda pueden ir juntos.",
+      "kind": "story",
+      "choices": [
+        {
+          "key": "banco-1",
+          "to": "llamada",
+          "label": "Llamar a Mara y pedir ayuda desde aquí",
+          "consequence": "Llamas sin alejarte: «¡Mara!». Una adulta que está con sus niños te escucha.",
+          "mark": {
+            "title": "Mi voz cuenta",
+            "text": "Hiciste saber que necesitabas ayuda.",
+            "kind": "care"
+          }
+        },
+        {
+          "key": "banco-2",
+          "to": "espera",
+          "label": "Esperar un momento mirando el camino",
+          "consequence": "Ves pasar varias familias. Mara todavía no aparece. Puedes seguir visible y pedir ayuda si lo necesitas.",
+          "mark": {
+            "title": "Aprendo a esperar",
+            "text": "Te mantuviste en un punto visible; también puedes pedir apoyo.",
+            "kind": "discovery"
+          }
+        }
+      ]
+    },
+    {
+      "key": "espera",
+      "title": "La espera se hace larga",
+      "body": "Aprietas el cuaderno entre las manos. Esperar a solas cuesta. Cerca hay una adulta con dos niños y, al fondo, la caseta sigue abierta.",
+      "image": "/art/park/banco.png",
+      "act": 3,
+      "speaker": "narrator",
+      "hint": null,
+      "kind": "story",
+      "choices": [
+        {
+          "key": "espera-1",
+          "to": "llamada",
+          "label": "Pedir que avisen al personal del parque",
+          "consequence": "La adulta escucha y llama a una trabajadora, sin pedirte que te vayas con ella.",
+          "mark": {
+            "title": "No tengo que hacerlo a solas",
+            "text": "Pediste apoyo sin abandonar tu punto de encuentro.",
+            "kind": "care"
+          }
+        },
+        {
+          "key": "espera-2",
+          "to": "oferta",
+          "label": "Escuchar a alguien que dice haberla visto",
+          "consequence": "Una persona se acerca: «Creo que vi a tu acompañante por la salida. Ven y buscamos». No sabes si es cierto.",
+          "mark": {
+            "title": "Escucho y decido",
+            "text": "Oír una propuesta no te obliga a aceptarla.",
+            "kind": "learning"
+          }
+        }
+      ]
+    },
+    {
+      "key": "llamada",
+      "title": "Ayuda sin salir de aquí",
+      "body": "«No encuentro a Mara. ¿Puede avisar al personal?», dices. La adulta llama a una trabajadora que está en la plaza. Tú sigues junto al farol.",
+      "image": "/art/park/ayuda.png",
+      "act": 3,
+      "speaker": "narrator",
+      "hint": null,
+      "kind": "story",
+      "choices": [
+        {
+          "key": "llamada-1",
+          "to": "espera_farol",
+          "label": "Contar dónde viste a Mara por última vez",
+          "consequence": "La trabajadora avisa a la caseta por radio. Explica que esperas en el farol turquesa.",
+          "mark": {
+            "title": "Doy una pista útil",
+            "text": "Contaste un lugar concreto para ayudar a encontrarse.",
+            "kind": "care"
+          }
+        },
+        {
+          "key": "llamada-2",
+          "to": "espera_farol",
+          "label": "Decir que este es nuestro punto de encuentro",
+          "consequence": "La trabajadora sonríe: «Nos quedamos aquí mientras avisamos». No tienes que irte con nadie.",
+          "mark": {
+            "title": "Mantengo nuestro acuerdo",
+            "text": "Explicaste el plan que compartes con quien te cuida.",
+            "kind": "care"
+          }
+        }
+      ]
+    },
+    {
+      "key": "oferta",
+      "title": "Una propuesta que no conoces",
+      "body": "«Vamos a buscar fuera», propone esa persona. Su voz parece amable, pero tú no la conoces y Mara no acordó que te fueras con ella.",
+      "image": "/art/park/oferta.png",
+      "act": 3,
+      "speaker": "narrator",
+      "hint": "Una voz amable no significa que debas irte con esa persona. Puedes quedarte y pedir personal del parque.",
+      "kind": "story",
+      "choices": [
+        {
+          "key": "oferta-1",
+          "to": "negativa",
+          "label": "Decir: «Me quedo aquí. Avise al personal»",
+          "consequence": "La persona se aparta. Tú permaneces en la zona pública y haces una señal hacia la caseta.",
+          "mark": {
+            "title": "Mi límite vale",
+            "text": "Pusiste un límite claro sin tener que dar explicaciones largas.",
+            "kind": "care"
+          }
+        },
+        {
+          "key": "oferta-2",
+          "to": "umbral",
+          "label": "Dar unos pasos hacia la salida",
+          "consequence": "Te alejas unos pasos y dejas de ver el banco. Algo no te convence. Puedes detenerte aunque antes hayas dicho que sí.",
+          "mark": {
+            "title": "Escucho mi duda",
+            "text": "Notaste una señal de alerta antes de salir.",
+            "kind": "learning"
+          }
+        }
+      ]
+    },
+    {
+      "key": "umbral",
+      "title": "Todavía puedes parar",
+      "body": "La salida está delante. Tú sigues dentro del parque. Te detienes. No tienes que continuar un plan que te hace sentir inseguridad.",
+      "image": "/art/park/limite.png",
+      "act": 3,
+      "speaker": "narrator",
+      "hint": "Puedes decir que no, apartarte y pedir ayuda. No es tu culpa que alguien te proponga algo inseguro.",
+      "kind": "story",
+      "choices": [
+        {
+          "key": "umbral-1",
+          "to": "regreso",
+          "label": "Decir «No voy» y volver hacia las familias",
+          "consequence": "Vuelves al espacio abierto sin cruzar la verja. Una trabajadora te ve junto al árbol grande.",
+          "mark": {
+            "title": "Siempre puedo decir basta",
+            "text": "Cambiaste una decisión para cuidarte.",
+            "kind": "care"
+          }
+        },
+        {
+          "key": "umbral-2",
+          "to": "regreso",
+          "label": "Pedir ayuda en voz alta desde dentro",
+          "consequence": "«¡Necesito ayuda!». Una trabajadora de la plaza se acerca. Permaneces dentro del parque.",
+          "mark": {
+            "title": "Pedir ayuda con fuerza",
+            "text": "Usaste tu voz para llamar la atención de quienes estaban cerca.",
+            "kind": "care"
+          }
+        }
+      ]
+    },
+    {
+      "key": "negativa",
+      "title": "Tu voz abre espacio",
+      "body": "No sales del parque. Una trabajadora de la caseta se acerca por la plaza. «Podemos hablar aquí, donde están las familias», te dice.",
+      "image": "/art/park/ayuda.png",
+      "act": 3,
+      "speaker": "narrator",
+      "hint": null,
+      "kind": "story",
+      "choices": [
+        {
+          "key": "negativa-1",
+          "to": "caseta",
+          "label": "Ir a la caseta visible por la plaza",
+          "consequence": "Caminas por la zona abierta hasta el mostrador de información. La plaza sigue a la vista.",
+          "mark": {
+            "title": "Elijo un lugar público",
+            "text": "Buscaste ayuda sin ir a un sitio aislado.",
+            "kind": "care"
+          }
+        }
+      ]
+    },
+    {
+      "key": "regreso",
+      "title": "Bajo el árbol grande",
+      "body": "La trabajadora está atendiendo a las familias junto al árbol. Le cuentas que no encuentras a Mara. «Avisaré por radio y nos quedamos aquí, a la vista», responde.",
+      "image": "/art/park/arbol.png",
+      "act": 3,
+      "speaker": "narrator",
+      "hint": null,
+      "kind": "story",
+      "choices": [
+        {
+          "key": "regreso-1",
+          "to": "espera_arbol",
+          "label": "Contar que llegué hasta la verja",
+          "consequence": "Explicas el camino que hiciste. Nadie te regaña: esa información ayuda a entender dónde buscabas.",
+          "mark": {
+            "title": "Contarlo ayuda",
+            "text": "Hablar de un error permite recibir mejor ayuda.",
+            "kind": "learning"
+          }
+        },
+        {
+          "key": "regreso-2",
+          "to": "espera_arbol",
+          "label": "Pedir que avisen al farol y a la caseta",
+          "consequence": "Recuerdas el acuerdo con Mara. La trabajadora avisa a sus compañeras de los dos lugares.",
+          "mark": {
+            "title": "Recupero mi plan",
+            "text": "Volviste a usar una referencia después de cambiar de rumbo.",
+            "kind": "care"
+          }
+        }
+      ]
+    },
+    {
+      "key": "caseta",
+      "title": "Una caseta, muchas preguntas",
+      "body": "En el mostrador hay una trabajadora con uniforme, identificación y radio. Está atendiendo al público. Levanta la mirada y espera a que le hables.",
+      "image": "/art/park/caseta.png",
+      "act": 3,
+      "speaker": "narrator",
+      "hint": null,
+      "kind": "story",
+      "choices": [
+        {
+          "key": "caseta-1",
+          "to": "identificacion",
+          "label": "Decir: «No encuentro a quien me cuida»",
+          "consequence": "La trabajadora se llama Inés. Te escucha desde el mostrador: «Gracias por decírmelo. Vamos paso a paso».",
+          "mark": {
+            "title": "Pido lo que necesito",
+            "text": "Dijiste con claridad que necesitabas ayuda.",
+            "kind": "care"
+          }
+        },
+        {
+          "key": "caseta-2",
+          "to": "palabras",
+          "label": "Tomarme un momento: me cuesta hablar",
+          "consequence": "Inés te da tiempo. No hace falta contarlo perfecto ni decirlo todo de golpe.",
+          "mark": {
+            "title": "A mi propio ritmo",
+            "text": "Reconociste que necesitabas un momento para expresarte.",
+            "kind": "discovery"
+          }
+        }
+      ]
+    },
+    {
+      "key": "palabras",
+      "title": "Las primeras palabras",
+      "body": "Puedes empezar con una frase pequeña. Inés espera en la caseta. NAVI flota a tu lado, sin hablar por ti.",
+      "image": "/art/park/caseta.png",
+      "act": 3,
+      "speaker": "narrator",
+      "hint": null,
+      "kind": "story",
+      "choices": [
+        {
+          "key": "palabras-1",
+          "to": "identificacion",
+          "label": "«Me he separado de Mara»",
+          "consequence": "Con esa frase basta para empezar. Inés deja sus papeles y te presta atención.",
+          "mark": {
+            "title": "Una frase es un comienzo",
+            "text": "Encontraste tus propias palabras para pedir ayuda.",
+            "kind": "care"
+          }
+        },
+        {
+          "key": "palabras-2",
+          "to": "identificacion",
+          "label": "Señalar el farol y decir «Estoy buscando a Mara»",
+          "consequence": "Inés mira el lugar que señalas y entiende que necesitas encontrar a tu acompañante.",
+          "mark": {
+            "title": "También puedo señalar",
+            "text": "Combinaste un gesto y unas palabras para hacerte entender.",
+            "kind": "care"
+          }
+        }
+      ]
+    },
+    {
+      "key": "identificacion",
+      "title": "Ayuda a la vista de todos",
+      "body": "Inés propone avisar por radio mientras esperas en la caseta. El uniforme y la identificación son pistas; también importa que atienda al público y que sigas en un lugar visible.",
+      "image": "/art/park/identificacion.png",
+      "act": 3,
+      "speaker": "narrator",
+      "hint": "La ayuda puede organizarse desde una zona pública. No necesitas ir a un lugar apartado.",
+      "kind": "story",
+      "choices": [
+        {
+          "key": "identificacion-1",
+          "to": "descripcion",
+          "label": "Quedarme en el mostrador mientras avisa",
+          "consequence": "Inés enciende la radio. Tú sigues viendo la plaza y a las familias.",
+          "mark": {
+            "title": "Ayuda en un lugar visible",
+            "text": "Comprobaste el contexto, no solo una insignia.",
+            "kind": "care"
+          }
+        },
+        {
+          "key": "identificacion-2",
+          "to": "publico",
+          "label": "Preguntar si hace falta ir a otro lugar",
+          "consequence": "«No. Podemos hacerlo desde aquí», aclara Inés. Entender el plan te ayuda a sentir tranquilidad.",
+          "mark": {
+            "title": "Puedo preguntar",
+            "text": "Pediste saber qué iba a pasar antes de seguir.",
+            "kind": "care"
+          }
+        }
+      ]
+    },
+    {
+      "key": "publico",
+      "title": "Conocer el plan",
+      "body": "Inés señala la radio y el banco del mostrador: «Aviso al equipo y esperamos aquí». Puedes ver por dónde podría llegar Mara.",
+      "image": "/art/park/radio.png",
+      "act": 3,
+      "speaker": "narrator",
+      "hint": null,
+      "kind": "story",
+      "choices": [
+        {
+          "key": "publico-1",
+          "to": "descripcion",
+          "label": "Aceptar esperar en el lugar público",
+          "consequence": "Te sientas cerca del mostrador. Ya sabes qué va a hacer Inés y dónde vas a quedarte.",
+          "mark": {
+            "title": "Un plan que entiendo",
+            "text": "Elegiste con información y permaneciste a la vista.",
+            "kind": "care"
+          }
+        }
+      ]
+    },
+    {
+      "key": "descripcion",
+      "title": "Las pistas que sí sirven",
+      "body": "«¿Cómo es Mara y dónde la viste por última vez?», pregunta Inés. Recuerdas su chaqueta amarilla y las flores junto a la fuente.",
+      "image": "/art/park/identificacion.png",
+      "act": 3,
+      "speaker": "narrator",
+      "hint": null,
+      "kind": "story",
+      "choices": [
+        {
+          "key": "descripcion-1",
+          "to": "radio",
+          "label": "Describir la chaqueta y el último lugar",
+          "consequence": "Inés comunica esas dos pistas al equipo. No necesitas inventar nada ni dar datos que no conoces.",
+          "mark": {
+            "title": "Dos pistas claras",
+            "text": "Compartiste información útil para el reencuentro.",
+            "kind": "care"
+          }
+        },
+        {
+          "key": "descripcion-2",
+          "to": "radio",
+          "label": "Decir que acordamos esperar en el farol",
+          "consequence": "Inés pide a una compañera que mire junto al farol. También describe dónde estás tú.",
+          "mark": {
+            "title": "Recuerdo compartido",
+            "text": "Usaste el punto de encuentro para orientar la búsqueda.",
+            "kind": "care"
+          }
+        }
+      ]
+    },
+    {
+      "key": "radio",
+      "title": "Un mensaje cruza el parque",
+      "body": "La radio hace «crrr». Inés explica al equipo lo que contaste. Después te dice: «Ya saben dónde estamos. Te avisaré en cuanto respondan».",
+      "image": "/art/park/radio.png",
+      "act": 4,
+      "speaker": "narrator",
+      "hint": null,
+      "kind": "story",
+      "choices": [
+        {
+          "key": "radio-1",
+          "to": "espera_caseta",
+          "label": "Abrir mi cuaderno mientras esperamos",
+          "consequence": "Dibujas una pequeña radio junto a tu hoja. Inés permanece en el mostrador, cerca de ti.",
+          "mark": {
+            "title": "Algo que me calma",
+            "text": "Elegiste una actividad tranquila mientras llega ayuda.",
+            "kind": "discovery"
+          }
+        },
+        {
+          "key": "radio-2",
+          "to": "espera_caseta",
+          "label": "Decirle a Inés que todavía siento miedo",
+          "consequence": "«Lo entiendo. Podemos esperar juntos», responde. No tienes que esconder lo que sientes.",
+          "mark": {
+            "title": "Mis emociones tienen voz",
+            "text": "Contaste cómo te sentías a quien te estaba ayudando.",
+            "kind": "care"
+          }
+        }
+      ]
+    },
+    {
+      "key": "espera_caseta",
+      "title": "La respuesta de la radio",
+      "body": "La radio vuelve a sonar. Una compañera ha encontrado a Mara junto a la fuente y la acompaña a la caseta. Inés te lo cuenta. Tú esperas allí, sin salir a buscar otra vez.",
+      "image": "/art/park/espera.png",
+      "act": 4,
+      "speaker": "narrator",
+      "hint": null,
+      "kind": "story",
+      "choices": [
+        {
+          "key": "espera_caseta-1",
+          "to": "reencuentro_caseta",
+          "label": "Esperar en el lugar que ya conocen",
+          "consequence": "Entre las personas de la plaza aparece una chaqueta amarilla. Esta vez ves también la cara de Mara.",
+          "mark": {
+            "title": "Un lugar donde encontrarme",
+            "text": "Permaneciste donde el equipo sabía que estabas.",
+            "kind": "care"
+          }
+        }
+      ]
+    },
+    {
+      "key": "espera_farol",
+      "title": "Una luz conocida",
+      "body": "La trabajadora avisa a la caseta y se queda contigo en la plaza. Al poco rato, una figura con chaqueta amarilla vuelve por el camino de la fuente.",
+      "image": "/art/park/banco.png",
+      "act": 4,
+      "speaker": "narrator",
+      "hint": null,
+      "kind": "story",
+      "choices": [
+        {
+          "key": "espera_farol-1",
+          "to": "reencuentro_farol",
+          "label": "Mirar bien y llamar a Mara desde el farol",
+          "consequence": "Reconoces su cara y la llamas. Mara te ve junto al lugar que acordaron.",
+          "mark": {
+            "title": "Una señal compartida",
+            "text": "El punto de encuentro ayudó a reunirlos.",
+            "kind": "care"
+          }
+        }
+      ]
+    },
+    {
+      "key": "espera_arbol",
+      "title": "La vuelta encontró ayuda",
+      "body": "La radio responde: Mara está en el farol. La trabajadora le comunica dónde esperas y permanece contigo bajo el árbol, junto a las familias.",
+      "image": "/art/park/arbol.png",
+      "act": 4,
+      "speaker": "narrator",
+      "hint": null,
+      "kind": "story",
+      "choices": [
+        {
+          "key": "espera_arbol-1",
+          "to": "reencuentro_arbol",
+          "label": "Quedarme bajo el árbol hasta que llegue",
+          "consequence": "Mara llega desde el farol acompañada por otra trabajadora. Tu cambio de rumbo te trajo de vuelta a un lugar seguro.",
+          "mark": {
+            "title": "Volver también es avanzar",
+            "text": "Tu última decisión abrió un camino hacia el reencuentro.",
+            "kind": "learning"
+          }
+        }
+      ]
+    },
+    {
+      "key": "reencuentro_farol",
+      "title": "El abrazo del farol",
+      "body": "«¡Aquí estás!», dice Mara, aliviada. Se agacha para escucharte. El farol, que parecía un detalle pequeño al entrar, les ha ayudado a encontrarse.",
+      "image": "/art/park/reunion-farol.png",
+      "act": 5,
+      "speaker": "narrator",
+      "hint": null,
+      "kind": "story",
+      "choices": [
+        {
+          "key": "reencuentro_farol-1",
+          "to": "final_farol",
+          "label": "Contarle que recordé nuestro acuerdo",
+          "consequence": "Mara te abraza: «Ese acuerdo nos ayudó. La próxima vez seguiremos juntos y lo recordaremos al entrar».",
+          "mark": {
+            "title": "Lo que hicimos juntos",
+            "text": "Reconociste el valor de un plan compartido.",
+            "kind": "care"
+          }
+        },
+        {
+          "key": "reencuentro_farol-2",
+          "to": "final_farol",
+          "label": "Contarle cómo me sentí esperando",
+          "consequence": "«Gracias por contármelo», dice Mara. Se quedan un momento junto al banco, hasta que el nudo se afloja.",
+          "mark": {
+            "title": "Después también puedo hablar",
+            "text": "Compartiste tus emociones después del reencuentro.",
+            "kind": "care"
+          }
+        }
+      ]
+    },
+    {
+      "key": "reencuentro_caseta",
+      "title": "Una voz llegó hasta Mara",
+      "body": "Mara entra en la caseta y se agacha a tu altura. Inés explica lo que hiciste. «Pedir ayuda fue importante», dice Mara. Tu voz puso al equipo en movimiento.",
+      "image": "/art/park/reunion-caseta.png",
+      "act": 5,
+      "speaker": "narrator",
+      "hint": null,
+      "kind": "story",
+      "choices": [
+        {
+          "key": "reencuentro_caseta-1",
+          "to": "final_caseta",
+          "label": "Contarle cómo pedí ayuda",
+          "consequence": "Mara escucha y agradece a Inés. Antes de seguir paseando, vuelven a recordar el farol y acuerdan permanecer cerca.",
+          "mark": {
+            "title": "Mi historia, mis palabras",
+            "text": "Contaste tu recorrido y construiste un plan para después.",
+            "kind": "care"
+          }
+        },
+        {
+          "key": "reencuentro_caseta-2",
+          "to": "final_caseta",
+          "label": "Agradecer a Inés y proponer recordar el farol",
+          "consequence": "Inés se despide desde el mostrador. Tú y Mara anotan un pequeño farol en el cuaderno.",
+          "mark": {
+            "title": "Una red que acompaña",
+            "text": "Descubriste que pedir ayuda y acordar un plan pueden ir juntos.",
+            "kind": "care"
+          }
+        }
+      ]
+    },
+    {
+      "key": "reencuentro_arbol",
+      "title": "El camino de vuelta",
+      "body": "Mara llega al árbol y te abraza. Le cuentas que te alejaste y luego decidiste parar. «Gracias por volver a pedir ayuda. No estás en problemas», te dice.",
+      "image": "/art/park/reunion-arbol.png",
+      "act": 5,
+      "speaker": "narrator",
+      "hint": null,
+      "kind": "story",
+      "choices": [
+        {
+          "key": "reencuentro_arbol-1",
+          "to": "final_arbol",
+          "label": "Contar todo, incluso lo que me dio duda",
+          "consequence": "Mara escucha sin regañarte. Juntos acuerdan seguir cerca y pedir ayuda en un lugar público si vuelven a separarse.",
+          "mark": {
+            "title": "Una conversación valiente",
+            "text": "Hablar con sinceridad ayuda a cuidarse mejor.",
+            "kind": "learning"
+          }
+        },
+        {
+          "key": "reencuentro_arbol-2",
+          "to": "final_arbol",
+          "label": "Proponer un nuevo acuerdo para seguir juntos",
+          "consequence": "Señalan el farol otra vez. Esta vez también observan la caseta. Tu experiencia les ayuda a preparar el siguiente paseo.",
+          "mark": {
+            "title": "De la duda a un nuevo plan",
+            "text": "Transformaste lo que pasó en un acuerdo de cuidado.",
+            "kind": "learning"
+          }
+        }
+      ]
+    },
+    {
+      "key": "final_farol",
+      "title": "La luz que nos reunió",
+      "body": "Terminas tu dibujo junto a Mara. Añades un farol turquesa: un lugar que ambos conocían se convirtió en una forma de encontrarse. NAVI se acurruca cerca. La tarde todavía guarda cosas bonitas.",
+      "image": "/art/park/final-farol.png",
+      "act": 5,
+      "speaker": "narrator",
+      "hint": null,
+      "kind": "story",
+      "final": true,
+      "ending": "farol",
+      "takeaway": "Acordar un punto de encuentro, permanecer visible y pedir apoyo puede ayudarnos a encontrarnos.",
+      "choices": []
+    },
+    {
+      "key": "final_caseta",
+      "title": "Mi voz encontró un camino",
+      "body": "En tu cuaderno dibujas una radio y dos pequeñas ondas. No resolviste todo a solas: pediste ayuda y contaste lo que sabías. Mara camina a tu lado. La aventura continúa, ahora juntos.",
+      "image": "/art/park/final-caseta.png",
+      "act": 5,
+      "speaker": "narrator",
+      "hint": null,
+      "kind": "story",
+      "final": true,
+      "ending": "voz",
+      "takeaway": "Puedo pedir ayuda al personal en una zona pública y contar pistas claras sin alejarme con desconocidos.",
+      "choices": []
+    },
+    {
+      "key": "final_arbol",
+      "title": "Siempre puedo cambiar de rumbo",
+      "body": "Dibujas una hoja con un camino que vuelve al árbol. Te equivocaste de dirección, te detuviste y buscaste ayuda. Ese cambio cuenta. Mara y tú guardan el cuaderno y vuelven juntos a la fuente.",
+      "image": "/art/park/final-arbol.png",
+      "act": 5,
+      "speaker": "narrator",
+      "hint": null,
+      "kind": "story",
+      "final": true,
+      "ending": "regreso",
+      "takeaway": "Puedo detenerme, decir que no y cambiar una decisión. Pedir ayuda sigue siendo posible.",
+      "choices": []
+    }
+  ]
+}

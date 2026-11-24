@@ -1,0 +1,107 @@
+{
+  "institucion": "Casa de la Infancia",
+  "datosDemo": true,
+  "ninos": [
+    {
+      "id": 1,
+      "nombre": "Sofía",
+      "cuentosAsignados": 3,
+      "logros": [
+        "Primera aventura completada"
+      ],
+      "cuentosJugados": [
+        {
+          "id": "cuento-parque",
+          "titulo": "Me perdí en el parque",
+          "categoria": "Seguridad en lugares públicos",
+          "fecha": "2026-10-06",
+          "estado": "completado",
+          "puntaje": 10,
+          "puntajeMaximo": 20,
+          "estrellas": 2,
+          "decisiones": [
+            {
+              "situacion": "No encuentras a tu tutor.",
+              "respuesta": "Pedir ayuda al personal del parque.",
+              "correcta": true,
+              "puntos": 10,
+              "tema": "Pedir ayuda"
+            },
+            {
+              "situacion": "Una persona desconocida ofrece llevarte a casa.",
+              "respuesta": "Ir con esa persona.",
+              "correcta": false,
+              "puntos": 0,
+              "tema": "Seguridad ante desconocidos"
+            }
+          ],
+          "recomendacion": "Conversar sobre por qué debe permanecer en un lugar seguro y pedir ayuda al personal identificado."
+        },
+        {
+          "id": "cuento-calle",
+          "titulo": "Cruzamos la calle",
+          "categoria": "Seguridad vial",
+          "fecha": "2026-10-06",
+          "estado": "completado",
+          "puntaje": 20,
+          "puntajeMaximo": 20,
+          "estrellas": 3,
+          "decisiones": [
+            {
+              "situacion": "El semáforo peatonal está en rojo.",
+              "respuesta": "Esperar junto a mi tutor.",
+              "correcta": true,
+              "puntos": 10,
+              "tema": "Respetar el semáforo"
+            },
+            {
+              "situacion": "El semáforo peatonal cambia a verde.",
+              "respuesta": "Comprobar que los vehículos se detengan y cruzar con mi tutor.",
+              "correcta": true,
+              "puntos": 10,
+              "tema": "Cruzar con cuidado"
+            }
+          ],
+          "recomendacion": "Repasar las decisiones del cuento y practicar el cruce acompañado por un adulto."
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "nombre": "Mateo",
+      "cuentosAsignados": 3,
+      "logros": [
+        "Primera aventura completada"
+      ],
+      "cuentosJugados": [
+        {
+          "id": "cuento-parque",
+          "titulo": "Me perdí en el parque",
+          "categoria": "Seguridad en lugares públicos",
+          "fecha": "2026-10-06",
+          "estado": "completado",
+          "puntaje": 20,
+          "puntajeMaximo": 20,
+          "estrellas": 3,
+          "decisiones": [
+            {
+              "situacion": "No encuentras a tu tutor.",
+              "respuesta": "Pedir ayuda al personal del parque.",
+              "correcta": true,
+              "puntos": 10,
+              "tema": "Pedir ayuda"
+            },
+            {
+              "situacion": "Una persona desconocida ofrece llevarte a casa.",
+              "respuesta": "Quedarme con el personal del parque mientras localizan a mi tutor.",
+              "correcta": true,
+              "puntos": 10,
+              "tema": "Seguridad ante desconocidos"
+            }
+          ],
+          "recomendacion": "Repasar a quién puede pedir ayuda si se separa de su tutor."
+        }
+      ]
+    }
+  ]
+}

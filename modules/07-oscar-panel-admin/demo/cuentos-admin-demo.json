@@ -1,0 +1,22 @@
+{
+  "cuentos": [
+    {
+      "id": "c1",
+      "titulo": "El Misterio del Bosque Azul",
+      "categoria": "Aventura",
+      "descripcion": "Un viaje para encontrar la luz perdida.",
+      "imagen": "bosque.jpg",
+      "edad_recomendada": "5-7 años",
+      "estado": "publicado"
+    },
+    {
+      "id": "c2",
+      "titulo": "La Nave de Cartón",
+      "categoria": "Ciencia Ficción",
+      "descripcion": "Viaje a marte desde el patio.",
+      "imagen": "nave.jpg",
+      "edad_recomendada": "6-9 años",
+      "estado": "borrador"
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+
+   PASS  Tests\Unit\ExampleTest
+  ✓ that true is true
+
+   PASS  Tests\Feature\AdventureTest
+  ✓ public content has six illustrated scenes and no voice                                                       0.16s  
+  ✓ unauthenticated requests are rejected                                                                        0.04s  
+  ✓ adult registration login logout and password hash                                                            0.27s  
+  ✓ profiles validate age and cannot be read or changed by another tutor                                         0.05s  
+  ✓ session start decisions continue and rewards are idempotent                                                  0.14s  
+  ✓ foreign session cannot be read finished or changed                                                           0.05s  
+  ✓ teacher needs tutor consent and cannot play or modify child                                                  0.07s  
+  ✓ seeding twice preserves ids history and content graph                                                        0.13s  
+
+   PASS  Tests\Feature\ExampleTest
+  ✓ the application returns a successful response                                                                0.01s  
+
+  Tests:    10 passed (117 assertions)
+  Duration: 1.06s
+

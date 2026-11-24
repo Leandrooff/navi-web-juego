@@ -1,0 +1,14 @@
+{
+  "passed": true,
+  "checks": [
+    "El servidor rechaza POST sin token CSRF (419)",
+    "Edición real de alias y color del perfil",
+    "Filtro de informe solo con fecha final",
+    "Diálogo accesible, Escape y restitución de foco",
+    "Revelado gradual del texto y acción para mostrarlo completo",
+    "Texto grande y movimiento reducido en móvil de 360 px",
+    "Cero peticiones de audio y ningún control de voz ficticio",
+    "Cookie de sesión HttpOnly"
+  ],
+  "pageErrors": []
+}
