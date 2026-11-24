@@ -1,45 +1,24 @@
-# Modulo 04 Fabian Componentes frontend
+# Módulo 04 · Componentes frontend
 
-## Objetivo
+## Integración
 
-Crear componentes React reutilizables para que las pantallas del proyecto mantengan una experiencia clara, coherente y adaptable.
+Los componentes React están integrados en el frontend activo (`frontend/src/components/`) y se usan desde las pantallas de juego (`frontend/src/game/StoryStage.jsx`), familia y aula (`frontend/src/adult/`). La app conserva `Layout`, `Button`, `StoryCard`, `AchievementCard`, `ProgressBar`, `ChoiceButton`, `Alert` y `Modal`, y sus estilos compartidos.
 
-Leer tambien `INSTRUCCIONES.md` dentro de esta misma carpeta para ver exactamente que debes subir.
+El guardado de avance bloquea el botón mientras procesa, anuncia el estado ocupado y evita envíos repetidos. Almacena el progreso localmente; si el navegador rechaza el almacenamiento, muestra un error recuperable que permite volver a intentar. El modal tiene nombre accesible, captura el foco, mantiene la navegación con Tab, cierra con Escape o clic fuera y devuelve el foco al control que lo abrió.
 
-## Componentes incluidos
+## Reproducción y evidencia
 
-- `Button.jsx`: botón genérico y variantes `PrimaryButton` y `SecondaryButton`.
-- `StoryCard.jsx`: tarjeta de cuento con estados nuevo, en progreso, completado y bloqueado.
-- `AchievementCard.jsx`: tarjeta de logro desbloqueado o pendiente.
-- `ProgressBar.jsx`: barra accesible con valor y máximo configurables.
-- `ChoiceButton.jsx`: opción seleccionable para decisiones.
-- `Modal.jsx`: diálogo de confirmación, cierre con Escape y clic fuera.
-- `Alert.jsx`: mensajes informativos, positivos, de advertencia y error.
-- `Layout.jsx`: estructura de navegación, perfil y contenido adaptable.
-- `componentes.css`: estilos, estados, tokens de color y reglas responsive.
+Desde `frontend/`:
 
-## Uso rápido en React
-
-Importa los componentes que necesites y carga la hoja de estilos una sola vez:
-
-```jsx
-import { Button } from "./src/Button.jsx";
-import StoryCard from "./src/StoryCard.jsx";
-import ProgressBar from "./src/ProgressBar.jsx";
-import "./src/componentes.css";
-
-<Button variant="primary" onClick={iniciar}>Comenzar aventura</Button>
-<StoryCard title="Me perdí en el parque" category="Seguridad"
-  description="Aprende a pedir ayuda" status="nuevo" onAction={iniciar} />
-<ProgressBar value={3} max={5} label="Escenas completadas" />
+```bash
+npm install
+npm test
+npm run build
+npm run dev
 ```
 
-Los componentes reciben contenido y datos por props. Los botones aceptan `variant`, `state`, `disabled` y propiedades nativas de botón; la barra limita el valor mostrado al rango permitido. La galería incluye una versión HTML autónoma para revisar los ejemplos sin instalar dependencias.
+Resultado observado en esta entrega: `npm test` pasó 2/2 comprobaciones y `npm run build` terminó correctamente con Vite. Para revisar con teclado, abre «Salir de la aventura» desde Inicio; Tab y Mayús+Tab recorren los botones del diálogo, Escape lo cierra y el foco regresa al botón de apertura. También se puede cerrar con clic en el fondo.
 
-## Archivos
+En la interfaz prueba «Aventuras» para seleccionar una respuesta y guardar, «Mi progreso» para el resumen familiar y «Aula» para ver el avance del grupo. «Guardar progreso» anuncia Guardando…, se deshabilita durante la operación y termina con confirmación o error recuperable.
 
-- Componentes React en `src/`.
-- Galería visual e interactiva en `demo/componentes-demo.html`.
-- Resumen del avance en `base-avance/avance.md`.
-
-Los tokens principales usan la paleta de la preview del proyecto: azul `#2356d8`, navy `#102a43`, cielo `#dff3ff`, menta `#dff8ea` y amarillo `#ffe7a8`. Para usar una ilustración propia en `StoryCard`, pasa `image={{ src, alt }}`. `Modal` se muestra con `open` y recibe `onConfirm` y `onCancel`.
+El guardado de esta demo usa `localStorage` como persistencia local; una integración con API remota puede sustituir esa función sin cambiar la API visual de los componentes.

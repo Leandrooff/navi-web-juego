@@ -2,9 +2,11 @@
   "name": "navi-web-juego-frontend",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+    "test": "node --test",
     "preview": "vite preview"
   },
   "dependencies": {
