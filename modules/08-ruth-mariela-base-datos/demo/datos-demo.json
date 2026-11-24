@@ -1,0 +1,405 @@
+{
+  "roles": [
+    {
+      "id": 1,
+      "name": "tutor",
+      "description": "Tutor o familiar responsable del niño"
+    },
+    {
+      "id": 2,
+      "name": "teacher",
+      "description": "Docente que acompaña el proceso educativo"
+    },
+    {
+      "id": 3,
+      "name": "admin",
+      "description": "Administrador del sistema"
+    }
+  ],
+
+  "users": [
+    {
+      "id": 1,
+      "role_id": 1,
+      "name": "Ana Pérez",
+      "email": "ana.perez@navi.test",
+      "status": "active"
+    },
+    {
+      "id": 2,
+      "role_id": 2,
+      "name": "Carlos Rojas",
+      "email": "carlos.rojas@navi.test",
+      "status": "active"
+    },
+    {
+      "id": 3,
+      "role_id": 3,
+      "name": "Administrador NAVI",
+      "email": "admin@navi.test",
+      "status": "active"
+    }
+  ],
+
+  "child_profiles": [
+    {
+      "id": 1,
+      "tutor_id": 1,
+      "nickname": "Luna",
+      "age": 8,
+      "avatar": "avatar_luna.png",
+      "support_level": "medium"
+    },
+    {
+      "id": 2,
+      "tutor_id": 1,
+      "nickname": "Mateo",
+      "age": 10,
+      "avatar": "avatar_mateo.png",
+      "support_level": "low"
+    }
+  ],
+
+  "categories": [
+    {
+      "id": 1,
+      "name": "Seguridad con desconocidos",
+      "description": "Misiones sobre prevención y decisiones seguras frente a personas desconocidas"
+    },
+    {
+      "id": 2,
+      "name": "Seguridad digital",
+      "description": "Misiones relacionadas con mensajes, enlaces y riesgos en internet"
+    }
+  ],
+
+  "stories": [
+    {
+      "id": 1,
+      "category_id": 1,
+      "title": "El desconocido del parque",
+      "description": "Misión preventiva sobre cómo actuar frente a una persona desconocida.",
+      "version": 1,
+      "story_order": 1,
+      "status": "published",
+      "estimated_minutes": 15,
+      "initial_scene_id": 1
+    },
+    {
+      "id": 2,
+      "category_id": 2,
+      "title": "El mensaje misterioso",
+      "description": "Misión sobre mensajes inesperados y seguridad digital.",
+      "version": 1,
+      "story_order": 2,
+      "status": "published",
+      "estimated_minutes": 15,
+      "initial_scene_id": 6
+    }
+  ],
+
+  "scenes": [
+    {
+      "id": 1,
+      "story_id": 1,
+      "title": "Inicio en el parque",
+      "body": "Luna está jugando en el parque mientras espera a su tutor.",
+      "scene_order": 1,
+      "scene_type": "dialogue",
+      "is_final": false
+    },
+    {
+      "id": 2,
+      "story_id": 1,
+      "title": "Aparece un desconocido",
+      "body": "Una persona desconocida se acerca y le ofrece mostrarle algo interesante.",
+      "scene_order": 2,
+      "scene_type": "preventive_decision",
+      "is_final": false
+    },
+    {
+      "id": 3,
+      "story_id": 1,
+      "title": "Buscar al tutor",
+      "body": "Luna decide buscar a su tutor antes de hacer cualquier otra cosa.",
+      "scene_order": 3,
+      "scene_type": "dialogue",
+      "is_final": false
+    },
+    {
+      "id": 4,
+      "story_id": 1,
+      "title": "Alejarse del lugar",
+      "body": "Luna se aleja y busca un lugar seguro con adultos conocidos.",
+      "scene_order": 4,
+      "scene_type": "dialogue",
+      "is_final": false
+    },
+    {
+      "id": 5,
+      "story_id": 1,
+      "title": "Reflexión final",
+      "body": "La misión termina con una reflexión sobre pedir ayuda a un adulto de confianza.",
+      "scene_order": 5,
+      "scene_type": "final",
+      "is_final": true
+    },
+    {
+      "id": 6,
+      "story_id": 2,
+      "title": "Mensaje nuevo",
+      "body": "Mateo recibe un mensaje de una persona que no conoce.",
+      "scene_order": 1,
+      "scene_type": "dialogue",
+      "is_final": false
+    },
+    {
+      "id": 7,
+      "story_id": 2,
+      "title": "Enlace desconocido",
+      "body": "El mensaje contiene un enlace y promete un premio.",
+      "scene_order": 2,
+      "scene_type": "preventive_decision",
+      "is_final": false
+    },
+    {
+      "id": 8,
+      "story_id": 2,
+      "title": "Pedir ayuda",
+      "body": "Mateo decide mostrar el mensaje a un adulto de confianza.",
+      "scene_order": 3,
+      "scene_type": "dialogue",
+      "is_final": false
+    },
+    {
+      "id": 9,
+      "story_id": 2,
+      "title": "Comprensión",
+      "body": "¿Qué debería hacerse cuando llega un enlace de una persona desconocida?",
+      "scene_order": 4,
+      "scene_type": "comprehension",
+      "is_final": false
+    },
+    {
+      "id": 10,
+      "story_id": 2,
+      "title": "Cierre",
+      "body": "Mateo aprende que no debe abrir enlaces desconocidos sin consultar a un adulto.",
+      "scene_order": 5,
+      "scene_type": "final",
+      "is_final": true
+    }
+  ],
+
+  "choices": [
+    {
+      "id": 1,
+      "scene_id": 2,
+      "target_scene_id": 3,
+      "label": "Buscar a mi tutor antes de ir con esa persona",
+      "choice_order": 1,
+      "choice_type": "preventive",
+      "is_expected_answer": null,
+      "points": 0
+    },
+    {
+      "id": 2,
+      "scene_id": 2,
+      "target_scene_id": 4,
+      "label": "Alejarme y acercarme a un lugar seguro",
+      "choice_order": 2,
+      "choice_type": "preventive",
+      "is_expected_answer": null,
+      "points": 0
+    },
+    {
+      "id": 3,
+      "scene_id": 2,
+      "target_scene_id": 5,
+      "label": "Aceptar la invitación sin avisar a nadie",
+      "choice_order": 3,
+      "choice_type": "preventive",
+      "is_expected_answer": null,
+      "points": 0
+    },
+    {
+      "id": 4,
+      "scene_id": 7,
+      "target_scene_id": 8,
+      "label": "Mostrar el mensaje a un adulto de confianza",
+      "choice_order": 1,
+      "choice_type": "preventive",
+      "is_expected_answer": null,
+      "points": 0
+    },
+    {
+      "id": 5,
+      "scene_id": 7,
+      "target_scene_id": 10,
+      "label": "Abrir el enlace inmediatamente",
+      "choice_order": 2,
+      "choice_type": "preventive",
+      "is_expected_answer": null,
+      "points": 0
+    },
+    {
+      "id": 6,
+      "scene_id": 9,
+      "target_scene_id": 10,
+      "label": "No abrirlo y pedir ayuda a un adulto",
+      "choice_order": 1,
+      "choice_type": "comprehension",
+      "is_expected_answer": true,
+      "points": 10
+    },
+    {
+      "id": 7,
+      "scene_id": 9,
+      "target_scene_id": 10,
+      "label": "Abrirlo para saber qué contiene",
+      "choice_order": 2,
+      "choice_type": "comprehension",
+      "is_expected_answer": false,
+      "points": 0
+    }
+  ],
+
+  "game_sessions": [
+    {
+      "id": 1,
+      "child_profile_id": 1,
+      "story_id": 1,
+      "story_version": 1,
+      "started_at": "2026-10-05 18:00:00",
+      "completed_at": "2026-10-05 18:14:00",
+      "status": "completed"
+    },
+    {
+      "id": 2,
+      "child_profile_id": 2,
+      "story_id": 2,
+      "story_version": 1,
+      "started_at": "2026-10-05 19:00:00",
+      "completed_at": null,
+      "status": "in_progress"
+    }
+  ],
+
+  "decision_records": [
+    {
+      "id": 1,
+      "game_session_id": 1,
+      "scene_id": 2,
+      "choice_id": 1,
+      "selected_at": "2026-10-05 18:07:00"
+    },
+    {
+      "id": 2,
+      "game_session_id": 2,
+      "scene_id": 7,
+      "choice_id": 4,
+      "selected_at": "2026-10-05 19:05:00"
+    },
+    {
+      "id": 3,
+      "game_session_id": 2,
+      "scene_id": 9,
+      "choice_id": 6,
+      "selected_at": "2026-10-05 19:10:00"
+    }
+  ],
+
+  "scores": [
+    {
+      "id": 1,
+      "child_profile_id": 1,
+      "story_id": 1,
+      "score": 0,
+      "stars": 1
+    },
+    {
+      "id": 2,
+      "child_profile_id": 2,
+      "story_id": 2,
+      "score": 10,
+      "stars": 2
+    }
+  ],
+
+  "achievements": [
+    {
+      "id": 1,
+      "name": "Comienza tu aventura",
+      "description": "Completar la primera misión de NAVI.",
+      "icon_path": "logro_inicio.png",
+      "requirement_type": "completed_stories",
+      "requirement_value": 1
+    },
+    {
+      "id": 2,
+      "name": "Buen observador",
+      "description": "Completar una actividad de comprensión.",
+      "icon_path": "logro_observador.png",
+      "requirement_type": "comprehension_completed",
+      "requirement_value": 1
+    }
+  ],
+
+  "child_achievements": [
+    {
+      "id": 1,
+      "child_profile_id": 1,
+      "achievement_id": 1,
+      "unlocked_at": "2026-10-05 18:14:00"
+    },
+    {
+      "id": 2,
+      "child_profile_id": 2,
+      "achievement_id": 2,
+      "unlocked_at": "2026-10-05 19:10:00"
+    }
+  ],
+
+  "progress": [
+    {
+      "id": 1,
+      "child_profile_id": 1,
+      "story_id": 1,
+      "status": "completed",
+      "last_scene_id": 5,
+      "attempts": 1,
+      "started_at": "2026-10-05 18:00:00",
+      "completed_at": "2026-10-05 18:14:00"
+    },
+    {
+      "id": 2,
+      "child_profile_id": 1,
+      "story_id": 2,
+      "status": "available",
+      "last_scene_id": null,
+      "attempts": 0,
+      "started_at": null,
+      "completed_at": null
+    },
+    {
+      "id": 3,
+      "child_profile_id": 2,
+      "story_id": 1,
+      "status": "completed",
+      "last_scene_id": 5,
+      "attempts": 1,
+      "started_at": "2026-10-04 17:00:00",
+      "completed_at": "2026-10-04 17:16:00"
+    },
+    {
+      "id": 4,
+      "child_profile_id": 2,
+      "story_id": 2,
+      "status": "in_progress",
+      "last_scene_id": 9,
+      "attempts": 1,
+      "started_at": "2026-10-05 19:00:00",
+      "completed_at": null
+    }
+  ]
+}
