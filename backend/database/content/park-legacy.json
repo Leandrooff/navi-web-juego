@@ -1,0 +1,113 @@
+{
+  "slug": "me-perdi-en-el-parque",
+  "title": "Me perdí en el parque",
+  "description": "Una tarde de juegos, un pequeño despiste y un gran descubrimiento: pedir ayuda también es una forma de ser valiente.",
+  "estimated_minutes": 8,
+  "scenes": [
+    {
+      "key": "inicio",
+      "title": "¿Dónde está mi tutor?",
+      "body": "El parque huele a flores y a tierra tibia. Después de jugar, miras alrededor… tu tutor ya no está a la vista. NAVI se acerca: «Estoy contigo. Respiremos despacio. ¿Qué podemos hacer?»",
+      "alt": "El explorador se detiene junto a los juegos. NAVI lo acompaña y la caseta de información se ve a lo lejos."
+    },
+    {
+      "key": "caseta",
+      "title": "Una voz que ayuda",
+      "body": "«Trabajo aquí. Vamos a buscar a tu tutor», dice la encargada del parque. Lleva una identificación y una radio. NAVI sonríe: «Ya no tienes que resolverlo sin compañía». ¿Dónde esperarás?",
+      "alt": "Una trabajadora identificada escucha al explorador junto a la caseta y sostiene una radio."
+    },
+    {
+      "key": "punto-visible",
+      "title": "El banco junto al gran árbol",
+      "body": "Te detienes junto al banco azul, donde pueden verte. Las hojas se mueven suavemente. Desde aquí reconoces la caseta de información. «Este lugar es fácil de encontrar», susurra NAVI. ¿Qué haces ahora?",
+      "alt": "El explorador pide ayuda junto a un banco azul visible, cerca de la caseta."
+    },
+    {
+      "key": "sendero",
+      "title": "Una pausa en el camino",
+      "body": "El sendero se acerca a la salida. Ves personal del parque con identificación. Otra persona, a quien no conoces, ofrece llevarte fuera para buscar a tu tutor. NAVI te recuerda: «Podemos detenernos y pedir ayuda aquí».",
+      "alt": "El explorador permanece en el parque entre el personal identificado y otra persona que señala la salida."
+    },
+    {
+      "key": "reencuentro",
+      "title": "¡Aquí estás!",
+      "body": "Al fin aparece tu tutor. Un abrazo largo, una respiración tranquila… vuelven a estar juntos. «Gracias por pedir ayuda», te dice. NAVI da una vuelta en el aire. Antes de volver a jugar, ¿qué pueden acordar?",
+      "alt": "El explorador abraza a su tutora junto a la caseta. NAVI y la trabajadora los acompañan."
+    },
+    {
+      "key": "cierre",
+      "title": "Una luz para tu camino",
+      "body": "La aventura termina, pero lo que aprendiste va contigo: hacer una pausa, quedarte visible, buscar personal identificado y acordar un punto de encuentro con tu tutor. Cada decisión fue una oportunidad para aprender.",
+      "alt": "El explorador conversa con su tutora en un banco. NAVI sostiene una estrella al atardecer.",
+      "final": true
+    }
+  ],
+  "choices": [
+    [
+      "inicio",
+      "caseta",
+      "Pedir ayuda en la caseta del parque",
+      "Caminas hasta la caseta cercana, que puedes ver desde los juegos. Su personal identificado te escucha y se queda contigo para ayudarte a encontrar a tu tutor."
+    ],
+    [
+      "inicio",
+      "punto-visible",
+      "Quedarme en un lugar visible y pedir ayuda",
+      "Te quedas junto al banco azul y levantas la mano. Al detenerte, evitas alejarte más. NAVI te acompaña mientras buscas personal del parque."
+    ],
+    [
+      "inicio",
+      "sendero",
+      "Salir de los juegos y buscar por mi cuenta",
+      "Sigues el sendero, pero ya no reconoces tan bien el lugar. NAVI te invita a hacer una pausa. Todavía estás a tiempo de detenerte y pedir ayuda."
+    ],
+    [
+      "caseta",
+      "reencuentro",
+      "Esperar con el personal en la caseta",
+      "La encargada avisa por la radio. Tú esperas a su lado, en un lugar visible. Tu tutor llega a la caseta siguiendo las indicaciones del personal."
+    ],
+    [
+      "caseta",
+      "sendero",
+      "Volver a salir para buscar sin compañía",
+      "Sales de la caseta y el parque parece más grande. Cambiar de lugar puede hacer más difícil encontrarte. NAVI sigue a tu lado: «Paremos y pidamos ayuda otra vez»."
+    ],
+    [
+      "punto-visible",
+      "caseta",
+      "Pedir ayuda al personal de la caseta cercana",
+      "Llamas al personal identificado de la caseta, que está a la vista. Una encargada se acerca, te escucha y te acompaña al punto de ayuda."
+    ],
+    [
+      "punto-visible",
+      "sendero",
+      "Correr por el sendero hacia la salida",
+      "Al correr, el banco azul queda atrás. NAVI te alcanza y te recuerda que detenerte puede ayudarte a pensar. Cerca de la salida ves dos personas."
+    ],
+    [
+      "sendero",
+      "reencuentro",
+      "Pedir ayuda al personal del parque",
+      "Te acercas al personal identificado y explicas que no encuentras a tu tutor. Avisa a la caseta y permanece contigo. Poco después, tu tutor llega al punto de ayuda."
+    ],
+    [
+      "sendero",
+      "cierre",
+      "Aceptar salir con la persona desconocida",
+      "NAVI pausa el cuento antes de salir: «Aunque alguien parezca amable, no nos vamos con una persona que no conocemos». En esta historia volvemos a un lugar visible y pedimos ayuda al personal del parque. Ya con tu tutor, pueden conversar sobre lo aprendido."
+    ],
+    [
+      "reencuentro",
+      "cierre",
+      "Acordar un punto de encuentro y quedarnos cerca",
+      "Eligen juntos el banco azul, junto a la caseta, como punto de encuentro. Tu tutor también acuerda mantenerse cerca de ti. Ahora tienen un plan que pueden recordar."
+    ],
+    [
+      "reencuentro",
+      "cierre",
+      "Volver a jugar sin acordar dónde encontrarnos",
+      "Antes de correr a los juegos, NAVI propone una pequeña pausa: «Un lugar de encuentro ayuda mucho». Puedes acordarlo con tu tutor antes de la próxima visita."
+    ]
+  ]
+}

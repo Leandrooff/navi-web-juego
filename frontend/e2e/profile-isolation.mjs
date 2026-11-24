@@ -1,0 +1,42 @@
+import {chromium,expect} from '@playwright/test';
+import {randomUUID} from 'node:crypto';
+
+const browser=await chromium.launch({headless:true,executablePath:process.env.NAVI_BROWSER_PATH||undefined});
+const page=await browser.newPage({reducedMotion:'reduce'});
+const base=process.env.NAVI_TEST_URL||'http://127.0.0.1:5173';
+const email=`perfil-${randomUUID()}@example.test`,password=`Navi-${randomUUID()}`;
+try {
+ await page.goto(base);
+ await page.getByRole('button',{name:'Familias y docentes'}).click();
+ await page.getByRole('button',{name:'Crear una cuenta de familia o docente'}).click();
+ await page.getByLabel('Tu nombre',{exact:true}).fill('Familia de prueba');
+ await page.getByLabel('Correo electrónico').fill(email);
+ await page.getByLabel('Contraseña',{exact:true}).fill(password);
+ await page.getByLabel('Repite la contraseña').fill(password);
+ await page.getByRole('button',{name:'Crear mi cuenta',exact:true}).click();
+ await page.getByRole('button',{name:'Crear primer perfil',exact:true}).click();
+ await page.getByLabel('Alias del niño o niña').fill('Luna');
+ await page.getByLabel('Edad').selectOption('6');
+ await page.getByRole('button',{name:'Océano',exact:true}).click();
+ await page.getByRole('button',{name:'Guardar perfil',exact:true}).click();
+ await page.getByRole('button',{name:'+ Crear perfil'}).click();
+ await page.getByLabel('Alias del niño o niña').fill('Sol');
+ await page.getByLabel('Edad').selectOption('10');
+ await page.getByRole('button',{name:'Amanecer',exact:true}).click();
+ await page.getByRole('button',{name:'Guardar perfil',exact:true}).click();
+ await expect(page.locator('.explorer-row')).toHaveCount(2);
+ await page.locator('.explorer-row').filter({hasText:'Luna'}).click();
+ await page.getByRole('button',{name:'Abrir su mundo'}).click();
+ await page.locator('.navi-choice').first().click();
+ await expect(page.locator('.journey-stage')).toHaveAttribute('data-phase','consecuencia');
+ await page.reload();
+ await page.getByRole('button',{name:'¡Comenzar aventura!'}).click();
+ await page.getByRole('button',{name:/Sol.*10 años/}).click();
+ await expect(page.locator('.journey-stage')).toHaveAttribute('data-scene','cielo');
+ await expect(page.locator('.journey-stage')).toHaveAttribute('data-phase','jugando');
+ await page.reload();
+ await page.getByRole('button',{name:'¡Comenzar aventura!'}).click();
+ await page.getByRole('button',{name:/Luna.*6 años/}).click();
+ await expect(page.locator('.journey-stage')).toHaveAttribute('data-phase','consecuencia');
+ console.log('Dos perfiles conservan partidas separadas; la partida de Luna se reanuda después de recargar.');
+} finally { await browser.close(); }
