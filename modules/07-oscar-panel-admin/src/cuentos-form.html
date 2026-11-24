@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Crear/Editar Cuento</title>
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+    <div class="admin-container">
+        <div class="header">
+            <h1>Detalles del Cuento</h1>
+            <button class="btn btn-warning" onclick="location.href='admin-dashboard.html'">Volver</button>
+        </div>
+        <div class="card">
+            <div class="form-group">
+                <label>Título del Cuento</label>
+                <input type="text" placeholder="Ej: El Dragón Tímido">
+            </div>
+            <div class="form-group">
+                <label>Categoría</label>
+                <select>
+                    <option>Aventura</option>
+                    <option>Valores</option>
+                    <option>Ciencia Ficción</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Descripción</label>
+                <textarea rows="4" placeholder="De qué trata la historia..."></textarea>
+            </div>
+            <div class="form-group">
+                <label>URL de Imagen de Portada</label>
+                <input type="text" placeholder="https://ejemplo.com/imagen.jpg">
+            </div>
+            <div style="display: flex; gap: 20px;">
+                <div class="form-group" style="flex: 1;">
+                    <label>Edad Recomendada</label>
+                    <input type="text" placeholder="Ej: 6-8 años">
+                </div>
+                <div class="form-group" style="flex: 1;">
+                    <label>Estado</label>
+                    <select>
+                        <option value="borrador">Borrador</option>
+                        <option value="publicado">Publicado</option>
+                    </select>
+                </div>
+            </div>
+            <div class="header" style="margin-bottom: 0; margin-top: 20px;">
+                <button class="btn btn-success" onclick="guardarSimulado('Cuento')">Guardar Cuento</button>
+                <button class="btn btn-primary" onclick="previsualizar()">Ver Resumen</button>
+            </div>
+        </div>
+    </div>
+    <script src="admin.js"></script>
+</body>
+</html>

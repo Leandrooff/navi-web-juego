@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Crear/Editar Escenas</title>
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+    <div class="admin-container">
+        <div class="header">
+            <h1>Gestor de Escenas y Decisiones</h1>
+            <button class="btn btn-warning" onclick="location.href='admin-dashboard.html'">Volver al Dashboard</button>
+        </div>
+        
+        <div class="card">
+            <h2>Nueva Escena</h2>
+            <div class="form-group">
+                <label>Orden de la Escena (Ej: 1)</label>
+                <input type="number" value="1">
+            </div>
+            <div class="form-group">
+                <label>Texto de la Escena</label>
+                <textarea rows="4" placeholder="El dragón se encontró con un camino dividido..."></textarea>
+            </div>
+            <div class="form-group">
+                <label>Imagen de Escena (Opcional)</label>
+                <input type="text" placeholder="URL de imagen">
+            </div>
+
+            <hr style="border: 1px solid #E2E8F0; margin: 20px 0;">
+            
+            <div class="header">
+                <h3>Opciones de Decisión</h3>
+                <button class="btn btn-primary" onclick="agregarOpcion()">+ Añadir Opción</button>
+            </div>
+            
+            <div id="opciones-container">
+            </div>
+
+            <div style="margin-top: 20px;">
+                <button class="btn btn-success" onclick="guardarSimulado('Escena y Opciones')">Guardar Escena</button>
+            </div>
+        </div>
+    </div>
+    <script src="admin.js"></script>
+</body>
+</html>

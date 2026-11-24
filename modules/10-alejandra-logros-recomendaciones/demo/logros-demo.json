@@ -1,0 +1,108 @@
+{
+  "mensajes": {
+    "1": "¡Muy bien! Terminaste el cuento y ya aprendiste algo nuevo.",
+    "2": "¡Qué bien lo hiciste! Cada vez sabes más cómo cuidarte.",
+    "3": "¡Increíble! Sabes cómo cuidarte en esta situación."
+  },
+  "logros": [
+    {
+      "id": "primer-cuento",
+      "nombre": "Primer paso",
+      "descripcion": "Completaste tu primer cuento.",
+      "icono": "👣",
+      "metrica": "cuentos_completados",
+      "meta": 1,
+      "condicion": "Completar 1 cuento"
+    },
+    {
+      "id": "tres-estrellas",
+      "nombre": "Estrella brillante",
+      "descripcion": "Conseguiste 3 estrellas en un cuento.",
+      "icono": "🌟",
+      "metrica": "cuentos_3_estrellas",
+      "meta": 1,
+      "condicion": "Conseguir 3 estrellas en un cuento"
+    },
+    {
+      "id": "decisor-seguro",
+      "nombre": "Decisión segura",
+      "descripcion": "Tomaste 5 decisiones seguras.",
+      "icono": "🛡️",
+      "metrica": "decisiones_seguras",
+      "meta": 5,
+      "condicion": "Tomar 5 decisiones seguras"
+    },
+    {
+      "id": "pido-ayuda",
+      "nombre": "Pido ayuda",
+      "descripcion": "Elegiste pedir ayuda a un adulto de confianza.",
+      "icono": "🙋",
+      "metrica": "pidio_ayuda",
+      "meta": 1,
+      "condicion": "Elegir pedir ayuda a un adulto de confianza"
+    },
+    {
+      "id": "pequeno-lector",
+      "nombre": "Pequeño lector",
+      "descripcion": "Completaste los 3 cuentos de la biblioteca.",
+      "icono": "📚",
+      "metrica": "cuentos_completados",
+      "meta": 3,
+      "condicion": "Completar los 3 cuentos de la biblioteca"
+    },
+    {
+      "id": "coleccionista",
+      "nombre": "Coleccionista de estrellas",
+      "descripcion": "Juntaste 6 estrellas.",
+      "icono": "✨",
+      "metrica": "estrellas_total",
+      "meta": 6,
+      "condicion": "Juntar 6 estrellas"
+    }
+  ],
+  "recomendaciones": {
+    "perderse": {
+      "segura": "Si te pierdes, quedarte quieto y pedir ayuda a un adulto de confianza es lo mejor.",
+      "reforzar": "Si te pierdes, quédate en un lugar visible y pide ayuda a un guardia, un vendedor o alguien que trabaje ahí."
+    },
+    "desconocidos": {
+      "segura": "Decir que no a un desconocido y avisar a tu adulto es una gran decisión.",
+      "reforzar": "Si alguien que no conoces te ofrece algo, di que no y cuéntaselo a tu mamá, papá o tutor."
+    },
+    "cruzar-calle": {
+      "segura": "Cruzar por la esquina y mirar a los dos lados te mantiene a salvo.",
+      "reforzar": "Para cruzar, busca la esquina o el paso de cebra, mira a los dos lados y ve de la mano de un adulto."
+    },
+    "emergencia": {
+      "segura": "Avisar rápido a un adulto en una emergencia es muy valiente.",
+      "reforzar": "En una emergencia, avisa enseguida a un adulto o llama al número de ayuda que te enseñaron."
+    }
+  },
+  "sesion": {
+    "perfil": "demo-nino",
+    "cuentoId": "perdido-en-el-mercado",
+    "titulo": "Lucas en el mercado",
+    "puntaje": 12,
+    "decisiones": [
+      {
+        "categoria": "perderse",
+        "texto": "Te quedaste quieto y buscaste a un vendedor",
+        "segura": true,
+        "puntos": 5,
+        "etiqueta": "pedir_ayuda"
+      },
+      {
+        "categoria": "desconocidos",
+        "texto": "Aceptaste un dulce de alguien que no conocías",
+        "segura": false,
+        "puntos": 2
+      },
+      {
+        "categoria": "perderse",
+        "texto": "Le dijiste el teléfono de mamá a un guardia",
+        "segura": true,
+        "puntos": 5
+      }
+    ]
+  }
+}
