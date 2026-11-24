@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "screen": "aventura 360px",
+  "measurements": {
+    "viewport": 360,
+    "documentWidth": 360,
+    "horizontalOverflow": false,
+    "textOutsideOrClipped": [],
+    "interactiveOverlaps": []
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "passed": true,
+  "checks": [
+    "Tab y Enter alcanzan el acceso y el formulario de registro; foco visible. Orden observado: Volver a NAVI > email > password > Entrar > Crear una cuenta de familia o docente",
+    "El servidor rechaza POST sin token CSRF (419)",
+    "La vista familiar de perfil a 360 px no genera desplazamiento horizontal.",
+    "La vista familiar de perfil a 360 px no genera desplazamiento horizontal.",
+    "Edición real de alias y color del perfil",
+    "Filtro de informe solo con fecha final",
+    "El control de revelado completo aparece y muestra el texto antes de concluir la lectura gradual.",
+    "Una ilustración que falla muestra reintento y se recupera sin perder la historia",
+    "Diálogo accesible, Escape y restitución de foco",
+    "Texto grande y movimiento reducido en móvil de 360 px",
+    "Una decisión de la aventura se activa con Tab y Enter, con foco visible.",
+    "Cero peticiones de audio y ningún control de voz ficticio",
+    "Cookie de sesión HttpOnly"
+  ],
+  "findings": [
+    "En la portada el foco programático queda en el h1 antes del primer Tab; Tab enfoca «¡Comenzar aventura!» y omite el botón anterior «Familias y docentes». Shift+Tab sí lo alcanza."
+  ],
+  "pageErrors": []
+}
