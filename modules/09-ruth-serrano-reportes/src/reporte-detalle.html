@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NAVI | Detalle del reporte</title>
+  <link rel="stylesheet" href="estilos-ui.css">
+  <link rel="stylesheet" href="reportes.css">
+  <script src="reportes.js" defer></script>
+</head>
+
+<body>
+  <a class="saltar-contenido" href="#contenido-principal">Saltar al contenido</a>
+  <header class="encabezado">
+    <div class="contenedor">
+      <div class="navi-topbar"><span class="navi-brand"><span class="navi-brand__mark" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 48 48"><path d="M24 4l6 12.3 13.6 2-9.8 9.6 2.3 13.6L24 35.1 11.9 41.5l2.3-13.6L4.4 18.3l13.6-2z" fill="#ffc43d"/></svg></span><span class="navi-brand__name">NA<b>VI</b></span></span><span class="etiqueta-tutor">Tutores y educadores</span></div>
+      <h1>Detalle del reporte</h1>
+      <p>Decisiones y resultados del cuento seleccionado.</p>
+    </div>
+  </header>
+
+  <main class="contenedor" id="contenido-principal">
+    <p class="aviso-demo mensaje mensaje--advertencia">
+      Demostración con datos ficticios de niños.
+    </p>
+
+    <a id="volver-reportes" href="dashboard-progreso.html" class="btn btn--secondary">
+      Volver a reportes
+    </a>
+
+    <p id="mensaje-estado" class="mensaje-estado" role="status" aria-live="polite">
+      Cargando detalle…
+    </p>
+
+    <div id="contenido-detalle" hidden>
+      <section class="panel" aria-labelledby="titulo-cuento">
+        <h2 id="titulo-cuento"></h2>
+        <p><strong>Niño:</strong> <span id="detalle-nino"></span></p>
+        <p><strong>Categoría:</strong> <span id="detalle-categoria"></span></p>
+        <p><strong>Fecha:</strong> <span id="detalle-fecha"></span></p>
+        <p><strong>Estado:</strong> <span id="detalle-estado"></span></p>
+
+        <div class="tarjetas-resumen">
+          <article class="tarjeta">
+            <h3>Puntaje</h3>
+            <p id="detalle-puntaje"></p>
+          </article>
+
+          <article class="tarjeta">
+            <h3>Estrellas</h3>
+            <p id="detalle-estrellas"></p>
+          </article>
+
+          <article class="tarjeta">
+            <h3>Decisiones correctas</h3>
+            <p id="detalle-correctas"></p>
+          </article>
+
+          <article class="tarjeta">
+            <h3>Decisiones incorrectas</h3>
+            <p id="detalle-incorrectas"></p>
+          </article>
+        </div>
+      </section>
+
+      <section class="panel" aria-labelledby="titulo-decisiones">
+        <h2 id="titulo-decisiones">Decisiones tomadas</h2>
+        <div id="lista-decisiones"></div>
+      </section>
+
+      <section class="panel" aria-labelledby="titulo-temas">
+        <h2 id="titulo-temas">Temas por reforzar</h2>
+        <ul id="temas-reforzar"></ul>
+      </section>
+
+      <section class="panel" aria-labelledby="titulo-recomendacion">
+        <h2 id="titulo-recomendacion">Recomendación para el tutor</h2>
+        <p id="detalle-recomendacion"></p>
+      </section>
+    </div>
+  </main>
+
+  <footer class="contenedor">
+    <p>NAVI · Casa de la Infancia · Reportes de progreso</p>
+  </footer>
+</body>
+</html>
