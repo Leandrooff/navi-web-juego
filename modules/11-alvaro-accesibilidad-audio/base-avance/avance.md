@@ -20,3 +20,10 @@ Los controles del texto se encuentran dentro de accesibilidad.css y accesibilida
 ## Falta
 
 Por el momento falta la conexion con la pagina principal de los cuentos.
+
+## Integración de voces y rutas de audio (Me perdí en el parque)
+
+- Se generaron y subieron los 34 archivos `.mp3` de narración en `frontend/public/audio/es-BO/park/`.
+- Se vincularon las 34 rutas `audio_path` en `docs/voice-lines.json` (manteniendo las consecuencias en `null`).
+- Se agregaron las 34 rutas `audio_path` en cada escena narrada de `backend/database/content/park.json`.
+- **Dependencia:** Este PR requiere integrar previamente el **PR #14** (`integracion-navi-aventura-mejoras`).
