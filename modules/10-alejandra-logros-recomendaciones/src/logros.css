@@ -5,6 +5,7 @@ body{margin:0;background:var(--papel);color:var(--noche);font-family:"Baloo 2","
 .tarjeta-pantalla,.insignia,dialog{background:var(--blanco);border:3px solid var(--noche);border-radius:24px;box-shadow:0 6px 0 var(--noche);padding:1.5rem}
 .tarjeta-pantalla{text-align:center}
 .tarjeta-pantalla[hidden]{display:none}
+.sobrelinea{margin:0;color:var(--menta);font-size:.9rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase}
 h1{font-size:2.2rem;line-height:1.15;margin:.25rem 0 .75rem}
 h2{font-size:1.5rem;margin:.25rem 0}
 h3{font-size:1.2rem;margin:1rem 0 .25rem}
@@ -21,6 +22,9 @@ h3{font-size:1.2rem;margin:1rem 0 .25rem}
 .boton{display:inline-block;min-height:56px;padding:.7rem 1.6rem;margin-top:.75rem;background:var(--sol);color:var(--noche);border:3px solid var(--noche);border-radius:999px;box-shadow:0 4px 0 var(--noche);font:inherit;font-weight:800;text-decoration:none;cursor:pointer}
 .boton:active{transform:translateY(3px);box-shadow:0 1px 0 var(--noche)}
 .boton.secundario{background:var(--blanco)}
+.acciones{display:flex;justify-content:center;gap:.75rem;flex-wrap:wrap}
+.recomendacion{scroll-margin:1rem}
+.cierre{margin-top:1.25rem}
 :focus-visible{outline:4px solid var(--coral);outline-offset:3px}
 ul{list-style:none;padding:0;margin:0;text-align:left}
 #aciertos li,#reforzar li{padding:.5rem .75rem;margin:.4rem 0;border-radius:14px}
