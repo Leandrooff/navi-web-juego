@@ -1,0 +1,69 @@
+{
+  "nombre": "Sofia Navi",
+  "rol": "nino",
+  "avatar": "S",
+  "edad": 8,
+  "estrellas": 8,
+  "cuentosCompletados": 3,
+  "cuentosEnProgreso": 1,
+  "ultimaAventura": "Me perdi en el parque",
+  "logrosRecientes": [
+    {
+      "nombre": "Ayuda segura",
+      "descripcion": "Eligio pedir ayuda a una persona identificada."
+    },
+    {
+      "nombre": "Buena decision",
+      "descripcion": "Completo una aventura sin perder el hilo."
+    },
+    {
+      "nombre": "Exploradora constante",
+      "descripcion": "Volvio a practicar una historia ya terminada."
+    }
+  ],
+  "configuracion": {
+    "sonido": true,
+    "tamanoTexto": "normal",
+    "contraste": "normal"
+  },
+  "actividad": [
+    {
+      "titulo": "Termino una aventura",
+      "detalle": "Completo Me perdi en el parque con 3 estrellas."
+    },
+    {
+      "titulo": "Desbloqueo un logro",
+      "detalle": "Gano Ayuda segura por elegir una opcion correcta."
+    },
+    {
+      "titulo": "Tiene una aventura pendiente",
+      "detalle": "Puede continuar Alguien ofrece un regalo."
+    }
+  ],
+  "cuentos": [
+    {
+      "titulo": "Me perdi en el parque",
+      "estado": "completado",
+      "progreso": 100,
+      "estrellas": 3
+    },
+    {
+      "titulo": "Cruzar con cuidado",
+      "estado": "completado",
+      "progreso": 100,
+      "estrellas": 3
+    },
+    {
+      "titulo": "Cuidar mis datos",
+      "estado": "completado",
+      "progreso": 100,
+      "estrellas": 2
+    },
+    {
+      "titulo": "Alguien ofrece un regalo",
+      "estado": "en progreso",
+      "progreso": 45,
+      "estrellas": 0
+    }
+  ]
+}

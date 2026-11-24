@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NAVI - Perfil</title>
+    <link rel="stylesheet" href="./perfil.css" />
+    <script src="./perfil.js" defer></script>
+  </head>
+  <body data-page="perfil">
+    <header class="topbar">
+      <a class="brand" href="./perfil.html">NAVI</a>
+      <nav class="nav-links" aria-label="Navegacion del perfil">
+        <a class="active" href="./perfil.html">Perfil</a>
+        <a href="./progreso-personal.html">Progreso</a>
+      </nav>
+    </header>
+
+    <main class="page-shell">
+      <section class="profile-hero">
+        <div class="avatar" id="avatar">N</div>
+        <div>
+          <p class="eyebrow">Perfil del niño</p>
+          <h1 id="profileName">Cargando perfil...</h1>
+          <p class="muted">Rol: <strong id="profileRole">-</strong></p>
+        </div>
+      </section>
+
+      <section class="grid two-columns">
+        <article class="card">
+          <p class="eyebrow">Resumen</p>
+          <div class="stats-grid">
+            <div class="stat">
+              <span id="completedStories">0</span>
+              <p>Cuentos completados</p>
+            </div>
+            <div class="stat">
+              <span id="totalStars">0</span>
+              <p>Estrellas acumuladas</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="card highlight">
+          <p class="eyebrow">Última aventura</p>
+          <h2 id="lastAdventure">-</h2>
+          <p class="muted">Puedes continuar desde donde quedo el cuento.</p>
+          <button class="primary-button" id="continueButton">Continuar aventura</button>
+          <p class="status-message" id="continueMessage" aria-live="polite"></p>
+        </article>
+      </section>
+
+      <section class="grid two-columns">
+        <article class="card">
+          <div class="section-head">
+            <div>
+              <p class="eyebrow">Logros recientes</p>
+              <h2>Ultimos avances</h2>
+            </div>
+            <a class="text-link" href="./progreso-personal.html">Ver progreso</a>
+          </div>
+          <div class="achievement-list" id="achievementList"></div>
+        </article>
+
+        <article class="card">
+          <p class="eyebrow">Configuracion</p>
+          <h2>Preferencias basicas</h2>
+          <div class="settings-list">
+            <button class="setting-button" id="soundButton" type="button">Sonido: -</button>
+            <button class="setting-button" id="textButton" type="button">Texto: -</button>
+            <button class="setting-button" id="contrastButton" type="button">Contraste: -</button>
+          </div>
+        </article>
+      </section>
+    </main>
+  </body>
+</html>
