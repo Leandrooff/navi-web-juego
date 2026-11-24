@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#fff8e7">
+  <title>NAVI · Resultado del cuento</title>
+  <link rel="stylesheet" href="logros.css">
+</head>
+<body data-pantalla="resultado">
+  <main class="pantalla">
+    <header class="tarjeta-pantalla resultado-hero">
+      <p class="sobrelinea">¡Aventura completada!</p>
+      <h1 id="cuento">Tu cuento</h1>
+      <div id="estrellas" class="estrellas" aria-label="Estrellas"></div>
+      <p id="mensaje" class="mensaje" aria-live="polite"></p>
+      <p id="puntaje" class="dato"></p>
+    </header>
+
+    <section id="recomendacion" class="tarjeta-pantalla recomendacion" aria-labelledby="titulo-recomendacion" tabindex="-1" hidden>
+      <p class="sobrelinea">Lo que aprendimos</p>
+      <h2 id="titulo-recomendacion">Una idea para recordar</h2>
+      <div id="bloque-aciertos" hidden>
+        <h3>¡Ya sabes cómo cuidarte!</h3>
+        <ul id="aciertos"></ul>
+      </div>
+      <div id="bloque-reforzar" hidden>
+        <h3>Practiquemos juntos</h3>
+        <ul id="reforzar"></ul>
+      </div>
+      <p id="cierre" class="mensaje cierre" aria-live="polite"></p>
+    </section>
+
+    <nav class="acciones" aria-label="Continuar">
+      <button id="ver-recomendacion" class="boton secundario" type="button">Ver recomendación</button>
+      <a class="boton" href="logros.html">Mis insignias</a>
+    </nav>
+  </main>
+
+  <dialog id="tarjeta" aria-labelledby="t-nombre" aria-describedby="t-desc">
+    <span id="t-icono" aria-hidden="true"></span>
+    <p class="sobrelinea">¡Nueva insignia!</p>
+    <h2 id="t-nombre"></h2>
+    <p id="t-desc"></p>
+    <button id="t-cerrar" class="boton" type="button">¡Genial!</button>
+  </dialog>
+
+  <p id="error" role="alert" hidden></p>
+  <script src="logros.js"></script>
+</body>
+</html>
