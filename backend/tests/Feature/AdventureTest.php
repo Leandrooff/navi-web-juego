@@ -67,6 +67,29 @@ class AdventureTest extends TestCase {
         $this->postJson('/api/game-sessions',['child_profile_id'=>$child->id,'story_id'=>$this->story()->id,'request_key'=>(string)Str::uuid()])->assertNotFound();
         $this->postJson('/api/child-profiles',['nickname'=>'Prueba','age'=>4,'avatar'=>'leaf','navi_color'=>'green','support_level'=>'high'])->assertUnprocessable();
     }
+    public function test_two_profiles_keep_their_preferences_and_active_sessions_separate(): void {
+        $tutor=$this->adult();$this->actingAs($tutor);
+        $first=['nickname'=>'Luna','age'=>6,'avatar'=>'moon','navi_color'=>'blue','support_level'=>'high'];
+        $second=['nickname'=>'Sol','age'=>10,'avatar'=>'sun','navi_color'=>'orange','support_level'=>'low'];
+        foreach([5,11] as $age){
+            $this->postJson('/api/child-profiles',array_merge($first,['age'=>$age]))->assertUnprocessable()->assertJsonValidationErrors('age');
+        }
+        $a=$this->postJson('/api/child-profiles',$first)->assertCreated()->json('data');
+        $b=$this->postJson('/api/child-profiles',$second)->assertCreated()->json('data');
+        $updated=array_merge($first,['nickname'=>'Luna editada','age'=>7,'avatar'=>'river','navi_color'=>'purple','support_level'=>'medium']);
+        $this->putJson('/api/child-profiles/'.$a['id'],$updated)->assertOk()->assertJsonPath('data.nickname','Luna editada')->assertJsonPath('data.avatar','river')->assertJsonPath('data.navi_color','purple')->assertJsonPath('data.support_level','medium');
+        $profiles=$this->getJson('/api/child-profiles')->assertOk()->assertJsonCount(2,'data')->json('data');
+        $this->assertSame('Sol',$profiles[1]['nickname']);$this->assertSame('orange',$profiles[1]['navi_color']);
+        $session=$this->start(ChildProfile::findOrFail($a['id']))['session'];
+        $this->getJson('/api/child-profiles/'.$a['id'].'/progress')->assertJsonCount(1,'data.active_sessions')->assertJsonPath('data.active_sessions.0.id',$session['id']);
+        $this->getJson('/api/child-profiles/'.$b['id'].'/progress')->assertJsonCount(0,'data.active_sessions')->assertJsonPath('data.stars',0)->assertJsonPath('data.completed',0);
+        $resumed=$this->start(ChildProfile::findOrFail($a['id']));
+        $this->assertSame($session['id'],$resumed['session']['id']);
+        $this->actingAs($this->adult());
+        $this->getJson('/api/child-profiles/'.$a['id'].'/progress')->assertNotFound();
+        $this->putJson('/api/child-profiles/'.$b['id'],$second)->assertNotFound();
+        $this->getJson('/api/game-sessions/'.$session['id'])->assertNotFound();
+    }
     public function test_session_start_decisions_continue_and_rewards_are_idempotent(): void {
         $u=$this->adult();$c=$this->child($u);$this->actingAs($u);$key=(string)Str::uuid();
         $a=$this->start($c,$key);$b=$this->start($c,$key);$d=$this->start($c);
