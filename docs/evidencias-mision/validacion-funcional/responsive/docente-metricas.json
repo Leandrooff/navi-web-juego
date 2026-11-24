@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "measurements": {
+    "viewport": 360,
+    "documentWidth": 360,
+    "horizontalOverflow": false,
+    "textOutsideOrClipped": [],
+    "interactiveOverlaps": []
+  },
+  "joinCodeVisible": true
+}

@@ -1,0 +1,9 @@
+﻿NAVI functional validation preflight (2026-11-24)
+http://127.0.0.1:8000/ HTTP 200
+http://127.0.0.1:5173/ HTTP 200
+http://127.0.0.1:8001/ HTTP 200
+http://127.0.0.1:5174/ HTTP 200
+http://127.0.0.1:5174/api/stories HTTP 200
+Production-configured database (not modified): navi_db
+Isolated browser database: navi_validation_qa_20261124_1400
+Isolated backend-test database: navi_validation_qa_20261124_test

@@ -1,0 +1,6 @@
+{
+  "passed": false,
+  "checks": [],
+  "error": "expect(locator).toBeVisible() failed\n\nLocator: locator('.adult-welcome')\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n  - Expect \"toBeVisible\" locator('.adult-welcome') with timeout 5000ms\n  - waiting for locator('.adult-welcome')\n",
+  "pageErrors": []
+}

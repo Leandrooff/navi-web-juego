@@ -1,0 +1,25 @@
+{
+  "passed": true,
+  "checks": [
+    "Se crean dos perfiles infantiles ficticios en la misma cuenta.",
+    "Perfil nuevo entra directamente a la apertura cinematográfica.",
+    "Interrupción de red y recarga recuperan la consecuencia pendiente del prólogo.",
+    "Primer encuentro guardado y visible antes de terminar; pistas opcionales registradas.",
+    "Tres recorridos completos: farol, caseta y vuelta al árbol; el error permite recuperarse.",
+    "Familia y docente: consentimiento, informe completo, asignación y revocación siguen funcionando.",
+    "Tras tres finales, Nube no hereda progreso ni huellas de Luna; al volver a Luna los tres recorridos siguen disponibles."
+  ],
+  "pageErrors": [],
+  "audioRequests": [],
+  "viewports": [
+    [
+      1440,
+      960
+    ],
+    [
+      360,
+      800
+    ]
+  ],
+  "date": "2026-11-24T14:08:05.648Z"
+}
