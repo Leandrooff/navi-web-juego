@@ -1,40 +1,24 @@
-# Modulo 04 Fabian Componentes frontend
+# Módulo 04 · Componentes frontend
 
-## Objetivo
+## Integración
 
-Crear componentes reutilizables para que las pantallas del proyecto no se hagan desde cero cada vez.
+Los componentes React están integrados en el frontend activo (`frontend/src/components/`) y se usan desde las pantallas de juego (`frontend/src/game/StoryStage.jsx`), familia y aula (`frontend/src/adult/`). La app conserva `Layout`, `Button`, `StoryCard`, `AchievementCard`, `ProgressBar`, `ChoiceButton`, `Alert` y `Modal`, y sus estilos compartidos.
 
-Leer tambien `INSTRUCCIONES.md` dentro de esta misma carpeta para ver exactamente que debes subir.
+El guardado de avance bloquea el botón mientras procesa, anuncia el estado ocupado y evita envíos repetidos. Almacena el progreso localmente; si el navegador rechaza el almacenamiento, muestra un error recuperable que permite volver a intentar. El modal tiene nombre accesible, captura el foco, mantiene la navegación con Tab, cierra con Escape o clic fuera y devuelve el foco al control que lo abrió.
 
-## Componentes a desarrollar
+## Reproducción y evidencia
 
-- Boton principal.
-- Boton secundario.
-- Tarjeta de cuento.
-- Tarjeta de logro.
-- Barra de progreso.
-- Opcion de decision.
-- Modal de confirmacion.
-- Layout base con menu.
-- Mensaje de alerta.
+Desde `frontend/`:
 
-## Funciones necesarias
+```bash
+npm install
+npm test
+npm run build
+npm run dev
+```
 
-- Recibir datos por props o parametros.
-- Permitir estados: activo, deshabilitado, completado y error.
-- Adaptarse a celular y computadora.
-- Mantener estilos consistentes con el modulo UI.
-- Mostrar ejemplos de uso.
+Resultado observado en esta entrega: `npm test` pasó 2/2 comprobaciones y `npm run build` terminó correctamente con Vite. Para revisar con teclado, abre «Salir de la aventura» desde Inicio; Tab y Mayús+Tab recorren los botones del diálogo, Escape lo cierra y el foco regresa al botón de apertura. También se puede cerrar con clic en el fondo.
 
-## Archivos sugeridos
+En la interfaz prueba «Aventuras» para seleccionar una respuesta y guardar, «Mi progreso» para el resumen familiar y «Aula» para ver el avance del grupo. «Guardar progreso» anuncia Guardando…, se deshabilita durante la operación y termina con confirmación o error recuperable.
 
-- `Button.jsx`
-- `StoryCard.jsx`
-- `ProgressBar.jsx`
-- `ChoiceButton.jsx`
-- `componentes-demo.html`
-- `componentes.css`
-
-## Entrega esperada
-
-Subir componentes listos para copiar o integrar en React/HTML.
+El guardado de esta demo usa `localStorage` como persistencia local; una integración con API remota puede sustituir esa función sin cambiar la API visual de los componentes.
