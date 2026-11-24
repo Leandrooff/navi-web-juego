@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Navi - Biblioteca de Cuentos</title>
+  <link rel="stylesheet" href="biblioteca.css" />
+</head>
+<body>
+
+  <!-- ============================
+       BARRA DE NAVEGACIÓN
+  ============================= -->
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <span class="brand-icon">📚</span>
+      <span class="brand-name">Navi</span>
+    </div>
+    <ul class="nav-links">
+      <li>
+        <button class="nav-btn" id="nav-inicio" onclick="mostrarVista('inicio')">
+          <span>🏠</span>
+          <span>Inicio</span>
+        </button>
+      </li>
+      <li>
+        <button class="nav-btn active" id="nav-biblioteca" onclick="mostrarVista('biblioteca')">
+          <span>📖</span>
+          <span>Biblioteca</span>
+        </button>
+      </li>
+      <li>
+        <button class="nav-btn" id="nav-perfil" onclick="mostrarVista('perfil')">
+          <span>👤</span>
+          <span>Perfil</span>
+        </button>
+      </li>
+      <li>
+        <button class="nav-btn" id="nav-progreso" onclick="mostrarVista('progreso')">
+          <span>⭐</span>
+          <span>Progreso</span>
+        </button>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- ============================
+       VISTA: INICIO
+  ============================= -->
+  <section id="vista-inicio" class="vista oculta">
+    <div class="inicio-hero">
+      <div class="inicio-contenido">
+        <h1 class="inicio-titulo">¡Hola, explorador! 👋</h1>
+        <p class="inicio-subtitulo">
+          Bienvenido a <strong>Navi</strong>, tu biblioteca de cuentos de seguridad.<br />
+          Aprende cosas importantes mientras juegas y te diviertes.
+        </p>
+        <button class="btn-principal" onclick="mostrarVista('biblioteca')">
+          📚 Ver Biblioteca
+        </button>
+      </div>
+      <div class="inicio-imagen">🌟</div>
+    </div>
+
+    <div class="inicio-stats">
+      <div class="stat-card">
+        <span class="stat-icon">📖</span>
+        <span class="stat-numero" id="total-cuentos">0</span>
+        <span class="stat-label">Cuentos disponibles</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-icon">🔄</span>
+        <span class="stat-numero" id="en-progreso-count">0</span>
+        <span class="stat-label">En progreso</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-icon">✅</span>
+        <span class="stat-numero" id="completados-count">0</span>
+        <span class="stat-label">Completados</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================
+       VISTA: BIBLIOTECA
+  ============================= -->
+  <section id="vista-biblioteca" class="vista">
+
+    <div class="biblioteca-header">
+      <h1 class="pagina-titulo">📚 Biblioteca de Cuentos</h1>
+      <p class="pagina-subtitulo">Elige un cuento y comienza tu aventura</p>
+    </div>
+
+    <!-- Búsqueda y Filtros -->
+    <div class="controles">
+      <div class="busqueda-container">
+        <span class="busqueda-icono">🔍</span>
+        <input
+          type="text"
+          id="buscador"
+          class="buscador"
+          placeholder="Buscar cuento por nombre..."
+          oninput="aplicarFiltros()"
+        />
+      </div>
+
+      <div class="filtros-categoria">
+        <button class="filtro-btn activo" data-categoria="todas" onclick="seleccionarCategoria(this)">
+          Todas
+        </button>
+        <button class="filtro-btn" data-categoria="seguridad" onclick="seleccionarCategoria(this)">
+          🔒 Seguridad
+        </button>
+        <button class="filtro-btn" data-categoria="casa" onclick="seleccionarCategoria(this)">
+          🏠 Casa
+        </button>
+        <button class="filtro-btn" data-categoria="calle" onclick="seleccionarCategoria(this)">
+          🚗 Calle
+        </button>
+        <button class="filtro-btn" data-categoria="escuela" onclick="seleccionarCategoria(this)">
+          🏫 Escuela
+        </button>
+        <button class="filtro-btn" data-categoria="otra" onclick="seleccionarCategoria(this)">
+          🌟 Otra
+        </button>
+      </div>
+    </div>
+
+    <!-- Lista de cuentos -->
+    <div id="lista-cuentos" class="lista-cuentos"></div>
+
+    <!-- Mensaje sin resultados -->
+    <div id="sin-resultados" class="sin-resultados oculto">
+      <span class="sin-resultados-icono">🔎</span>
+      <p>No se encontraron cuentos con ese nombre o categoría.</p>
+      <button class="btn-secundario" onclick="limpiarFiltros()">Ver todos los cuentos</button>
+    </div>
+
+  </section>
+
+  <!-- ============================
+       VISTA: DETALLE DE CUENTO
+  ============================= -->
+  <section id="vista-detalle" class="vista oculta">
+    <div class="detalle-container">
+
+      <button class="btn-volver" onclick="mostrarVista('biblioteca')">
+        ← Volver a la Biblioteca
+      </button>
+
+      <div class="detalle-tarjeta">
+        <img id="detalle-imagen" class="detalle-imagen" src="" alt="Imagen del cuento" />
+        <div class="detalle-info">
+          <span id="detalle-categoria" class="detalle-categoria-badge"></span>
+          <h2 id="detalle-titulo" class="detalle-titulo"></h2>
+          <p id="detalle-descripcion" class="detalle-descripcion"></p>
+          <div class="detalle-estado-row">
+            <span class="detalle-estado-label">Estado:</span>
+            <span id="detalle-estado-badge" class="estado-badge"></span>
+          </div>
+          <div class="detalle-acciones">
+            <button id="detalle-btn-accion" class="btn-principal" onclick="accionCuentoDetalle()"></button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================
+       VISTA: CUENTO EN PROGRESO
+  ============================= -->
+  <section id="vista-progreso-cuento" class="vista oculta">
+    <div class="progreso-cuento-container">
+
+      <button class="btn-volver" onclick="mostrarVista('biblioteca')">
+        ← Volver a la Biblioteca
+      </button>
+
+      <div class="progreso-cuento-tarjeta">
+        <img id="progreso-imagen" class="progreso-imagen" src="" alt="" />
+        <h2 id="progreso-titulo" class="progreso-titulo"></h2>
+        <span id="progreso-estado-badge" class="estado-badge"></span>
+
+        <div class="progreso-barra-container">
+          <label class="progreso-barra-label">Progreso del cuento</label>
+          <div class="progreso-barra-track">
+            <div id="progreso-barra-fill" class="progreso-barra-fill"></div>
+          </div>
+          <span id="progreso-porcentaje" class="progreso-porcentaje"></span>
+        </div>
+
+        <div class="progreso-aviso">
+          <p>
+            🎮 El motor de cuentos será implementado por el módulo de Brayan.<br />
+            Esta vista muestra la navegación hacia un cuento en progreso.
+          </p>
+        </div>
+
+        <button class="btn-principal" onclick="mostrarVista('biblioteca')">
+          📚 Volver a la Biblioteca
+        </button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================
+       VISTA: PERFIL (demostrativa)
+  ============================= -->
+  <section id="vista-perfil" class="vista oculta">
+    <div class="vista-demo-container">
+      <div class="vista-demo-icono">👤</div>
+      <h2 class="vista-demo-titulo">Mi Perfil</h2>
+      <p class="vista-demo-texto">
+        Esta sección pertenece al módulo de <strong>Gabriela</strong>.<br />
+        Aquí se mostrará el perfil real del niño una vez integrado.
+      </p>
+      <div class="demo-info-card">
+        <p><strong>Nombre:</strong> Explorador</p>
+        <p><strong>Nivel:</strong> Aprendiz de aventuras ⭐</p>
+        <p><strong>Aventuras completadas:</strong> <span id="perfil-completados">0</span></p>
+      </div>
+      <button class="btn-principal" onclick="mostrarVista('biblioteca')">
+        📚 Ir a la Biblioteca
+      </button>
+    </div>
+  </section>
+
+  <!-- ============================
+       VISTA: PROGRESO (demostrativa)
+  ============================= -->
+  <section id="vista-progreso" class="vista oculta">
+    <div class="vista-demo-container">
+      <div class="vista-demo-icono">⭐</div>
+      <h2 class="vista-demo-titulo">Mi Progreso</h2>
+      <p class="vista-demo-texto">
+        Esta sección pertenece al módulo de <strong>Ruth Serrano</strong>.<br />
+        Aquí se mostrarán los reportes de progreso reales una vez integrados.
+      </p>
+      <div class="demo-progreso-lista" id="demo-progreso-lista"></div>
+      <button class="btn-principal" onclick="mostrarVista('biblioteca')">
+        📚 Ir a la Biblioteca
+      </button>
+    </div>
+  </section>
+
+  <script src="biblioteca.js"></script>
+</body>
+</html>

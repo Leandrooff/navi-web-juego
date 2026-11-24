@@ -1,0 +1,135 @@
+{
+  "tool": "image_gen built-in",
+  "assets": [
+    {
+      "key": "entrada",
+      "prompt": "Use case: illustration-story. Asset: full-bleed landscape 16:9 background for NAVI, a warm children's 2D narrative adventure game. Establish the art direction for an entire cohesive game, hand-drawn confident tapered ink contours, simple large organic shapes, restrained cel-shaded colors, subtle gouache paper grain, expressive charming authored animation design. NO photorealism, NO glossy 3D, NO ornate AI fantasy detailing, NO excessive tiny leaves, NO text or UI. Scene: the entrance to the Lantern Park in a floating fantasy village. A low curving cream stone arch, teal roofs, rounded green trees, a winding amber path, a recognizable turquoise glass lantern on a short stone pillar next to a curved wooden bench, distant lilac floating islands and a pale blue sky. A small child explorer with short curly chestnut hair, warm tan skin, cream short-sleeve top, teal overalls and tiny yellow satchel walks into park with their guardian, a woman with dark auburn bob hair and mustard cardigan and blue trousers. Figures midground center, full-body, calm excited expressions. Compose main action in upper 65%, bottom foreground grass/path unobtrusive for later dialogue overlay. Readable silhouettes, 5-color harmony sage/teal/cream/ochre/lilac, wide cinematic composition. Illustration only, no typography, labels, watermark or collage. This single image establishes consistent characters and park layout for subsequent images.",
+      "file": "frontend/public/art/park/entrada.png"
+    },
+    {
+      "key": "cielo",
+      "prompt": "Use case: illustration-story. Create ONE full landscape 16:9 scene for the NAVI children's narrative videogame. Input image is the CHARACTER, PALETTE and WORLD STYLE reference, not an edit target. Match child and guardian design exactly where present. Refine art toward clean expressive hand-drawn 2D animation: bold readable silhouettes, broad restrained cel shades, subtle organic paper grain, reduced tiny decorative detail. No realistic rendering, glossy 3D, text, typography, UI, borders, panels, watermarks or collage. Main action upper 65%; bottom foreground remains simple to support dialogue overlay. Scene: An aerial panoramic opening shot of this same floating-island universe, layered rounded teal-green islands with a small ivory castle, broad pale golden river of light winding between fluffy clouds towards the park, lavender far mountains. No people or creature: our animated NAVI sprite will fly over this background separately. Clear readable shapes, dreamy daylight.",
+      "file": "frontend/public/art/park/cielo.png"
+    },
+    {
+      "key": "puente",
+      "prompt": "Use case: illustration-story. Create ONE full landscape 16:9 scene for the NAVI children's narrative videogame. Input image is the CHARACTER, PALETTE and WORLD STYLE reference, not an edit target. Match child and guardian design exactly where present. Refine art toward clean expressive hand-drawn 2D animation: bold readable silhouettes, broad restrained cel shades, subtle organic paper grain, reduced tiny decorative detail. No realistic rendering, glossy 3D, text, typography, UI, borders, panels, watermarks or collage. Main action upper 65%; bottom foreground remains simple to support dialogue overlay. Scene: A traveling shot along a curved mossy stone footbridge between two floating garden islands, big rounded tree canopies framing upper corners, a turquoise stream waterfall and warm light beyond. No people or creatures: NAVI will be a separate animated sprite. Inviting magical journey, simple readable forms.",
+      "file": "frontend/public/art/park/puente.png"
+    },
+    {
+      "key": "encuentro",
+      "prompt": "Use case: illustration-story. Create ONE full landscape 16:9 scene for the NAVI children's narrative videogame. Input image is the CHARACTER, PALETTE and WORLD STYLE reference, not an edit target. Match child and guardian design exactly where present. Refine art toward clean expressive hand-drawn 2D animation: bold readable silhouettes, broad restrained cel shades, subtle organic paper grain, reduced tiny decorative detail. No realistic rendering, glossy 3D, text, typography, UI, borders, panels, watermarks or collage. Main action upper 65%; bottom foreground remains simple to support dialogue overlay. Scene: A tender first meeting: the exact child from the reference, curly short brown hair, tan skin, cream shirt, teal overalls, yellow small satchel, kneels on a grassy stone terrace at the entrance of a magical park, smiling and extending open palm towards empty air at upper-left where a separate animated friendly leaf spirit will be composited. Gentle circular glowing motes, cream stone arch and teal roofs behind. Child centered right in upper half. No guardian.",
+      "file": "frontend/public/art/park/encuentro.png"
+    },
+    {
+      "key": "fuente",
+      "prompt": "Use case: illustration-story. Create ONE full landscape 16:9 scene for the NAVI children's narrative videogame. Input image is the CHARACTER, PALETTE and WORLD STYLE reference, not an edit target. Match child and guardian design exactly where present. Refine art toward clean expressive hand-drawn 2D animation: bold readable silhouettes, broad restrained cel shades, subtle organic paper grain, reduced tiny decorative detail. No realistic rendering, glossy 3D, text, typography, UI, borders, panels, watermarks or collage. Main action upper 65%; bottom foreground remains simple to support dialogue overlay. Scene: The same child and guardian at a round low cream-stone fountain with a turquoise fish-shaped spout and clear turquoise water. Child points excitedly at a little butterfly; guardian mustard cardigan stands nearby. Garden park with lantern banners, distant public teal-roofed information kiosk. Cheerful exploration. Medium-wide shot.",
+      "file": "frontend/public/art/park/fuente.png"
+    },
+    {
+      "key": "peces",
+      "prompt": "Use case: illustration-story. Create ONE full landscape 16:9 scene for the NAVI children's narrative videogame. Input image is the CHARACTER, PALETTE and WORLD STYLE reference, not an edit target. Match child and guardian design exactly where present. Refine art toward clean expressive hand-drawn 2D animation: bold readable silhouettes, broad restrained cel shades, subtle organic paper grain, reduced tiny decorative detail. No realistic rendering, glossy 3D, text, typography, UI, borders, panels, watermarks or collage. Main action upper 65%; bottom foreground remains simple to support dialogue overlay. Scene: Close story moment at the same round fountain: exact child in teal overalls crouches safely on the dry stone path well away from the water edge, watching three little golden fish in shallow clear water. Curly hair and yellow satchel consistent. A bright leaf floats on the water, soft park surroundings, no guardian in frame. Calm wonder.",
+      "file": "frontend/public/art/park/peces.png"
+    },
+    {
+      "key": "cuaderno",
+      "prompt": "Use case: illustration-story. Create ONE full landscape 16:9 scene for the NAVI children's narrative videogame. Input image is the CHARACTER, PALETTE and WORLD STYLE reference, not an edit target. Match child and guardian design exactly where present. Refine art toward clean expressive hand-drawn 2D animation: bold readable silhouettes, broad restrained cel shades, subtle organic paper grain, reduced tiny decorative detail. No realistic rendering, glossy 3D, text, typography, UI, borders, panels, watermarks or collage. Main action upper 65%; bottom foreground remains simple to support dialogue overlay. Scene: Exact child in teal overalls sitting on curved wooden bench under large rounded tree drawing a simple leaf in a small ochre sketchbook. Yellow satchel beside them, turquoise lantern on short cream stone pillar visible nearby. Soft afternoon light, expressive focused face, medium shot. No typography.",
+      "file": "frontend/public/art/park/cuaderno.png"
+    },
+    {
+      "key": "silencio",
+      "prompt": "Use case: illustration-story. Create ONE full landscape 16:9 scene for the NAVI children's narrative videogame. Input image is the CHARACTER, PALETTE and WORLD STYLE reference, not an edit target. Match child and guardian design exactly where present. Refine art toward clean expressive hand-drawn 2D animation: bold readable silhouettes, broad restrained cel shades, subtle organic paper grain, reduced tiny decorative detail. No realistic rendering, glossy 3D, text, typography, UI, borders, panels, watermarks or collage. Main action upper 65%; bottom foreground remains simple to support dialogue overlay. Scene: Exact child alone beside the fountain, standing on path holding yellow satchel strap, concerned but not panicked expression, looking around the park. A few distant small adult silhouettes, guardian not visible. Empty space where guardian was, fallen petals on path, teal-roofed information kiosk clearly visible in the distance. Readable calm composition, no ominous mood.",
+      "file": "frontend/public/art/park/silencio.png"
+    },
+    {
+      "key": "respiro",
+      "prompt": "Use case: illustration-story. Create ONE full landscape 16:9 scene for the NAVI children's narrative videogame. Input image is the CHARACTER, PALETTE and WORLD STYLE reference, not an edit target. Match child and guardian design exactly where present. Refine art toward clean expressive hand-drawn 2D animation: bold readable silhouettes, broad restrained cel shades, subtle organic paper grain, reduced tiny decorative detail. No realistic rendering, glossy 3D, text, typography, UI, borders, panels, watermarks or collage. Main action upper 65%; bottom foreground remains simple to support dialogue overlay. Scene: Medium close-up exact child seated upright on curved bench, feet firmly on ground, one hand on chest and one on tummy, slowly breathing with relaxed closed eyes and softened eyebrows. Teal overalls and cream shirt, yellow satchel. Turquoise glass lantern on cream pillar nearby. Rounded garden forms, warm reassuring light.",
+      "file": "frontend/public/art/park/respiro.png"
+    },
+    {
+      "key": "mapa",
+      "prompt": "Use case: illustration-story. ONE full-bleed 16:9 landscape NAVI children's 2D narrative game scene. Reference image is STYLE/WORLD/CHILD IDENTITY only. Draw the NEW scene specified below, preserve exact child identity: short curly chestnut hair, tan skin, cream short-sleeve shirt, teal overalls, yellow satchel. Hand-drawn clean ink contours, simple broad cel-shaded shapes, subtle organic paper grain, restrained sage/teal/ochre/lilac palette, expressive animation acting, avoid excessive small decorations. Action in upper 65% with unobtrusive foreground. No 3D, no text, no typography, no UI, no borders, no collages. Scene: The child is ALONE in foreground, studying a wooden public park map board and pointing. Guardian Mara is LOST and MUST NOT appear. Map simple pictograms of fountain, tree, turquoise lantern and teal-roofed kiosk connected by paths, absolutely no writing. Same child design. Medium-wide shot. NO mustard-cardigan adult anywhere.",
+      "file": "frontend/public/art/park/mapa.png"
+    },
+    {
+      "key": "sendero",
+      "prompt": "Use case: illustration-story. ONE full-bleed 16:9 landscape NAVI children's 2D narrative game scene. Reference image is STYLE/WORLD/CHILD IDENTITY only. Draw the NEW scene specified below, preserve exact child identity: short curly chestnut hair, tan skin, cream short-sleeve shirt, teal overalls, yellow satchel. Hand-drawn clean ink contours, simple broad cel-shaded shapes, subtle organic paper grain, restrained sage/teal/ochre/lilac palette, expressive animation acting, avoid excessive small decorations. Action in upper 65% with unobtrusive foreground. No 3D, no text, no typography, no UI, no borders, no collages. Scene: The child is ALONE at a fork between a bright plaza path back to fountain and a bushy narrow path toward an iron gate with a yellow paper pinwheel. Looking uncertain, hand on satchel strap. Guardian is LOST and MUST NOT appear. No adult figures in foreground, no mustard cardigan anywhere. Clear two-way composition, safe ground, not scary.",
+      "file": "frontend/public/art/park/sendero.png"
+    },
+    {
+      "key": "limite",
+      "prompt": "Use case: illustration-story. ONE full-bleed 16:9 landscape NAVI children's 2D narrative game scene. Reference image is STYLE/WORLD/CHILD IDENTITY only. Draw the NEW scene specified below, preserve exact child identity: short curly chestnut hair, tan skin, cream short-sleeve shirt, teal overalls, yellow satchel. Hand-drawn clean ink contours, simple broad cel-shaded shapes, subtle organic paper grain, restrained sage/teal/ochre/lilac palette, expressive animation acting, avoid excessive small decorations. Action in upper 65% with unobtrusive foreground. No 3D, no text, no typography, no UI, no borders, no collages. Scene: Child alone stopped INSIDE a small iron side gate at the park boundary, both feet still inside park, sees unfamiliar path outside. Yellow pinwheel tied to gate, open plaza and trees behind child. Thoughtful concerned expression, no adult, no guardian, no danger happening. Wide shot, child left-center upper half.",
+      "file": "frontend/public/art/park/limite.png"
+    },
+    {
+      "key": "banco",
+      "prompt": "Use case: illustration-story. ONE full-bleed 16:9 landscape NAVI children's 2D narrative game scene. Reference image is STYLE/WORLD/CHILD IDENTITY only. Draw the NEW scene specified below, preserve exact child identity: short curly chestnut hair, tan skin, cream short-sleeve shirt, teal overalls, yellow satchel. Hand-drawn clean ink contours, simple broad cel-shaded shapes, subtle organic paper grain, restrained sage/teal/ochre/lilac palette, expressive animation acting, avoid excessive small decorations. Action in upper 65% with unobtrusive foreground. No 3D, no text, no typography, no UI, no borders, no collages. Scene: Child waits alone beside the curved wooden bench with the landmark turquoise glass lantern on cream stone pillar, holding small leaf sketchbook to chest and watching open public plaza. Two tiny families in distant background. No mustard cardigan adult. Quiet and hopeful, medium-wide.",
+      "file": "frontend/public/art/park/banco.png"
+    },
+    {
+      "key": "ayuda",
+      "prompt": "Use case: illustration-story. ONE full-bleed 16:9 landscape NAVI children's 2D narrative game scene. Reference image is STYLE/WORLD/CHILD IDENTITY only. Draw the NEW scene specified below, preserve exact child identity: short curly chestnut hair, tan skin, cream short-sleeve shirt, teal overalls, yellow satchel. Hand-drawn clean ink contours, simple broad cel-shaded shapes, subtle organic paper grain, restrained sage/teal/ochre/lilac palette, expressive animation acting, avoid excessive small decorations. Action in upper 65% with unobtrusive foreground. No 3D, no text, no typography, no UI, no borders, no collages. Scene: At turquoise lantern landmark bench, child speaks to an adult woman in a muted lilac dress standing with her two small children. The woman gestures towards a park worker in teal uniform visible across public plaza. Child stays near bench. No guardian with mustard cardigan. Reassuring everyday public help scene, medium-wide.",
+      "file": "frontend/public/art/park/ayuda.png"
+    },
+    {
+      "key": "oferta",
+      "prompt": "Use case: illustration-story. ONE full-bleed 16:9 landscape NAVI children's 2D narrative game scene. Reference image is STYLE/WORLD/CHILD IDENTITY only. Draw the NEW scene specified below, preserve exact child identity: short curly chestnut hair, tan skin, cream short-sleeve shirt, teal overalls, yellow satchel. Hand-drawn clean ink contours, simple broad cel-shaded shapes, subtle organic paper grain, restrained sage/teal/ochre/lilac palette, expressive animation acting, avoid excessive small decorations. Action in upper 65% with unobtrusive foreground. No 3D, no text, no typography, no UI, no borders, no collages. Scene: At open public park path, child in foreground right listening uncertainly to an unfamiliar ordinary adult in a muted plum jacket on left who gestures toward distant exit gate. Adult maintains distance, does not touch child, no threatening expression, no sinister stereotyping. Child has one hand on satchel, thoughtful. Public plaza nearby. No guardian.",
+      "file": "frontend/public/art/park/oferta.png"
+    },
+    {
+      "key": "arbol",
+      "prompt": "Use case: illustration-story. ONE full-bleed 16:9 landscape NAVI children's 2D narrative game scene. Reference image is STYLE/WORLD/CHILD IDENTITY only. Draw the NEW scene specified below, preserve exact child identity: short curly chestnut hair, tan skin, cream short-sleeve shirt, teal overalls, yellow satchel. Hand-drawn clean ink contours, simple broad cel-shaded shapes, subtle organic paper grain, restrained sage/teal/ochre/lilac palette, expressive animation acting, avoid excessive small decorations. Action in upper 65% with unobtrusive foreground. No 3D, no text, no typography, no UI, no borders, no collages. Scene: At a huge rounded tree in a public plaza, child speaks to park worker Ines: adult woman dark brown skin, black hair in a bun, teal uniform jacket, cream shirt, simple gold leaf badge, radio clipped belt. Ines kneels to listen at child's eye level. Families small in background, safe open place. NO mustard guardian. Keep Ines design for future.",
+      "file": "frontend/public/art/park/arbol.png"
+    },
+    {
+      "key": "caseta",
+      "prompt": "Use case: illustration-story. ONE full-bleed 16:9 landscape NAVI children's 2D narrative game scene. Reference image is STYLE/WORLD/CHILD IDENTITY only. Draw the NEW scene specified below, preserve exact child identity: short curly chestnut hair, tan skin, cream short-sleeve shirt, teal overalls, yellow satchel. Hand-drawn clean ink contours, simple broad cel-shaded shapes, subtle organic paper grain, restrained sage/teal/ochre/lilac palette, expressive animation acting, avoid excessive small decorations. Action in upper 65% with unobtrusive foreground. No 3D, no text, no typography, no UI, no borders, no collages. Scene: The child reaches an open-air information kiosk with teal curved roof and low cream stone public counter. Behind counter Ines: dark brown skin, black hair in a bun, teal uniform jacket, cream shirt, simple gold leaf badge, radio. She leans forward kindly to listen, public plaza visible all around. Child cream shirt teal overalls yellow satchel. NO guardian, no writing, no text.",
+      "file": "frontend/public/art/park/caseta.png"
+    },
+    {
+      "key": "identificacion",
+      "prompt": "Use case: illustration-story. ONE full-bleed 16:9 landscape NAVI children's 2D narrative game scene. Reference image is STYLE/WORLD/CHILD IDENTITY only. Draw the NEW scene specified below, preserve exact child identity: short curly chestnut hair, tan skin, cream short-sleeve shirt, teal overalls, yellow satchel. Hand-drawn clean ink contours, simple broad cel-shaded shapes, subtle organic paper grain, restrained sage/teal/ochre/lilac palette, expressive animation acting, avoid excessive small decorations. Action in upper 65% with unobtrusive foreground. No 3D, no text, no typography, no UI, no borders, no collages. Scene: Closer dialogue composition of child at open public kiosk counter with Ines dark brown skin black hair bun teal jacket cream shirt gold leaf badge and radio. She introduces herself with open palm gesture and attentive kind expression. Show environment open behind them with families in plaza, not closed room. Child thinking, engaged. NO guardian. No writing.",
+      "file": "frontend/public/art/park/identificacion.png"
+    },
+    {
+      "key": "radio",
+      "prompt": "Edit one 16:9 game illustration. Image 1 is EDIT TARGET. Image 2 is guardian Mara identity reference. Image 3 is park worker Ines identity reference. Preserve the child's exact identity, park palette and hand-drawn 2D style. Keep image 1 composition, child, kiosk and radio action. Change ONLY Ines's clothing and hair to EXACTLY match Ines in image 3: dark brown skin, black hair in single high bun, teal jacket with sleeves rolled over cream collared shirt, dark teal trousers and golden leaf pin. She must NOT wear overalls or an apron. Same woman, not different park staff.",
+      "file": "frontend/public/art/park/radio.png"
+    },
+    {
+      "key": "espera",
+      "prompt": "Edit one 16:9 game illustration. Image 1 is EDIT TARGET. Image 2 is guardian Mara identity reference. Image 3 is park worker Ines identity reference. Preserve the child's exact identity, park palette and hand-drawn 2D style. Keep image 1 composition, child drawing, kiosk and gentle waiting mood. Change ONLY Ines's clothing and hair to EXACTLY match Ines in image 3: dark brown skin, black single high bun, teal jacket rolled sleeves over cream collared shirt, dark teal trousers gold leaf pin. No overalls, no apron.",
+      "file": "frontend/public/art/park/espera.png"
+    },
+    {
+      "key": "reunion-farol",
+      "prompt": "Edit one 16:9 game illustration. Image 1 is EDIT TARGET. Image 2 is guardian Mara identity reference. Image 3 is park worker Ines identity reference. Preserve the child's exact identity, park palette and hand-drawn 2D style. Keep image 1 child and embrace composition. Correct Mara exactly as image 2: dark auburn bob, mustard cardigan cream shirt blue trousers. Replace male worker in background with Ines from image 3: dark brown skin, black bun, teal jacket cream shirt dark teal trousers leaf pin. No other changes.",
+      "file": "frontend/public/art/park/reunion-farol.png"
+    },
+    {
+      "key": "reunion-caseta",
+      "prompt": "Edit one 16:9 game illustration. Image 1 is EDIT TARGET. Image 2 is guardian Mara identity reference. Image 3 is park worker Ines identity reference. Preserve the child's exact identity, park palette and hand-drawn 2D style. Keep image 1 reunion composition and child. Correct Mara to EXACTLY match woman in image 2: short dark auburn BOB (not orange hair), mustard cardigan, cream shirt, BLUE TROUSERS (not skirt). Correct background Ines to woman in image 3: dark brown skin black high bun teal JACKET over cream shirt, leaf pin, no apron or vest. Two adult women distinct.",
+      "file": "frontend/public/art/park/reunion-caseta.png"
+    },
+    {
+      "key": "reunion-arbol",
+      "prompt": "Use case: illustration-story. ONE full-bleed 16:9 landscape NAVI children's 2D narrative game scene. Reference image is STYLE/WORLD/CHILD IDENTITY only. Draw the NEW scene specified below, preserve exact child identity: short curly chestnut hair, tan skin, cream short-sleeve shirt, teal overalls, yellow satchel. Hand-drawn clean ink contours, simple broad cel-shaded shapes, subtle organic paper grain, restrained sage/teal/ochre/lilac palette, expressive animation acting, avoid excessive small decorations. Action in upper 65% with unobtrusive foreground. No 3D, no text, no typography, no UI, no borders, no collages. Scene: Tender reunion under the huge rounded tree in open park plaza: guardian Mara auburn bob mustard cardigan blue trousers sits on low tree surround listening attentively to child curly hair teal overalls yellow satchel who gestures about their story. Ines dark brown skin black bun teal jacket nearby. Faces relief no scolding, warm afternoon.",
+      "file": "frontend/public/art/park/reunion-arbol.png"
+    },
+    {
+      "key": "final-farol",
+      "prompt": "Edit one 16:9 game illustration. Image 1 is EDIT TARGET. Image 2 is guardian Mara identity reference. Image 3 is park worker Ines identity reference. Preserve the child's exact identity, park palette and hand-drawn 2D style. Retain this same 2D art world and notebook composition but make a calm CLOSING STILL LIFE ONLY. REMOVE ALL PEOPLE from the image, replace their space with softly painted distant park trees and low stone walls. Large open small sketchbook on curved bench in foreground shows a FLAT hand-drawn turquoise lantern and green leaf. Warm sunset turquoise actual lantern in background. No words, no numbers, no human figures anywhere. Palette simpler with broad shapes and gentle cel shades.",
+      "file": "frontend/public/art/park/final-farol.png"
+    },
+    {
+      "key": "final-caseta",
+      "prompt": "Edit one 16:9 game illustration. Image 1 is EDIT TARGET. Image 2 is guardian Mara identity reference. Image 3 is park worker Ines identity reference. Preserve the child's exact identity, park palette and hand-drawn 2D style. Retain same 2D art world, change to calm CLOSING STILL LIFE ONLY. REMOVE ALL PEOPLE from the image and all standalone radios. On open sketchbook in foreground draw a FLAT simple child's pencil drawing of a little radio with two curved signal lines next to a green leaf. Not a real radio on book. Kiosk counter and softly painted empty plaza behind, warm sunset. No words numbers human figures or UI anywhere.",
+      "file": "frontend/public/art/park/final-caseta.png"
+    },
+    {
+      "key": "final-arbol",
+      "prompt": "Edit one 16:9 game illustration. Image 1 is EDIT TARGET. Image 2 is guardian Mara identity reference. Image 3 is park worker Ines identity reference. Preserve the child's exact identity, park palette and hand-drawn 2D style. Retain 2D art world and foreground sketchbook, make calm CLOSING STILL LIFE ONLY. REMOVE ALL PEOPLE from the image, replace space with softly painted distant park fountain. Open sketchbook on grass beneath big tree, flat drawing of looping path returning to tree and green leaf, warm sunset. No text numbers human figures or UI. Broader clean color shapes.",
+      "file": "frontend/public/art/park/final-arbol.png"
+    }
+  ]
+}

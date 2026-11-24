@@ -1,0 +1,77 @@
+{
+  "id": "cuento-parque",
+  "titulo": "Me perdí en el parque",
+  "descripcion": "Acompaña a Navi y practica cómo pedir ayuda si te separas de tu tutor.",
+  "escenaInicial": "inicio",
+  "escenas": [
+    {
+      "id": "inicio",
+      "titulo": "¿Dónde está mi tutor?",
+      "texto": "Estabas jugando cerca de los árboles. Al mirar alrededor, ya no ves a tu tutor. Respira despacio: puedes elegir cómo pedir ayuda.",
+      "icono": "🌳",
+      "esFinal": false,
+      "opciones": [
+        { "id": "inicio-caseta", "texto": "Pedir ayuda en la caseta del parque", "puntos": 10, "siguiente": "caseta", "consecuencia": "La caseta es un lugar identificado. Su personal puede ayudarte a localizar a tu tutor sin salir del parque." },
+        { "id": "inicio-esperar", "texto": "Quedarme en un lugar visible y pedir ayuda", "puntos": 5, "siguiente": "punto-visible", "consecuencia": "Quedarte visible evita alejarte más. Ahora busca ayuda de personal identificado del parque." },
+        { "id": "inicio-salir", "texto": "Salir del área de juegos para buscar por mi cuenta", "puntos": 0, "siguiente": "sendero", "consecuencia": "Alejarte sin compañía puede dificultar que te encuentren. Todavía puedes detenerte y pedir ayuda segura." }
+      ]
+    },
+    {
+      "id": "caseta",
+      "titulo": "Un lugar para pedir ayuda",
+      "texto": "Una trabajadora identificada del parque te escucha y avisa a sus compañeros. ¿Qué haces mientras buscan a tu tutor?",
+      "icono": "🏡",
+      "esFinal": false,
+      "opciones": [
+        { "id": "caseta-esperar", "texto": "Esperar en la caseta con el personal", "puntos": 10, "siguiente": "reencuentro", "consecuencia": "Esperar en el lugar acordado facilita el reencuentro. El personal del parque localiza a tu tutor." },
+        { "id": "caseta-salir", "texto": "Volver a salir para buscar sin compañía", "puntos": 0, "siguiente": "sendero", "consecuencia": "Si cambias de lugar, tu tutor y el personal pueden no encontrarte. Detente para volver a pedir ayuda." }
+      ]
+    },
+    {
+      "id": "punto-visible",
+      "titulo": "Me quedo donde puedan verme",
+      "texto": "Estás cerca de un banco visible. Desde allí ves la caseta de información y un sendero que lleva hacia la salida.",
+      "icono": "🪑",
+      "esFinal": false,
+      "opciones": [
+        { "id": "visible-caseta", "texto": "Pedir ayuda al personal de la caseta cercana", "puntos": 10, "siguiente": "caseta", "consecuencia": "Reconoces un lugar de ayuda y buscas personal identificado. Ya no tienes que resolverlo sin compañía." },
+        { "id": "visible-correr", "texto": "Correr por el sendero hacia la salida", "puntos": 0, "siguiente": "sendero", "consecuencia": "Correr puede alejarte del lugar donde te están buscando. Haz una pausa y busca ayuda segura." }
+      ]
+    },
+    {
+      "id": "sendero",
+      "titulo": "Todavía puedo pedir ayuda",
+      "texto": "En el sendero ves a un trabajador identificado del parque. Una persona que no conoces también te ofrece llevarte fuera del parque para buscar a tu tutor.",
+      "icono": "🧭",
+      "esFinal": false,
+      "opciones": [
+        { "id": "sendero-personal", "texto": "Pedir ayuda al trabajador del parque", "puntos": 5, "siguiente": "reencuentro", "consecuencia": "Te detienes y eliges ayuda identificada. El trabajador avisa a la caseta para organizar el reencuentro." },
+        { "id": "sendero-desconocido", "texto": "Aceptar salir con la persona desconocida", "puntos": 0, "siguiente": "cierre", "consecuencia": "En esta práctica aprendemos que no debemos salir con desconocidos. Si te pierdes, quédate en un lugar visible y busca personal identificado." }
+      ]
+    },
+    {
+      "id": "reencuentro",
+      "titulo": "¡Volvemos a encontrarnos!",
+      "texto": "Tu tutor llega al punto de ayuda. Ya están juntos. Antes de seguir jugando, ¿qué acuerdo pueden hacer?",
+      "icono": "🤝",
+      "esFinal": false,
+      "opciones": [
+        { "id": "reencuentro-acuerdo", "texto": "Acordar un punto de encuentro y mantenernos cerca", "puntos": 5, "siguiente": "cierre", "consecuencia": "Un punto de encuentro y mantenerse cerca ayudan a prevenir otra separación. ¡Buen aprendizaje!" },
+        { "id": "reencuentro-sin-acuerdo", "texto": "Volver a jugar sin acordar dónde encontrarnos", "puntos": 0, "siguiente": "cierre", "consecuencia": "Antes de jugar conviene acordar un punto de encuentro. Puedes practicarlo con tu tutor en la próxima visita." }
+      ]
+    },
+    {
+      "id": "cierre",
+      "titulo": "Terminaste la aventura",
+      "texto": "Cada decisión fue una oportunidad para aprender. Puedes revisar tu recorrido o volver a intentarlo.",
+      "icono": "🌈",
+      "esFinal": true,
+      "opciones": []
+    }
+  ],
+  "finales": [
+    { "id": "final-reforzar", "tipo": "malo", "minPuntos": 0, "maxPuntos": 9, "titulo": "Practiquemos cómo pedir ayuda", "texto": "Algunas decisiones podían alejarte de la ayuda. Recuerda: quédate visible, busca personal identificado y evita salir con desconocidos. ¡Puedes volver a intentarlo!" },
+    { "id": "final-aprendiendo", "tipo": "intermedio", "minPuntos": 10, "maxPuntos": 19, "titulo": "Vas aprendiendo a cuidarte", "texto": "Tomaste decisiones que te acercaron a la ayuda. Sigue practicando cómo permanecer en un lugar seguro y acordar un punto de encuentro con tu tutor." },
+    { "id": "final-seguro", "tipo": "bueno", "minPuntos": 20, "maxPuntos": null, "titulo": "¡Elegiste un camino seguro!", "texto": "Buscaste ayuda identificada y tomaste buenas decisiones para el reencuentro. Comparte con tu tutor lo que aprendiste en esta aventura." }
+  ]
+}
