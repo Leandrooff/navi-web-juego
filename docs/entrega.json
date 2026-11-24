@@ -1,0 +1,24 @@
+{
+  "input": "NAVI_AVENTURA.zip",
+  "sha256": "4fb6f6c9ffec1560e58c02d1ecb2e50cd1c4db0a14f8b5c4806bec08a6f8e707",
+  "implementedAt": "2026-10-13T15:34:40.046Z",
+  "scenes": 34,
+  "choices": 53,
+  "illustrations": 26,
+  "endings": 3,
+  "completeRoutes": 2784,
+  "routeChoices": {
+    "min": 12,
+    "max": 21
+  },
+  "backend": {
+    "tests": 13,
+    "assertions": 613,
+    "passed": true
+  },
+  "frontend": {
+    "tests": 5,
+    "passed": true
+  },
+  "voicesProduced": 0
+}

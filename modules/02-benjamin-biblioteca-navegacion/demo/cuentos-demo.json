@@ -1,0 +1,269 @@
+[
+  {
+    "id": 1,
+    "titulo": "Me perdí en el parque",
+    "categoria": "seguridad",
+    "estado": "nuevo",
+    "descripcion": "Aprende qué hacer si te separas de tu tutor en un espacio público.",
+    "imagen": "🌳",
+    "is_main": true,
+    "asignacion_aula": true,
+    "initial_scene_id": "parque-1",
+    "scenes": [
+      {
+        "id": "parque-1",
+        "title": "Un paseo en el parque",
+        "body": "Estás con tu familia en el parque y ves una mariposa de muchos colores. Caminas siguiéndola y de pronto no ves a tus papás.",
+        "choices": [
+          { "label": "Quedarme en el mismo lugar y buscar a un policía o guardia con uniforme.", "target": "parque-2-bien", "points": 10, "feedback": "¡Excelente idea! Permanecer visible hace que te encuentren más rápido." },
+          { "label": "Caminar hacia la calle a buscar mi casa solo.", "target": "parque-2-mal", "points": 0, "feedback": "Caminar solo a avenidas transitadas aumenta el riesgo de perderte." }
+        ],
+        "is_final": false
+      },
+      {
+        "id": "parque-2-bien",
+        "title": "Encontrando ayuda segura",
+        "body": "Te quedas cerca del quiosco y ves a una persona de seguridad con chaleco reflectante. Le dices tu nombre y que te perdiste.",
+        "choices": [
+          { "label": "Darle el número de teléfono de papá que aprendí de memoria.", "target": "parque-final-bueno", "points": 10, "feedback": "Aprenderse el número de los tutores es una súper habilidad de seguridad." }
+        ],
+        "is_final": false
+      },
+      {
+        "id": "parque-2-mal",
+        "title": "Peligro en la avenida",
+        "body": "Hay muchos autos veloces y no sabes por dónde ir. Afortunadamente escuchas la voz de tu mamá llamándote.",
+        "choices": [
+          { "label": "Correr hacia mamá y prometer no alejarme de nuevo.", "target": "parque-final-bueno", "points": 5, "feedback": "Siempre mantén la vista fija en tus acompañantes." }
+        ],
+        "is_final": false
+      },
+      {
+        "id": "parque-final-bueno",
+        "title": "Reunión familiar segura",
+        "body": "¡Excelente decisión! La persona de seguridad contactó a tus tutores y se reencontraron rápidamente. Recuerda: quédate quieto y busca a un adulto de confianza.",
+        "choices": [],
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "titulo": "Cruzar la calle con cuidado",
+    "categoria": "calle",
+    "estado": "nuevo",
+    "descripcion": "Observa, escucha y espera antes de cruzar la avenida.",
+    "imagen": "🚦",
+    "is_main": false,
+    "asignacion_aula": false,
+    "initial_scene_id": "calle-1",
+    "scenes": [
+      {
+        "id": "calle-1",
+        "title": "Llegando a la esquina",
+        "body": "Quieres cruzar para comprar pan con tu tía, pero el semáforo vehicular está en verde.",
+        "choices": [
+          { "label": "Esperar en la acera a que el semáforo peatonal cambie a verde.", "target": "calle-final-bien", "points": 10, "feedback": "Esperar en la acera evita accidentes viales." },
+          { "label": "Apurarme y cruzar corriendo entre los coches detenidos.", "target": "calle-final-mal", "points": 0, "feedback": "Cruzar intempestivamente entre vehículos es muy peligroso." }
+        ],
+        "is_final": false
+      },
+      {
+        "id": "calle-final-bien",
+        "title": "Paso seguro por el paso peatonal",
+        "body": "Cruzas de la mano de tu tía por las líneas de cebra. ¡Llegaron a salvo y aprendiste una regla vital!",
+        "choices": [],
+        "is_final": true
+      },
+      {
+        "id": "calle-final-mal",
+        "title": "¡Cuidado con los autos!",
+        "body": "Un auto casi no te ve y frenó de golpe con la bocina. Tu tía te toma de la mano. Nunca corras hacia la pista sin mirar.",
+        "choices": [],
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "titulo": "Un desconocido ofrece un regalo",
+    "categoria": "seguridad",
+    "estado": "nuevo",
+    "descripcion": "Practica cómo poner límites firmes ante personas desconocidas.",
+    "imagen": "🎁",
+    "is_main": false,
+    "asignacion_aula": true,
+    "initial_scene_id": "desconocido-1",
+    "scenes": [
+      {
+        "id": "desconocido-1",
+        "title": "En la plaza del vecindario",
+        "body": "Una persona que no conoces se acerca y te ofrece un juguete si la acompañas a su coche.",
+        "choices": [
+          { "label": "Decir NO con voz fuerte y correr hacia mi tutor.", "target": "desconocido-final-bien", "points": 10, "feedback": "¡Gran reacción! Tu voz clara y alejarte de inmediato te mantiene a salvo." },
+          { "label": "Aceptar el juguete y mirar su auto de cerca.", "target": "desconocido-final-alerta", "points": 0, "feedback": "Nunca aceptes regalos de desconocidos ni te acerques a sus vehículos." }
+        ],
+        "is_final": false
+      },
+      {
+        "id": "desconocido-final-bien",
+        "title": "Reacción inteligente",
+        "body": "¡Muy bien hecho! Rechazaste el ofrecimiento y fuiste directo con tu tutor. Los desconocidos nunca deben pedirte que vayas con ellos.",
+        "choices": [],
+        "is_final": true
+      },
+      {
+        "id": "desconocido-final-alerta",
+        "title": "Alerta de seguridad",
+        "body": "Tu mamá te ve a tiempo y detiene la situación. Recuerda: Jamás te acerques a vehículos de desconocidos ni aceptes regalos.",
+        "choices": [],
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "titulo": "Un día seguro en casa",
+    "categoria": "casa",
+    "estado": "nuevo",
+    "descripcion": "Descubre normas simples para cuidarte y evitar accidentes en el hogar.",
+    "imagen": "🏠",
+    "is_main": false,
+    "asignacion_aula": false,
+    "initial_scene_id": "casa-1",
+    "scenes": [
+      {
+        "id": "casa-1",
+        "title": "Olla caliente en la cocina",
+        "body": "Entras a la cocina y ves una olla hirviendo en la estufa con el mango hacia afuera.",
+        "choices": [
+          { "label": "No tocarla y avisar inmediatamente a un adulto.", "target": "casa-final-bien", "points": 10, "feedback": "Avisar a un adulto previene quemaduras graves." },
+          { "label": "Intentar bajarla yo mismo para ver qué cocinan.", "target": "casa-final-mal", "points": 0, "feedback": "Manipular recipientes calientes puede derramar líquidos hirviendo." }
+        ],
+        "is_final": false
+      },
+      {
+        "id": "casa-final-bien",
+        "title": "Hogar seguro",
+        "body": "¡Genial! Tu papá acomodó la olla y te agradeció por avisar. La cocina no es un lugar de juego.",
+        "choices": [],
+        "is_final": true
+      },
+      {
+        "id": "casa-final-mal",
+        "title": "Riesgo de quemadura",
+        "body": "¡El vapor estaba muy caliente! Casi se derrama agua hirviendo. Los niños nunca deben manipular estufas.",
+        "choices": [],
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "titulo": "Nuevo amigo en la escuela",
+    "categoria": "escuela",
+    "estado": "nuevo",
+    "descripcion": "Aprende a presentarte, convivir con respeto y pedir ayuda al docente.",
+    "imagen": "🎒",
+    "is_main": false,
+    "asignacion_aula": true,
+    "initial_scene_id": "escuela-1",
+    "scenes": [
+      {
+        "id": "escuela-1",
+        "title": "Hora del recreo",
+        "body": "Ves a un compañero nuevo sentado solo en una banca luciendo triste.",
+        "choices": [
+          { "label": "Acercarme con una sonrisa y preguntarle si quiere jugar con mi grupo.", "target": "escuela-final-bien", "points": 10, "feedback": "La inclusión y amabilidad construyen una escuela segura y feliz." },
+          { "label": "Ignorarlo porque no lo conozco todavía.", "target": "escuela-final-regular", "points": 5, "feedback": "A veces dar el primer paso ayuda a quien es tímido." }
+        ],
+        "is_final": false
+      },
+      {
+        "id": "escuela-final-bien",
+        "title": "Compañerismo ejemplar",
+        "body": "¡Hicieron un nuevo amigo! El profesor felicitó tu empatía y amabilidad.",
+        "choices": [],
+        "is_final": true
+      },
+      {
+        "id": "escuela-final-regular",
+        "title": "Oportunidad de empatía",
+        "body": "Más tarde el profesor los une en una actividad. Recuerda que invitar a otros nos hace sentir incluidos a todos.",
+        "choices": [],
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "titulo": "La emergencia familiar",
+    "categoria": "casa",
+    "estado": "nuevo",
+    "descripcion": "Conoce cuándo llamar por ayuda y qué números de emergencia marcar.",
+    "imagen": "☎️",
+    "is_main": false,
+    "asignacion_aula": false,
+    "initial_scene_id": "emergencia-1",
+    "scenes": [
+      {
+        "id": "emergencia-1",
+        "title": "Un tropiezo en las escaleras",
+        "body": "Tu abuelito se tropieza y no puede levantarse solo. Te pide que busques el teléfono.",
+        "choices": [
+          { "label": "Llamar al número de emergencias o al vecino de confianza que nos ayuda siempre.", "target": "emergencia-final-bien", "points": 10, "feedback": "Pedir ayuda oportuna a números de emergencia salva vidas." },
+          { "label": "Ponerme a jugar y esperar a que alguien llegue en unas horas.", "target": "emergencia-final-mal", "points": 0, "feedback": "Nunca postergues una llamada en caso de accidente." }
+        ],
+        "is_final": false
+      },
+      {
+        "id": "emergencia-final-bien",
+        "title": "Respuesta rápida y valiente",
+        "body": "¡Increíble calma! Llegó la asistencia a tiempo gracias a tu llamada clara con la dirección.",
+        "choices": [],
+        "is_final": true
+      },
+      {
+        "id": "emergencia-final-mal",
+        "title": "Tiempo valioso",
+        "body": "En emergencias, cada minuto cuenta. Saber los números de ayuda y avisar de inmediato salva vidas.",
+        "choices": [],
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": 98,
+    "titulo": "Cuento con ruta rota (debe quedar fuera)",
+    "categoria": "calle",
+    "estado": "publicado",
+    "descripcion": "Este cuento tiene una opción que salta a una escena inexistente y debe quedar fuera de la biblioteca.",
+    "imagen": "⚠️",
+    "is_main": false,
+    "asignacion_aula": false,
+    "initial_scene_id": "rota-1",
+    "scenes": [
+      {
+        "id": "rota-1",
+        "title": "Inicio con destino inexistente",
+        "body": "Hay un camino pero apunta a la nada.",
+        "choices": [
+          { "label": "Saltar a escena que no existe", "target": "escena-inexistente-404", "points": 0 }
+        ],
+        "is_final": false
+      }
+    ]
+  },
+  {
+    "id": 99,
+    "titulo": "Cuento en borrador incompleto",
+    "categoria": "seguridad",
+    "estado": "borrador",
+    "descripcion": "Este cuento de prueba no debe mostrarse porque no tiene escenas ni cierre.",
+    "imagen": "⚠️",
+    "is_main": false,
+    "asignacion_aula": false,
+    "initial_scene_id": null,
+    "scenes": []
+  }
+]

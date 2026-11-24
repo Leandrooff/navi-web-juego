@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Biblioteca NAVI</title>
+  <link rel="stylesheet" href="./biblioteca.css">
+</head>
+<body>
+  <aside class="sidebar">
+    <div class="brand"><span class="brand-mark">N</span><strong>NAVI</strong></div>
+    <nav class="menu" aria-label="Navegación principal">
+      <button type="button" data-view="inicio">🏠 <span>Inicio</span></button>
+      <button type="button" class="active" data-view="biblioteca">📚 <span>Biblioteca</span></button>
+      <button type="button" data-view="progreso">📈 <span>Progreso</span></button>
+      <button type="button" data-view="perfil">👤 <span>Perfil</span></button>
+    </nav>
+  </aside>
+
+  <main class="main">
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">Hola, Alex</p>
+        <h1 id="pageTitle">Biblioteca de aventuras</h1>
+      </div>
+      <button class="profile-button" type="button" aria-label="Abrir perfil">A</button>
+    </header>
+
+    <section id="mainContent"></section>
+  </main>
+
+  <dialog id="detailDialog" aria-labelledby="detailTitle">
+    <button class="dialog-close" type="button" aria-label="Cerrar">×</button>
+    <div id="detailContent"></div>
+  </dialog>
+
+  <script src="./biblioteca.js"></script>
+</body>
+</html>

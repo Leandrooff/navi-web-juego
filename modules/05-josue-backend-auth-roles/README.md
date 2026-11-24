@@ -1,36 +1,11 @@
-# Modulo 05 Josué Login y roles
+# Módulo: Login y Roles
 
-## Objetivo
+Este módulo gestiona la autenticación de usuarios (registro e inicio de sesión) y el control de acceso según roles (`nino`, `tutor`, `educador`, `admin`).
 
-Crear el acceso de usuarios y roles para separar nino, tutor, educador y administrador.
+## Estructura del Módulo
+- `src/`: Pantallas HTML y lógica JavaScript (`auth.js`, `roles.js`).
+- `demo/`: Datos de prueba en JSON (`usuarios-demo.json`).
+- `base-avance/`: Documentación del progreso (`avance.md`).
 
-Leer tambien `INSTRUCCIONES.md` dentro de esta misma carpeta para ver exactamente que debes subir.
-
-## Pantallas a desarrollar
-
-- Login.
-- Registro.
-- Seleccion de rol.
-- Usuario logueado.
-- Acceso denegado si no tiene permiso.
-
-## Funciones necesarias
-
-- Registrar usuario.
-- Iniciar sesion.
-- Cerrar sesion.
-- Guardar usuario activo.
-- Validar rol.
-- Redirigir segun rol.
-- Proteger rutas o pantallas.
-
-## Roles
-
-- `nino`: juega cuentos.
-- `tutor`: ve progreso del nino.
-- `educador`: ve reportes de estudiantes.
-- `admin`: administra contenidos.
-
-## Entrega esperada
-
-Subir pantallas o funciones simuladas. Si no hay backend listo, usar datos demo en JSON.
+## Cómo probarlo
+Abre `src/login.html` directamente en tu navegador o mediante Live Server.

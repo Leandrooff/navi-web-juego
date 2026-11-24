@@ -1,0 +1,698 @@
+[
+  {
+    "dialogue_id": "park.r2.cielo.narration",
+    "scene": "cielo",
+    "speaker_id": "navi",
+    "locale": "es-BO",
+    "text": "Soy NAVI. Vivo entre estas islas y acompaño a quienes se atreven a descubrir. Hoy he visto una luz nueva… ¡la tuya!",
+    "audio_path": null
+  },
+  {
+    "dialogue_id": "park.r2.cielo-1.consequence",
+    "scene": "cielo",
+    "speaker_id": "narrator",
+    "locale": "es-BO",
+    "text": "Un pequeño destello cruza las nubes. El mundo empieza a abrirse ante ti.",
+    "audio_path": null
+  },
+  {
+    "dialogue_id": "park.r2.puente.narration",
+    "scene": "puente",
+    "speaker_id": "navi",
+    "locale": "es-BO",
+    "text": "Podemos explorar, hacernos preguntas y aprender a cuidarnos. Yo iré a tu lado. Las decisiones serán tuyas.",
+    "audio_path": null
+  },
+  {
+    "dialogue_id": "park.r2.puente-1.consequence",
+    "scene": "puente",
+    "speaker_id": "narrator",
+    "locale": "es-BO",
+    "text": "El brillo baja hasta el parque y se detiene junto a tu mano.",
+    "audio_path": null
+  },
+  {
+    "dialogue_id": "park.r2.encuentro.narration",
+    "scene": "encuentro",
+    "speaker_id": "navi",
+    "locale": "es-BO",
+    "text": "¡Aquí estás, {name}! Me alegra encontrarte. ¿Me haces un sitio en tu aventura?",
+    "audio_path": null
+  },
+  {
+    "dialogue_id": "park.r2.encuentro-1.consequence",
+    "scene": "encuentro",
+    "speaker_id": "narrator",
+    "locale": "es-BO",
+    "text": "NAVI dibuja un círculo de luz a tu alrededor. En tu cuaderno aparece la primera hoja: «Primer encuentro».",
+    "audio_path": null
+  },
+  {
+    "dialogue_id": "park.r2.encuentro-2.consequence",
+    "scene": "encuentro",
+    "speaker_id": "narrator",
+    "locale": "es-BO",
+    "text": "NAVI se posa un instante sobre tu mano. No hace falta decir mucho para empezar una amistad.",
+    "audio_path": null
+  },
+  {
+    "dialogue_id": "park.r2.entrada.narration",
+    "scene": "entrada",
+    "speaker_id": "narrator",
+    "locale": "es-BO",
+    "text": "Vienes al parque con Mara, la adulta que te cuida hoy. Antes de entrar, señala el farol turquesa junto al banco: «Si nos separamos, este será nuestro punto de encuentro».",
+    "audio_path": null
+  },
+  {
+    "dialogue_id": "park.r2.entrada-1.consequence",
+    "scene": "entrada",
+    "speaker_id": "narrator",
+    "locale": "es-BO",
+    "text": "Mara asiente. Ahora sabes qué lugar recordar si dejan de verse.",
+    "audio_path": null
+  },
+  {
+    "dialogue_id": "park.r2.entrada-2.consequence",
+    "scene": "entrada",
+    "speaker_id": "narrator",
+    "locale": "es-BO",
+    "text": "Descubres una caseta de información cerca de la fuente. Mara te recuerda el farol acordado. Ya conoces dos referencias.",
+    "audio_path": null
+  },
+  {
+    "dialogue_id": "park.r2.fuente.narration",
+    "scene": "fuente",
+    "speaker_id": "narrator",
+    "locale": "es-BO",
+    "text": "La fuente canta bajito. Mara se queda cerca, mirando las flores. Tú llevas un cuaderno de hojas: hoy quieres encontrar algo que merezca dibujarse.",
+    "audio_path": null
+  },
+  {
+    "dialogue_id": "park.r2.fuente-1.consequence",
+    "scene": "fuente",
+    "speaker_id": "narrator",
+    "locale": "es-BO",
+    "text": "Tres peces dorados asoman bajo una hoja. Te agachas en el camino seco para verlos mejor.",
+    "audio_path": null
+  },
+  {
+    "dialogue_id": "park.r2.fuente-2.consequence",
+    "scene": "fuente",
+    "speaker_id": "narrator",
+    "locale": "es-BO",
+    "text": "La hoja parece un pequeño barco. Abres tu cuaderno y empiezas a dibujarla.",
+    "audio_path": null
+  },
+  {
+    "dialogue_id": "park.r2.peces.narration",
+    "scene": "peces",
+    "speaker_id": "narrator",
+    "locale": "es-BO",
+    "text": "Un pez empuja la hoja y los otros dos la siguen. Te gustaría enseñárselo a Mara. Al girarte, solo ves la fuente, los árboles y otras familias.",
+    "audio_path": null
+  },
+  {
+    "dialogue_id": "park.r2.peces-1.consequence",
+    "scene": "peces",
+    "speaker_id": "narrator",
+    "locale": "es-BO",
+    "text": "Miras desde donde estás. La chaqueta amarilla de Mara ya no aparece entre las flores.",
+    "audio_path": null
+  },
+  {
+    "dialogue_id": "park.r2.cuaderno.narration",
+    "scene": "cuaderno",
+    "speaker_id": "narrator",
+    "locale": "es-BO",
+    "text": "Ya tienes el contorno de la hoja. «¡Mara, mira!». Nadie responde. Tu lápiz se queda quieto: no ves a Mara junto a las flores.",
+    "audio_path": null
+  },
+  {
+    "dialogue_id": "park.r2.cuaderno-1.consequence",
+    "scene": "cuaderno",
+    "speaker_id": "narrator",
+    "locale": "es-BO",
+    "text": "Cierras el cuaderno. La tarde sigue sonando, pero ahora necesitas encontrar ayuda.",
+    "audio_path": null
+  },
+  {
+    "dialogue_id": "park.r2.silencio.narration",
+    "scene": "silencio",
+    "speaker_id": "narrator",
+    "locale": "es-BO",
+    "text": "Miras a un lado y al otro. Mara no está a la vista. Sientes un nudo en la barriga. NAVI se queda cerca, en silencio. Ahora decides tu siguiente paso.",
+    "audio_path": null
+  },
+  {
+    "dialogue_id": "park.r2.silencio-1.consequence",
+    "scene": "silencio",
+    "speaker_id": "narrator",
+    "locale": "es-BO",
+    "text": "Apoyas los pies en el suelo. El nudo sigue ahí, pero puedes pensar un poquito mejor.",
+    "audio_path": null
+  },
+  {
+    "dialogue_id": "park.r2.silencio-2.consequence",
+    "scene": "silencio",
+    "speaker_id": "narrator",
+    "locale": "es-BO",
+    "text": "Avanzas hasta una bifurcación. Desde aquí ya no ves tan bien la fuente. Buscar sin rumbo puede hacer más difícil encontrarse.",
+    "audio_path": null
+  },
+  {
+    "dialogue_id": "park.r2.respiro.narration",
+    "scene": "respiro",
+    "speaker_id": "narrator",
+    "locale": "es-BO",
+    "text": "Inspiras como si olieras una flor y sueltas el aire despacio. No tienes que resolverlo todo de golpe. Desde aquí ves el farol acordado y la caseta de información.",
+    "audio_path": null
+  },
+  {
+    "dialogue_id": "park.r2.respiro-1.consequence",
+    "scene": "respiro",
+    "speaker_id": "narrator",
+    "locale": "es-BO",
+    "text": "Te sitúas junto al banco, a la vista del camino. Es el lugar que acordaste con Mara.",
+    "audio_path": null
+  },
+  {
+    "dialogue_id": "park.r2.respiro-2.consequence",
+    "scene": "respiro",
+    "speaker_id": "narrator",
+    "locale": "es-BO",
+    "text": "El mapa está justo al lado. Puedes mirarlo sin perder de vista la fuente.",
+    "audio_path": null
+  },
+  {
+    "dialogue_id": "park.r2.cruce.narration",
+    "scene": "cruce",
+    "speaker_id": "narrator",
+    "locale": "es-BO",
+    "text": "Un camino vuelve hacia la fuente. El otro se estrecha entre los arbustos. Una cinta amarilla se mueve al fondo… pero no sabes si es Mara.",
+    "audio_path": null
+  },
+  {
+    "dialogue_id": "park.r2.cruce-1.consequence",
+    "scene": "cruce",
+    "speaker_id": "narrator",
+    "locale": "es-BO",
+    "text": "Regresas por el tramo que conoces. La fuente y el mapa vuelven a estar cerca.",
+    "audio_path": null
+  },
+  {
+    "dialogue_id": "park.r2.cruce-2.consequence",
+    "scene": "cruce",
+    "speaker_id": "narrator",
+    "locale": "es-BO",
+    "text": "Es un molinillo de papel. Has llegado a una verja lateral; seguir por ahí te alejaría del parque.",
+    "audio_path": null
+  },
+  {
+    "dialogue_id": "park.r2.limite.narration",
+    "scene": "limite",
+    "speaker_id": "narrator",
+    "locale": "es-BO",
+    "text": "La verja da a un camino que no conoces. Antes de cruzar, escuchas voces en el parque. Todavía puedes volver al espacio abierto.",
+    "audio_path": null
+  },
+  {
+    "dialogue_id": "park.r2.limite-1.consequence",
+    "scene": "limite",
+    "speaker_id": "narrator",
+    "locale": "es-BO",
+    "text": "No cruzas la verja. Vuelves despacio hasta el árbol grande, donde hay otras familias.",
+    "audio_path": null
+  },
+  {
+    "dialogue_id": "park.r2.limite-2.consequence",
+    "scene": "limite",
+    "speaker_id": "narrator",
+    "locale": "es-BO",
+    "text": "La persona no trabaja en el parque. Te dice que quizá vio a Mara fuera y que puede acompañarte.",
+    "audio_path": null
+  },
+  {
+    "dialogue_id": "park.r2.mapa.narration",
+    "scene": "mapa",
+    "speaker_id": "narrator",
+    "locale": "es-BO",
+    "text": "El mapa muestra una fuente, un farol y una caseta. Levantas la vista: la caseta está aquí mismo, al otro lado de la plaza abierta. Hay personal atendiendo.",
+    "audio_path": null
+  },
+  {
+    "dialogue_id": "park.r2.mapa-1.consequence",
+    "scene": "mapa",
+    "speaker_id": "narrator",
+    "locale": "es-BO",
+    "text": "Cruzas la plaza abierta sin salir del parque. Una trabajadora deja de ordenar folletos para escucharte.",
+    "audio_path": null
+  },
+  {
+    "dialogue_id": "park.r2.mapa-2.consequence",
+    "scene": "mapa",
+    "speaker_id": "narrator",
+    "locale": "es-BO",
+    "text": "El farol está cerca y puedes verlo todo el tiempo. Te quedas al lado del banco.",
+    "audio_path": null
+  },
+  {
+    "dialogue_id": "park.r2.banco.narration",
+    "scene": "banco",
+    "speaker_id": "narrator",
+    "locale": "es-BO",
+    "text": "Te quedas junto al banco, lejos del agua y a la vista de las familias. Mara conoce este lugar. ¿Cómo puedes hacer que sepan que necesitas ayuda?",
+    "audio_path": null
+  },
+  {
+    "dialogue_id": "park.r2.banco-1.consequence",
+    "scene": "banco",
+    "speaker_id": "narrator",
+    "locale": "es-BO",
+    "text": "Llamas sin alejarte: «¡Mara!». Una adulta que está con sus niños te escucha.",
+    "audio_path": null
+  },
+  {
+    "dialogue_id": "park.r2.banco-2.consequence",
+    "scene": "banco",
+    "speaker_id": "narrator",
+    "locale": "es-BO",
+    "text": "Ves pasar varias familias. Mara todavía no aparece. Puedes seguir visible y pedir ayuda si lo necesitas.",
+    "audio_path": null
+  },
+  {
+    "dialogue_id": "park.r2.espera.narration",
+    "scene": "espera",
+    "speaker_id": "narrator",
+    "locale": "es-BO",
+    "text": "Aprietas el cuaderno entre las manos. Esperar a solas cuesta. Cerca hay una adulta con dos niños y, al fondo, la caseta sigue abierta.",
+    "audio_path": null
+  },
+  {
+    "dialogue_id": "park.r2.espera-1.consequence",
+    "scene": "espera",
+    "speaker_id": "narrator",
+    "locale": "es-BO",
+    "text": "La adulta escucha y llama a una trabajadora, sin pedirte que te vayas con ella.",
+    "audio_path": null
+  },
+  {
+    "dialogue_id": "park.r2.espera-2.consequence",
+    "scene": "espera",
+    "speaker_id": "narrator",
+    "locale": "es-BO",
+    "text": "Una persona se acerca: «Creo que vi a tu acompañante por la salida. Ven y buscamos». No sabes si es cierto.",
+    "audio_path": null
+  },
+  {
+    "dialogue_id": "park.r2.llamada.narration",
+    "scene": "llamada",
+    "speaker_id": "narrator",
+    "locale": "es-BO",
+    "text": "«No encuentro a Mara. ¿Puede avisar al personal?», dices. La adulta llama a una trabajadora que está en la plaza. Tú sigues junto al farol.",
+    "audio_path": null
+  },
+  {
+    "dialogue_id": "park.r2.llamada-1.consequence",
+    "scene": "llamada",
+    "speaker_id": "narrator",
+    "locale": "es-BO",
+    "text": "La trabajadora avisa a la caseta por radio. Explica que esperas en el farol turquesa.",
+    "audio_path": null
+  },
+  {
+    "dialogue_id": "park.r2.llamada-2.consequence",
+    "scene": "llamada",
+    "speaker_id": "narrator",
+    "locale": "es-BO",
+    "text": "La trabajadora sonríe: «Nos quedamos aquí mientras avisamos». No tienes que irte con nadie.",
+    "audio_path": null
+  },
+  {
+    "dialogue_id": "park.r2.oferta.narration",
+    "scene": "oferta",
+    "speaker_id": "narrator",
+    "locale": "es-BO",
+    "text": "«Vamos a buscar fuera», propone esa persona. Su voz parece amable, pero tú no la conoces y Mara no acordó que te fueras con ella.",
+    "audio_path": null
+  },
+  {
+    "dialogue_id": "park.r2.oferta-1.consequence",
+    "scene": "oferta",
+    "speaker_id": "narrator",
+    "locale": "es-BO",
+    "text": "La persona se aparta. Tú permaneces en la zona pública y haces una señal hacia la caseta.",
+    "audio_path": null
+  },
+  {
+    "dialogue_id": "park.r2.oferta-2.consequence",
+    "scene": "oferta",
+    "speaker_id": "narrator",
+    "locale": "es-BO",
+    "text": "Te alejas unos pasos y dejas de ver el banco. Algo no te convence. Puedes detenerte aunque antes hayas dicho que sí.",
+    "audio_path": null
+  },
+  {
+    "dialogue_id": "park.r2.umbral.narration",
+    "scene": "umbral",
+    "speaker_id": "narrator",
+    "locale": "es-BO",
+    "text": "La salida está delante. Tú sigues dentro del parque. Te detienes. No tienes que continuar un plan que te hace sentir inseguridad.",
+    "audio_path": null
+  },
+  {
+    "dialogue_id": "park.r2.umbral-1.consequence",
+    "scene": "umbral",
+    "speaker_id": "narrator",
+    "locale": "es-BO",
+    "text": "Vuelves al espacio abierto sin cruzar la verja. Una trabajadora te ve junto al árbol grande.",
+    "audio_path": null
+  },
+  {
+    "dialogue_id": "park.r2.umbral-2.consequence",
+    "scene": "umbral",
+    "speaker_id": "narrator",
+    "locale": "es-BO",
+    "text": "«¡Necesito ayuda!». Una trabajadora de la plaza se acerca. Permaneces dentro del parque.",
+    "audio_path": null
+  },
+  {
+    "dialogue_id": "park.r2.negativa.narration",
+    "scene": "negativa",
+    "speaker_id": "narrator",
+    "locale": "es-BO",
+    "text": "No sales del parque. Una trabajadora de la caseta se acerca por la plaza. «Podemos hablar aquí, donde están las familias», te dice.",
+    "audio_path": null
+  },
+  {
+    "dialogue_id": "park.r2.negativa-1.consequence",
+    "scene": "negativa",
+    "speaker_id": "narrator",
+    "locale": "es-BO",
+    "text": "Caminas por la zona abierta hasta el mostrador de información. La plaza sigue a la vista.",
+    "audio_path": null
+  },
+  {
+    "dialogue_id": "park.r2.regreso.narration",
+    "scene": "regreso",
+    "speaker_id": "narrator",
+    "locale": "es-BO",
+    "text": "La trabajadora está atendiendo a las familias junto al árbol. Le cuentas que no encuentras a Mara. «Avisaré por radio y nos quedamos aquí, a la vista», responde.",
+    "audio_path": null
+  },
+  {
+    "dialogue_id": "park.r2.regreso-1.consequence",
+    "scene": "regreso",
+    "speaker_id": "narrator",
+    "locale": "es-BO",
+    "text": "Explicas el camino que hiciste. Nadie te regaña: esa información ayuda a entender dónde buscabas.",
+    "audio_path": null
+  },
+  {
+    "dialogue_id": "park.r2.regreso-2.consequence",
+    "scene": "regreso",
+    "speaker_id": "narrator",
+    "locale": "es-BO",
+    "text": "Recuerdas el acuerdo con Mara. La trabajadora avisa a sus compañeras de los dos lugares.",
+    "audio_path": null
+  },
+  {
+    "dialogue_id": "park.r2.caseta.narration",
+    "scene": "caseta",
+    "speaker_id": "narrator",
+    "locale": "es-BO",
+    "text": "En el mostrador hay una trabajadora con uniforme, identificación y radio. Está atendiendo al público. Levanta la mirada y espera a que le hables.",
+    "audio_path": null
+  },
+  {
+    "dialogue_id": "park.r2.caseta-1.consequence",
+    "scene": "caseta",
+    "speaker_id": "narrator",
+    "locale": "es-BO",
+    "text": "La trabajadora se llama Inés. Te escucha desde el mostrador: «Gracias por decírmelo. Vamos paso a paso».",
+    "audio_path": null
+  },
+  {
+    "dialogue_id": "park.r2.caseta-2.consequence",
+    "scene": "caseta",
+    "speaker_id": "narrator",
+    "locale": "es-BO",
+    "text": "Inés te da tiempo. No hace falta contarlo perfecto ni decirlo todo de golpe.",
+    "audio_path": null
+  },
+  {
+    "dialogue_id": "park.r2.palabras.narration",
+    "scene": "palabras",
+    "speaker_id": "narrator",
+    "locale": "es-BO",
+    "text": "Puedes empezar con una frase pequeña. Inés espera en la caseta. NAVI flota a tu lado, sin hablar por ti.",
+    "audio_path": null
+  },
+  {
+    "dialogue_id": "park.r2.palabras-1.consequence",
+    "scene": "palabras",
+    "speaker_id": "narrator",
+    "locale": "es-BO",
+    "text": "Con esa frase basta para empezar. Inés deja sus papeles y te presta atención.",
+    "audio_path": null
+  },
+  {
+    "dialogue_id": "park.r2.palabras-2.consequence",
+    "scene": "palabras",
+    "speaker_id": "narrator",
+    "locale": "es-BO",
+    "text": "Inés mira el lugar que señalas y entiende que necesitas encontrar a tu acompañante.",
+    "audio_path": null
+  },
+  {
+    "dialogue_id": "park.r2.identificacion.narration",
+    "scene": "identificacion",
+    "speaker_id": "narrator",
+    "locale": "es-BO",
+    "text": "Inés propone avisar por radio mientras esperas en la caseta. El uniforme y la identificación son pistas; también importa que atienda al público y que sigas en un lugar visible.",
+    "audio_path": null
+  },
+  {
+    "dialogue_id": "park.r2.identificacion-1.consequence",
+    "scene": "identificacion",
+    "speaker_id": "narrator",
+    "locale": "es-BO",
+    "text": "Inés enciende la radio. Tú sigues viendo la plaza y a las familias.",
+    "audio_path": null
+  },
+  {
+    "dialogue_id": "park.r2.identificacion-2.consequence",
+    "scene": "identificacion",
+    "speaker_id": "narrator",
+    "locale": "es-BO",
+    "text": "«No. Podemos hacerlo desde aquí», aclara Inés. Entender el plan te ayuda a sentir tranquilidad.",
+    "audio_path": null
+  },
+  {
+    "dialogue_id": "park.r2.publico.narration",
+    "scene": "publico",
+    "speaker_id": "narrator",
+    "locale": "es-BO",
+    "text": "Inés señala la radio y el banco del mostrador: «Aviso al equipo y esperamos aquí». Puedes ver por dónde podría llegar Mara.",
+    "audio_path": null
+  },
+  {
+    "dialogue_id": "park.r2.publico-1.consequence",
+    "scene": "publico",
+    "speaker_id": "narrator",
+    "locale": "es-BO",
+    "text": "Te sientas cerca del mostrador. Ya sabes qué va a hacer Inés y dónde vas a quedarte.",
+    "audio_path": null
+  },
+  {
+    "dialogue_id": "park.r2.descripcion.narration",
+    "scene": "descripcion",
+    "speaker_id": "narrator",
+    "locale": "es-BO",
+    "text": "«¿Cómo es Mara y dónde la viste por última vez?», pregunta Inés. Recuerdas su chaqueta amarilla y las flores junto a la fuente.",
+    "audio_path": null
+  },
+  {
+    "dialogue_id": "park.r2.descripcion-1.consequence",
+    "scene": "descripcion",
+    "speaker_id": "narrator",
+    "locale": "es-BO",
+    "text": "Inés comunica esas dos pistas al equipo. No necesitas inventar nada ni dar datos que no conoces.",
+    "audio_path": null
+  },
+  {
+    "dialogue_id": "park.r2.descripcion-2.consequence",
+    "scene": "descripcion",
+    "speaker_id": "narrator",
+    "locale": "es-BO",
+    "text": "Inés pide a una compañera que mire junto al farol. También describe dónde estás tú.",
+    "audio_path": null
+  },
+  {
+    "dialogue_id": "park.r2.radio.narration",
+    "scene": "radio",
+    "speaker_id": "narrator",
+    "locale": "es-BO",
+    "text": "La radio hace «crrr». Inés explica al equipo lo que contaste. Después te dice: «Ya saben dónde estamos. Te avisaré en cuanto respondan».",
+    "audio_path": null
+  },
+  {
+    "dialogue_id": "park.r2.radio-1.consequence",
+    "scene": "radio",
+    "speaker_id": "narrator",
+    "locale": "es-BO",
+    "text": "Dibujas una pequeña radio junto a tu hoja. Inés permanece en el mostrador, cerca de ti.",
+    "audio_path": null
+  },
+  {
+    "dialogue_id": "park.r2.radio-2.consequence",
+    "scene": "radio",
+    "speaker_id": "narrator",
+    "locale": "es-BO",
+    "text": "«Lo entiendo. Podemos esperar juntos», responde. No tienes que esconder lo que sientes.",
+    "audio_path": null
+  },
+  {
+    "dialogue_id": "park.r2.espera_caseta.narration",
+    "scene": "espera_caseta",
+    "speaker_id": "narrator",
+    "locale": "es-BO",
+    "text": "La radio vuelve a sonar. Una compañera ha encontrado a Mara junto a la fuente y la acompaña a la caseta. Inés te lo cuenta. Tú esperas allí, sin salir a buscar otra vez.",
+    "audio_path": null
+  },
+  {
+    "dialogue_id": "park.r2.espera_caseta-1.consequence",
+    "scene": "espera_caseta",
+    "speaker_id": "narrator",
+    "locale": "es-BO",
+    "text": "Entre las personas de la plaza aparece una chaqueta amarilla. Esta vez ves también la cara de Mara.",
+    "audio_path": null
+  },
+  {
+    "dialogue_id": "park.r2.espera_farol.narration",
+    "scene": "espera_farol",
+    "speaker_id": "narrator",
+    "locale": "es-BO",
+    "text": "La trabajadora avisa a la caseta y se queda contigo en la plaza. Al poco rato, una figura con chaqueta amarilla vuelve por el camino de la fuente.",
+    "audio_path": null
+  },
+  {
+    "dialogue_id": "park.r2.espera_farol-1.consequence",
+    "scene": "espera_farol",
+    "speaker_id": "narrator",
+    "locale": "es-BO",
+    "text": "Reconoces su cara y la llamas. Mara te ve junto al lugar que acordaron.",
+    "audio_path": null
+  },
+  {
+    "dialogue_id": "park.r2.espera_arbol.narration",
+    "scene": "espera_arbol",
+    "speaker_id": "narrator",
+    "locale": "es-BO",
+    "text": "La radio responde: Mara está en el farol. La trabajadora le comunica dónde esperas y permanece contigo bajo el árbol, junto a las familias.",
+    "audio_path": null
+  },
+  {
+    "dialogue_id": "park.r2.espera_arbol-1.consequence",
+    "scene": "espera_arbol",
+    "speaker_id": "narrator",
+    "locale": "es-BO",
+    "text": "Mara llega desde el farol acompañada por otra trabajadora. Tu cambio de rumbo te trajo de vuelta a un lugar seguro.",
+    "audio_path": null
+  },
+  {
+    "dialogue_id": "park.r2.reencuentro_farol.narration",
+    "scene": "reencuentro_farol",
+    "speaker_id": "narrator",
+    "locale": "es-BO",
+    "text": "«¡Aquí estás!», dice Mara, aliviada. Se agacha para escucharte. El farol, que parecía un detalle pequeño al entrar, les ha ayudado a encontrarse.",
+    "audio_path": null
+  },
+  {
+    "dialogue_id": "park.r2.reencuentro_farol-1.consequence",
+    "scene": "reencuentro_farol",
+    "speaker_id": "narrator",
+    "locale": "es-BO",
+    "text": "Mara te abraza: «Ese acuerdo nos ayudó. La próxima vez seguiremos juntos y lo recordaremos al entrar».",
+    "audio_path": null
+  },
+  {
+    "dialogue_id": "park.r2.reencuentro_farol-2.consequence",
+    "scene": "reencuentro_farol",
+    "speaker_id": "narrator",
+    "locale": "es-BO",
+    "text": "«Gracias por contármelo», dice Mara. Se quedan un momento junto al banco, hasta que el nudo se afloja.",
+    "audio_path": null
+  },
+  {
+    "dialogue_id": "park.r2.reencuentro_caseta.narration",
+    "scene": "reencuentro_caseta",
+    "speaker_id": "narrator",
+    "locale": "es-BO",
+    "text": "Mara entra en la caseta y se agacha a tu altura. Inés explica lo que hiciste. «Pedir ayuda fue importante», dice Mara. Tu voz puso al equipo en movimiento.",
+    "audio_path": null
+  },
+  {
+    "dialogue_id": "park.r2.reencuentro_caseta-1.consequence",
+    "scene": "reencuentro_caseta",
+    "speaker_id": "narrator",
+    "locale": "es-BO",
+    "text": "Mara escucha y agradece a Inés. Antes de seguir paseando, vuelven a recordar el farol y acuerdan permanecer cerca.",
+    "audio_path": null
+  },
+  {
+    "dialogue_id": "park.r2.reencuentro_caseta-2.consequence",
+    "scene": "reencuentro_caseta",
+    "speaker_id": "narrator",
+    "locale": "es-BO",
+    "text": "Inés se despide desde el mostrador. Tú y Mara anotan un pequeño farol en el cuaderno.",
+    "audio_path": null
+  },
+  {
+    "dialogue_id": "park.r2.reencuentro_arbol.narration",
+    "scene": "reencuentro_arbol",
+    "speaker_id": "narrator",
+    "locale": "es-BO",
+    "text": "Mara llega al árbol y te abraza. Le cuentas que te alejaste y luego decidiste parar. «Gracias por volver a pedir ayuda. No estás en problemas», te dice.",
+    "audio_path": null
+  },
+  {
+    "dialogue_id": "park.r2.reencuentro_arbol-1.consequence",
+    "scene": "reencuentro_arbol",
+    "speaker_id": "narrator",
+    "locale": "es-BO",
+    "text": "Mara escucha sin regañarte. Juntos acuerdan seguir cerca y pedir ayuda en un lugar público si vuelven a separarse.",
+    "audio_path": null
+  },
+  {
+    "dialogue_id": "park.r2.reencuentro_arbol-2.consequence",
+    "scene": "reencuentro_arbol",
+    "speaker_id": "narrator",
+    "locale": "es-BO",
+    "text": "Señalan el farol otra vez. Esta vez también observan la caseta. Tu experiencia les ayuda a preparar el siguiente paseo.",
+    "audio_path": null
+  },
+  {
+    "dialogue_id": "park.r2.final_farol.narration",
+    "scene": "final_farol",
+    "speaker_id": "narrator",
+    "locale": "es-BO",
+    "text": "Terminas tu dibujo junto a Mara. Añades un farol turquesa: un lugar que ambos conocían se convirtió en una forma de encontrarse. NAVI se acurruca cerca. La tarde todavía guarda cosas bonitas.",
+    "audio_path": null
+  },
+  {
+    "dialogue_id": "park.r2.final_caseta.narration",
+    "scene": "final_caseta",
+    "speaker_id": "narrator",
+    "locale": "es-BO",
+    "text": "En tu cuaderno dibujas una radio y dos pequeñas ondas. No resolviste todo a solas: pediste ayuda y contaste lo que sabías. Mara camina a tu lado. La aventura continúa, ahora juntos.",
+    "audio_path": null
+  },
+  {
+    "dialogue_id": "park.r2.final_arbol.narration",
+    "scene": "final_arbol",
+    "speaker_id": "narrator",
+    "locale": "es-BO",
+    "text": "Dibujas una hoja con un camino que vuelve al árbol. Te equivocaste de dirección, te detuviste y buscaste ayuda. Ese cambio cuenta. Mara y tú guardan el cuaderno y vuelven juntos a la fuente.",
+    "audio_path": null
+  }
+]
