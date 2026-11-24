@@ -34,6 +34,7 @@ export const api={
   progress:id=>request('/child-profiles/'+id+'/progress'),
   assignments:id=>request('/child-profiles/'+id+'/assignments'),
   start:(childId,storyId,key)=>request('/game-sessions',{method:'POST',body:{child_profile_id:childId,story_id:storyId,request_key:key}}),
+  gameSession:id=>request('/game-sessions/'+id),
   decision:(id,body)=>request('/game-sessions/'+id+'/decisions',{method:'POST',body}),
   advance:(id,decisionId)=>request('/game-sessions/'+id+'/continue',{method:'POST',body:{decision_id:decisionId}}),
   finish:id=>request('/game-sessions/'+id+'/finish',{method:'POST'}),

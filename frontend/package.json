@@ -7,6 +7,7 @@
     "build": "vite build",
     "preview": "vite preview",
     "test": "node --test tests/*.test.mjs",
+    "test:motor:e2e": "node --test e2e/motor-cuentos.test.mjs",
     "test:e2e": "node e2e/adventure.mjs",
     "test:ux": "node e2e/accessibility.mjs"
   },
