@@ -1,49 +1,214 @@
-import React from 'react';
-import Button from '../components/Button.jsx';
-import {Icon,Logo,Navi,Particles,Avatar,Loading} from '../components/GameUI.jsx';
+import React, { useState, useEffect } from "react";
 
-export function Welcome({onStart,onAdult,ready=true}){
- return <main className="welcome world-background">
- <Particles/><header className="welcome-header"><Logo small/><button className="glass adult-access" disabled={!ready} onClick={onAdult}><Icon name="shield" size={19}/> Familias y docentes <Icon name="arrow" size={16}/></button></header>
- <section className="welcome-copy"><span className="eyebrow light"><i/> UN MUNDO POR DESCUBRIR</span><Logo/>
- <h1>Cada pequeña decisión<br/>abre una <em>gran aventura.</em></h1>
- <p>Explora, imagina y aprende a cuidarte.<br/>Yo soy NAVI. Y voy contigo.</p>
- <Button onClick={onStart} disabled={!ready} className="begin-button"><Icon name="book" size={27}/> {ready?'¡Comenzar aventura!':'Preparando tu mundo…'} <Icon name="arrow"/></Button>
- <div className="welcome-note"><span>6–10 años</span><span>A tu ritmo</span><span>En compañía</span></div></section>
- <div className="welcome-spirit"><div className="spirit-halo"/><Navi/><span className="spirit-caption">TU COMPAÑERO DE GRANDES AVENTURAS</span></div>
- <footer className="welcome-footer"><span><Icon name="leaf" size={17}/> Navegación y Aprendizaje para la Vida Infantil</span><span>EXPLORA · APRENDE · DESCUBRE</span></footer>
- </main>;
-}
-export function ProfileSelection({profiles,onSelect,onAdult}){
- return <main className="world-background selection-page"><Particles/><Logo small/><section className="parchment selection-content"><span className="eyebrow">EL VIAJE ES TUYO</span><h1>¿Quién viene a explorar?</h1><p>Elige tu perfil para continuar tu aventura.</p>
- <div className="profile-grid">{profiles.map(p=><button key={p.id} className="profile-tile" onClick={()=>onSelect(p)}><Avatar name={p.avatar} color={p.navi_color}/><strong>{p.nickname}</strong><small>{p.age} años</small><Icon name="arrow"/></button>)}</div>
- {!profiles.length&&<p>Un adulto de tu familia puede crear tu perfil para empezar.</p>}
- <Button variant="secondary" onClick={onAdult}>{profiles.length?'Ir a NAVI Familias':'Crear mi primer perfil'} <Icon name="people"/></Button></section><Navi className="selection-navi"/></main>;
-}
-export function World({profile,stories,progress,assignments,onStory,onJournal,onAdult}){
- const featured=stories.find(s=>s.slug==='me-perdi-en-el-parque')||stories[0];
- const status=featured&&progress?.progress.find(p=>p.story_id===featured.id);
- const active=featured&&progress?.active_sessions.some(s=>s.story_id===featured.id);
- return <main className="world-map world-background"><Particles/>
- <div className="map-greeting"><Navi color={profile.navi_color}/><div className="speech parchment"><small>TU MUNDO DE AVENTURAS</small><h1>Hola, {profile.nickname}.</h1><p>Hay algo nuevo por descubrir.<br/>¿Exploramos juntos?</p></div></div>
- <div className="map-locations" aria-label="Mapa de aventuras">{featured&&<button className="map-pin park-pin" onClick={()=>onStory(featured)}><span className="pin-medallion"><Icon name="leaf" size={35}/></span><span className="parchment pin-label"><strong>El parque</strong><small>{active?'Continuar aventura':status?.status==='completed'?'Aventura completada':'Tu primera aventura'}</small></span><span className="pin-light"/></button>}
- <span className="world-label plaza-label">La plaza de los sueños</span><span className="world-label bridge-label">El puente de las nubes</span></div>
- <aside className="parchment adventure-journal"><span className="eyebrow">TU CUADERNO DE VIAJE</span><h2>Una historia te espera</h2>
- {featured?<><div className="journal-illustration"><img src={featured.cover_path||'/art/inicio.png'} alt="El parque y sus personajes"/><span>CAPÍTULO 01</span></div><h3>{featured.title}</h3><p>{featured.description}</p><div className="chapter-meta"><span><Icon name="clock" size={17}/>{featured.estimated_minutes} min aprox.</span><span><Icon name="star" size={17}/>1 estrella</span></div>
- <Button onClick={()=>onStory(featured)}>{active?'Continuar mi aventura':status?.status==='completed'?'Volver a explorar':'Vamos al parque'}<Icon name="arrow"/></Button></>:<p>Las aventuras aparecerán aquí cuando estén publicadas.</p>}
- {stories.length>1&&<div className="other-stories">{stories.filter(s=>s.id!==featured?.id).map(s=><button key={s.id} onClick={()=>onStory(s)}>{s.title}<Icon name="arrow"/></button>)}</div>}
- {assignments.length>0&&<p className="assignment-note"><Icon name="book" size={18}/>{assignments.length} aventura{assignments.length!==1?'s':''} de tu aula</p>}
- </aside>
- <footer className="map-footer"><button className="glass menu-tile" onClick={onJournal}><Icon name="trophy"/><span>Mis descubrimientos<small>{progress?.completed||0} aventuras completadas</small></span></button><button className="glass menu-tile" onClick={onAdult}><Icon name="people"/><span>Mi familia<small>Acompañamos tu camino</small></span></button></footer>
- </main>;
-}
-export function Chapter({story,onStart,onBack,busy,error,active}){
- return <main className="chapter-page" style={{'--scene-image':'url("'+(story.cover_path||'/art/inicio.png')+'")'}}><div className="chapter-background"/><Particles/>
- <button className="glass back-label" onClick={onBack}><Icon name="back"/> Volver al mapa</button>
- <section className="chapter-intro"><div className="chapter-number"><span>01</span><i/></div><span className="eyebrow light">EL PARQUE DE LOS FAROLES</span><h1>{story.title}</h1><p>{story.description}</p>
- <div className="chapter-meta"><span><Icon name="clock"/>{story.estimated_minutes} minutos</span><span><Icon name="leaf"/>Tú eliges el camino</span></div>
- <div className="chapter-promise"><Icon name="shield"/><span>Una historia para practicar cómo pedir ayuda.<br/>Puedes volver a intentarlo todas las veces que quieras.</span></div>
- {error&&<p className="error-notice" role="alert">{error}</p>}
- <Button disabled={busy} onClick={onStart}>{busy?'Preparando tu aventura…':active?'Continuar donde me quedé':'Entrar en la historia'}<Icon name="arrow"/></Button></section>
- </main>;
+/**
+ * World / Map Component (El Mundo de Aventuras de NAVI)
+ *
+ * Requirements:
+ * - Flow: mapa → ficha → jugar o continuar → final → mapa
+ * - Preserves the prologue on first visit (prólogo de la primera visita)
+ * - Highlights classroom assignments (asignaciones del aula)
+ * - Identifies started and completed stories based on active profile progress
+ * - Prominently displays main adventure and extra published adventures
+ */
+export default function World({
+  stories,
+  activeProfile,
+  profileProgress,
+  onOpenStoryDetail,
+  onPlayStory
+}) {
+  const [showPrologue, setShowPrologue] = useState(false);
+
+  // Check if first visit for the active profile
+  useEffect(() => {
+    if (!activeProfile?.id) return;
+    const storageKey = `navi-prologue-seen-${activeProfile.id}`;
+    const alreadySeen = localStorage.getItem(storageKey);
+    if (!alreadySeen) {
+      setShowPrologue(true);
+    }
+  }, [activeProfile?.id]);
+
+  const closePrologue = () => {
+    if (activeProfile?.id) {
+      localStorage.setItem(`navi-prologue-seen-${activeProfile.id}`, "true");
+    }
+    setShowPrologue(false);
+  };
+
+  const getStoryState = (storyId) => {
+    return profileProgress[storyId] || "nuevo";
+  };
+
+  const mainStory = stories.find((s) => s.is_main) || stories[0];
+  const extraStories = stories.filter((s) => s.id !== mainStory?.id);
+
+  // Classroom assignments
+  const assignedStories = stories.filter((s) => s.asignacion_aula);
+
+  return (
+    <div className="world-container">
+      {/* Prólogo de la primera visita */}
+      {showPrologue && (
+        <div className="prologue-banner" role="region" aria-label="Prólogo de bienvenida">
+          <div className="prologue-content">
+            <div className="prologue-badge">¡Bienvenido a tu Mundo NAVI! 🗺️</div>
+            <h2>¡Hola, {activeProfile.nombre}! Tu aventura segura comienza hoy</h2>
+            <p>
+              Explora las diferentes zonas de la ciudad en este mapa interactivo. En cada lugar vivirás
+              situaciones del día a día donde deberás tomar decisiones inteligentes para cuidarte y ayudar a otros.
+              ¡Acepta las misiones del aula y gana estrellas en cada cuento!
+            </p>
+            <div className="prologue-actions">
+              <button type="button" className="primary" onClick={closePrologue}>
+                ¡Comenzar a explorar! ✨
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Classroom assignments bar */}
+      {assignedStories.length > 0 && (
+        <section className="classroom-bar" aria-label="Asignaciones del aula">
+          <div className="classroom-header">
+            <span className="classroom-icon" aria-hidden="true">🏫</span>
+            <div>
+              <h3>Asignaciones de tu aula escolar</h3>
+              <p>Tu educador seleccionó estas aventuras prioritarias para ti:</p>
+            </div>
+          </div>
+          <div className="classroom-cards">
+            {assignedStories.map((story) => {
+              const state = getStoryState(story.id);
+              return (
+                <div key={story.id} className="assigned-chip" onClick={() => onOpenStoryDetail(story)}>
+                  <span className="assigned-img">{story.imagen}</span>
+                  <div className="assigned-info">
+                    <strong>{story.titulo}</strong>
+                    <span className={`status-pill ${state.replace(" ", "-")}`}>
+                      {state === "en progreso" ? "Continuando" : state === "completado" ? "Listo" : "Pendiente"}
+                    </span>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </section>
+      )}
+
+      {/* Interactive Map Section */}
+      <section className="world-map" aria-label="Mapa interactivo de aventuras">
+        <div className="map-legend">
+          <span className="legend-title">🗺️ Mapa de Aventuras</span>
+          <div className="legend-items">
+            <span className="legend-item"><span className="dot nuevo"></span> No iniciado</span>
+            <span className="legend-item"><span className="dot en-progreso"></span> En progreso</span>
+            <span className="legend-item"><span className="dot completado"></span> Completado</span>
+          </div>
+          {!showPrologue && (
+            <button
+              type="button"
+              className="text-btn"
+              onClick={() => setShowPrologue(true)}
+              aria-label="Volver a leer el prólogo"
+            >
+              📖 Leer prólogo
+            </button>
+          )}
+        </div>
+
+        {/* Main Adventure Card / Center of Map */}
+        {mainStory && (
+          <div className="main-adventure-hero">
+            <div className="hero-badge">🌟 AVENTURA PRINCIPAL RECOMENDADA</div>
+            <div className="hero-content">
+              <div className="hero-art">{mainStory.imagen}</div>
+              <div className="hero-details">
+                <div className="hero-tags">
+                  <span className="category-tag">{mainStory.categoria}</span>
+                  {mainStory.asignacion_aula && <span className="assigned-tag">🏫 Asignación de aula</span>}
+                  <span className={`status ${getStoryState(mainStory.id).replace(" ", "-")}`}>
+                    {getStoryState(mainStory.id)}
+                  </span>
+                </div>
+                <h2>{mainStory.titulo}</h2>
+                <p>{mainStory.descripcion}</p>
+                <div className="hero-actions">
+                  <button
+                    type="button"
+                    className="primary hero-play"
+                    onClick={() => onPlayStory(mainStory)}
+                  >
+                    {getStoryState(mainStory.id) === "en progreso"
+                      ? "Continuar aventura ▶"
+                      : getStoryState(mainStory.id) === "completado"
+                      ? "Volver a jugar 🔄"
+                      : "Jugar ahora 🚀"}
+                  </button>
+                  <button
+                    type="button"
+                    className="secondary"
+                    onClick={() => onOpenStoryDetail(mainStory)}
+                  >
+                    Ver ficha detallada 📋
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* Extra Published Stories on the Map */}
+        <div className="map-nodes-header">
+          <h3>Otras aventuras en el mapa ({extraStories.length})</h3>
+          <p>Toca cualquier zona para ver su ficha y comenzar a jugar:</p>
+        </div>
+
+        <div className="map-nodes-grid">
+          {extraStories.map((story) => {
+            const state = getStoryState(story.id);
+            return (
+              <article
+                key={story.id}
+                className={`map-node-card node-${story.categoria} state-${state.replace(" ", "-")}`}
+                onClick={() => onOpenStoryDetail(story)}
+                tabIndex={0}
+                role="button"
+                onKeyDown={(e) => {
+                  if (e.key === "Enter" || e.key === " ") {
+                    e.preventDefault();
+                    onOpenStoryDetail(story);
+                  }
+                }}
+                aria-label={`Abrir ficha de ${story.titulo}`}
+              >
+                <div className="node-icon-wrapper">
+                  <span className="node-icon">{story.imagen}</span>
+                  {story.asignacion_aula && <span className="node-assigned-badge" title="Asignación del aula">🏫</span>}
+                </div>
+                <div className="node-body">
+                  <span className="category-tag">{story.categoria}</span>
+                  <h4>{story.titulo}</h4>
+                  <div className="node-footer">
+                    <span className={`status ${state.replace(" ", "-")}`}>{state}</span>
+                    <button
+                      type="button"
+                      className="node-action-btn"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        onPlayStory(story);
+                      }}
+                    >
+                      {state === "en progreso" ? "Continuar" : state === "completado" ? "Repetir" : "Jugar"}
+                    </button>
+                  </div>
+                </div>
+              </article>
+            );
+          })}
+        </div>
+      </section>
+    </div>
+  );
 }
