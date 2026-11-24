@@ -1,0 +1,1261 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Panel Administrador de Cuentos</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;0,900;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --o1: #f6a12e;
+            --o2: #ee6a2c;
+            --y: #ffd45c;
+            --bg: #f4b13f;
+            --ink: #1c1917;
+            --mut: #6b6358;
+            --line: #f0e4d2;
+            --soft: #fff7ec;
+            --ok: #1f9d55;
+            --err: #d93a2b;
+            --grad: linear-gradient(135deg, #ee6a2c, #f6a12e 60%, #ffd45c);
+            --r: 22px
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        body {
+            margin: 0;
+            background: var(--bg);
+            font-family: 'Roboto', 'Segoe UI', system-ui, sans-serif;
+            color: var(--ink);
+            padding: 22px;
+            line-height: 1.45
+        }
+
+        .shell {
+            max-width: 1240px;
+            margin: 0 auto;
+            background: #fff;
+            border-radius: 30px;
+            overflow: hidden;
+            box-shadow: 0 18px 50px rgba(120, 60, 0, .25)
+        }
+
+        header {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 14px;
+            padding: 18px 28px
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 14px
+        }
+
+        .logo {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--grad);
+            display: grid;
+            place-items: center;
+            color: #fff;
+            font-weight: 900;
+            font-style: italic;
+            font-size: 1.2rem
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 1.35rem;
+            font-style: italic;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: .01em
+        }
+
+        .sub {
+            color: var(--mut);
+            font-size: .85rem
+        }
+
+        .role {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: .85rem;
+            font-weight: 500
+        }
+
+        select,
+        input,
+        textarea {
+            width: 100%;
+            padding: 10px 14px;
+            border: 1.5px solid var(--line);
+            border-radius: 14px;
+            background: #fff;
+            font: inherit;
+            font-size: .92rem;
+            color: var(--ink)
+        }
+
+        select {
+            width: auto
+        }
+
+        input:focus,
+        textarea:focus,
+        select:focus,
+        button:focus-visible {
+            outline: 3px solid rgba(238, 106, 44, .35);
+            border-color: var(--o2)
+        }
+
+        textarea {
+            min-height: 90px;
+            resize: vertical
+        }
+
+        label {
+            display: block;
+            font-size: .82rem;
+            font-weight: 500;
+            color: var(--mut);
+            margin-top: 12px
+        }
+
+        label input,
+        label textarea,
+        label select {
+            margin-top: 5px;
+            color: var(--ink)
+        }
+
+        button {
+            font: inherit;
+            font-weight: 700;
+            font-size: .86rem;
+            padding: 9px 18px;
+            border: 0;
+            border-radius: 999px;
+            cursor: pointer;
+            background: var(--grad);
+            color: #fff;
+            transition: transform .12s, box-shadow .12s;
+            box-shadow: 0 4px 12px rgba(238, 106, 44, .3)
+        }
+
+        button:hover {
+            transform: translateY(-1px)
+        }
+
+        button.ghost {
+            background: #fff;
+            color: var(--ink);
+            border: 1.5px solid var(--ink);
+            box-shadow: none
+        }
+
+        button.ok {
+            background: var(--ok);
+            box-shadow: none
+        }
+
+        button.del {
+            background: #fff;
+            color: var(--err);
+            border: 1.5px solid #f3c4bf;
+            box-shadow: none
+        }
+
+        button.sm {
+            padding: 5px 12px;
+            font-size: .78rem
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 12px;
+            padding: 0 0 18px
+        }
+
+        .stat {
+            text-align: left;
+            background: var(--soft);
+            color: var(--ink);
+            border: 2px solid transparent;
+            border-radius: var(--r);
+            padding: 12px 16px;
+            box-shadow: none
+        }
+
+        .stat span {
+            display: block;
+            font-size: .8rem;
+            font-weight: 500;
+            color: var(--mut)
+        }
+
+        .stat strong {
+            font-size: 1.7rem;
+            font-weight: 900;
+            font-style: italic;
+            color: var(--o2)
+        }
+
+        .stat.on {
+            background: var(--grad);
+            color: #fff
+        }
+
+        .stat.on span,
+        .stat.on strong {
+            color: #fff
+        }
+
+        .banner {
+            background: var(--grad);
+            border-radius: 26px;
+            padding: 18px 24px;
+            color: #fff;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 18px
+        }
+
+        .banner h2 {
+            margin: 0;
+            font-style: italic;
+            font-weight: 900;
+            font-size: 1.7rem
+        }
+
+        .banner .tools {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            align-items: center
+        }
+
+        .banner input {
+            border: 0;
+            width: 250px
+        }
+
+        .banner button {
+            background: #fff;
+            color: var(--o2);
+            box-shadow: none
+        }
+
+        .catalog,
+        .panel {
+            padding: 0 28px 28px
+        }
+
+        .nav {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap
+        }
+
+        .nav button {
+            background: #fff;
+            color: var(--ink);
+            border: 1.5px solid var(--line);
+            box-shadow: none
+        }
+
+        .nav button.on {
+            background: var(--grad);
+            color: #fff;
+            border-color: transparent
+        }
+
+        .kpis {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 12px;
+            margin-bottom: 18px
+        }
+
+        .kpi {
+            background: var(--soft);
+            border-radius: var(--r);
+            padding: 14px 16px;
+            font-size: .85rem;
+            color: var(--mut)
+        }
+
+        .kpi strong {
+            display: block;
+            font-size: 1.8rem;
+            font-style: italic;
+            font-weight: 900;
+            color: var(--o2)
+        }
+
+        .bar {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin: 6px 0;
+            font-size: .86rem
+        }
+
+        .bar i {
+            display: block;
+            height: 14px;
+            border-radius: 99px;
+            background: var(--grad)
+        }
+
+        .bar span {
+            min-width: 120px
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: .86rem
+        }
+
+        th,
+        td {
+            text-align: left;
+            padding: 9px 10px;
+            border-bottom: 1px solid var(--line)
+        }
+
+        th {
+            color: var(--mut);
+            font-weight: 500
+        }
+
+        .log {
+            padding: 0;
+            margin: 0
+        }
+
+        .log li {
+            list-style: none;
+            padding: 9px 0;
+            border-bottom: 1px solid var(--line)
+        }
+
+        .log small {
+            color: var(--mut);
+            margin-right: 8px
+        }
+
+        .map {
+            overflow: auto;
+            background: var(--soft);
+            border-radius: var(--r);
+            padding: 10px;
+            margin: 12px 0
+        }
+
+        @media(max-width:700px) {
+            .kpis {
+                grid-template-columns: repeat(2, 1fr)
+            }
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 18px
+        }
+
+        .story {
+            display: flex;
+            flex-direction: column;
+            background: #fff;
+            border: 1.5px solid var(--line);
+            border-radius: var(--r);
+            padding: 10px;
+            box-shadow: 0 8px 20px rgba(120, 60, 0, .1);
+            transition: transform .15s, box-shadow .15s
+        }
+
+        .story:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 14px 26px rgba(120, 60, 0, .18)
+        }
+
+        .thumb {
+            width: 100%;
+            aspect-ratio: 16/10;
+            object-fit: cover;
+            border-radius: 16px;
+            background: var(--line);
+            display: block
+        }
+
+        .story .info {
+            flex: 1;
+            padding: 10px 6px 0
+        }
+
+        .story b {
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            line-height: 1.25;
+            min-height: 2.5em
+        }
+
+        .story small {
+            color: var(--mut);
+            display: block;
+            margin-top: 6px
+        }
+
+        .story .acts {
+            padding: 0 6px 6px;
+            margin-top: 12px
+        }
+
+        .acts {
+            display: flex;
+            gap: 6px;
+            flex-wrap: wrap;
+            margin-top: 8px
+        }
+
+        .work {
+            padding: 24px 28px;
+            background: #fff
+        }
+
+        .hero {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center
+        }
+
+        .hero-l {
+            display: flex;
+            gap: 14px;
+            align-items: center
+        }
+
+        .cover {
+            width: 120px;
+            height: 76px;
+            border-radius: 16px;
+            object-fit: cover;
+            background: var(--line)
+        }
+
+        .hero h2 {
+            margin: 0;
+            font-size: 1.5rem;
+            font-style: italic;
+            font-weight: 900
+        }
+
+        .pill {
+            display: inline-block;
+            padding: 2px 10px;
+            border-radius: 999px;
+            font-size: .72rem;
+            font-weight: 700;
+            background: var(--line)
+        }
+
+        .published {
+            background: #d5f5e1;
+            color: #14693a
+        }
+
+        .draft {
+            background: #ffe9bf;
+            color: #8a5200
+        }
+
+        .inactive {
+            background: #fddcd8;
+            color: #a3281d
+        }
+
+        .status {
+            margin: 16px 0;
+            padding: 12px 16px;
+            border-radius: var(--r);
+            font-size: .9rem
+        }
+
+        .status.good {
+            background: #e1f7ea;
+            color: #14693a
+        }
+
+        .status.bad {
+            background: #fff1da;
+            color: #8a4a00
+        }
+
+        .status ul {
+            margin: 6px 0 0 18px;
+            padding: 0
+        }
+
+        .steps {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin: 6px 0 16px;
+            font-size: .84rem;
+            color: var(--mut)
+        }
+
+        .steps span {
+            background: var(--soft);
+            padding: 6px 14px;
+            border-radius: 999px
+        }
+
+        .steps b {
+            color: var(--o2)
+        }
+
+        .box {
+            background: var(--soft);
+            border: 2px dashed var(--o1);
+            border-radius: var(--r);
+            padding: 16px;
+            margin: 14px 0
+        }
+
+        .sec-h {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-top: 8px
+        }
+
+        .sec-h h3 {
+            margin: 0;
+            font-size: 1.15rem;
+            font-style: italic;
+            font-weight: 900
+        }
+
+        .scene {
+            border: 1.5px solid var(--line);
+            border-radius: 26px;
+            padding: 16px;
+            margin-top: 14px;
+            box-shadow: 0 6px 18px rgba(120, 60, 0, .07)
+        }
+
+        .scene-top {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+            flex-wrap: wrap;
+            align-items: center
+        }
+
+        .num {
+            display: inline-grid;
+            place-items: center;
+            min-width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            background: var(--grad);
+            color: #fff;
+            font-weight: 900;
+            font-style: italic;
+            margin-right: 8px
+        }
+
+        .tag {
+            font-size: .7rem;
+            font-weight: 700;
+            padding: 3px 10px;
+            border-radius: 999px;
+            margin-left: 6px
+        }
+
+        .t-ini {
+            background: #d8ecff;
+            color: #17508a
+        }
+
+        .t-end {
+            background: #ffe9bf;
+            color: #8a5200
+        }
+
+        .body {
+            white-space: pre-line;
+            color: #44403c;
+            margin: 10px 0
+        }
+
+        .dec {
+            background: var(--soft);
+            border-radius: 20px;
+            padding: 14px;
+            margin-top: 10px
+        }
+
+        .dec h4 {
+            margin: 0 0 4px;
+            font-size: .95rem
+        }
+
+        .dec p {
+            margin: 0 0 10px;
+            color: var(--mut);
+            font-size: .82rem
+        }
+
+        .route {
+            display: grid;
+            grid-template-columns: auto 1fr auto auto;
+            gap: 10px;
+            align-items: center;
+            background: #fff;
+            border-radius: 16px;
+            padding: 10px 12px;
+            margin-bottom: 8px;
+            border: 1.5px solid var(--line)
+        }
+
+        .route .opt {
+            font-weight: 700
+        }
+
+        .route .dest {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: #fff1da;
+            border-radius: 999px;
+            padding: 4px 12px;
+            font-size: .84rem;
+            white-space: nowrap
+        }
+
+        .pts {
+            background: var(--ink);
+            color: #fff;
+            border-radius: 999px;
+            padding: 3px 10px;
+            font-size: .78rem;
+            font-weight: 700;
+            white-space: nowrap
+        }
+
+        .letter {
+            width: 28px;
+            height: 28px;
+            border-radius: 10px;
+            background: var(--o1);
+            color: #fff;
+            display: grid;
+            place-items: center;
+            font-weight: 900
+        }
+
+        .nodest {
+            color: var(--err);
+            font-weight: 700
+        }
+
+        .add {
+            background: #fff;
+            border: 2px dashed var(--o1);
+            border-radius: 18px;
+            padding: 14px;
+            margin-top: 8px
+        }
+
+        .add h5 {
+            margin: 0 0 4px;
+            font-size: .9rem
+        }
+
+        .fg {
+            display: grid;
+            grid-template-columns: 1.4fr 1fr 1fr;
+            gap: 12px;
+            align-items: start
+        }
+
+        .rng {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 11px
+        }
+
+        .rng input {
+            padding: 0;
+            border: 0;
+            accent-color: var(--o2);
+            box-shadow: none
+        }
+
+        .rng output {
+            min-width: 34px;
+            text-align: center;
+            font-weight: 900;
+            font-style: italic;
+            color: var(--o2);
+            font-size: 1.1rem
+        }
+
+        .hint {
+            font-size: .76rem;
+            color: var(--mut);
+            margin-top: 4px
+        }
+
+        .empty {
+            text-align: center;
+            padding: 34px 10px;
+            color: var(--mut)
+        }
+
+        #toast {
+            position: fixed;
+            left: 50%;
+            bottom: 24px;
+            transform: translateX(-50%) translateY(30px);
+            opacity: 0;
+            pointer-events: none;
+            background: var(--ink);
+            color: #fff;
+            padding: 12px 22px;
+            border-radius: 999px;
+            font-weight: 500;
+            transition: .25s;
+            z-index: 60;
+            max-width: 92vw
+        }
+
+        #toast.show {
+            opacity: 1;
+            transform: translateX(-50%)
+        }
+
+        #toast.err {
+            background: var(--err)
+        }
+
+        .modal {
+            position: fixed;
+            inset: 0;
+            background: rgba(28, 25, 23, .6);
+            display: none;
+            place-items: center;
+            z-index: 50;
+            padding: 16px
+        }
+
+        .modal.show {
+            display: grid
+        }
+
+        .play {
+            background: #fff;
+            border-radius: 30px;
+            max-width: 560px;
+            width: 100%;
+            padding: 26px;
+            max-height: 92vh;
+            overflow: auto
+        }
+
+        .play h3 {
+            margin: 0 0 4px;
+            font-style: italic;
+            font-weight: 900;
+            font-size: 1.4rem
+        }
+
+        .play .choice {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            text-align: left;
+            margin-top: 10px;
+            background: var(--soft);
+            color: var(--ink);
+            border: 2px solid var(--o1);
+            box-shadow: none;
+            padding: 12px 18px
+        }
+
+        .score {
+            float: right;
+            background: var(--grad);
+            color: #fff;
+            border-radius: 50%;
+            width: 62px;
+            height: 62px;
+            display: grid;
+            place-items: center;
+            font-weight: 900;
+            font-style: italic;
+            font-size: 1.3rem;
+            margin-left: 12px
+        }
+
+        @media(max-width:1100px) {
+            .grid {
+                grid-template-columns: repeat(3, minmax(0, 1fr))
+            }
+        }
+
+        @media(max-width:860px) {
+            .grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr))
+            }
+
+            .stats {
+                grid-template-columns: repeat(2, 1fr)
+            }
+        }
+
+        @media(max-width:520px) {
+            .grid {
+                grid-template-columns: 1fr
+            }
+
+            .banner input {
+                width: 100%
+            }
+        }
+
+        @media(max-width:640px) {
+            .fg {
+                grid-template-columns: 1fr
+            }
+
+            .route {
+                grid-template-columns: auto 1fr
+            }
+
+            .route>*:nth-child(n+3) {
+                grid-column: 2
+            }
+
+            body {
+                padding: 10px
+            }
+        }
+
+        @media(prefers-reduced-motion:reduce) {
+            * {
+                transition: none !important
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="shell">
+        <header>
+            <div class="brand">
+                <div class="logo">C</div>
+                <div>
+                    <h1>Panel de cuentos</h1>
+                    <div class="sub">Crea escenas, conecta decisiones y publica cuando todo esté listo.</div>
+                </div>
+            </div>
+            <nav class="nav" id="nav"></nav>
+            <label class="role" style="margin:0">Tu rol
+                <select id="role" onchange="gate()">
+                    <option value="admin">admin</option>
+                    <option value="tutor">tutor</option>
+                    <option value="docente">docente</option>
+                </select>
+            </label>
+        </header>
+
+        <div id="blocked" class="empty" style="display:none">
+            <h2>Acceso restringido</h2>
+            <p>Solo el rol <b>admin</b> puede crear, editar o publicar cuentos. Cambia el rol arriba para continuar.</p>
+        </div>
+
+        <div id="work">
+            <section class="catalog" id="catalog">
+                <div class="banner">
+                    <h2 id="listTitle">Todos los cuentos</h2>
+                    <div class="tools"><select id="catf" onchange="render()" aria-label="Categoría"></select><select
+                            id="sort" onchange="render()" aria-label="Ordenar">
+                            <option value="new">Más recientes</option>
+                            <option value="az">A–Z</option>
+                            <option value="scenes">Más escenas</option>
+                            <option value="plays">Más probados</option>
+                        </select><input id="q" type="search" placeholder="Buscar por título o categoría…"
+                            oninput="render()" aria-label="Buscar cuentos" /><button onclick="openStoryForm()">+ Nuevo
+                            cuento</button></div>
+                </div>
+                <div class="stats" id="stats"></div>
+                <div class="grid" id="grid"></div>
+            </section>
+            <section class="panel" id="infoView" style="display:none"></section>
+
+            <div id="storyForm" class="modal" onclick="if(event.target===this)closeStoryForm()">
+                <div class="play">
+                    <div class="sec-h">
+                        <h3 id="sfTitle">Nuevo cuento</h3><button type="button" class="ghost sm"
+                            onclick="closeStoryForm()">Cerrar</button>
+                    </div>
+                    <form onsubmit="saveStory(event)">
+                        <input type="hidden" id="sId" />
+                        <label>Título *<input id="sTitle" required placeholder="Ej. El misterio del reloj" /></label>
+                        <label>Categoría *<input id="sCat" required list="cats" placeholder="Ej. Aventura" /></label>
+                        <datalist id="cats">
+                            <option>Aventura</option>
+                            <option>Misterio</option>
+                            <option>Fantasía</option>
+                            <option>Educativo</option>
+                            <option>Terror suave</option>
+                        </datalist>
+                        <label>Descripción<textarea id="sDesc"
+                                placeholder="Resumen breve para el lector"></textarea></label>
+                        <label>Edad recomendada<select id="sAge" style="width:100%">
+                                <option>Todas las edades</option>
+                                <option>3–5 años</option>
+                                <option>6–8 años</option>
+                                <option>9–12 años</option>
+                                <option>13+ años</option>
+                            </select></label>
+                        <label>Portada (URL o ruta)<input id="sImg" placeholder="https://… o ./portada.png" /></label>
+                        <div style="display:flex;gap:8px;margin-top:14px"><button type="submit">Guardar
+                                cuento</button><button type="button" class="ghost"
+                                onclick="closeStoryForm()">Cancelar</button></div>
+                    </form>
+                </div>
+            </div>
+
+            <section class="work" id="editorView" style="display:none">
+                <button class="ghost sm" style="margin-bottom:14px" onclick="backToCatalog()">← Volver al
+                    catálogo</button>
+                <div id="editor">
+                    <div class="hero">
+                        <div class="hero-l"><img id="cover" class="cover" alt="Portada" />
+                            <div>
+                                <h2 id="hTitle"></h2>
+                                <div id="hMeta" class="sub"></div>
+                            </div>
+                        </div>
+                        <div class="acts">
+                            <button id="editBtn" onclick="toggleEdit()"></button>
+                            <button class="ok" onclick="publish()">Publicar</button>
+                            <button class="ghost" onclick="playStory()">▶ Probar</button>
+                            <button class="ghost" onclick="mapOn=!mapOn;render()">🗺 Mapa</button>
+                            <button class="ghost" onclick="openStoryForm(sel)">Datos del cuento</button>
+                            <button class="ghost" onclick="setStatus('draft')">A borrador</button>
+                            <button class="ghost" onclick="setStatus('inactive')">Desactivar</button>
+                            <button class="ghost" onclick="dupStory()">Duplicar</button>
+                            <button class="ghost" onclick="exportStory()">Exportar</button>
+                            <button class="del" onclick="delStory(sel)">Eliminar</button>
+                        </div>
+                    </div>
+                    <div id="status" class="status"></div>
+                    <div id="mapBox" class="map" style="display:none"></div>
+                    <div class="steps" id="steps"><span><b>Paso 1</b> Crea las escenas</span><span><b>Paso 2</b> Marca
+                            inicio y finales</span><span><b>Paso 3</b> Conecta cada decisión con su destino</span></div>
+
+                    <div class="sec-h">
+                        <h3>Escenas del cuento</h3><button id="addScene" onclick="openSceneForm()">+ Agregar
+                            escena</button>
+                    </div>
+                    <div id="sceneForm" class="box" style="display:none">
+                        <div class="sec-h">
+                            <h3 id="scTitleH">Nueva escena</h3><button class="ghost sm"
+                                onclick="closeSceneForm()">Cerrar</button>
+                        </div>
+                        <form onsubmit="saveScene(event)">
+                            <input type="hidden" id="scId" />
+                            <label>Título de la escena *<input id="scTitle" required
+                                    placeholder="Ej. Frente a la puerta antigua" /></label>
+                            <label>Lo que lee el jugador *<textarea id="scBody" required
+                                    placeholder="Describe qué ve, oye o siente el personaje…"></textarea></label>
+                            <label>Tipo de escena<select id="scType" style="width:100%">
+                                    <option value="normal">Normal: el jugador toma una decisión</option>
+                                    <option value="ending">Final: aquí termina una rama</option>
+                                </select></label>
+                            <label style="display:flex;gap:8px;align-items:center"><input type="checkbox" id="scInit"
+                                    style="width:auto" /> Es la escena con la que empieza el cuento</label>
+                            <div style="display:flex;gap:8px;margin-top:14px"><button type="submit">Guardar
+                                    escena</button><button type="button" class="ghost"
+                                    onclick="closeSceneForm()">Cancelar</button></div>
+                        </form>
+                    </div>
+                    <div id="scenes"></div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <div id="toast" role="status"></div>
+    <div id="modal" class="modal" onclick="if(event.target===this)closePlay()">
+        <div class="play" id="playBox"></div>
+    </div>
+
+    <script>
+        const KEY = 'cuentos_admin_panel_v3';
+        const COVER = 'data:image/svg+xml;utf8,' + encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" width="420" height="240"><rect width="420" height="240" fill="#fde7c4"/><text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="#c58a3a" font-family="sans-serif" font-size="18">Sin portada</text></svg>');
+        const $ = id => document.getElementById(id);
+        const esc = s => String(s ?? '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+        let state = load(), filter = 'all', sel = state.stories[0]?.id ?? null, editing = null, P = null, view = 'catalog', editMode = false, mapOn = false;
+
+        function load() { try { const p = JSON.parse(localStorage.getItem(KEY)); if (p && Array.isArray(p.stories)) { p.log = p.log || []; p.trash = p.trash || []; return p } } catch (_) { } return { stories: [], log: [], trash: [] } }
+        function save() { localStorage.setItem(KEY, JSON.stringify(state)) }
+        function toast(m, t = 'ok') {
+            if (t !== 'err') { const c = view === 'editor' && cur(); state.log.unshift({ t: Date.now(), role: $('role').value, msg: (c ? c.title + ': ' : '') + m }); state.log.length = Math.min(state.log.length, 150); save() }
+            const e = $('toast'); e.textContent = m; e.className = 'show ' + (t === 'err' ? 'err' : ''); clearTimeout(toast.t); toast.t = setTimeout(() => e.className = '', 3200)
+        }
+        function gate() { const ok = $('role').value === 'admin'; $('blocked').style.display = ok ? 'none' : 'block'; $('work').style.display = ok ? 'block' : 'none'; if (!ok) toast('Solo el rol admin puede operar el panel.', 'err'); return ok }
+        const cur = () => state.stories.find(s => s.id === sel) || null;
+        const sorted = s => [...s.scenes].sort((a, b) => a.sort_order - b.sort_order);
+
+        function setFilter(f) { filter = f; render() }
+
+        /* Cuentos */
+        function openStoryForm(id) {
+            if (!gate()) return; const s = id && state.stories.find(x => x.id === id);
+            $('storyForm').classList.add('show'); $('sfTitle').textContent = s ? 'Editar datos del cuento' : 'Nuevo cuento';
+            $('sId').value = s ? s.id : ''; $('sTitle').value = s ? s.title : ''; $('sCat').value = s ? s.category : ''; $('sDesc').value = s ? s.description || '' : ''; $('sImg').value = s ? s.cover_image || '' : ''; $('sAge').value = s ? s.age || 'Todas las edades' : 'Todas las edades';
+            $('sTitle').focus()
+        }
+        function closeStoryForm() { $('storyForm').classList.remove('show') }
+        function saveStory(e) {
+            e.preventDefault(); if (!gate()) return;
+            const id = $('sId').value, d = { title: $('sTitle').value.trim(), category: $('sCat').value.trim(), description: $('sDesc').value.trim(), cover_image: $('sImg').value.trim(), age: $('sAge').value };
+            if (id) { Object.assign(state.stories.find(x => String(x.id) === id), d); toast('Cuento actualizado.') }
+            else { const n = { id: Date.now(), ...d, status: 'draft', revision: 1, initial_scene_id: null, scenes: [] }; state.stories.unshift(n); sel = n.id; view = 'editor'; editMode = true; toast('Cuento creado como borrador. Agrega su primera escena.') }
+            save(); closeStoryForm(); render(); window.scrollTo(0, 0)
+        }
+        function openStory(id, edit) { sel = id; view = 'editor'; editMode = !!edit; editing = null; closeSceneForm(); render(); window.scrollTo(0, 0) }
+        function backToCatalog() { view = 'catalog'; editMode = false; editing = null; closeSceneForm(); render(); window.scrollTo(0, 0) }
+        function toggleEdit() { editMode = !editMode; editing = null; closeSceneForm(); render() }
+        function delStory(id) {
+            if (!gate()) return; const s = state.stories.find(x => x.id === id); if (!s || !confirm(`¿Eliminar el cuento "${s.title}"? Podrás restaurarlo desde Respaldo.`)) return;
+            state.trash.unshift({ ...s, deleted_at: Date.now() }); state.stories = state.stories.filter(x => x.id !== id); if (sel === id) { sel = null; view = 'catalog'; editMode = false } save(); toast(`Cuento "${s.title}" enviado a la papelera.`); render()
+        }
+        function dupStory() {
+            const s = cur(); if (!s) return; const c = JSON.parse(JSON.stringify(s)); const map = {};
+            c.id = Date.now(); c.title += ' (copia)'; c.status = 'draft'; c.revision = 1;
+            c.scenes.forEach((x, i) => { map[x.id] = c.id + i + 1; });
+            c.scenes.forEach(x => { x.id = map[x.id]; x.choices.forEach(h => { h.id = Math.random() * 1e9 | 0; h.next_scene_id = map[h.next_scene_id] || null }) });
+            c.initial_scene_id = map[s.initial_scene_id] || null; state.stories.unshift(c); sel = c.id; save(); toast('Cuento duplicado.'); render()
+        }
+        function exportStory() {
+            const s = cur(); if (!s) return; const a = document.createElement('a');
+            a.href = URL.createObjectURL(new Blob([JSON.stringify(s, null, 2)], { type: 'application/json' })); a.download = (s.title || 'cuento').replace(/\W+/g, '_') + '.json'; a.click(); toast('Archivo JSON descargado.')
+        }
+
+        /* Escenas */
+        function openSceneForm(id) {
+            if (!gate()) return; const s = cur(); if (!s) return; const sc = id && s.scenes.find(x => x.id === id);
+            $('sceneForm').style.display = 'block'; $('scTitleH').textContent = sc ? 'Editar escena' : 'Nueva escena';
+            $('scId').value = sc ? sc.id : ''; $('scTitle').value = sc ? sc.title : ''; $('scBody').value = sc ? sc.body : '';
+            $('scType').value = sc && sc.is_ending ? 'ending' : 'normal'; $('scInit').checked = sc ? s.initial_scene_id === sc.id : s.scenes.length === 0;
+            $('scTitle').focus(); $('sceneForm').scrollIntoView({ behavior: 'smooth', block: 'nearest' })
+        }
+        function closeSceneForm() { $('sceneForm').style.display = 'none' }
+        function saveScene(e) {
+            e.preventDefault(); if (!gate()) return; const s = cur(); if (!s) return;
+            const id = $('scId').value, title = $('scTitle').value.trim(), body = $('scBody').value.trim(), end = $('scType').value === 'ending'; let t;
+            if (id) { t = s.scenes.find(x => String(x.id) === id); Object.assign(t, { title, body, is_ending: end }); if (end) t.choices = [] }
+            else { t = { id: Date.now() + (Math.random() * 100 | 0), title, body, sort_order: s.scenes.length + 1, is_ending: end, choices: [] }; s.scenes.push(t) }
+            if ($('scInit').checked || !s.initial_scene_id) s.initial_scene_id = t.id;
+            save(); closeSceneForm(); toast('Escena guardada.'); render()
+        }
+        function delScene(id) {
+            if (!gate()) return; const s = cur(), sc = s.scenes.find(x => x.id === id); if (!sc || !confirm(`¿Eliminar la escena "${sc.title}"? Las decisiones que llevaban a ella quedarán sin destino.`)) return;
+            s.scenes = s.scenes.filter(x => x.id !== id); s.scenes.forEach((x, i) => { x.sort_order = i + 1; x.choices.forEach(h => { if (h.next_scene_id === id) h.next_scene_id = null }) });
+            if (s.initial_scene_id === id) s.initial_scene_id = s.scenes[0]?.id ?? null; save(); toast('Escena eliminada.'); render()
+        }
+        function move(id, d) {
+            const s = cur(), a = sorted(s), i = a.findIndex(x => x.id === id), j = i + d; if (j < 0 || j >= a.length) return;
+            [a[i], a[j]] = [a[j], a[i]]; a.forEach((x, k) => x.sort_order = k + 1); save(); render()
+        }
+
+        /* Decisiones */
+        function saveChoice(sid) {
+            if (!gate()) return; const s = cur(), sc = s.scenes.find(x => x.id === sid);
+            const label = $('cl' + sid).value.trim(), pts = parseInt($('cp' + sid).value, 10); let nx = $('cn' + sid).value;
+            if (!label) { toast('Escribe qué dice el botón de la decisión.', 'err'); return }
+            if (!nx) { toast('Elige a qué escena lleva esta decisión.', 'err'); return }
+            if (nx === '__new') { const n = { id: Date.now() + (Math.random() * 100 | 0), title: 'Escena: ' + label, body: 'Escribe aquí lo que pasa después…', sort_order: s.scenes.length + 1, is_ending: false, choices: [] }; s.scenes.push(n); nx = n.id; toast('Se creó una escena nueva. Edítala y agrega su texto.') }
+            else nx = Number(nx);
+            if (editing && editing.s === sid) { const h = sc.choices.find(c => c.id === editing.c); if (h) Object.assign(h, { label, points: pts, next_scene_id: nx }); editing = null; toast('Decisión actualizada.') }
+            else { sc.choices.push({ id: Date.now() + (Math.random() * 100 | 0), label, points: pts, next_scene_id: nx }); toast('Decisión agregada.') }
+            save(); render()
+        }
+        function editChoice(sid, cid) { editing = { s: sid, c: cid }; render(); $('cl' + sid).focus() }
+        function cancelEdit() { editing = null; render() }
+        function delChoice(sid, cid) { const sc = cur().scenes.find(x => x.id === sid); sc.choices = sc.choices.filter(c => c.id !== cid); save(); toast('Decisión eliminada.'); render() }
+
+        /* Validación */
+        function validate(s) {
+            const e = []; if (!s.scenes.length) return ['Agrega al menos una escena.'];
+            const ids = new Set(s.scenes.map(x => x.id)), ini = s.initial_scene_id || s.scenes[0].id;
+            if (!ids.has(ini)) e.push('Define una escena inicial válida.');
+            s.scenes.forEach(sc => {
+                if (sc.is_ending) return;
+                if (!sc.choices.length) e.push(`"${sc.title}" no es final y no tiene decisiones.`);
+                sc.choices.forEach(h => { if (!h.next_scene_id || !ids.has(h.next_scene_id)) e.push(`La decisión "${h.label}" (en "${sc.title}") no tiene escena destino.`) })
+            });
+            if (!s.scenes.some(x => x.is_ending)) e.push('Marca al menos una escena como final.');
+            else if (ids.has(ini)) {
+                const v = new Set(), q = [ini]; let hit = false;
+                while (q.length) { const c = q.shift(); if (v.has(c)) continue; v.add(c); const x = s.scenes.find(y => y.id === c); if (!x) continue; if (x.is_ending) { hit = true; break } x.choices.forEach(h => h.next_scene_id && q.push(h.next_scene_id)) }
+                if (!hit) e.push('Ningún final se puede alcanzar desde la escena inicial.')
+            }
+            return e
+        }
+        function publish() {
+            if (!gate()) return; const s = cur(); if (!s) return; const e = validate(s);
+            if (e.length) { toast('Aún no se puede publicar. Revisa los pendientes.', 'err'); $('status').scrollIntoView({ behavior: 'smooth' }); return }
+            if (s.status === 'published') s.revision = (s.revision || 1) + 1; s.initial_scene_id = s.initial_scene_id || s.scenes[0].id; s.status = 'published'; editMode = false; editing = null; closeSceneForm();
+            save(); toast(`"${s.title}" publicado (v${s.revision}).`); render()
+        }
+        function setStatus(st) { if (!gate()) return; const s = cur(); if (!s) return; s.status = st; save(); toast(`Estado cambiado a "${st}".`); render() }
+
+        /* Probar cuento */
+        function playStory() {
+            const s = cur(); if (!s || !s.scenes.length) { toast('Agrega escenas para poder probar el cuento.', 'err'); return }
+            s.plays = (s.plays || 0) + 1; save(); P = { score: 0, id: s.initial_scene_id || sorted(s)[0].id }; $('modal').classList.add('show'); drawPlay()
+        }
+        function drawPlay() {
+            const s = cur(), sc = s.scenes.find(x => x.id === P.id);
+            if (!sc) { $('playBox').innerHTML = '<p>Esta decisión no lleva a ninguna escena.</p><button onclick="closePlay()">Cerrar</button>'; return }
+            $('playBox').innerHTML = `<div class="score" title="Puntos">${P.score}</div><h3>${esc(sc.title)}</h3><p class="body">${esc(sc.body)}</p>` +
+                (sc.is_ending ? `<p><b>Fin del cuento.</b> Puntaje final: ${P.score}</p><div class="acts"><button onclick="playStory()">Jugar de nuevo</button><button class="ghost" onclick="closePlay()">Cerrar</button></div>`
+                    : (sc.choices.map(h => `<button class="choice" onclick="P.score+=${h.points};P.id=${h.next_scene_id};drawPlay()"><span>${esc(h.label)}</span><span>+${h.points}</span></button>`).join('') || '<p>Esta escena no tiene decisiones.</p>') + '<div class="acts" style="margin-top:14px"><button class="ghost sm" onclick="closePlay()">Salir</button></div>')
+        }
+        function closePlay() { $('modal').classList.remove('show') }
+
+        function setView(v) { view = v; editMode = false; editing = null; closeSceneForm(); render(); window.scrollTo(0, 0) }
+        function maxPts(s) { const m = new Map(s.scenes.map(x => [x.id, x])); const go = (id, seen) => { const x = m.get(id); if (!x || seen.has(id)) return 0; const n = new Set(seen).add(id); return x.is_ending ? 0 : Math.max(0, ...x.choices.map(h => h.points + go(h.next_scene_id, n))) }; return go(s.initial_scene_id, new Set()) }
+        function dl(obj, name) { const a = document.createElement('a'); a.href = URL.createObjectURL(new Blob([JSON.stringify(obj, null, 2)], { type: 'application/json' })); a.download = name; a.click() }
+        function exportAll() { dl({ stories: state.stories }, 'respaldo_cuentos.json'); toast('Respaldo descargado.') }
+        function adopt(o) {
+            if (!o || !Array.isArray(o.scenes)) return null; const c = JSON.parse(JSON.stringify(o)), map = {}, b = Date.now() + Math.floor(Math.random() * 1e5);
+            c.id = b; c.title = String(c.title || 'Cuento importado'); c.category = String(c.category || 'Sin categoría'); c.status = 'draft'; c.revision = 1; delete c.deleted_at;
+            c.scenes.forEach((x, i) => { map[x.id] = b + i + 1; x.id = b + i + 1; x.choices = Array.isArray(x.choices) ? x.choices : []; x.sort_order = i + 1 });
+            c.scenes.forEach(x => x.choices.forEach(h => { h.id = Math.random() * 1e9 | 0; h.next_scene_id = map[h.next_scene_id] || null }));
+            c.initial_scene_id = map[o.initial_scene_id] || c.scenes[0]?.id || null; return c
+        }
+        function importFile(inp) {
+            if (!gate()) return; const f = inp.files[0]; if (!f) return; const r = new FileReader();
+            r.onload = () => { try { const d = JSON.parse(r.result), ok = (Array.isArray(d) ? d : d.stories || [d]).map(adopt).filter(Boolean); if (!ok.length) throw 0; state.stories.unshift(...ok); save(); toast(`${ok.length} cuento(s) importado(s) como borrador.`); render() } catch (_) { toast('El archivo no es un cuento válido.', 'err') } inp.value = '' }; r.readAsText(f)
+        }
+        function restore(id) { const t = state.trash.find(x => x.id === id); if (!t) return; delete t.deleted_at; state.stories.unshift(t); state.trash = state.trash.filter(x => x.id !== id); save(); toast(`Cuento "${t.title}" restaurado.`); render() }
+        function purge(id) { if (!confirm('¿Eliminar para siempre? Esta acción no se puede deshacer.')) return; state.trash = state.trash.filter(x => x.id !== id); save(); toast('Eliminado definitivamente.'); render() }
+        function clearLog() { if (!confirm('¿Borrar todo el historial?')) return; state.log = []; save(); render() }
+        function drawInfo() {
+            const st = state.stories, V = $('infoView');
+            if (view === 'stats') {
+                const sum = f => st.reduce((a, s) => a + f(s), 0), cat = {}; st.forEach(s => cat[s.category] = (cat[s.category] || 0) + 1); const mx = Math.max(1, ...Object.values(cat));
+                V.innerHTML = `<div class="banner"><h2>Estadísticas</h2></div><div class="kpis">` + [['Cuentos', st.length], ['Escenas', sum(s => s.scenes.length)], ['Decisiones', sum(s => s.scenes.reduce((b, x) => b + x.choices.length, 0))], ['Finales', sum(s => s.scenes.filter(x => x.is_ending).length)]].map(k => `<div class="kpi">${k[0]}<strong>${k[1]}</strong></div>`).join('') + `</div><h3>Cuentos por categoría</h3>` + (Object.entries(cat).map(([k, v]) => `<div class="bar"><span>${esc(k)}</span><i style="width:${v / mx * 55}%"></i>${v}</div>`).join('') || '<p class="sub">Aún no hay datos.</p>') + `<h3 style="margin-top:22px">Detalle por cuento</h3><div style="overflow:auto"><table><tr><th>Cuento</th><th>Estado</th><th>Escenas</th><th>Decisiones</th><th>Finales</th><th>Puntos máx.</th><th>Pruebas</th></tr>` + st.map(s => `<tr><td><b>${esc(s.title)}</b></td><td><span class="pill ${s.status}">${s.status}</span></td><td>${s.scenes.length}</td><td>${s.scenes.reduce((b, x) => b + x.choices.length, 0)}</td><td>${s.scenes.filter(x => x.is_ending).length}</td><td>${maxPts(s)}</td><td>${s.plays || 0}</td></tr>`).join('') + '</table></div>'
+            }
+            else if (view === 'history') V.innerHTML = `<div class="banner"><h2>Historial de cambios</h2><div class="tools"><button onclick="clearLog()">Limpiar</button></div></div><ul class="log">` + (state.log.map(l => `<li><small>${new Date(l.t).toLocaleString('es-BO')}</small><b>${esc(l.role)}</b> · ${esc(l.msg)}</li>`).join('') || '<li class="sub">Todavía no hay cambios registrados.</li>') + '</ul>';
+            else V.innerHTML = `<div class="banner"><h2>Respaldo</h2></div><div class="box"><b>Copia de seguridad</b><p class="sub">Descarga todos tus cuentos o carga un JSON (de un cuento o de un respaldo completo). Lo importado entra como borrador.</p><div class="acts"><button onclick="exportAll()">Descargar respaldo</button><button class="ghost" onclick="$('imp').click()">Importar JSON</button><input id="imp" type="file" accept=".json,application/json" style="display:none" onchange="importFile(this)"></div></div><h3>Papelera (${state.trash.length})</h3>` + (state.trash.map(t => `<div class="route" style="grid-template-columns:1fr auto"><span><b>${esc(t.title)}</b> <small class="sub">· eliminado ${new Date(t.deleted_at).toLocaleDateString('es-BO')}</small></span><span class="acts" style="margin:0"><button class="sm" onclick="restore(${t.id})">Restaurar</button><button class="del sm" onclick="purge(${t.id})">Eliminar para siempre</button></span></div>`).join('') || '<p class="sub">La papelera está vacía.</p>')
+        }
+        function drawMap(s) {
+            const a = sorted(s), B = $('mapBox'); if (!a.length) { B.innerHTML = '<p class="sub">Agrega escenas para ver el mapa.</p>'; return }
+            const ini = s.initial_scene_id || a[0].id, lv = { [ini]: 0 }, q = [ini];
+            while (q.length) { const c = q.shift(), x = s.scenes.find(y => y.id === c); (x ? x.choices : []).forEach(h => { if (h.next_scene_id && !(h.next_scene_id in lv)) { lv[h.next_scene_id] = lv[c] + 1; q.push(h.next_scene_id) } }) }
+            const orph = new Set(a.filter(x => !(x.id in lv)).map(x => x.id)), mL = Math.max(...Object.values(lv)); orph.forEach(id => lv[id] = mL + 1);
+            const cols = {}; a.forEach(x => (cols[lv[x.id]] = cols[lv[x.id]] || []).push(x)); const pos = {};
+            Object.entries(cols).forEach(([l, xs]) => xs.forEach((x, i) => pos[x.id] = { x: 20 + l * 210, y: 20 + i * 72 }));
+            const W = 40 + Object.keys(cols).length * 210, H = 40 + Math.max(...Object.values(cols).map(c => c.length)) * 72;
+            let g = `<svg width="${W}" height="${H}" role="img" aria-label="Mapa del cuento"><defs><marker id="ar" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0L8,4L0,8z" fill="#ee6a2c"/></marker></defs>`;
+            a.forEach(x => x.choices.forEach(h => { const p = pos[x.id], t = pos[h.next_scene_id]; if (!t) return; const x1 = p.x + 160, y1 = p.y + 22, x2 = t.x, y2 = t.y + 22; g += `<path d="M${x1},${y1} C${x1 + 40},${y1} ${x2 - 40},${y2} ${x2},${y2}" fill="none" stroke="#ee6a2c" stroke-width="1.6" marker-end="url(#ar)"><title>${esc(h.label)} (+${h.points})</title></path>` }));
+            a.forEach((x, i) => {
+                const p = pos[x.id], f = orph.has(x.id) ? '#fddcd8' : x.is_ending ? '#ffe9bf' : x.id === ini ? '#d8ecff' : '#fff', t = x.title.length > 21 ? x.title.slice(0, 20) + '…' : x.title;
+                g += `<g><rect x="${p.x}" y="${p.y}" width="160" height="44" rx="14" fill="${f}" stroke="#f6a12e" stroke-width="1.5" ${orph.has(x.id) ? 'stroke-dasharray="5 4"' : ''}/><text x="${p.x + 12}" y="${p.y + 27}" font-size="13" font-weight="700" fill="#1c1917">${i + 1}. ${esc(t)}</text></g>`
+            });
+            B.innerHTML = g + '</svg><div class="sub">Azul: inicio · Amarillo: final · Rojo punteado: nadie llega a esta escena. Pasa el cursor sobre una flecha para ver la decisión.</div>'
+        }
+        /* Render */
+        function render() {
+            const st = state.stories, c = k => st.filter(s => s.status === k).length;
+            const defs = [['all', 'Todos', st.length], ['published', 'Publicados', c('published')], ['draft', 'Borradores', c('draft')], ['inactive', 'Inactivos', c('inactive')]];
+            $('stats').innerHTML = defs.map(d => `<button class="stat ${filter === d[0] ? 'on' : ''}" onclick="setFilter('${d[0]}')"><span>${d[1]}</span><strong>${d[2]}</strong></button>`).join('');
+            $('listTitle').textContent = { all: 'Todos los cuentos', published: 'Publicados', draft: 'Borradores', inactive: 'Inactivos' }[filter];
+            const q = $('q').value.trim().toLowerCase();
+            const cf = $('catf').value, cats = [...new Set(st.map(x => x.category))].sort();
+            $('catf').innerHTML = '<option value="">Todas las categorías</option>' + cats.map(c => `<option ${c === cf ? 'selected' : ''}>${esc(c)}</option>`).join('');
+            const list = st.filter(s => (filter === 'all' || s.status === filter) && (!cf || s.category === cf) && (!q || (s.title + s.category).toLowerCase().includes(q))), so = $('sort').value;
+            if (so === 'az') list.sort((a, b) => a.title.localeCompare(b.title)); if (so === 'scenes') list.sort((a, b) => b.scenes.length - a.scenes.length); if (so === 'plays') list.sort((a, b) => (b.plays || 0) - (a.plays || 0));
+            $('grid').innerHTML = list.length ? list.map(s => `<article class="story"><img class="thumb" src="${esc(s.cover_image || COVER)}" alt="" onerror="this.src='${COVER}'"/>
+    <div class="info"><b>${esc(s.title)}</b><span class="pill ${s.status}">${s.status}</span><small>${esc(s.category)} · ${esc(s.age || 'Todas las edades')}<br>v${s.revision || 1} · ${s.scenes.length} escenas</small></div>
+    <div class="acts"><button class="sm" onclick="openStory(${s.id})">Abrir</button><button class="ghost sm" onclick="openStory(${s.id},true)">Editar</button><button class="del sm" onclick="delStory(${s.id})">Eliminar</button></div></article>`).join('')
+                : '<div class="empty" style="grid-column:1/-1">No hay cuentos en esta sección. Crea uno con <b>+ Nuevo cuento</b>.</div>';
+            if (view === 'editor' && !cur()) view = 'catalog';
+            const s = cur(), inEd = view === 'editor', info = ['stats', 'history', 'backup'].includes(view);
+            $('nav').innerHTML = [['catalog', 'Cuentos'], ['stats', 'Estadísticas'], ['history', 'Historial'], ['backup', 'Respaldo']].map(n => `<button class="${view === n[0] || (inEd && n[0] === 'catalog') ? 'on' : ''}" onclick="setView('${n[0]}')">${n[1]}</button>`).join('');
+            $('catalog').style.display = view === 'catalog' ? 'block' : 'none'; $('infoView').style.display = info ? 'block' : 'none'; $('editorView').style.display = inEd ? 'block' : 'none';
+            if (info) drawInfo();
+            if (!inEd) return;
+            const cv = $('cover'); cv.src = s.cover_image || COVER; cv.onerror = () => cv.src = COVER;
+            $('hTitle').textContent = s.title; $('hMeta').innerHTML = `${esc(s.category)} · v${s.revision || 1} <span class="pill ${s.status}">${s.status}</span>`;
+            const E = editMode; $('editBtn').textContent = E ? '✓ Terminar edición' : '✎ Editar escenas y decisiones'; $('editBtn').className = E ? 'ghost' : '';
+            $('steps').style.display = E ? 'flex' : 'none'; $('addScene').style.display = E ? '' : 'none'; if (!E) closeSceneForm(); $('mapBox').style.display = mapOn ? 'block' : 'none'; if (mapOn) drawMap(s);
+            const err = validate(s);
+            $('status').className = 'status ' + (err.length ? 'bad' : 'good');
+            $('status').innerHTML = err.length ? `<b>Pendiente antes de publicar:</b><ul>${err.map(x => `<li>${esc(x)}</li>`).join('')}</ul>` : '<b>Listo para publicar.</b> Hay escena inicial, todas las decisiones tienen destino y se llega a un final.';
+            const a = sorted(s);
+            $('scenes').innerHTML = a.length ? a.map((sc, i) => {
+                const opts = a.map((o, j) => `<option value="${o.id}" ${o.id === sc.id ? '' : ''}>Escena ${j + 1}: ${esc(o.title)}</option>`).join('');
+                const ed = editing && editing.s === sc.id ? sc.choices.find(h => h.id === editing.c) : null;
+                const rows = sc.choices.map((h, k) => {
+                    const j = a.findIndex(x => x.id === h.next_scene_id);
+                    return `<div class="route"><span class="letter">${String.fromCharCode(65 + k)}</span><span class="opt">"${esc(h.label)}"</span>
+      <span>${j >= 0 ? `<span class="dest">lleva a <b>Escena ${j + 1}</b> · ${esc(a[j].title)}</span>` : '<span class="nodest">Sin destino</span>'} <span class="pts">+${h.points} pts</span></span>
+      ${E ? `<span class="acts" style="margin:0"><button class="ghost sm" onclick="editChoice(${sc.id},${h.id})">Editar</button><button class="del sm" onclick="delChoice(${sc.id},${h.id})">Quitar</button></span>` : '<span></span>'}</div>`
+                }).join('');
+                return `<article class="scene"><div class="scene-top"><div><span class="num">${i + 1}</span><b>${esc(sc.title)}</b>${s.initial_scene_id === sc.id ? '<span class="tag t-ini">INICIO</span>' : ''}${sc.is_ending ? '<span class="tag t-end">FINAL</span>' : ''}</div>
+      ${E ? `<div class="acts" style="margin:0"><button class="ghost sm" onclick="move(${sc.id},-1)" aria-label="Subir">↑</button><button class="ghost sm" onclick="move(${sc.id},1)" aria-label="Bajar">↓</button><button class="ghost sm" onclick="openSceneForm(${sc.id})">Editar escena</button><button class="del sm" onclick="delScene(${sc.id})">Eliminar</button></div>` : ''}</div>
+      <p class="body">${esc(sc.body)}</p>` +
+                    (sc.is_ending ? '<div class="sub">Escena final: aquí termina esta rama de la historia.</div>' :
+                        `<div class="dec"><h4>${E ? '¿Qué puede decidir el jugador aquí?' : 'Decisiones'}</h4>${E ? '<p>Cada decisión es un botón que el jugador ve. Elige a qué escena lo lleva y cuántos puntos gana.</p>' : ''}
+        ${rows || (E ? '<p><i>Todavía no hay decisiones. Agrega la primera abajo.</i></p>' : '<p><i>Sin decisiones.</i></p>')}
+        ${E ? `<div class="add"><h5>${ed ? 'Editando decisión' : 'Agregar decisión'}</h5>
+        <div class="fg"><label>1. Texto del botón<input id="cl${sc.id}" value="${esc(ed?.label || '')}" placeholder="Ej. Abrir la puerta" /></label>
+        <label>2. Lleva a<select id="cn${sc.id}" style="width:100%"><option value="">Elegir escena…</option>${opts.replace(`value="${ed?.next_scene_id}"`, `value="${ed?.next_scene_id}" selected`)}<option value="__new">＋ Crear escena nueva</option></select></label>
+        <label>3. Puntos que gana<div class="rng"><input id="cp${sc.id}" type="range" min="1" max="10" value="${ed?.points || 5}" oninput="this.nextElementSibling.value=this.value"/><output>${ed?.points || 5}</output></div></label></div>
+        <div class="acts"><button onclick="saveChoice(${sc.id})">${ed ? 'Guardar cambios' : '+ Agregar decisión'}</button>${ed ? '<button class="ghost" onclick="cancelEdit()">Cancelar</button>' : ''}</div></div>` : ''}</div>`) + `</article>`
+            }).join('')
+                : '<div class="empty">Aún no hay escenas. Pulsa <b>Editar escenas y decisiones</b> y luego <b>+ Agregar escena</b>.</div>';
+        }
+        gate(); render();
+    </script>
+</body>
+
+</html>
