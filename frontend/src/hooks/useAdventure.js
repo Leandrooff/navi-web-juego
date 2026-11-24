@@ -16,10 +16,20 @@ export function useAdventure(){
    sync(data);setStory(detail);setReward(null);operation.current=null;
  });
  const choose=choice=>run(async()=>{
-   const action='decision:'+saved.session.id+':'+state.escenaActual.id+':'+choice;
+   const sessionId=saved.session.id;
+   const sceneId=Number(state.escenaActual.id);
+   const action='decision:'+sessionId+':'+sceneId+':'+choice;
    if(operation.current?.action!==action)operation.current={action,key:crypto.randomUUID()};
-   const data=await api.decision(saved.session.id,{scene_id:Number(state.escenaActual.id),choice_id:Number(choice),request_key:operation.current.key});
-   sync(data);operation.current=null;
+   let data;
+   try {
+     data=await api.decision(sessionId,{scene_id:sceneId,choice_id:Number(choice),request_key:operation.current.key});
+   } catch (error) {
+     if(error.status!==409)throw error;
+     // Otra decisión pudo quedar guardada aunque el navegador no recibiera su respuesta.
+     data=await api.gameSession(sessionId);
+   }
+   sync(data);
+   operation.current=null;
  });
  const hint=()=>run(async()=>sync(await api.hint(saved.session.id,state.escenaActual.id)));
  const advance=()=>run(async()=>sync(await api.advance(saved.session.id,saved.pending.id)));
