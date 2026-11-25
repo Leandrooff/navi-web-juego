@@ -94,3 +94,25 @@ label{display:flex;flex-direction:column;gap:8px;font-size:13px;font-weight:600;
 .pagination button:disabled{color:var(--disabled-ink);background:var(--disabled-bg);border:2px dashed var(--disabled-line);opacity:1}
 /* Mensajes de error legibles también en móvil (antes 12 px) */
 @media(max-width:760px){.notice,.error-notice{font-size:14px;padding:12px 14px;gap:10px}}
+/* ---------- Módulo 01 · Responsive y accesibilidad ---------- */
+/* Encabezados que App enfoca por programa (tabindex=-1) para lectores de pantalla:
+   no son controles, así que no muestran la caja de foco del navegador. */
+main :is(h1,h2)[tabindex="-1"]:focus{outline:none}
+/* Eyebrows y lema del logo: mínimo 12 px (antes 8–11 px) */
+.eyebrow,.welcome-copy>.eyebrow,.adventure-journal .eyebrow{font-size:12px}
+.brand small{font-size:12px;letter-spacing:1px}
+/* Controles táctiles de al menos 44 px */
+.adult-access{min-height:44px;font-size:13px}
+.profile-button{min-height:44px}
+/* Aviso de error global: arriba al centro, bajo la cabecera, para no tapar el botón principal
+   (a 360 px tapaba «¡Comenzar aventura!») ni los accesos del pie del mapa */
+.global-error{top:84px;bottom:auto;left:50%;right:auto;transform:translateX(-50%);width:min(650px,calc(100% - 24px));max-width:none}
+@media(max-width:760px){
+ /* Bienvenida: el logo vuelve a verse en móvil y NAVI sube un poco para dejar aire */
+ .welcome-header>.brand{display:inline-flex}
+ .welcome-spirit{top:84px;width:260px}
+ .adult-access{font-size:12px;padding:10px 13px}
+ .welcome-copy>.eyebrow{letter-spacing:1.5px}
+ /* HUD: botón de ajustes de 44 × 44 px (antes 33 px) */
+ .hud .icon-button{width:44px;height:44px}
+}
